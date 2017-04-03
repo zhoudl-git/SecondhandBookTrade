@@ -1,0 +1,26 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <parent>
+    <groupId>com.booktrade</groupId>
+    <artifactId>SecondhandBookTrade-parent</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+  </parent>
+  <artifactId>SecondhandBookTrade-manager</artifactId>
+  <packaging>pom</packaging>
+  <name>SecondhandBookTrade-manager</name>
+  <!-- 添加依赖 -->
+	<dependencies>
+		<dependency>
+			<groupId>com.booktrade</groupId>
+			<artifactId>SecondhandBookTrade-common</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+		</dependency>
+	</dependencies>
+  
+	<modules>
+		<module>SecondhandBookTrade-manager-pojo</module>
+		<module>SecondhandBookTrade-manager-dao</module>
+		<module>SecondhandBookTrade-manager-service</module>
+		<module>SecondhandBookTrade-manager-web</module>
+	</modules>
+</project>
