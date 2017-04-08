@@ -1,0 +1,47 @@
+﻿<html>
+	<head>
+		<title>Filter - jQuery LigerUI API</title>      
+		<meta http-equiv="content-type" content="text/html; charset=UTF-8" /> 
+		<link href="../common.css" rel="stylesheet" type="text/css" />
+		<script src="../core.js" type="text/javascript"></script> 
+	</head>
+	<body>
+		<h2>ligerFilter</h2> 
+         
+        
+                    <p> 
+            过滤器（自定义查询组件）
+        </p>
+                     
+          
+                <h3>示例</h3>
+        <pre><div><!--
+
+Code highlighting produced by Actipro CodeHighlighter (freeware)
+http://www.CodeHighlighter.com/
+
+--><span style="color: #008080;"> 1</span> <span style="color: #000000;"> </span><span style="color: #0000FF;">var</span><span style="color: #000000;"> fields </span><span style="color: #000000;">=</span><span style="color: #000000;"> [
+</span><span style="color: #008080;"> 2</span> <span style="color: #000000;">                { display: </span><span style="color: #000000;">'</span><span style="color: #000000;">主键</span><span style="color: #000000;">'</span><span style="color: #000000;">, name: </span><span style="color: #000000;">'</span><span style="color: #000000;">CustomerID</span><span style="color: #000000;">'</span><span style="color: #000000;"> },
+</span><span style="color: #008080;"> 3</span> <span style="color: #000000;">                { display: </span><span style="color: #000000;">'</span><span style="color: #000000;">公司名</span><span style="color: #000000;">'</span><span style="color: #000000;">, name: </span><span style="color: #000000;">'</span><span style="color: #000000;">CompanyName</span><span style="color: #000000;">'</span><span style="color: #000000;">, editor: { type: </span><span style="color: #000000;">'</span><span style="color: #000000;">string</span><span style="color: #000000;">'</span><span style="color: #000000;">} },
+</span><span style="color: #008080;"> 4</span> <span style="color: #000000;">                { display: </span><span style="color: #000000;">'</span><span style="color: #000000;">加入时间</span><span style="color: #000000;">'</span><span style="color: #000000;">, name: </span><span style="color: #000000;">'</span><span style="color: #000000;">AddTime</span><span style="color: #000000;">'</span><span style="color: #000000;">, editor: { type: </span><span style="color: #000000;">'</span><span style="color: #000000;">date</span><span style="color: #000000;">'</span><span style="color: #000000;">, options: { showTime: </span><span style="color: #0000FF;">true</span><span style="color: #000000;">}} },
+</span><span style="color: #008080;"> 5</span> <span style="color: #000000;">                { display: </span><span style="color: #000000;">'</span><span style="color: #000000;">金额</span><span style="color: #000000;">'</span><span style="color: #000000;">, name: </span><span style="color: #000000;">'</span><span style="color: #000000;">Amount</span><span style="color: #000000;">'</span><span style="color: #000000;">, type: </span><span style="color: #000000;">'</span><span style="color: #000000;">number</span><span style="color: #000000;">'</span><span style="color: #000000;">, editor: { type: </span><span style="color: #000000;">'</span><span style="color: #000000;">number</span><span style="color: #000000;">'</span><span style="color: #000000;">, options: { type: </span><span style="color: #000000;">'</span><span style="color: #000000;">float</span><span style="color: #000000;">'</span><span style="color: #000000;">}} }
+</span><span style="color: #008080;"> 6</span> <span style="color: #000000;">            ];
+</span><span style="color: #008080;"> 7</span> <span style="color: #000000;">
+</span><span style="color: #008080;"> 8</span> <span style="color: #000000;">
+</span><span style="color: #008080;"> 9</span> <span style="color: #000000;">            </span><span style="color: #0000FF;">var</span><span style="color: #000000;"> filter </span><span style="color: #000000;">=</span><span style="color: #000000;"> $(</span><span style="color: #000000;">&quot;</span><span style="color: #000000;">#filter</span><span style="color: #000000;">&quot;</span><span style="color: #000000;">).ligerFilter({ fields: fields });
+</span><span style="color: #008080;">10</span> <span style="color: #000000;">
+</span><span style="color: #008080;">11</span> <span style="color: #000000;">            $(</span><span style="color: #000000;">&quot;</span><span style="color: #000000;">#Button1</span><span style="color: #000000;">&quot;</span><span style="color: #000000;">).click(</span><span style="color: #0000FF;">function</span><span style="color: #000000;"> ()
+</span><span style="color: #008080;">12</span> <span style="color: #000000;">            {
+</span><span style="color: #008080;">13</span> <span style="color: #000000;">                </span><span style="color: #0000FF;">var</span><span style="color: #000000;"> group </span><span style="color: #000000;">=</span><span style="color: #000000;"> filter.getData();
+</span><span style="color: #008080;">14</span> <span style="color: #000000;">                $(</span><span style="color: #000000;">&quot;</span><span style="color: #000000;">#txtGroup</span><span style="color: #000000;">&quot;</span><span style="color: #000000;">).val($.ligerui.toJSON(group));
+</span><span style="color: #008080;">15</span> <span style="color: #000000;">            });</span></div></pre>
+        
+        <h3>截图</h3>
+
+        <p>
+            <img src="../../uishow/ligerFilter.jpg" />
+        </p>  
+        
+
+			</body>
+</html>

@@ -1,0 +1,142 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <link href="../../../lib/ligerUI/skins/Aqua/css/ligerui-all.css" rel="stylesheet" type="text/css" />
+    <script src="../../../lib/jquery/jquery-1.9.0.min.js" type="text/javascript"></script>
+    <script src="../../../lib/ligerUI/js/core/base.js" type="text/javascript"></script>
+    <script src="../../../lib/ligerUI/js/plugins/ligerGrid.js" type="text/javascript"></script>
+        <script src="../../../lib/ligerUI/js/plugins/ligerResizable.js" type="text/javascript"></script> 
+    <script src="../TreeDeptData.js" type="text/javascript"></script>
+
+    <script type="text/javascript">
+        var manager;
+        $(function ()
+        { 
+            TreeDeptData.Rows[0].children[0].isextend = false; 
+            TreeDeptData.Rows[0].children[0].childrenurl = 'xxx';
+            TreeDeptData.Rows[0].children[0].name = "这个节点模拟加载";
+             
+            
+            manager = $("#maingrid").ligerGrid({
+                columns: [
+                    { display: '部门名', name: 'name', id: 'id1', width: 250, align: 'left' },
+                { display: '部门标示', name: 'id', width: 250, type: 'int', align: 'left' },
+
+                { display: '部门描述', name: 'remark', width: 250, align: 'left' }
+                ], width: '100%', pageSizeOptions: [5, 10, 15, 20], height: '97%',
+                data: TreeDeptData, alternatingRow: false,
+                
+                onBeforeShowData: function ()
+                {
+                    var grid = this; 
+                    grid.collapsedRows = []; 
+                },
+                onTreeExpand: function (data,e)
+                {
+                    var grid = this;
+                    if (data.childrenurl && !data.loaded)
+                    {
+                        grid.toggleLoading(true);
+                        //模拟加载ajax数据
+                        setTimeout(function ()
+                        { 
+                            grid.toggleLoading(false);
+                            var children_data = [
+                                { id: '0101A', name: "企划分部1-A", remark: "企划分部1-A" },
+                                { id: '0101B', name: "企划分部1-B", remark: "企划分部1-B" },
+                                { id: '0101C', name: "企划分部1-C", remark: "企划分部1-C" }
+                            ];
+                            children_data[0].children = [
+                                { id: '0101AA', name: "企划分部1-AA", remark: "企划分部1-AA" }
+                            ];
+
+                            grid.append(children_data, data);
+
+                            e.update();
+
+                            data.loaded = true;
+                        }, 200);
+                        return false;
+                    }
+                },
+                tree:{
+                    columnId: 'id1',
+                    isParent: function (data)
+                    { 
+                        var exist = 'children' in data;
+                        if (exist) return true;
+
+                        if (data.childrenurl) return true;
+                        return false;
+                    }
+                }
+            }
+            );
+        });
+        function getParent()
+        {
+            var row = manager.getParent(manager.getSelectedRow());
+            alert(JSON.stringify(row));
+        }
+        function getSelected()
+        {
+            var row = manager.getSelectedRow();
+            if (!row) { alert('请选择行'); return; }
+            alert(JSON.stringify(row));
+        }
+        function getData()
+        {
+            var data = manager.getData();
+            alert(JSON.stringify(data));
+        }
+        function hasChildren()
+        {
+            var row = manager.getSelectedRowObj();
+            alert(manager.hasChildren(row));
+        }
+        function isLeaf()
+        {
+            var row = manager.getSelectedRowObj();
+            alert(manager.isLeaf(row));
+        }
+        function collapseAll()
+        {
+            manager.collapseAll();
+        }
+        function expandAll()
+        {
+            manager.expandAll();
+        }
+    </script>
+</head>
+<body  style="padding:4px"> 
+<div> 
+       <a class="l-button" style="width:120px;float:left; margin-left:10px;" onclick="getParent()">获取父节点</a>
+
+
+     <a class="l-button" style="width:120px;float:left; margin-left:10px;" onclick="hasChildren()">是否有子节点</a>
+       
+        <a class="l-button" style="width:120px;float:left; margin-left:10px;" onclick="isLeaf()">是否叶节点节点</a>
+          
+   <a class="l-button" style="width:120px;float:left; margin-left:10px;" onclick="getSelected()">获取选中的值(选择行)</a>
+  
+   <a class="l-button" style="width:120px;float:left; margin-left:10px;" onclick="getData()">获取当前的值</a>
+
+
+       <a class="l-button" style="width:120px;float:left; margin-left:10px;" onclick="expandAll()">展开全部</a>
+
+       <a class="l-button" style="width:120px;float:left; margin-left:10px;" onclick="collapseAll()">收缩全部</a>
+   <div class="l-clear"></div>
+ 
+</div>
+
+    <div id="maingrid"></div> 
+<div>
+
+
+</div>
+
+</body>
+</html>

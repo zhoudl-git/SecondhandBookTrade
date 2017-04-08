@@ -1,0 +1,79 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+        <link href="../../lib/ligerUI/skins/Aqua/css/ligerui-all.css" rel="stylesheet" type="text/css" />
+    <script src="../../lib/jquery/jquery-1.9.0.min.js" type="text/javascript"></script>
+        <script src="../../lib/ligerUI/js/core/base.js" type="text/javascript"></script>
+    <script src="../../lib/ligerUI/js/plugins/ligerDrag.js" type="text/javascript"></script>
+    <script src="../../lib/ligerUI/js/plugins/ligerResizable.js" type="text/javascript"></script>
+    <script src="../../lib/ligerUI/js/plugins/ligerMessageBox.js" type="text/javascript"></script>
+     <style type="text/css">
+    
+     </style>
+     <script type="text/javascript">
+         $(function ()
+         {
+
+         });
+         function btnClick(item, index, messageBox)
+         {
+             //alert(item.text);
+             messageBox.close();
+         }
+         function showmessagebox(title,type)
+         {
+             $.ligerMessageBox.show(
+             {
+                 width: 270,
+                 type: type,
+                 title:title,
+                 content: '窗口改变大小事件',
+                 buttons: [{ text: '确定', onclick: btnClick }, { text: '取消', onclick: btnClick}]
+             });
+         }
+         function showalert(title, content)
+         {
+             $.ligerMessageBox.alert(title, content);
+         }
+         function success(title,content)
+         {
+             $.ligerMessageBox.success(title, content);
+         }
+         function warn(title, content)
+         {
+             $.ligerMessageBox.warn(title, content);
+         }
+         function error(title, content)
+         {
+             $.ligerMessageBox.error(title, content);
+         }
+         function question(title, content)
+         {
+             $.ligerMessageBox.question(title, content);
+         }
+         function showconfirm(title, content)
+         {
+             $.ligerMessageBox.confirm(title, content, function (r)
+             {
+                 alert(r ? '您点击了Y' : '您点击了N');
+             });
+         }
+     </script>
+</head>
+<body style="padding:10px">
+
+    <a href="javascript:showalert('弹出信息','确定信息')">alert</a>
+     <a href="javascript:success('修改成功','确定信息')">success</a>
+     <a href="javascript:error('修改失败','error')">error</a>
+     <a href="javascript:warn('确定警告','warn')">warn</a>
+     <a href="javascript:question('这是一个问题信息','question')">question</a><br />
+
+     <a href="javascript:showconfirm('确定？','确定信息')">确定框</a>
+      <div style="display:none;">
+      
+</div>
+</body>
+</html>
+    

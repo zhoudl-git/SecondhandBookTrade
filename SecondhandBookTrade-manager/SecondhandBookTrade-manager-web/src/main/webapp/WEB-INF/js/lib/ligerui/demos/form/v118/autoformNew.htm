@@ -1,0 +1,53 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head><title>
+</title>
+    <link href="../../../lib/ligerUI/skins/Aqua/css/ligerui-all.css" rel="stylesheet" type="text/css" /> 
+    <link href="../../../lib/ligerUI/skins/Gray/css/all.css" rel="stylesheet" type="text/css" /> 
+    <script src="../../../lib/jquery/jquery-1.9.0.min.js" type="text/javascript"></script>
+     <script src="../../../lib/ligerUI/js/ligerui.all.js" type="text/javascript"></script>  
+    <script src="../../grid/CustomersData.js"></script>
+	
+	
+   <script src="../../../lib/jquery-validation/jquery.validate.min.js"></script>
+    <script src="../../../lib/jquery-validation/jquery.metadata.js" type="text/javascript"></script>
+    <script src="../../../lib/jquery-validation/messages_cn.js" type="text/javascript"></script>
+
+    <script type="text/javascript"> 
+        var groupicon = "../../../lib/ligerUI/skins/icons/communication.gif";
+		var form;
+        $(function ()
+        { 
+            //创建表单结构 
+            form = $("#form2").ligerForm({
+                inputWidth: 170, labelWidth: 90, space: 40,
+				validate : true,
+                fields: [
+                { name: "ProductID", type: "hidden" }, 
+                { display: "日期 ", name: "AddTime", newline: true, type: "date" ,validate:{required:true,minlength:5} },
+                { display: "折扣", name: "QuantityPerUnit", newline: true, type: "number",validate:{required:true,minlength:5} },
+                { display: "单价", name: "UnitPrice", newline: true,  type: "number",validate:{required:true,minlength:5} },
+                { display: "库存量", name: "UnitsInStock", newline: true, type: "digits", group: "库存", groupicon: groupicon },
+                { display: "订购量", name: "UnitsOnOrder", newline: false, type: "digits" },
+                { display: "备注", name: "Remark", newline: true, type: "text" ,width:470,validate:{required:true,minlength:5} },
+                { display: "备注", name: "Remark", newline: true, type: "text" ,width:470 }
+                ]
+            }); 
+        });  
+		 function f_validate() { 
+            if (form.valid()) {
+                alert('验证通过');
+            }
+            else {
+                form.showInvalid();
+            }
+        } 
+
+    </script> 
+
+</head>
+<body style="padding:10px"> 
+  <form id="form2"></form> 
+  <div class="liger-button" data-click="f_validate" data-width="150">验证</div> 
+
+</html>

@@ -1,0 +1,60 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <script src="../../lib/jquery/jquery-1.9.0.min.js" type="text/javascript"></script>
+    <link href="../../lib/ligerUI/skins/Aqua/css/ligerui-all.css" rel="stylesheet" type="text/css" />
+    <script src="../../lib/ligerUI/js/core/base.js" type="text/javascript"></script>
+    <script src="../../lib/ligerUI/js/plugins/ligerTree.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        var manager = null;
+        $(function ()
+        {
+            $("#tree1").ligerTree({ url: 'json.txt', ajaxType: 'get' });
+            manager = $("#tree1").ligerGetTreeManager();
+        }); 
+        function collapseAll()
+        {
+            manager.collapseAll();
+        }
+        function expandAll()
+        {
+            manager.expandAll();
+        }
+        function getChecked()
+        {
+            var notes = manager.getChecked();
+            var text = "";
+            for (var i = 0; i < notes.length; i++)
+            {
+                
+                text += notes[i].data.text + ",";
+            }
+            alert('选择的节点数：' + text);
+        }
+        function getSelected()
+        {
+            var note = manager.getSelected(); 
+            alert('选择的是:' + note.data.text);
+        }
+    </script>
+</head>
+<body style="padding:10px"> 
+    <a class="l-button" onclick="collapseAll()" style="float:left;margin-right:10px;">折叠全部</a> 
+    <a class="l-button" onclick="expandAll()" style="float:left;margin-right:10px;">张开全部</a> 
+    <div class="l-clear"></div>
+     <br />
+        <a class="l-button" onclick="getChecked()" style="float:left;margin-right:10px;">获取选择(复选框)</a> 
+    <a class="l-button" onclick="getSelected()" style="float:left;margin-right:10px;">获取选择</a>
+    <br />
+     <br />
+     <!-- 带复选框和图标 -->
+    <div style="width:200px; height:300px; border:1px solid #ccc; overflow:auto; clear:both;">
+    <ul id="tree1">   </ul>
+    </div>
+
+        <div style="display:none">
+     
+    </div>
+</body>
+</html>

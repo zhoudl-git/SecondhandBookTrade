@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<root>
+ <note>
+    <text>节点1</text>
+    <treelevel>1</treelevel>
+    <isleaf>0</isleaf>
+    <url></url>
+ </note>
+  <note>
+    <text>节点1.1</text>
+    <treelevel>2</treelevel>
+    <isleaf>1</isleaf>
+    <url></url>
+  </note>
+  <note>
+    <text>节点1.2</text>
+    <treelevel>2</treelevel>
+    <isleaf>1</isleaf>
+    <url></url>
+  </note>
+  <note>
+    <text>节点1.3</text>
+    <treelevel>2</treelevel>
+    <isleaf>0</isleaf>
+    <url></url>
+  </note>
+  <note>
+    <text>节点1.3.1</text>
+    <treelevel>3</treelevel>
+    <isleaf>1</isleaf>
+    <url></url>
+  </note>
+  <note>
+    <text>节点1.3.2</text>
+    <treelevel>3</treelevel>
+    <isleaf>1</isleaf>
+    <url></url>
+  </note>
+</root>

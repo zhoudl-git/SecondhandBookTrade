@@ -1,0 +1,46 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <link href="../../lib/ligerUI/skins/Aqua/css/ligerui-all.css" rel="stylesheet" type="text/css" /> 
+    <style type="text/css">
+    </style>
+    <script src="../../lib/jquery/jquery-1.9.0.min.js" type="text/javascript"></script> 
+    <script src="../../lib/ligerUI/js/core/base.js" type="text/javascript"></script>
+    <script src="../../lib/ligerUI/js/plugins/ligerCheckBox.js" type="text/javascript"></script>
+    <script src="../../lib/ligerUI/js/plugins/ligerResizable.js" type="text/javascript"></script>
+    <script src="../../lib/ligerUI/js/plugins/ligerComboBox.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        $(function ()
+        { 
+            $("#select2").ligerComboBox({
+                width : 400,
+                cancelable: true
+            });
+        });
+        function clickee()
+        {
+            alert($("#select2").val());
+        }
+    </script>
+</head>
+<body style="padding:10px"> 
+        <select name="select2" id="select2" >
+				<option value="opt1">Big Option test line with more wordssss</option>
+				<option value="opt2">Option 2</option>
+				<option value="opt3">Option 3</option>
+				<option value="opt4">Option 4</option>
+				<option value="opt5">Option 5</option>
+				<option value="opt6">Option 6</option>
+				<option value="opt7">Option 7</option>
+				<option value="opt8">Option 8</option>
+			</select> 
+      <br />
+         
+<a href="javascript:clickee()" class="l-button" style="width:100px">获取</a> 
+ <div style="display:none;">
+ 
+</div>
+</body>
+</html>

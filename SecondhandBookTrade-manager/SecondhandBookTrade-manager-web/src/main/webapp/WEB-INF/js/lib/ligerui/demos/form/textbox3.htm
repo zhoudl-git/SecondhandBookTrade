@@ -1,0 +1,59 @@
+<html>
+<head>
+    <title></title>
+    <link href="../../lib/ligerUI/skins/Aqua/css/ligerui-all.css" rel="stylesheet" type="text/css" />
+    <script src="../../lib/jquery/jquery-1.9.0.min.js" type="text/javascript"></script> 
+    <script src="../../lib/ligerUI/js/core/base.js" type="text/javascript"></script>
+    <script src="../../lib/ligerUI/js/plugins/ligerTextBox.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        $(function ()
+        {
+            //我们将一个html文本框对象转换成ligerui文本框对象,并返回ligerui对象
+            var g = $("#txt1").ligerTextBox(
+            {
+                //如果没有输入时,会提示不能为空
+                nullText: '不能为空'
+            });
+
+            /*
+            如何获取属性
+            */
+            //方式一
+            alert('方式一:' + g.get('disabled'));
+            //方式二
+            alert('方式二:' + $("#txt1").ligerTextBox('option', 'disabled'));
+
+             
+            /*
+            如何设置属性
+            */
+            //方式一
+            g.set('disabled', true);
+            //方式二 
+            $("#txt1").ligerTextBox('option', 'disabled', false);
+
+            /*
+            如何调用方法
+            */
+            //方式一
+            g.setDisabled();
+            //方式二 
+            $("#txt1").ligerTextBox('setEnabled');
+             
+            /*
+            如何设置事件
+            */
+            //这里给文本框绑定一个改变值的事件
+            //也可以设置onChangeValue参数
+            g.bind('changeValue', function (value)
+            {
+                alert(value);
+            });
+        }); 
+    </script>
+
+</head>
+<body style="padding:10px">
+        <input type="text" id="txt1" value="" style="width:200px"/>
+</body>
+</html>

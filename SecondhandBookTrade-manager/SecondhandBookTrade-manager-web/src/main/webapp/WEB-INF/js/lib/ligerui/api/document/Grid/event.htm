@@ -1,0 +1,631 @@
+﻿<html>
+	<head>
+		<title>Grid - jQuery LigerUI API</title>     
+ 
+		<meta http-equiv="content-type" content="text/html; charset=UTF-8" /> 
+		<link href="../common.css" rel="stylesheet" type="text/css" />
+		<script src="../core.js" type="text/javascript"></script> 
+	</head>
+	<body>
+		<h2>事件列表</h2> 
+
+		<table class="apitable" cellpadding="0" cellspacing="0">
+			 <thead>
+            <tr> 
+				<td>事件名</td>
+				<td>参数</td> 
+				<td>描述</td> 
+			</tr>
+            </thead>
+            <tbody>
+					<tr> 
+                <td> 
+                    <a name="event_onEndEdit" key="onEndEdit" class="linkname"></a>
+                                                                     onEndEdit
+                        
+                    				</td>
+                <td> 
+                                        (editParm)
+                    				</td>
+				<td class="description"> 
+                                        &nbsp;
+                    				</td> 
+			</tr>
+					<tr> 
+                <td> 
+                    <a name="event_onRowDragDrop" key="onRowDragDrop" class="linkname"></a>
+                                                                     onRowDragDrop
+                        
+                    				</td>
+                <td> 
+                                        (editParm)
+{rows,parent,near,after}
+                    				</td>
+				<td class="description"> 
+                                        &nbsp;
+                    				</td> 
+			</tr>
+					<tr> 
+                <td> 
+                    <a name="event_onDragCol" key="onDragCol" class="linkname"></a>
+                                                                     onDragCol
+                        
+                    				</td>
+                <td> 
+                                        &nbsp;
+                    				</td>
+				<td class="description"> 
+                                        拖动列事件
+                    				</td> 
+			</tr>
+					<tr> 
+                <td> 
+                    <a name="event_onToggleCol" key="onToggleCol" class="linkname"></a>
+                                                                     onToggleCol
+                        
+                    				</td>
+                <td> 
+                                        &nbsp;
+                    				</td>
+				<td class="description"> 
+                                        切换列事件
+                    				</td> 
+			</tr>
+					<tr> 
+                <td> 
+                    <a name="event_onChangeSort" key="onChangeSort" class="linkname"></a>
+                                                                     onChangeSort
+                        
+                    				</td>
+                <td> 
+                                        &nbsp;
+                    				</td>
+				<td class="description"> 
+                                        改变排序事件
+                    				</td> 
+			</tr>
+					<tr> 
+                <td> 
+                    <a name="event_onSuccess" key="onSuccess" class="linkname"></a>
+                                                                     onSuccess
+                        
+                    				</td>
+                <td> 
+                                        (data, grid)
+                    				</td>
+				<td class="description"> 
+                                        成功获取服务器数据的事件
+                    				</td> 
+			</tr>
+					<tr> 
+                <td> 
+                    <a name="event_onDblClickRow" key="onDblClickRow" class="linkname"></a>
+                                                                     <a href="#link29" title="点击查看示例">onDblClickRow</a>
+                        
+                    				</td>
+                <td> 
+                                        (data,rowid,rowdata)
+                    				</td>
+				<td class="description"> 
+                                        双击行事件
+                    				</td> 
+			</tr>
+					<tr> 
+                <td> 
+                    <a name="event_onSelectRow" key="onSelectRow" class="linkname"></a>
+                                                                     onSelectRow
+                        
+                    				</td>
+                <td> 
+                                        (rowdata, rowid, rowobj)
+                    				</td>
+				<td class="description"> 
+                                        选择行事件
+                    				</td> 
+			</tr>
+					<tr> 
+                <td> 
+                    <a name="event_onUnSelectRow" key="onUnSelectRow" class="linkname"></a>
+                                                                     onUnSelectRow
+                        
+                    				</td>
+                <td> 
+                                        (rowdata, rowid, rowobj)
+                    				</td>
+				<td class="description"> 
+                                        取消选择行事件
+                    				</td> 
+			</tr>
+					<tr> 
+                <td> 
+                    <a name="event_onBeforeCheckRow" key="onBeforeCheckRow" class="linkname"></a>
+                                                                     onBeforeCheckRow
+                        
+                    				</td>
+                <td> 
+                                        (checked, data, rowid, rowdata)
+                    				</td>
+				<td class="description"> 
+                                        选择前事件，可以通过return false阻止操作(复选框)
+                    				</td> 
+			</tr>
+					<tr> 
+                <td> 
+                    <a name="event_onCheckRow" key="onCheckRow" class="linkname"></a>
+                                                                     onCheckRow
+                        
+                    				</td>
+                <td> 
+                                        (checked,data,rowid,rowdata)
+                    				</td>
+				<td class="description"> 
+                                        选择事件(复选框)
+                    				</td> 
+			</tr>
+					<tr> 
+                <td> 
+                    <a name="event_onBeforeCheckAllRow" key="onBeforeCheckAllRow" class="linkname"></a>
+                                                                     onBeforeCheckAllRow
+                        
+                    				</td>
+                <td> 
+                                        (checked,element)
+                    				</td>
+				<td class="description"> 
+                                        选择前事件
+                    				</td> 
+			</tr>
+					<tr> 
+                <td> 
+                    <a name="event_onCheckAllRow" key="onCheckAllRow" class="linkname"></a>
+                                                                     onCheckAllRow
+                        
+                    				</td>
+                <td> 
+                                        (checked,element)
+                    				</td>
+				<td class="description"> 
+                                        选择事件(复选框 全选/全不选)
+                    				</td> 
+			</tr>
+					<tr> 
+                <td> 
+                    <a name="event_onBeforeShowData" key="onBeforeShowData" class="linkname"></a>
+                                                                     onBeforeShowData
+                        
+                    				</td>
+                <td> 
+                                        (currentData)
+                    				</td>
+				<td class="description"> 
+                                        显示数据前事件
+                    				</td> 
+			</tr>
+					<tr> 
+                <td> 
+                    <a name="event_onAfterShowData" key="onAfterShowData" class="linkname"></a>
+                                                                     onAfterShowData
+                        
+                    				</td>
+                <td> 
+                                        (currentData)
+                    				</td>
+				<td class="description"> 
+                                        显示完数据事件
+                    				</td> 
+			</tr>
+					<tr> 
+                <td> 
+                    <a name="event_onError" key="onError" class="linkname"></a>
+                                                                     onError
+                        
+                    				</td>
+                <td> 
+                                        (XMLHttpRequest, textStatus, errorThrown)
+                    				</td>
+				<td class="description"> 
+                                        错误事件
+                    				</td> 
+			</tr>
+					<tr> 
+                <td> 
+                    <a name="event_onSubmit" key="onSubmit" class="linkname"></a>
+                                                                     onSubmit
+                        
+                    				</td>
+                <td> 
+                                        &nbsp;
+                    				</td>
+				<td class="description"> 
+                                        提交前事件
+                    				</td> 
+			</tr>
+					<tr> 
+                <td> 
+                    <a name="event_onReload" key="onReload" class="linkname"></a>
+                                                                     onReload
+                        
+                    				</td>
+                <td> 
+                                        (grid)
+                    				</td>
+				<td class="description"> 
+                                        刷新事件
+                    				</td> 
+			</tr>
+					<tr> 
+                <td> 
+                    <a name="event_onToFirst" key="onToFirst" class="linkname"></a>
+                                                                     onToFirst
+                        
+                    				</td>
+                <td> 
+                                        (element)
+                    				</td>
+				<td class="description"> 
+                                        第一页
+                    				</td> 
+			</tr>
+					<tr> 
+                <td> 
+                    <a name="event_onToPrev" key="onToPrev" class="linkname"></a>
+                                                                     onToPrev
+                        
+                    				</td>
+                <td> 
+                                        (element)
+                    				</td>
+				<td class="description"> 
+                                        上一页
+                    				</td> 
+			</tr>
+					<tr> 
+                <td> 
+                    <a name="event_onToNext" key="onToNext" class="linkname"></a>
+                                                                     onToNext
+                        
+                    				</td>
+                <td> 
+                                        (element)
+                    				</td>
+				<td class="description"> 
+                                        下一页
+                    				</td> 
+			</tr>
+					<tr> 
+                <td> 
+                    <a name="event_onToLast" key="onToLast" class="linkname"></a>
+                                                                     onToLast
+                        
+                    				</td>
+                <td> 
+                                        (element)
+                    				</td>
+				<td class="description"> 
+                                        最后一页
+                    				</td> 
+			</tr>
+					<tr> 
+                <td> 
+                    <a name="event_onAfterAddRow" key="onAfterAddRow" class="linkname"></a>
+                                                                     onAfterAddRow
+                        
+                    				</td>
+                <td> 
+                                        (rowdata)
+                    				</td>
+				<td class="description"> 
+                                        增加行后事件
+                    				</td> 
+			</tr>
+					<tr> 
+                <td> 
+                    <a name="event_onBeforeEdit" key="onBeforeEdit" class="linkname"></a>
+                                                                     <a href="#link46" title="点击查看示例">onBeforeEdit</a>
+                        
+                    				</td>
+                <td> 
+                                        (editParm)
+                    				</td>
+				<td class="description"> 
+                                        编辑前事件
+                    				</td> 
+			</tr>
+					<tr> 
+                <td> 
+                    <a name="event_onBeforeSubmitEdit" key="onBeforeSubmitEdit" class="linkname"></a>
+                                                                     onBeforeSubmitEdit
+                        
+                    				</td>
+                <td> 
+                                        (editParm)
+                    				</td>
+				<td class="description"> 
+                                        验证编辑器结果是否通过
+                    				</td> 
+			</tr>
+					<tr> 
+                <td> 
+                    <a name="event_onAfterEdit" key="onAfterEdit" class="linkname"></a>
+                                                                     onAfterEdit
+                        
+                    				</td>
+                <td> 
+                                        (editParm)
+                    				</td>
+				<td class="description"> 
+                                        结束编辑后事件
+                    				</td> 
+			</tr>
+					<tr> 
+                <td> 
+                    <a name="event_onLoading" key="onLoading" class="linkname"></a>
+                                                                     onLoading
+                        
+                    				</td>
+                <td> 
+                                        &nbsp;
+                    				</td>
+				<td class="description"> 
+                                        加载时函数
+                    				</td> 
+			</tr>
+					<tr> 
+                <td> 
+                    <a name="event_onLoaded" key="onLoaded" class="linkname"></a>
+                                                                     onLoaded
+                        
+                    				</td>
+                <td> 
+                                        (grid)
+                    				</td>
+				<td class="description"> 
+                                        加载完函数
+                    				</td> 
+			</tr>
+					<tr> 
+                <td> 
+                    <a name="event_onContextmenu" key="onContextmenu" class="linkname"></a>
+                                                                     <a href="#link51" title="点击查看示例">onContextmenu</a>
+                        
+                    				</td>
+                <td> 
+                                        ({data,rowindex,row},e)
+                    				</td>
+				<td class="description"> 
+                                        右击事件
+                    				</td> 
+			</tr>
+					<tr> 
+                <td> 
+                    <a name="event_onBeforeCancelEdit" key="onBeforeCancelEdit" class="linkname"></a>
+                                                                     onBeforeCancelEdit
+                        
+                    				</td>
+                <td> 
+                                        &nbsp;
+                    				</td>
+				<td class="description"> 
+                                        取消编辑前事件
+                    				</td> 
+			</tr>
+					<tr> 
+                <td> 
+                    <a name="event_onAfterSubmitEdit" key="onAfterSubmitEdit" class="linkname"></a>
+                                                                     onAfterSubmitEdit
+                        
+                    				</td>
+                <td> 
+                                        ({record,rowindex,newdata})
+                    				</td>
+				<td class="description"> 
+                                        编辑后事件
+                    				</td> 
+			</tr>
+					<tr> 
+                <td> 
+                    <a name="event_onGroupExtend" key="onGroupExtend" class="linkname"></a>
+                                                                     onGroupExtend
+                        
+                    				</td>
+                <td> 
+                                        ()
+                    				</td>
+				<td class="description"> 
+                                        分组展开事件
+                    				</td> 
+			</tr>
+					<tr> 
+                <td> 
+                    <a name="event_onGroupCollapse" key="onGroupCollapse" class="linkname"></a>
+                                                                     onGroupCollapse
+                        
+                    				</td>
+                <td> 
+                                        ()
+                    				</td>
+				<td class="description"> 
+                                        分组收缩事件
+                    				</td> 
+			</tr>
+					<tr> 
+                <td> 
+                    <a name="event_onLoadData" key="onLoadData" class="linkname"></a>
+                                                                     onLoadData
+                        
+                    				</td>
+                <td> 
+                                        ()
+                    				</td>
+				<td class="description"> 
+                                        加载数据前事件
+                    				</td> 
+			</tr>
+					<tr> 
+                <td> 
+                    <a name="event_onBeforeSelectRow" key="onBeforeSelectRow" class="linkname"></a>
+                                                                     onBeforeSelectRow
+                        
+                    				</td>
+                <td> 
+                                        ()
+                    				</td>
+				<td class="description"> 
+                                        选择前事件
+                    				</td> 
+			</tr>
+					<tr> 
+                <td> 
+                    <a name="event_onHeaderCellBulid" key="onHeaderCellBulid" class="linkname"></a>
+                                                                     onHeaderCellBulid
+                        
+                    				</td>
+                <td> 
+                                        ()
+                    				</td>
+				<td class="description"> 
+                                        头部单元格创建事件
+                    				</td> 
+			</tr>
+		
+     
+        </tbody>
+		</table>
+
+
+                                                                                                                                                               <a name="link29"></a>
+                <h3 class="event">onDblClickRow事件 示例：</h3>
+
+                <p>
+                <pre><div><!--
+
+Code highlighting produced by Actipro CodeHighlighter (freeware)
+http://www.CodeHighlighter.com/
+
+--><span style="color: #008080;">1</span> <span style="color: #000000;"> onDblClickRow : </span><span style="color: #0000FF;">function</span><span style="color: #000000;"> (data, rowindex, rowobj)
+</span><span style="color: #008080;">2</span> <span style="color: #000000;">                {
+</span><span style="color: #008080;">3</span> <span style="color: #000000;">                    $.ligerDialog.alert(</span><span style="color: #000000;">'</span><span style="color: #000000;">选择的是</span><span style="color: #000000;">'</span><span style="color: #000000;"> </span><span style="color: #000000;">+</span><span style="color: #000000;"> data.CustomerID);
+</span><span style="color: #008080;">4</span> <span style="color: #000000;">                } </span></div></pre>
+                </p>
+                                                                                                                                                                                                                                                                                                                                                                                <a name="link46"></a>
+                <h3 class="event">onBeforeEdit事件 示例：</h3>
+
+                <p>
+                <pre><div><!--
+
+Code highlighting produced by Actipro CodeHighlighter (freeware)
+http://www.CodeHighlighter.com/
+
+--><span style="color: #008080;"> 1</span> <span style="color: #000000;">  </span><span style="color: #0000FF;">&lt;</span><span style="color: #800000;">script </span><span style="color: #FF0000;">type</span><span style="color: #0000FF;">=&quot;text/javascript&quot;</span><span style="color: #0000FF;">&gt;</span><span style="background-color: #F5F5F5; color: #000000;">
+</span><span style="color: #008080;"> 2</span> <span style="background-color: #F5F5F5; color: #000000;">
+</span><span style="color: #008080;"> 3</span> <span style="background-color: #F5F5F5; color: #000000;">        </span><span style="background-color: #F5F5F5; color: #0000FF;">var</span><span style="background-color: #F5F5F5; color: #000000;"> DepartmentList </span><span style="background-color: #F5F5F5; color: #000000;">=</span><span style="background-color: #F5F5F5; color: #000000;"> DepartmentData.Rows;
+</span><span style="color: #008080;"> 4</span> <span style="background-color: #F5F5F5; color: #000000;">        </span><span style="background-color: #F5F5F5; color: #0000FF;">var</span><span style="background-color: #F5F5F5; color: #000000;"> sexData </span><span style="background-color: #F5F5F5; color: #000000;">=</span><span style="background-color: #F5F5F5; color: #000000;"> [{ Sex: </span><span style="background-color: #F5F5F5; color: #000000;">1</span><span style="background-color: #F5F5F5; color: #000000;">, text: </span><span style="background-color: #F5F5F5; color: #000000;">'</span><span style="background-color: #F5F5F5; color: #000000;">男</span><span style="background-color: #F5F5F5; color: #000000;">'</span><span style="background-color: #F5F5F5; color: #000000;"> }, { Sex: </span><span style="background-color: #F5F5F5; color: #000000;">2</span><span style="background-color: #F5F5F5; color: #000000;">, text: </span><span style="background-color: #F5F5F5; color: #000000;">'</span><span style="background-color: #F5F5F5; color: #000000;">女</span><span style="background-color: #F5F5F5; color: #000000;">'</span><span style="background-color: #F5F5F5; color: #000000;">}];
+</span><span style="color: #008080;"> 5</span> <span style="background-color: #F5F5F5; color: #000000;">        $(f_initGrid); 
+</span><span style="color: #008080;"> 6</span> <span style="background-color: #F5F5F5; color: #000000;">
+</span><span style="color: #008080;"> 7</span> <span style="background-color: #F5F5F5; color: #000000;">        </span><span style="background-color: #F5F5F5; color: #0000FF;">function</span><span style="background-color: #F5F5F5; color: #000000;"> f_initGrid()
+</span><span style="color: #008080;"> 8</span> <span style="background-color: #F5F5F5; color: #000000;">        {
+</span><span style="color: #008080;"> 9</span> <span style="background-color: #F5F5F5; color: #000000;">            $(</span><span style="background-color: #F5F5F5; color: #000000;">&quot;</span><span style="background-color: #F5F5F5; color: #000000;">#maingrid</span><span style="background-color: #F5F5F5; color: #000000;">&quot;</span><span style="background-color: #F5F5F5; color: #000000;">).ligerGrid({
+</span><span style="color: #008080;">10</span> <span style="background-color: #F5F5F5; color: #000000;">                columns: [
+</span><span style="color: #008080;">11</span> <span style="background-color: #F5F5F5; color: #000000;">                { display: </span><span style="background-color: #F5F5F5; color: #000000;">'</span><span style="background-color: #F5F5F5; color: #000000;">主键</span><span style="background-color: #F5F5F5; color: #000000;">'</span><span style="background-color: #F5F5F5; color: #000000;">, name: </span><span style="background-color: #F5F5F5; color: #000000;">'</span><span style="background-color: #F5F5F5; color: #000000;">ID</span><span style="background-color: #F5F5F5; color: #000000;">'</span><span style="background-color: #F5F5F5; color: #000000;">, width: </span><span style="background-color: #F5F5F5; color: #000000;">50</span><span style="background-color: #F5F5F5; color: #000000;">, type: </span><span style="background-color: #F5F5F5; color: #000000;">'</span><span style="background-color: #F5F5F5; color: #000000;">int</span><span style="background-color: #F5F5F5; color: #000000;">'</span><span style="background-color: #F5F5F5; color: #000000;"> },
+</span><span style="color: #008080;">12</span> <span style="background-color: #F5F5F5; color: #000000;">                { display: </span><span style="background-color: #F5F5F5; color: #000000;">'</span><span style="background-color: #F5F5F5; color: #000000;">名字</span><span style="background-color: #F5F5F5; color: #000000;">'</span><span style="background-color: #F5F5F5; color: #000000;">, name: </span><span style="background-color: #F5F5F5; color: #000000;">'</span><span style="background-color: #F5F5F5; color: #000000;">RealName</span><span style="background-color: #F5F5F5; color: #000000;">'</span><span style="background-color: #F5F5F5; color: #000000;">,
+</span><span style="color: #008080;">13</span> <span style="background-color: #F5F5F5; color: #000000;">                    editor: { type: </span><span style="background-color: #F5F5F5; color: #000000;">'</span><span style="background-color: #F5F5F5; color: #000000;">text</span><span style="background-color: #F5F5F5; color: #000000;">'</span><span style="background-color: #F5F5F5; color: #000000;"> }
+</span><span style="color: #008080;">14</span> <span style="background-color: #F5F5F5; color: #000000;">                },
+</span><span style="color: #008080;">15</span> <span style="background-color: #F5F5F5; color: #000000;">                { display: </span><span style="background-color: #F5F5F5; color: #000000;">'</span><span style="background-color: #F5F5F5; color: #000000;">性别</span><span style="background-color: #F5F5F5; color: #000000;">'</span><span style="background-color: #F5F5F5; color: #000000;">, width: </span><span style="background-color: #F5F5F5; color: #000000;">50</span><span style="background-color: #F5F5F5; color: #000000;">, name: </span><span style="background-color: #F5F5F5; color: #000000;">'</span><span style="background-color: #F5F5F5; color: #000000;">Sex</span><span style="background-color: #F5F5F5; color: #000000;">'</span><span style="background-color: #F5F5F5; color: #000000;">,
+</span><span style="color: #008080;">16</span> <span style="background-color: #F5F5F5; color: #000000;">                    editor: { type: </span><span style="background-color: #F5F5F5; color: #000000;">'</span><span style="background-color: #F5F5F5; color: #000000;">select</span><span style="background-color: #F5F5F5; color: #000000;">'</span><span style="background-color: #F5F5F5; color: #000000;">, data: sexData, valueField: </span><span style="background-color: #F5F5F5; color: #000000;">'</span><span style="background-color: #F5F5F5; color: #000000;">Sex</span><span style="background-color: #F5F5F5; color: #000000;">'</span><span style="background-color: #F5F5F5; color: #000000;"> },
+</span><span style="color: #008080;">17</span> <span style="background-color: #F5F5F5; color: #000000;">                    render: </span><span style="background-color: #F5F5F5; color: #0000FF;">function</span><span style="background-color: #F5F5F5; color: #000000;"> (item)
+</span><span style="color: #008080;">18</span> <span style="background-color: #F5F5F5; color: #000000;">                    {
+</span><span style="color: #008080;">19</span> <span style="background-color: #F5F5F5; color: #000000;">                        </span><span style="background-color: #F5F5F5; color: #0000FF;">if</span><span style="background-color: #F5F5F5; color: #000000;"> (parseInt(item.Sex) </span><span style="background-color: #F5F5F5; color: #000000;">==</span><span style="background-color: #F5F5F5; color: #000000;"> </span><span style="background-color: #F5F5F5; color: #000000;">1</span><span style="background-color: #F5F5F5; color: #000000;">) </span><span style="background-color: #F5F5F5; color: #0000FF;">return</span><span style="background-color: #F5F5F5; color: #000000;"> </span><span style="background-color: #F5F5F5; color: #000000;">'</span><span style="background-color: #F5F5F5; color: #000000;">男</span><span style="background-color: #F5F5F5; color: #000000;">'</span><span style="background-color: #F5F5F5; color: #000000;">;
+</span><span style="color: #008080;">20</span> <span style="background-color: #F5F5F5; color: #000000;">                        </span><span style="background-color: #F5F5F5; color: #0000FF;">return</span><span style="background-color: #F5F5F5; color: #000000;"> </span><span style="background-color: #F5F5F5; color: #000000;">'</span><span style="background-color: #F5F5F5; color: #000000;">女</span><span style="background-color: #F5F5F5; color: #000000;">'</span><span style="background-color: #F5F5F5; color: #000000;">;
+</span><span style="color: #008080;">21</span> <span style="background-color: #F5F5F5; color: #000000;">                    }
+</span><span style="color: #008080;">22</span> <span style="background-color: #F5F5F5; color: #000000;">                },
+</span><span style="color: #008080;">23</span> <span style="background-color: #F5F5F5; color: #000000;">                { display: </span><span style="background-color: #F5F5F5; color: #000000;">'</span><span style="background-color: #F5F5F5; color: #000000;">年龄</span><span style="background-color: #F5F5F5; color: #000000;">'</span><span style="background-color: #F5F5F5; color: #000000;">, name: </span><span style="background-color: #F5F5F5; color: #000000;">'</span><span style="background-color: #F5F5F5; color: #000000;">Age</span><span style="background-color: #F5F5F5; color: #000000;">'</span><span style="background-color: #F5F5F5; color: #000000;">, width: </span><span style="background-color: #F5F5F5; color: #000000;">50</span><span style="background-color: #F5F5F5; color: #000000;">, type: </span><span style="background-color: #F5F5F5; color: #000000;">'</span><span style="background-color: #F5F5F5; color: #000000;">int</span><span style="background-color: #F5F5F5; color: #000000;">'</span><span style="background-color: #F5F5F5; color: #000000;">, editor: { type: </span><span style="background-color: #F5F5F5; color: #000000;">'</span><span style="background-color: #F5F5F5; color: #000000;">int</span><span style="background-color: #F5F5F5; color: #000000;">'</span><span style="background-color: #F5F5F5; color: #000000;">} },
+</span><span style="color: #008080;">24</span> <span style="background-color: #F5F5F5; color: #000000;">                { display: </span><span style="background-color: #F5F5F5; color: #000000;">'</span><span style="background-color: #F5F5F5; color: #000000;">入职日期</span><span style="background-color: #F5F5F5; color: #000000;">'</span><span style="background-color: #F5F5F5; color: #000000;">, name: </span><span style="background-color: #F5F5F5; color: #000000;">'</span><span style="background-color: #F5F5F5; color: #000000;">IncomeDay</span><span style="background-color: #F5F5F5; color: #000000;">'</span><span style="background-color: #F5F5F5; color: #000000;">, type: </span><span style="background-color: #F5F5F5; color: #000000;">'</span><span style="background-color: #F5F5F5; color: #000000;">date</span><span style="background-color: #F5F5F5; color: #000000;">'</span><span style="background-color: #F5F5F5; color: #000000;">, width: </span><span style="background-color: #F5F5F5; color: #000000;">100</span><span style="background-color: #F5F5F5; color: #000000;">, editor: { type: </span><span style="background-color: #F5F5F5; color: #000000;">'</span><span style="background-color: #F5F5F5; color: #000000;">date</span><span style="background-color: #F5F5F5; color: #000000;">'</span><span style="background-color: #F5F5F5; color: #000000;">} },
+</span><span style="color: #008080;">25</span> <span style="background-color: #F5F5F5; color: #000000;">                {
+</span><span style="color: #008080;">26</span> <span style="background-color: #F5F5F5; color: #000000;">                    display: </span><span style="background-color: #F5F5F5; color: #000000;">'</span><span style="background-color: #F5F5F5; color: #000000;">部门</span><span style="background-color: #F5F5F5; color: #000000;">'</span><span style="background-color: #F5F5F5; color: #000000;">, name: </span><span style="background-color: #F5F5F5; color: #000000;">'</span><span style="background-color: #F5F5F5; color: #000000;">DepartmentID</span><span style="background-color: #F5F5F5; color: #000000;">'</span><span style="background-color: #F5F5F5; color: #000000;">, width: </span><span style="background-color: #F5F5F5; color: #000000;">120</span><span style="background-color: #F5F5F5; color: #000000;">, isSort: </span><span style="background-color: #F5F5F5; color: #0000FF;">false</span><span style="background-color: #F5F5F5; color: #000000;">, textField: </span><span style="background-color: #F5F5F5; color: #000000;">'</span><span style="background-color: #F5F5F5; color: #000000;">DepartmentName</span><span style="background-color: #F5F5F5; color: #000000;">'</span><span style="background-color: #F5F5F5; color: #000000;">,
+</span><span style="color: #008080;">27</span> <span style="background-color: #F5F5F5; color: #000000;">                editor: { type: </span><span style="background-color: #F5F5F5; color: #000000;">'</span><span style="background-color: #F5F5F5; color: #000000;">select</span><span style="background-color: #F5F5F5; color: #000000;">'</span><span style="background-color: #F5F5F5; color: #000000;">, data: DepartmentList, valueField: </span><span style="background-color: #F5F5F5; color: #000000;">'</span><span style="background-color: #F5F5F5; color: #000000;">DepartmentID</span><span style="background-color: #F5F5F5; color: #000000;">'</span><span style="background-color: #F5F5F5; color: #000000;">, textField: </span><span style="background-color: #F5F5F5; color: #000000;">'</span><span style="background-color: #F5F5F5; color: #000000;">DepartmentName</span><span style="background-color: #F5F5F5; color: #000000;">'</span><span style="background-color: #F5F5F5; color: #000000;"> } 
+</span><span style="color: #008080;">28</span> <span style="background-color: #F5F5F5; color: #000000;">                },
+</span><span style="color: #008080;">29</span> <span style="background-color: #F5F5F5; color: #000000;">                { display: </span><span style="background-color: #F5F5F5; color: #000000;">'</span><span style="background-color: #F5F5F5; color: #000000;">地址</span><span style="background-color: #F5F5F5; color: #000000;">'</span><span style="background-color: #F5F5F5; color: #000000;">, name: </span><span style="background-color: #F5F5F5; color: #000000;">'</span><span style="background-color: #F5F5F5; color: #000000;">Address</span><span style="background-color: #F5F5F5; color: #000000;">'</span><span style="background-color: #F5F5F5; color: #000000;">,
+</span><span style="color: #008080;">30</span> <span style="background-color: #F5F5F5; color: #000000;">                    editor: { type: </span><span style="background-color: #F5F5F5; color: #000000;">'</span><span style="background-color: #F5F5F5; color: #000000;">text</span><span style="background-color: #F5F5F5; color: #000000;">'</span><span style="background-color: #F5F5F5; color: #000000;"> }, align: </span><span style="background-color: #F5F5F5; color: #000000;">'</span><span style="background-color: #F5F5F5; color: #000000;">left</span><span style="background-color: #F5F5F5; color: #000000;">'</span><span style="background-color: #F5F5F5; color: #000000;">, width: </span><span style="background-color: #F5F5F5; color: #000000;">300</span><span style="background-color: #F5F5F5; color: #000000;">
+</span><span style="color: #008080;">31</span> <span style="background-color: #F5F5F5; color: #000000;">                }
+</span><span style="color: #008080;">32</span> <span style="background-color: #F5F5F5; color: #000000;">                ],
+</span><span style="color: #008080;">33</span> <span style="background-color: #F5F5F5; color: #000000;">                enabledEdit: </span><span style="background-color: #F5F5F5; color: #0000FF;">true</span><span style="background-color: #F5F5F5; color: #000000;">, isScroll: </span><span style="background-color: #F5F5F5; color: #0000FF;">false</span><span style="background-color: #F5F5F5; color: #000000;">,
+</span><span style="color: #008080;">34</span> <span style="background-color: #F5F5F5; color: #000000;">                onBeforeEdit: f_onBeforeEdit,
+</span><span style="color: #008080;">35</span> <span style="background-color: #F5F5F5; color: #000000;">                onBeforeSubmitEdit: f_onBeforeSubmitEdit,
+</span><span style="color: #008080;">36</span> <span style="background-color: #F5F5F5; color: #000000;">                onAfterEdit: f_onAfterEdit,
+</span><span style="color: #008080;">37</span> <span style="background-color: #F5F5F5; color: #000000;">                data: EmployeeData,
+</span><span style="color: #008080;">38</span> <span style="background-color: #F5F5F5; color: #000000;">                width: </span><span style="background-color: #F5F5F5; color: #000000;">'</span><span style="background-color: #F5F5F5; color: #000000;">100%</span><span style="background-color: #F5F5F5; color: #000000;">'</span><span style="background-color: #F5F5F5; color: #000000;">
+</span><span style="color: #008080;">39</span> <span style="background-color: #F5F5F5; color: #000000;">            });
+</span><span style="color: #008080;">40</span> <span style="background-color: #F5F5F5; color: #000000;">        }
+</span><span style="color: #008080;">41</span> <span style="background-color: #F5F5F5; color: #000000;">        </span><span style="background-color: #F5F5F5; color: #008000;">//</span><span style="background-color: #F5F5F5; color: #008000;">只允许编辑前3行</span><span style="background-color: #F5F5F5; color: #008000;">
+</span><span style="color: #008080;">42</span> <span style="background-color: #F5F5F5; color: #008000;"></span><span style="background-color: #F5F5F5; color: #000000;">        </span><span style="background-color: #F5F5F5; color: #0000FF;">function</span><span style="background-color: #F5F5F5; color: #000000;"> f_onBeforeEdit(e)
+</span><span style="color: #008080;">43</span> <span style="background-color: #F5F5F5; color: #000000;">        { 
+</span><span style="color: #008080;">44</span> <span style="background-color: #F5F5F5; color: #000000;">            </span><span style="background-color: #F5F5F5; color: #0000FF;">if</span><span style="background-color: #F5F5F5; color: #000000;">(e.rowindex</span><span style="background-color: #F5F5F5; color: #000000;">&lt;=</span><span style="background-color: #F5F5F5; color: #000000;">2</span><span style="background-color: #F5F5F5; color: #000000;">) </span><span style="background-color: #F5F5F5; color: #0000FF;">return</span><span style="background-color: #F5F5F5; color: #000000;"> </span><span style="background-color: #F5F5F5; color: #0000FF;">true</span><span style="background-color: #F5F5F5; color: #000000;">;
+</span><span style="color: #008080;">45</span> <span style="background-color: #F5F5F5; color: #000000;">            </span><span style="background-color: #F5F5F5; color: #0000FF;">return</span><span style="background-color: #F5F5F5; color: #000000;"> </span><span style="background-color: #F5F5F5; color: #0000FF;">false</span><span style="background-color: #F5F5F5; color: #000000;">;
+</span><span style="color: #008080;">46</span> <span style="background-color: #F5F5F5; color: #000000;">        }
+</span><span style="color: #008080;">47</span> <span style="background-color: #F5F5F5; color: #000000;">        </span><span style="background-color: #F5F5F5; color: #008000;">//</span><span style="background-color: #F5F5F5; color: #008000;">限制年龄</span><span style="background-color: #F5F5F5; color: #008000;">
+</span><span style="color: #008080;">48</span> <span style="background-color: #F5F5F5; color: #008000;"></span><span style="background-color: #F5F5F5; color: #000000;">        </span><span style="background-color: #F5F5F5; color: #0000FF;">function</span><span style="background-color: #F5F5F5; color: #000000;"> f_onBeforeSubmitEdit(e)
+</span><span style="color: #008080;">49</span> <span style="background-color: #F5F5F5; color: #000000;">        { 
+</span><span style="color: #008080;">50</span> <span style="background-color: #F5F5F5; color: #000000;">            </span><span style="background-color: #F5F5F5; color: #0000FF;">if</span><span style="background-color: #F5F5F5; color: #000000;"> (e.columnname </span><span style="background-color: #F5F5F5; color: #000000;">==</span><span style="background-color: #F5F5F5; color: #000000;"> </span><span style="background-color: #F5F5F5; color: #000000;">&quot;</span><span style="background-color: #F5F5F5; color: #000000;">Age</span><span style="background-color: #F5F5F5; color: #000000;">&quot;</span><span style="background-color: #F5F5F5; color: #000000;">)
+</span><span style="color: #008080;">51</span> <span style="background-color: #F5F5F5; color: #000000;">            {
+</span><span style="color: #008080;">52</span> <span style="background-color: #F5F5F5; color: #000000;">                </span><span style="background-color: #F5F5F5; color: #0000FF;">if</span><span style="background-color: #F5F5F5; color: #000000;"> (e.value </span><span style="background-color: #F5F5F5; color: #000000;">&lt;</span><span style="background-color: #F5F5F5; color: #000000;"> </span><span style="background-color: #F5F5F5; color: #000000;">20</span><span style="background-color: #F5F5F5; color: #000000;"> </span><span style="background-color: #F5F5F5; color: #000000;">||</span><span style="background-color: #F5F5F5; color: #000000;"> e.value </span><span style="background-color: #F5F5F5; color: #000000;">&gt;</span><span style="background-color: #F5F5F5; color: #000000;"> </span><span style="background-color: #F5F5F5; color: #000000;">30</span><span style="background-color: #F5F5F5; color: #000000;">) </span><span style="background-color: #F5F5F5; color: #0000FF;">return</span><span style="background-color: #F5F5F5; color: #000000;"> </span><span style="background-color: #F5F5F5; color: #0000FF;">false</span><span style="background-color: #F5F5F5; color: #000000;">;
+</span><span style="color: #008080;">53</span> <span style="background-color: #F5F5F5; color: #000000;">            }
+</span><span style="color: #008080;">54</span> <span style="background-color: #F5F5F5; color: #000000;">            </span><span style="background-color: #F5F5F5; color: #0000FF;">return</span><span style="background-color: #F5F5F5; color: #000000;"> </span><span style="background-color: #F5F5F5; color: #0000FF;">true</span><span style="background-color: #F5F5F5; color: #000000;">;
+</span><span style="color: #008080;">55</span> <span style="background-color: #F5F5F5; color: #000000;">        }
+</span><span style="color: #008080;">56</span> <span style="background-color: #F5F5F5; color: #000000;">        </span><span style="background-color: #F5F5F5; color: #008000;">//</span><span style="background-color: #F5F5F5; color: #008000;">编辑后事件 </span><span style="background-color: #F5F5F5; color: #008000;">
+</span><span style="color: #008080;">57</span> <span style="background-color: #F5F5F5; color: #008000;"></span><span style="background-color: #F5F5F5; color: #000000;">        </span><span style="background-color: #F5F5F5; color: #0000FF;">function</span><span style="background-color: #F5F5F5; color: #000000;"> f_onAfterEdit(e)
+</span><span style="color: #008080;">58</span> <span style="background-color: #F5F5F5; color: #000000;">        {
+</span><span style="color: #008080;">59</span> <span style="background-color: #F5F5F5; color: #000000;">            </span><span style="background-color: #F5F5F5; color: #0000FF;">if</span><span style="background-color: #F5F5F5; color: #000000;"> (e.columnname </span><span style="background-color: #F5F5F5; color: #000000;">==</span><span style="background-color: #F5F5F5; color: #000000;"> </span><span style="background-color: #F5F5F5; color: #000000;">&quot;</span><span style="background-color: #F5F5F5; color: #000000;">Age</span><span style="background-color: #F5F5F5; color: #000000;">&quot;</span><span style="background-color: #F5F5F5; color: #000000;">)
+</span><span style="color: #008080;">60</span> <span style="background-color: #F5F5F5; color: #000000;">            {
+</span><span style="color: #008080;">61</span> <span style="background-color: #F5F5F5; color: #000000;">                alert(e.value);
+</span><span style="color: #008080;">62</span> <span style="background-color: #F5F5F5; color: #000000;">            }
+</span><span style="color: #008080;">63</span> <span style="background-color: #F5F5F5; color: #000000;">        }
+</span><span style="color: #008080;">64</span> <span style="background-color: #F5F5F5; color: #000000;">        </span><span style="background-color: #F5F5F5; color: #0000FF;">function</span><span style="background-color: #F5F5F5; color: #000000;"> getSelected()
+</span><span style="color: #008080;">65</span> <span style="background-color: #F5F5F5; color: #000000;">        {
+</span><span style="color: #008080;">66</span> <span style="background-color: #F5F5F5; color: #000000;">            </span><span style="background-color: #F5F5F5; color: #0000FF;">var</span><span style="background-color: #F5F5F5; color: #000000;"> manager </span><span style="background-color: #F5F5F5; color: #000000;">=</span><span style="background-color: #F5F5F5; color: #000000;"> $(</span><span style="background-color: #F5F5F5; color: #000000;">&quot;</span><span style="background-color: #F5F5F5; color: #000000;">#maingrid</span><span style="background-color: #F5F5F5; color: #000000;">&quot;</span><span style="background-color: #F5F5F5; color: #000000;">).ligerGetGridManager();
+</span><span style="color: #008080;">67</span> <span style="background-color: #F5F5F5; color: #000000;">            </span><span style="background-color: #F5F5F5; color: #0000FF;">var</span><span style="background-color: #F5F5F5; color: #000000;"> row </span><span style="background-color: #F5F5F5; color: #000000;">=</span><span style="background-color: #F5F5F5; color: #000000;"> manager.getSelectedRow();
+</span><span style="color: #008080;">68</span> <span style="background-color: #F5F5F5; color: #000000;">            </span><span style="background-color: #F5F5F5; color: #0000FF;">if</span><span style="background-color: #F5F5F5; color: #000000;"> (</span><span style="background-color: #F5F5F5; color: #000000;">!</span><span style="background-color: #F5F5F5; color: #000000;">row) { alert(</span><span style="background-color: #F5F5F5; color: #000000;">'</span><span style="background-color: #F5F5F5; color: #000000;">请选择行</span><span style="background-color: #F5F5F5; color: #000000;">'</span><span style="background-color: #F5F5F5; color: #000000;">); </span><span style="background-color: #F5F5F5; color: #0000FF;">return</span><span style="background-color: #F5F5F5; color: #000000;">; }
+</span><span style="color: #008080;">69</span> <span style="background-color: #F5F5F5; color: #000000;">            alert(JSON.stringify(row));
+</span><span style="color: #008080;">70</span> <span style="background-color: #F5F5F5; color: #000000;">        }
+</span><span style="color: #008080;">71</span> <span style="background-color: #F5F5F5; color: #000000;">        </span><span style="background-color: #F5F5F5; color: #0000FF;">function</span><span style="background-color: #F5F5F5; color: #000000;"> getData()
+</span><span style="color: #008080;">72</span> <span style="background-color: #F5F5F5; color: #000000;">        {
+</span><span style="color: #008080;">73</span> <span style="background-color: #F5F5F5; color: #000000;">            </span><span style="background-color: #F5F5F5; color: #0000FF;">var</span><span style="background-color: #F5F5F5; color: #000000;"> manager </span><span style="background-color: #F5F5F5; color: #000000;">=</span><span style="background-color: #F5F5F5; color: #000000;"> $(</span><span style="background-color: #F5F5F5; color: #000000;">&quot;</span><span style="background-color: #F5F5F5; color: #000000;">#maingrid</span><span style="background-color: #F5F5F5; color: #000000;">&quot;</span><span style="background-color: #F5F5F5; color: #000000;">).ligerGetGridManager();
+</span><span style="color: #008080;">74</span> <span style="background-color: #F5F5F5; color: #000000;">            </span><span style="background-color: #F5F5F5; color: #0000FF;">var</span><span style="background-color: #F5F5F5; color: #000000;"> data </span><span style="background-color: #F5F5F5; color: #000000;">=</span><span style="background-color: #F5F5F5; color: #000000;"> manager.getData();
+</span><span style="color: #008080;">75</span> <span style="background-color: #F5F5F5; color: #000000;">            alert(JSON.stringify(data));
+</span><span style="color: #008080;">76</span> <span style="background-color: #F5F5F5; color: #000000;">        } 
+</span><span style="color: #008080;">77</span> <span style="background-color: #F5F5F5; color: #000000;">    </span><span style="color: #0000FF;">&lt;/</span><span style="color: #800000;">script</span><span style="color: #0000FF;">&gt;</span></div></pre>
+                </p>
+                                                                                                                                <a name="link51"></a>
+                <h3 class="event">onContextmenu事件 示例：</h3>
+
+                <p>
+                <pre><div><!--
+
+Code highlighting produced by Actipro CodeHighlighter (freeware)
+http://www.CodeHighlighter.com/
+
+--><span style="color: #008080;"> 1</span> <span style="color: #000000;"> menu </span><span style="color: #000000;">=</span><span style="color: #000000;"> $.ligerMenu({ width: </span><span style="color: #000000;">120</span><span style="color: #000000;">, items:
+</span><span style="color: #008080;"> 2</span> <span style="color: #000000;">            [
+</span><span style="color: #008080;"> 3</span> <span style="color: #000000;">            { text: </span><span style="color: #000000;">'</span><span style="color: #000000;">增加</span><span style="color: #000000;">'</span><span style="color: #000000;">, click: itemclick, icon: </span><span style="color: #000000;">'</span><span style="color: #000000;">add</span><span style="color: #000000;">'</span><span style="color: #000000;"> },
+</span><span style="color: #008080;"> 4</span> <span style="color: #000000;">            { text: </span><span style="color: #000000;">'</span><span style="color: #000000;">修改</span><span style="color: #000000;">'</span><span style="color: #000000;">, click: itemclick },
+</span><span style="color: #008080;"> 5</span> <span style="color: #000000;">            { line: </span><span style="color: #0000FF;">true</span><span style="color: #000000;"> },
+</span><span style="color: #008080;"> 6</span> <span style="color: #000000;">            { text: </span><span style="color: #000000;">'</span><span style="color: #000000;">查看</span><span style="color: #000000;">'</span><span style="color: #000000;">, click: itemclick }
+</span><span style="color: #008080;"> 7</span> <span style="color: #000000;">            ]
+</span><span style="color: #008080;"> 8</span> <span style="color: #000000;">            }); 
+</span><span style="color: #008080;"> 9</span> <span style="color: #000000;">            grid </span><span style="color: #000000;">=</span><span style="color: #000000;"> $(</span><span style="color: #000000;">&quot;</span><span style="color: #000000;">#maingrid4</span><span style="color: #000000;">&quot;</span><span style="color: #000000;">).ligerGrid({ 
+</span><span style="color: #008080;">10</span> <span style="color: #000000;">                columns: [
+</span><span style="color: #008080;">11</span> <span style="color: #000000;">                { display: </span><span style="color: #000000;">'</span><span style="color: #000000;">主键</span><span style="color: #000000;">'</span><span style="color: #000000;">, name: </span><span style="color: #000000;">'</span><span style="color: #000000;">CustomerID</span><span style="color: #000000;">'</span><span style="color: #000000;">, align: </span><span style="color: #000000;">'</span><span style="color: #000000;">left</span><span style="color: #000000;">'</span><span style="color: #000000;">, width: </span><span style="color: #000000;">120</span><span style="color: #000000;"> },
+</span><span style="color: #008080;">12</span> <span style="color: #000000;">                { display: </span><span style="color: #000000;">'</span><span style="color: #000000;">公司名</span><span style="color: #000000;">'</span><span style="color: #000000;">, name: </span><span style="color: #000000;">'</span><span style="color: #000000;">CompanyName</span><span style="color: #000000;">'</span><span style="color: #000000;">, minWidth: </span><span style="color: #000000;">60</span><span style="color: #000000;"> },
+</span><span style="color: #008080;">13</span> <span style="color: #000000;">                { display: </span><span style="color: #000000;">'</span><span style="color: #000000;">联系名</span><span style="color: #000000;">'</span><span style="color: #000000;">, name: </span><span style="color: #000000;">'</span><span style="color: #000000;">ContactName</span><span style="color: #000000;">'</span><span style="color: #000000;">, minWidth: </span><span style="color: #000000;">140</span><span style="color: #000000;"> },
+</span><span style="color: #008080;">14</span> <span style="color: #000000;">                { display: </span><span style="color: #000000;">'</span><span style="color: #000000;">城市</span><span style="color: #000000;">'</span><span style="color: #000000;">, name: </span><span style="color: #000000;">'</span><span style="color: #000000;">City</span><span style="color: #000000;">'</span><span style="color: #000000;"> }
+</span><span style="color: #008080;">15</span> <span style="color: #000000;">                ], pageSize: </span><span style="color: #000000;">30</span><span style="color: #000000;">, data: CustomersData, sortName: </span><span style="color: #000000;">'</span><span style="color: #000000;">CustomerID</span><span style="color: #000000;">'</span><span style="color: #000000;">,
+</span><span style="color: #008080;">16</span> <span style="color: #000000;">                width: </span><span style="color: #000000;">'</span><span style="color: #000000;">100%</span><span style="color: #000000;">'</span><span style="color: #000000;">, height: </span><span style="color: #000000;">'</span><span style="color: #000000;">100%</span><span style="color: #000000;">'</span><span style="color: #000000;">, onRClickToSelect:</span><span style="color: #0000FF;">true</span><span style="color: #000000;">,
+</span><span style="color: #008080;">17</span> <span style="color: #000000;">                onContextmenu : </span><span style="color: #0000FF;">function</span><span style="color: #000000;"> (parm,e)
+</span><span style="color: #008080;">18</span> <span style="color: #000000;">                {
+</span><span style="color: #008080;">19</span> <span style="color: #000000;">                    actionCustomerID </span><span style="color: #000000;">=</span><span style="color: #000000;"> parm.data.CustomerID;
+</span><span style="color: #008080;">20</span> <span style="color: #000000;">                    menu.show({ top: e.pageY, left: e.pageX });
+</span><span style="color: #008080;">21</span> <span style="color: #000000;">                    </span><span style="color: #0000FF;">return</span><span style="color: #000000;"> </span><span style="color: #0000FF;">false</span><span style="color: #000000;">;
+</span><span style="color: #008080;">22</span> <span style="color: #000000;">                } 
+</span><span style="color: #008080;">23</span> <span style="color: #000000;">            });</span></div></pre>
+                </p>
+                                                                                                                                                                	</body>
+</html>

@@ -1,0 +1,92 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <link href="../../../lib/ligerUI/skins/Aqua/css/ligerui-all.css" rel="stylesheet" type="text/css" />
+    <script src="../../../lib/jquery/jquery-1.9.0.min.js" type="text/javascript"></script>
+    <script src="../../../lib/json2.js" type="text/javascript"></script>
+    <script src="../../../lib/ligerUI/js/core/base.js" type="text/javascript"></script>
+    <script src="../../../lib/ligerUI/js/plugins/ligerDialog.js" type="text/javascript"></script>
+    <script src="../../../lib/ligerUI/js/plugins/ligerTextBox.js" type="text/javascript"></script>
+    <script src="../../../lib/ligerUI/js/plugins/ligerCheckBox.js" type="text/javascript"></script>
+    <script src="../../../lib/ligerUI/js/plugins/ligerComboBox.js" type="text/javascript"></script>
+    <script src="../../../lib/ligerUI/js/plugins/ligerGrid.js" type="text/javascript"></script>
+    <script src="../../../lib/ligerUI/js/plugins/ligerDateEditor.js" type="text/javascript"></script>
+    <script src="../../../lib/ligerUI/js/plugins/ligerSpinner.js" type="text/javascript"></script>
+    <script src="../EmployeeData.js" type="text/javascript"></script>
+
+    <script type="text/javascript">
+
+        var data = [{
+            UnitPrice: 10,
+            Quantity: 2 
+        },{
+            UnitPrice: 10,
+            Quantity: 4 
+        }]; 
+
+        var manager = null;
+        $(function()
+        {
+            f_initGrid();
+        });
+        function f_initGrid()
+        {
+            $("#txtQuantity").ligerSpinner({ type: 'int' });
+            window['g'] = 
+            manager = $("#maingrid").ligerGrid({
+                columns: [
+                { display: '单价', name: 'UnitPrice', width: 100, type: 'float'},
+                { display: '数量', name: 'Quantity', width: 100, type: 'int'},
+                { display: '金额', name: 'Price', width: 100, type: 'int',render:function(record){
+                    return record.UnitPrice * record.Quantity;
+                } }
+                ]
+                , usePager: false,   data: { Rows: data },
+                width: '100%'
+            });
+            
+        }
+        function f_onAfterEdit(e)
+        {
+            manager.updateCell('Price', e.record.UnitPrice * e.record.Quantity, e.record); 
+        }
+        function addNewRow()
+        { 
+            manager.addRow({
+                UnitPrice: 10, 
+                Quantity: 1 
+            });
+        } 
+        function updateRow()
+        {
+            var selected = manager.getSelected();
+            if (!selected) { alert('请选择行'); return; }
+            manager.updateRow(selected,{
+                UnitPrice: 40,
+                Quantity: parseInt($("#txtQuantity").val())
+            });
+        }
+        function getSelected()
+        { 
+            var row = manager.getSelectedRow();
+            if (!row) { alert('请选择行'); return; }
+            alert(JSON.stringify(row));
+        }
+    </script>
+</head>
+<body  style="padding:10px">
+数量：<input type="text" id="txtQuantity" value="10" /><br />
+  <a class="l-button" style="width:100px;float:left; margin-left:10px;" onclick="addNewRow()">添加行</a>
+   <a class="l-button" style="width:100px;float:left; margin-left:10px;" onclick="updateRow()">更新行</a>
+  <br /><br />
+    <div id="maingrid" style="margin-top:20px"></div> <br />
+       <br />
+   <a class="l-button" style="width:120px" onclick="getSelected()">获取选中的值(选择行)</a>
+ 
+  <div style="display:none;">
+  <!-- g data total ttt -->
+</div>
+</body>
+</html>

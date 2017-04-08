@@ -1,0 +1,59 @@
+﻿<html>
+	<head>
+		<title>Accordion - jQuery LigerUI API</title>      
+		<meta http-equiv="content-type" content="text/html; charset=UTF-8" /> 
+		<link href="../common.css" rel="stylesheet" type="text/css" />
+		<script src="../core.js" type="text/javascript"></script> 
+	</head>
+	<body>
+		<h2>ligerAccordion</h2> 
+         
+        
+                    <p> 
+            <pre><div><!--
+
+Code highlighting produced by Actipro CodeHighlighter (freeware)
+http://www.CodeHighlighter.com/
+
+--><span style="color: #000000;">LG.submitForm(mainform, </span><span style="color: #0000FF;">function</span><span style="color: #000000;"> (data) {
+                </span><span style="color: #0000FF;">var</span><span style="color: #000000;"> win </span><span style="color: #000000;">=</span><span style="color: #000000;"> parent </span><span style="color: #000000;">||</span><span style="color: #000000;"> window;
+                </span><span style="color: #0000FF;">if</span><span style="color: #000000;"> (data.IsError) {  
+                    win.LG.showError(</span><span style="color: #000000;">'</span><span style="color: #000000;">错误:</span><span style="color: #000000;">'</span><span style="color: #000000;"> </span><span style="color: #000000;">+</span><span style="color: #000000;"> data.Message);
+                }
+                </span><span style="color: #0000FF;">else</span><span style="color: #000000;"> { 
+                    win.LG.showSuccess(</span><span style="color: #000000;">'</span><span style="color: #000000;">保存成功</span><span style="color: #000000;">'</span><span style="color: #000000;">, </span><span style="color: #0000FF;">function</span><span style="color: #000000;"> () { 
+            </span><span style="color: #0000FF;">if</span><span style="color: #000000;">(parent </span><span style="color: #000000;">&amp;&amp;</span><span style="color: #000000;"> parent.homepage)
+                        {
+                            win.LG.closeAndReloadParent(</span><span style="color: #0000FF;">null</span><span style="color: #000000;">, </span><span style="color: #000000;">&quot;</span><span style="color: #000000;">Plugin</span><span style="color: #000000;">&quot;</span><span style="color: #000000;">);
+                        }
+                        </span><span style="color: #0000FF;">else</span><span style="color: #000000;">
+                        {
+                            LG.closeCurrentDetailPage(</span><span style="color: #0000FF;">true</span><span style="color: #000000;">);
+                        } 
+                    });
+                }
+            });</span></div></pre>
+        </p>
+                     
+          
+                <h3>示例</h3>
+        <pre><div><!--
+
+Code highlighting produced by Actipro CodeHighlighter (freeware)
+http://www.CodeHighlighter.com/
+
+--><span style="color: #008080;">1</span> <span style="color: #0000FF;">&lt;</span><span style="color: #800000;">div </span><span style="color: #FF0000;">id</span><span style="color: #0000FF;">=&quot;accordion1&quot;</span><span style="color: #FF0000;"> class</span><span style="color: #0000FF;">=&quot;liger-accordion&quot;</span><span style="color: #FF0000;"> height</span><span style="color: #0000FF;">=&quot;300&quot;</span><span style="color: #FF0000;"> style</span><span style="color: #0000FF;">=&quot;width:160px;&quot;</span><span style="color: #0000FF;">&gt;</span><span style="color: #000000;"> 
+</span><span style="color: #008080;">2</span> <span style="color: #000000;">    </span><span style="color: #0000FF;">&lt;</span><span style="color: #800000;">div </span><span style="color: #FF0000;">title</span><span style="color: #0000FF;">=&quot;功能列表1&quot;</span><span style="color: #0000FF;">&gt;&lt;/</span><span style="color: #800000;">div</span><span style="color: #0000FF;">&gt;</span><span style="color: #000000;">
+</span><span style="color: #008080;">3</span> <span style="color: #000000;">    </span><span style="color: #0000FF;">&lt;</span><span style="color: #800000;">div </span><span style="color: #FF0000;">title</span><span style="color: #0000FF;">=&quot;功能列表2&quot;</span><span style="color: #0000FF;">&gt;&lt;/</span><span style="color: #800000;">div</span><span style="color: #0000FF;">&gt;</span><span style="color: #000000;">
+</span><span style="color: #008080;">4</span> <span style="color: #000000;">    </span><span style="color: #0000FF;">&lt;</span><span style="color: #800000;">div </span><span style="color: #FF0000;">title</span><span style="color: #0000FF;">=&quot;功能列表3&quot;</span><span style="color: #0000FF;">&gt;&lt;/</span><span style="color: #800000;">div</span><span style="color: #0000FF;">&gt;</span><span style="color: #000000;">
+</span><span style="color: #008080;">5</span> <span style="color: #000000;"></span><span style="color: #0000FF;">&lt;/</span><span style="color: #800000;">div</span><span style="color: #0000FF;">&gt;</span></div></pre>
+        
+        <h3>截图</h3>
+
+        <p>
+            <img src="../../uishow/ligerAccordion.jpg" />
+        </p>  
+        
+
+			</body>
+</html>

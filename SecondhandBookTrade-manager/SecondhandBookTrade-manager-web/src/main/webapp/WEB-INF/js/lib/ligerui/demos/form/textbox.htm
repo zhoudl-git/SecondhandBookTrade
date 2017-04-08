@@ -1,0 +1,52 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <link href="../../lib/ligerUI/skins/Aqua/css/ligerui-all.css" rel="stylesheet" type="text/css" />
+    <style type="text/css">
+    </style>
+    <script src="../../lib/jquery/jquery-1.9.0.min.js" type="text/javascript"></script> 
+    <script src="../../lib/ligerUI/js/core/base.js" type="text/javascript"></script>
+    <script src="../../lib/ligerUI/js/plugins/ligerTextBox.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        $(function ()
+        {
+            $("#txt1").ligerTextBox({ nullText: '不能为空', currency: true });
+			
+			 $("#txt1").ligerTextBox({ nullText: '不能为空222' ,label:'LABEL44'});
+			 
+			 
+            $("#txt2").ligerTextBox({ initValue: '不能为空' ,label:'设置初始值', labelWidth:100, labelAlign:'right'});
+			$("#btnSet").bind('click',function(){
+				$("#txt1").ligerGetTextBoxManager().setValue('设置值');
+			});
+			$("#btnGet").bind('click',function(){
+				alert($("#txt1").ligerGetTextBoxManager().getValue());
+			});
+			$("#btnDisabled").bind('click',function(){
+				$("#txt1").ligerGetTextBoxManager().setDisabled();
+			});
+			$("#btnEnabled").bind('click',function(){
+				$("#txt1").ligerGetTextBoxManager().setEnabled();
+			});
+        }); 
+    </script>
+
+</head>
+<body style="padding:10px">
+ 
+         <input type="button" id="btnSet" value="设置值" />
+         <input type="button" id="btnGet" value="获取值" />
+         <input type="button" id="btnDisabled" value="设置只读" />
+         <input type="button" id="btnEnabled" value="取消只读" />
+         <div>
+        <input type="text" id="txt1" value="" style="width:200px"/>
+        </div>
+        <div>
+        <input type="text" id="txt2" value=""/>
+        </div>
+         <div style="display:none;">
+</div>
+</body>
+</html>

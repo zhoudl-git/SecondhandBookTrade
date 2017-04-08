@@ -1,0 +1,170 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title> 
+    <link href="../../lib/ligerUI/skins/Aqua/css/ligerui-all.css" rel="stylesheet" type="text/css" /> 
+    <script src="../../lib/jquery/jquery-1.9.0.min.js" type="text/javascript"></script>   
+    <script src="../../lib/ligerUI/js/core/base.js" type="text/javascript"></script>
+    <script src="../../lib/ligerUI/js/plugins/ligerPanel.js" type="text/javascript"></script>
+     <script src="../../lib/ligerUI/js/plugins/ligerPortal.js" type="text/javascript"></script>
+    <script src="../../lib/ligerUI/js/plugins/ligerDrag.js"></script>
+    <script src="../../lib/ligerUI/js/plugins/ligerButton.js"></script>
+    <script src="../../lib/ligerUI/js/core/inject.js"></script>
+      <script src="../../lib/json2.js"></script>
+    <script type="text/javascript">
+        var g;
+        $(function ()
+        {
+            g = $("#portalMain").ligerPortal({
+                draggable : true,
+                rows: [ 
+                    {
+                        columns: [{
+                            width: 300,
+                            panels: [{
+                                title: '行1-列1-模块1',
+                                width: '100%',
+                                height: 100,
+                                content: '内容。。。',
+                                showClose:true
+                            },
+                            {
+                                title: '行1-列1-模块2',
+                                width: '100%',
+                                height: 100,
+                                content: '内容。。。'
+                            }
+                            ]
+                        }, {
+                            width: 300,
+                            panels: [
+                            ]
+                        }, {
+                            width: 300,
+                            panels: [{
+                                title: '行1-列3-模块1',
+                                width: '100%',
+                                height: 100,
+                                content: '内容。。。'
+                            }
+                            ]
+                        }]
+                    },
+                     {
+                         columns: [{
+                             width: 420,
+                             panels: [{
+                                 title: '行2-列1-模块1',
+                                 width: '100%',
+                                 height: 100,
+                                 content: '内容。。。',
+                                 id:'d211'
+                             },
+                             {
+                                 title: '行2-列1-模块2',
+                                 width: '100%',
+                                 height: 100,
+                                 content: '内容。。。'
+                             }
+                             ]
+                         }, {
+                             width: 250,
+                             panels: [{
+                                 title: '行2-列2-模块1',
+                                 width: '100%',
+                                 height: 100,
+                                 content: '内容。。。'
+                             }
+                             ]
+                         }]
+                     }
+                ]
+            }); 
+        });
+        function f_remove()
+        {
+            g.remove({
+                rowIndex: 0,
+                columnIndex: 0,
+                index:1
+            });
+        }
+        function f_add()
+        { 
+            g.add({
+                rowIndex: 0,
+                columnIndex: 0,
+                panel: {
+                    title: '行1-列1-新Panel',
+                    width: '100%',
+                    height: 100,
+                    content: '内容XXX'
+                }
+            });
+        }
+        function f_add2()
+        {
+            g.add({
+                rowIndex: 0,
+                columnIndex: 0,
+                index:0,
+                panel: {
+                    title: '行1-列1-新Panel2',
+                    width: '100%',
+                    height: 100,
+                    content: '内容XXX22'
+                }
+            });
+        }
+        function f_show()
+        {
+            var panels = g.getPanels();
+            var d = [];
+            $(panels).each(function ()
+            {
+                d.push({
+                    rowIndex: this.rowIndex,
+                    columnIndex: this.columnIndex,
+                    index: this.index,
+                    id: this.panel.id
+                });
+            });
+            $("#message").html(JSON2.stringify(d));
+        }
+        function f_setPanel()
+        {
+            //var panels = g.getPanels();
+            //panels[0].panel.set('title', '我是调用JS改变的');
+            //或者：
+            var panel = g.getPanel({
+                columnIndex : 0,index:0
+            });
+            panel.set('title', '我是调用JS改变的');
+        }
+
+        function f_setPanel2()
+        {
+            var panel = liger.get("d211");
+            panel.set('title', '我是调用JS改变的(调用指定Panel的api)');
+        }
+    </script>
+
+</head>
+<body style="padding:10px">
+        <div style="width:100%;" id="portalMain"> 
+        </div> 
+    <div>
+    <div class="liger-button" data-click="f_remove" data-width="120px" style="float:left">删除 行1-列1-模块2</div>
+    <div class="liger-button" data-click="f_add" data-width="120px" style="float:left;margin-left:10px;">增加到 行1-列1</div>
+        <div class="liger-button" data-click="f_add2" data-width="130px" style="float:left;margin-left:10px;">插入到 行1-列1(第一个)</div>
+         <div class="liger-button" data-click="f_show" data-width="130px" style="float:left;margin-left:10px;">获取所有Panel</div> 
+        <div class="l-clear"></div>
+    </div>
+    <div style="clear:both; margin-top:9px;"> 
+        <div class="liger-button" data-click="f_setPanel" data-width="130px" style="float:left;margin-left:10px;">调用第一个Panel的api</div>
+        <div class="liger-button" data-click="f_setPanel2" data-width="130px" style="float:left;margin-left:10px;">调用指定Panel的api</div>
+        </div>
+    <div id="message" style="clear:both; margin:8px;"></div>
+</body>
+</html>

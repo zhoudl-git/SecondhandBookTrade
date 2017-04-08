@@ -1,0 +1,60 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head><title>表单插件</title>     
+    <meta name="keywords" content="免费控件,免费UI控件,免费开源UI,免费开源UI控件,免费开源UI框架,表单插件" />  
+    <link href="../../lib/ligerUI/skins/Aqua/css/ligerui-all.css" rel="stylesheet" type="text/css" /> 
+    <link href="../../lib/ligerUI/skins/Tab/css/form.css" rel="stylesheet" type="text/css" /> 
+    <script src="../../lib/jquery/jquery-1.9.0.min.js" type="text/javascript"></script>
+     <script src="../../lib/ligerUI/js/ligerui.all.js" type="text/javascript"></script>  
+    <script src="../../grid/CustomersData.js"></script>
+	
+	
+   <script src="../../lib/jquery-validation/jquery.validate.min.js"></script>
+    <script src="../../lib/jquery-validation/jquery.metadata.js" type="text/javascript"></script>
+    <script src="../../lib/jquery-validation/messages_cn.js" type="text/javascript"></script>
+
+    <script type="text/javascript">
+        var groupicon = "";
+        var form;
+        var area_data = [
+            { id: '11', value: '11', text: '北京市' },
+            { id: '22', value: '22', text: '广州市' },
+            { id: '33', value: '33', text: '苏州市' },
+            { id: '44', value: '44', text: '杜洲市' }
+        ];
+        $(function ()
+        {
+            //创建表单结构 
+            form = $("#form2").ligerForm({
+                inputWidth: 170, labelWidth: 90, space: 40,
+                
+                fields: [
+                { name: "ProductID", type: "hidden" },
+                { display: "日期 ", name: "AddTime", newline: true, type: "date", validate: { required: true, minlength: 5 } },
+                { display: "折扣", name: "QuantityPerUnit", newline: true, type: "number", validate: { required: true, minlength: 5 } },
+                { display: "单价", name: "UnitPrice", newline: true, type: "number",editor:{readonly:true}, validate: { required: true, minlength: 5 } },
+                { display: "库存量", name: "UnitsInStock", newline: true, type: "digits", group: "库存", groupicon: groupicon },
+                { display: "订购量", name: "UnitsOnOrder", newline: true, type: "digits" },
+                { display: "采购量", name: "UnitsOnOrder2", newline: true, type: "spinner" },
+                 { display: "选择公司", name: "Company", newline: true, type: "popup" },
+              { display: "地区", name: "Area", newline: false, type: "select", editor: {data:area_data} },
+                { display: "备注", name: "Remark", newline: true, type: "text", width: 470, validate: { required: true, minlength: 5 } },
+                { display: "备注", name: "Remark", newline: true, type: "text", width: 470 }
+                ],
+                validate  : true
+            });
+        });
+        
+        function f_validate()
+        {
+            form.valid()
+        }
+
+    </script> 
+
+</head>
+<body style="padding:10px"> 
+  <form id="form2"></form> 
+ 
+                           <input value="验证" type="button" onclick="f_validate()" />
+</html>

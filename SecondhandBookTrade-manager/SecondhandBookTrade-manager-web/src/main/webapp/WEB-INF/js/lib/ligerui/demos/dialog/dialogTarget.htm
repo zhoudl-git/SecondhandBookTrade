@@ -1,0 +1,49 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+        <link href="../../lib/ligerUI/skins/Aqua/css/ligerui-all.css" rel="stylesheet" type="text/css" />
+    <script src="../../lib/jquery/jquery-1.9.0.min.js" type="text/javascript"></script>
+    <script src="../../lib/ligerUI/js/core/base.js" type="text/javascript"></script>
+    <script src="../../lib/ligerUI/js/plugins/ligerDrag.js" type="text/javascript"></script> 
+    <script src="../../lib/ligerUI/js/plugins/ligerDialog.js" type="text/javascript"></script>
+    <script src="../../lib/ligerUI/js/plugins/ligerComboBox.js" type="text/javascript"></script>
+    <script src="../../lib/ligerUI/js/plugins/ligerDateEditor.js" type="text/javascript"></script>
+     <style type="text/css">
+    
+     </style>
+     <script type="text/javascript">
+         $(function ()
+         {
+             $("#sl1").ligerComboBox();
+             $("#d1").ligerDateEditor();
+             $.ligerDialog.open({ target: $("#target1") });
+         }); 
+     </script>
+</head>
+<body style="padding:10px;  height:800px;">
+
+ <div id="target1" style="width:200px; margin:3px; display:none;">
+    <h3>提示文本标题</h3>
+    <div>
+        这里是目标容器的内容，执行open({target:$("#target1")});<BR />
+        以后将把这段内容以ligerDialog的方式加载并显示。
+        <select id="sl1">
+        <option>选项一</option>
+        <option>选项二</option>
+        <option>选项三</option>
+        <option>选项四</option>
+        </select><br />
+        <input type="text" id="d1" /><br />
+    </div>
+ </div>
+     
+
+
+      <div style="display:none;">
+      
+</div>
+</body>
+</html>
+    

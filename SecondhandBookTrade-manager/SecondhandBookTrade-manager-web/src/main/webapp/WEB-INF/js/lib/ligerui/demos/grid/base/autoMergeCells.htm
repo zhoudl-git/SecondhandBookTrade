@@ -1,0 +1,93 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <link href="../../../lib/ligerUI/skins/Aqua/css/ligerui-all.css" rel="stylesheet" type="text/css" />
+    <script src="../../../lib/jquery/jquery-1.9.0.min.js" type="text/javascript"></script>
+    <script src="../../../lib/ligerUI/js/core/base.js" type="text/javascript"></script>
+    <script src="../../../lib/ligerUI/js/plugins/ligerGrid.js" type="text/javascript"></script> 
+        <script src="../../../lib/ligerUI/js/plugins/ligerResizable.js" type="text/javascript"></script>
+    <script src="../../../lib/ligerUI/js/plugins/ligerDrag.js" type="text/javascript"></script>
+     <script src="../CustomersData.js" type="text/javascript"></script>
+   
+    <script type="text/javascript">
+	function log(){
+		console.log(arguments[0])
+	}
+		jQuery.fn.rowspan = function(colname,tableObj) {
+				var colIdx;
+				log(tableObj)
+				for(var i = 0,n=tableObj.columns.length;i<n;i++){
+						if(tableObj.columns[i]["columnname"] == colname){
+							colIdx = i-1<1?0:i-1;
+							break;
+						}
+				}
+				log(colIdx)
+				return this.each(function() {
+					var that;
+					$('tr', this).each(function(row) {
+						$('td:eq(' + colIdx + ')', this).filter(':visible').each(function(col) {
+							if (that != null && $(this).html() == $(that).html()) {
+								rowspan = $(that).attr("rowSpan");
+								if (rowspan == undefined) {
+									$(that).attr("rowSpan", 1);
+									rowspan = $(that).attr("rowSpan");
+								}
+								rowspan = Number(rowspan) + 1;
+								$(that).attr("rowSpan", rowspan);
+								$(this).hide();
+							} else {
+								that = this;
+							}
+						});
+					});
+				});
+			}
+        var columns = [
+                { display: '公司信息', columns:
+                [
+                    
+                    { display: '公司名', name: 'CompanyName', minWidth: 60,width:140  } 
+                ]
+                },
+                { display: '联系名', name: 'ContactName', width: 200, align: 'left' } 
+                ];
+        $(function()
+        {
+            window['g'] =
+            $("#maingrid4").ligerGrid({
+                columns: [
+				{ display: '表头0', name: 'CustomerID', width: 120 },
+				{ display: '表头1', columns: columns }, 
+				{ display: '表头0', name: 'CustomerID', width: 100}], pageSize: 10, checkbox: false,
+                data: CustomersData,
+                allowHideColumn:false,rownumbers:true,colDraggable:true,rowDraggable:true,
+                width: '100%', height: '100%', pageSizeOptions: [2, 5, 10,20],onAfterShowData:function(s){
+					setTimeout(function(){
+
+ log(window['g'].get('columns'))
+
+						$('#maingrid4 .l-grid-body-table tbody').rowspan('CustomerID', window['g'])
+					},0)
+
+
+					
+				},
+            });
+            $("#pageloading").hide();
+        });
+    </script>
+</head>
+<body style="padding:6px; overflow:hidden;"> 
+    <div id="maingrid4" style="margin:0; padding:0"></div>
+ 
+
+
+  <div style="display:none;">
+  <!-- g data total ttt -->
+</div>
+ 
+</body>
+</html>

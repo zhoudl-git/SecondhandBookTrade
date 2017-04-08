@@ -1,0 +1,113 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <link href="../../../lib/ligerUI/skins/Aqua/css/ligerui-all.css" rel="stylesheet" type="text/css" />
+    <script src="../../../lib/jquery/jquery-1.9.0.min.js" type="text/javascript"></script>
+    <script src="../../../lib/json2.js" type="text/javascript"></script>
+    <script src="../../../lib/ligerUI/js/core/base.js" type="text/javascript"></script>
+    <script src="../../../lib/ligerUI/js/plugins/ligerDialog.js" type="text/javascript"></script>
+    <script src="../../../lib/ligerUI/js/plugins/ligerTextBox.js" type="text/javascript"></script>
+    <script src="../../../lib/ligerUI/js/plugins/ligerCheckBox.js" type="text/javascript"></script>
+    <script src="../../../lib/ligerUI/js/plugins/ligerComboBox.js" type="text/javascript"></script>
+    <script src="../../../lib/ligerUI/js/plugins/ligerGrid.js" type="text/javascript"></script>
+    <script src="../../../lib/ligerUI/js/plugins/ligerDateEditor.js" type="text/javascript"></script>
+    <script src="../../../lib/ligerUI/js/plugins/ligerSpinner.js" type="text/javascript"></script>
+     <script src="../EmployeeData.js" type="text/javascript"></script>
+    <script src="../DepartmentData.js" type="text/javascript"></script>
+    <script type="text/javascript">
+
+        var DepartmentList = DepartmentData.Rows;
+        var sexData = [{ Sex: 1, text: '男' }, { Sex: 2, text: '女'}];
+        $(f_initGrid); 
+
+        function f_initGrid()
+        {
+            $("#maingrid").ligerGrid({
+                columns: [
+                { display: '主键', name: 'ID', width: 50, type: 'int' },
+                { display: '名字', name: 'RealName',
+                    editor: { type: 'text' }
+                },
+                { display: '性别', width: 50, name: 'Sex',
+                    editor: { type: 'select', data: sexData, valueField: 'Sex' },
+                    render: function (item)
+                    {
+                        if (parseInt(item.Sex) == 1) return '男';
+                        return '女';
+                    }
+                },
+                { display: '年龄', name: 'Age', width: 50, type: 'int', editor: { type: 'int'} },
+                { display: '入职日期', name: 'IncomeDay', type: 'date', width: 100, editor: { type: 'date'} },
+                {
+                    display: '部门', name: 'DepartmentID', width: 120, isSort: false, textField: 'DepartmentName',
+                editor: { type: 'select', data: DepartmentList, valueField: 'DepartmentID', textField: 'DepartmentName' } 
+                },
+                { display: '地址', name: 'Address',
+                    editor: { type: 'text' }, align: 'left', width: 300
+                }
+                ],
+                enabledEdit: true, isScroll: false,
+                onBeforeEdit: f_onBeforeEdit,
+                onBeforeSubmitEdit: f_onBeforeSubmitEdit,
+                onAfterEdit: f_onAfterEdit,
+                data: EmployeeData,
+                width: '100%'
+            });
+        }
+        //只允许编辑前3行
+        function f_onBeforeEdit(e)
+        { 
+            if(e.rowindex<=2) return true;
+            return false;
+        }
+        //限制年龄
+        function f_onBeforeSubmitEdit(e)
+        { 
+            if (e.column.name == "Age")
+            {
+                if (e.value < 20 || e.value > 30) return false;
+            }
+            return true;
+        }
+        //编辑后事件 
+        function f_onAfterEdit(e)
+        {
+            if (e.column.name == "Age")
+            {
+                alert(e.value);
+            }
+        }
+        function getSelected()
+        {
+            var manager = $("#maingrid").ligerGetGridManager();
+            var row = manager.getSelectedRow();
+            if (!row) { alert('请选择行'); return; }
+            alert(JSON.stringify(row));
+        }
+        function getData()
+        {
+            var manager = $("#maingrid").ligerGetGridManager();
+            var data = manager.getData();
+            alert(JSON.stringify(data));
+        } 
+    </script>
+</head>
+<body  style="padding:10px">
+  
+    <div id="maingrid" style="margin-top:20px"></div> <br />
+       <br />
+       <p>1,编辑前事件 只允许编辑前3行</p>
+       <p>2,编辑提交前事件 限制年龄 20 -30</p>
+       <p>3,编辑后事件 打印年龄</p>
+       <br />
+   <a class="l-button" style="width:120px" onclick="getSelected()">获取选中的值(选择行)</a>
+ 
+   <br />
+   <a class="l-button" style="width:120px" onclick="getData()">获取当前的值</a>
+  <div style="display:none;">
+  <!-- g data total ttt -->
+</div>
+</body>
+</html>

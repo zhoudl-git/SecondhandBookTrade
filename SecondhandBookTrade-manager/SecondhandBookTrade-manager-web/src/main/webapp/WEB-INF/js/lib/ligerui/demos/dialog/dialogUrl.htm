@@ -1,0 +1,107 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <link href="../../lib/ligerUI/skins/Aqua/css/ligerui-all.css" rel="stylesheet" type="text/css" />
+    <link href="../../lib/ligerUI/skins/ligerui-icons.css" rel="stylesheet" type="text/css" />
+    <script src="../../lib/jquery/jquery-1.9.0.min.js" type="text/javascript"></script>
+    <script src="../../lib/ligerUI/js/core/base.js" type="text/javascript"></script>
+    <script src="../../lib/ligerUI/js/plugins/ligerDrag.js" type="text/javascript"></script>
+    <script src="../../lib/ligerUI/js/plugins/ligerDialog.js" type="text/javascript"></script>
+    <script src="../../lib/ligerUI/js/plugins/ligerResizable.js" type="text/javascript"></script>
+    <style type="text/css">
+        .l-case-title
+        {
+            font-weight: bold;
+            margin-top: 20px;
+            margin-bottom: 20px;
+        }
+    </style>
+    <script type="text/javascript">
+         
+        var win1;
+        function f_open()
+        {
+            if (win1) win1.show();
+            else win1 = $.ligerDialog.open({ height: 200, url: '../../welcome.htm', width: null, showMax: true, showToggle: true, showMin: true, isResize: true, slide: false }); 
+        }
+        function f_open3()
+        {
+            $.ligerDialog.open({ height: 200, url: '../../welcome.htm', isResize: true });
+        }
+        function f_open4()
+        {
+            $.ligerDialog.open({ url: '../../welcome.htm', width: null, height: 200, modal: false, isResize: true });
+        }
+        function f_open2()
+        {
+            $.ligerDialog.open({ url: '../../welcome.htm', height: 300, width: null, buttons: [
+                { text: '确定', onclick: function (item, dialog) { alert(item.text); },cls:'l-dialog-btn-highlight' },
+                { text: '取消', onclick: function (item, dialog) { dialog.close(); } }
+             ], isResize: true
+            });
+        }
+        function f_open5()
+        {
+            $.ligerDialog.open({ url: '../../welcome.htm', height: 200, isResize: true });
+        }
+        function f_open6()
+        {
+            var m = $.ligerDialog.open({ url: '../../welcome.htm', height: 200, isResize: true });
+            setTimeout(function ()
+            {
+                m.hide();
+                setTimeout(function ()
+                {
+                    m.show();
+                }, 1000);
+            }, 1000);
+
+        }
+        function f_open7()
+        {
+            var m = $.ligerDialog.open({ url: '../../welcome.htm', height: 200, isResize: true });
+            setTimeout(function ()
+            {
+                m.setUrl('dialogUrl.htm');
+            }, 1000);
+
+        }
+    </script>
+</head>
+<body style="padding: 10px; padding-bottom: 800px;">
+    <div class="l-case-title">
+        实例一(保存window manager)：if (win1) win1.show(); else win1 = $.ligerDialog.open({ height:
+        200, url: '../../welcome.htm', width: null });</div>
+    <input type="button" onclick="f_open()" value="open window" />
+    <div class="l-case-title">
+        实例二：$.ligerDialog.open({ height: 200,url: '../../welcome.htm' });</div>
+    <input type="button" onclick="f_open3()" value="open window" />
+    <div class="l-case-title">
+        实例三：$.ligerDialog.open({ url: '../../welcome.htm', height: 200,width: null, buttons:
+        [ { text: '确定', onclick: function (item, dialog) { alert(item.text); } }, { text:
+        '取消', onclick: function (item, dialog) { dialog.close(); } } ] });</div>
+    <input type="button" onclick="f_open2()" value="open window with button" />
+    <div class="l-case-title">
+        实例四：$.ligerDialog.open({ url: '../../welcome.htm', width: null,height:200,modal:false
+        });</div>
+    <input type="button" onclick="f_open4()" value="open noModal window" />
+    <div class="l-case-title">
+        实例五：$.ligerDialog.open({ url: '../../welcome.htm',height: 200, isResize:true });</div>
+    <input type="button" onclick="f_open5()" value="open Resizable window" />
+    <div class="l-case-title">
+        实例六：模拟手工控制关闭和打开 var m = $.ligerDialog.open({ url: '../../welcome.htm',height: 200,
+        isResize:true }); setTimeout(function () { m.hide(); setTimeout(function () { m.show();
+        }, 1000); }, 1000);
+    </div>
+    <input type="button" onclick="f_open6()" value="模拟手工控制关闭和打开" />
+    <div class="l-case-title">
+        实例七： var m = $.ligerDialog.open({ url: '../../welcome.htm', height: 200, isResize:
+        true }); setTimeout(function () { m.setUrl('dialogUrl.htm'); }, 1000);
+    </div>
+    <input type="button" onclick="f_open7()" value="动态修改url" />
+    <div style="display: none;">
+    </div>
+     
+</body>
+</html>

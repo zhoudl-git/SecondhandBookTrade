@@ -1,0 +1,45 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head><title>复选框</title>     
+    <meta name="keywords" content="免费控件,免费UI控件,免费开源UI,免费开源UI控件,免费开源UI框架,复选框" />  
+    <link href="../../lib/ligerUI/skins/Aqua/css/ligerui-all.css" rel="stylesheet" type="text/css" />
+    <script src="../../lib/jquery/jquery-1.9.0.min.js" type="text/javascript"></script>   
+    <script src="../../lib/ligerUI/js/core/base.js" type="text/javascript"></script>
+    <script src="../../lib/ligerUI/js/plugins/ligerCheckBox.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        var manager;
+        $(function ()
+        {
+            manager = $("#r").ligerCheckBox({ disabled: true });
+
+            $("#btnSet").bind('click', function ()
+            {
+                manager.setValue(true);
+            });
+            $("#btnGet").bind('click', function ()
+            {
+                alert(manager.getValue());
+            });
+            $("#btnDisabled").bind('click', function ()
+            {
+                manager.setDisabled();
+            });
+            $("#btnEnabled").bind('click', function ()
+            {
+                manager.setEnabled();
+            });
+        }); 
+    </script>
+
+</head>
+<body style="padding:10px">
+<input type="checkbox" id="r" />
+         <input type="button" id="btnSet" value="设置值" />
+         <input type="button" id="btnGet" value="获取值" />
+         <input type="button" id="btnDisabled" value="设置只读" />
+         <input type="button" id="btnEnabled" value="取消只读" /> 
+         <div style="display:none;">
+</div>
+</body>
+</html>

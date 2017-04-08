@@ -1,0 +1,159 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <link href="common.css" rel="stylesheet" type="text/css" />
+</head>
+<body> 
+
+
+<div id="cnblogs_post_body"><p><a name="labelTop"></a></p>
+<div class="category">
+<h3><strong>阅读目录</strong></h3>
+<ul>
+<li><a href="#label1">获取最新代码</a></li>
+<li><a href="#label2">ligerUI是什么</a></li>
+<li><a href="#label3">如何使用</a></li>
+<li><a href="#label4">如何扩展</a></li>
+</ul>
+</div>
+<div data-mce-=""><a name="label1"></a></div>
+<h2>获取最新代码</h2>
+<p>可以到http://ligerui.googlecode.com下载最新代码。</p>
+<h3>简介</h3>
+<p>jQuery LigerUI 是基于jQuery的一系列UI控件组合，简单而又强大，致力于快速打造Web前端界面解决方案。 因为是前端控件，跟服务器无关，可以适合.net,jsp,php等等web服务器环境。目前全部插件的打包压缩JS只有150K左右,很轻巧。使用插件式的开发模式，以“简单”为原则的设计，每个插件尽量独立，并可依赖拓展。</p>
+<div style="text-align: right;"><a href="#labelTop">回到顶部</a><a name="label2"></a></div>
+<h2>ligerUI是什么</h2>
+<p>jQuery LigerUI控件丰富，包括基础、导航、布局、表单、表格、树形、窗口等</p>
+<blockquote>
+<p>基础：Resizable、Drag、Tip</p>
+<p>导航：Menu、MenuBar、ToolBar</p>
+<p>布局：Layout、Tab</p>
+<p>表单：Form、TextBox、Button、CheckBox、ComboBox、DateEditor、Radio、Spinner、ListBox、PopupEdit、CheckboxList、RadioList</p>
+<p>表格：Grid</p>
+<p>树形：Tree</p>
+<p>窗口：Dialog、MessageBox、Window</p>
+</blockquote>
+<div style="text-align: right;"><a href="#labelTop">回到顶部</a><a name="label3"></a></div>
+<h2>如何使用</h2>
+<p>jQuery LigerUI是基于jQuery而设计的一系列插件集合。基本上每个插件都是相对独立的。但是彼此之间又紧密地关联着，合理地对插件进行组装，实现出现各种复杂的功能。 使用UI可以帮助你快速地创建友好的用户界面。</p>
+<h3>第一个例子</h3>
+<div class="cnblogs_code">
+<pre><span style="color: #0000ff;">&lt;</span><span style="color: #800000;">head</span><span style="color: #0000ff;">&gt;</span><br>    <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">title</span><span style="color: #0000ff;">&gt;&lt;/</span><span style="color: #800000;">title</span><span style="color: #0000ff;">&gt;</span><br>    <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">link </span><span style="color: #ff0000;">href</span><span style="color: #0000ff;">="http://www.cnblogs.com/lib/ligerUI/skins/Aqua/css/ligerui-all.css"</span><span style="color: #ff0000;"> rel</span><span style="color: #0000ff;">="stylesheet"</span><span style="color: #ff0000;"> type</span><span style="color: #0000ff;">="text/css"</span> <span style="color: #0000ff;">/&gt;</span><br>    <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">script </span><span style="color: #ff0000;">src</span><span style="color: #0000ff;">="http://www.cnblogs.com/lib/jquery/jquery-1.3.2.min.js"</span><span style="color: #ff0000;"> type</span><span style="color: #0000ff;">="text/javascript"</span><span style="color: #0000ff;">&gt;&lt;/</span><span style="color: #800000;">script</span><span style="color: #0000ff;">&gt;</span> <br>    <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">script </span><span style="color: #ff0000;">src</span><span style="color: #0000ff;">="http://www.cnblogs.com/lib/ligerUI/js/core/base.js"</span><span style="color: #ff0000;"> type</span><span style="color: #0000ff;">="text/javascript"</span><span style="color: #0000ff;">&gt;&lt;/</span><span style="color: #800000;">script</span><span style="color: #0000ff;">&gt;</span><br>    <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">script </span><span style="color: #ff0000;">src</span><span style="color: #0000ff;">="http://www.cnblogs.com/lib/ligerUI/js/plugins/ligerTextBox.js"</span><span style="color: #ff0000;"> type</span><span style="color: #0000ff;">="text/javascript"</span><span style="color: #0000ff;">&gt;&lt;/</span><span style="color: #800000;">script</span><span style="color: #0000ff;">&gt;</span><br>    <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">script </span><span style="color: #ff0000;">type</span><span style="color: #0000ff;">="text/javascript"</span><span style="color: #0000ff;">&gt;</span><span style="background-color: #f5f5f5; color: #000000;"><br>        $(</span><span style="background-color: #f5f5f5; color: #0000ff;">function</span><span style="background-color: #f5f5f5; color: #000000;"> ()<br>        {<br>            </span><span style="background-color: #f5f5f5; color: #008000;">//</span><span style="background-color: #f5f5f5; color: #008000;">我们将一个html文本框对象转换成ligerui文本框对象,并返回ligerui对象</span><span style="background-color: #f5f5f5; color: #008000;"><br></span><span style="background-color: #f5f5f5; color: #0000ff;">var</span><span style="background-color: #f5f5f5; color: #000000;"> g </span><span style="background-color: #f5f5f5; color: #000000;">=</span><span style="background-color: #f5f5f5; color: #000000;"> $(</span><span style="background-color: #f5f5f5; color: #000000;">"</span><span style="background-color: #f5f5f5; color: #000000;">#txt1</span><span style="background-color: #f5f5f5; color: #000000;">"</span><span style="background-color: #f5f5f5; color: #000000;">).ligerTextBox(<br>            {<br>                </span><span style="background-color: #f5f5f5; color: #008000;">//</span><span style="background-color: #f5f5f5; color: #008000;">如果没有输入时,会提示不能为空</span><span style="background-color: #f5f5f5; color: #008000;"><br></span><span style="background-color: #f5f5f5; color: #000000;">                nullText: </span><span style="background-color: #f5f5f5; color: #000000;">'</span><span style="background-color: #f5f5f5; color: #000000;">不能为空</span><span style="background-color: #f5f5f5; color: #000000;">'</span><span style="background-color: #f5f5f5; color: #000000;"><br>            });<br><br><br>            </span><span style="background-color: #f5f5f5; color: #008000;">/*</span><span style="background-color: #f5f5f5; color: #008000;"><br>            如何获取属性<br>            </span><span style="background-color: #f5f5f5; color: #008000;">*/</span><span style="background-color: #f5f5f5; color: #000000;"><br>            </span><span style="background-color: #f5f5f5; color: #008000;">//</span><span style="background-color: #f5f5f5; color: #008000;">方式一</span><span style="background-color: #f5f5f5; color: #008000;"><br></span><span style="background-color: #f5f5f5; color: #000000;">            alert(</span><span style="background-color: #f5f5f5; color: #000000;">'</span><span style="background-color: #f5f5f5; color: #000000;">方式一:</span><span style="background-color: #f5f5f5; color: #000000;">'</span> <span style="background-color: #f5f5f5; color: #000000;">+</span><span style="background-color: #f5f5f5; color: #000000;"> g.get(</span><span style="background-color: #f5f5f5; color: #000000;">'</span><span style="background-color: #f5f5f5; color: #000000;">disabled</span><span style="background-color: #f5f5f5; color: #000000;">'</span><span style="background-color: #f5f5f5; color: #000000;">));<br>            </span><span style="background-color: #f5f5f5; color: #008000;">//</span><span style="background-color: #f5f5f5; color: #008000;">方式二</span><span style="background-color: #f5f5f5; color: #008000;"><br></span><span style="background-color: #f5f5f5; color: #000000;">            alert(</span><span style="background-color: #f5f5f5; color: #000000;">'</span><span style="background-color: #f5f5f5; color: #000000;">方式二:</span><span style="background-color: #f5f5f5; color: #000000;">'</span> <span style="background-color: #f5f5f5; color: #000000;">+</span><span style="background-color: #f5f5f5; color: #000000;"> $(</span><span style="background-color: #f5f5f5; color: #000000;">"</span><span style="background-color: #f5f5f5; color: #000000;">#txt1</span><span style="background-color: #f5f5f5; color: #000000;">"</span><span style="background-color: #f5f5f5; color: #000000;">).ligerTextBox(</span><span style="background-color: #f5f5f5; color: #000000;">'</span><span style="background-color: #f5f5f5; color: #000000;">option</span><span style="background-color: #f5f5f5; color: #000000;">'</span><span style="background-color: #f5f5f5; color: #000000;">, </span><span style="background-color: #f5f5f5; color: #000000;">'</span><span style="background-color: #f5f5f5; color: #000000;">disabled</span><span style="background-color: #f5f5f5; color: #000000;">'</span><span style="background-color: #f5f5f5; color: #000000;">));<br><br><br>            </span><span style="background-color: #f5f5f5; color: #008000;">/*</span><span style="background-color: #f5f5f5; color: #008000;"><br>            如何设置属性<br>            </span><span style="background-color: #f5f5f5; color: #008000;">*/</span><span style="background-color: #f5f5f5; color: #000000;"><br>            </span><span style="background-color: #f5f5f5; color: #008000;">//</span><span style="background-color: #f5f5f5; color: #008000;">方式一</span><span style="background-color: #f5f5f5; color: #008000;"><br></span><span style="background-color: #f5f5f5; color: #000000;">            g.set(</span><span style="background-color: #f5f5f5; color: #000000;">'</span><span style="background-color: #f5f5f5; color: #000000;">disabled</span><span style="background-color: #f5f5f5; color: #000000;">'</span><span style="background-color: #f5f5f5; color: #000000;">, </span><span style="background-color: #f5f5f5; color: #0000ff;">true</span><span style="background-color: #f5f5f5; color: #000000;">);<br>            </span><span style="background-color: #f5f5f5; color: #008000;">//</span><span style="background-color: #f5f5f5; color: #008000;">方式二 </span><span style="background-color: #f5f5f5; color: #008000;"><br></span><span style="background-color: #f5f5f5; color: #000000;">            $(</span><span style="background-color: #f5f5f5; color: #000000;">"</span><span style="background-color: #f5f5f5; color: #000000;">#txt1</span><span style="background-color: #f5f5f5; color: #000000;">"</span><span style="background-color: #f5f5f5; color: #000000;">).ligerTextBox(</span><span style="background-color: #f5f5f5; color: #000000;">'</span><span style="background-color: #f5f5f5; color: #000000;">option</span><span style="background-color: #f5f5f5; color: #000000;">'</span><span style="background-color: #f5f5f5; color: #000000;">, </span><span style="background-color: #f5f5f5; color: #000000;">'</span><span style="background-color: #f5f5f5; color: #000000;">disabled</span><span style="background-color: #f5f5f5; color: #000000;">'</span><span style="background-color: #f5f5f5; color: #000000;">, </span><span style="background-color: #f5f5f5; color: #0000ff;">false</span><span style="background-color: #f5f5f5; color: #000000;">);<br> <br><br>            </span><span style="background-color: #f5f5f5; color: #008000;">/*</span><span style="background-color: #f5f5f5; color: #008000;"><br>            如何调用方法<br>            </span><span style="background-color: #f5f5f5; color: #008000;">*/</span><span style="background-color: #f5f5f5; color: #000000;"><br>            </span><span style="background-color: #f5f5f5; color: #008000;">//</span><span style="background-color: #f5f5f5; color: #008000;">方式一</span><span style="background-color: #f5f5f5; color: #008000;"><br></span><span style="background-color: #f5f5f5; color: #000000;">            g.setDisabled();<br>            </span><span style="background-color: #f5f5f5; color: #008000;">//</span><span style="background-color: #f5f5f5; color: #008000;">方式二 </span><span style="background-color: #f5f5f5; color: #008000;"><br></span><span style="background-color: #f5f5f5; color: #000000;">            $(</span><span style="background-color: #f5f5f5; color: #000000;">"</span><span style="background-color: #f5f5f5; color: #000000;">#txt1</span><span style="background-color: #f5f5f5; color: #000000;">"</span><span style="background-color: #f5f5f5; color: #000000;">).ligerTextBox(</span><span style="background-color: #f5f5f5; color: #000000;">'</span><span style="background-color: #f5f5f5; color: #000000;">setEnabled</span><span style="background-color: #f5f5f5; color: #000000;">'</span><span style="background-color: #f5f5f5; color: #000000;">);<br><br>            </span><span style="background-color: #f5f5f5; color: #008000;">/*</span><span style="background-color: #f5f5f5; color: #008000;"><br>            如何设置事件<br>            </span><span style="background-color: #f5f5f5; color: #008000;">*/</span><span style="background-color: #f5f5f5; color: #000000;"><br>            </span><span style="background-color: #f5f5f5; color: #008000;">//</span><span style="background-color: #f5f5f5; color: #008000;">这里给文本框绑定一个改变值的事件</span><span style="background-color: #f5f5f5; color: #008000;"><br></span><span style="background-color: #f5f5f5; color: #008000;">//</span><span style="background-color: #f5f5f5; color: #008000;">也可以设置onChangeValue参数</span><span style="background-color: #f5f5f5; color: #008000;"><br></span><span style="background-color: #f5f5f5; color: #000000;">            g.bind(</span><span style="background-color: #f5f5f5; color: #000000;">'</span><span style="background-color: #f5f5f5; color: #000000;">changeValue</span><span style="background-color: #f5f5f5; color: #000000;">'</span><span style="background-color: #f5f5f5; color: #000000;">, </span><span style="background-color: #f5f5f5; color: #0000ff;">function</span><span style="background-color: #f5f5f5; color: #000000;"> (value)<br>            {<br>                alert(value);<br><br>            });<br><br>        }); <br>    </span><span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">script</span><span style="color: #0000ff;">&gt;</span><br><span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">head</span><span style="color: #0000ff;">&gt;</span><br><span style="color: #0000ff;">&lt;</span><span style="color: #800000;">body </span><span style="color: #ff0000;">style</span><span style="color: #0000ff;">="padding:10px"</span><span style="color: #0000ff;">&gt;</span><br>        <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">input </span><span style="color: #ff0000;">type</span><span style="color: #0000ff;">="text"</span><span style="color: #ff0000;"> id</span><span style="color: #0000ff;">="txt1"</span><span style="color: #ff0000;"> value</span><span style="color: #0000ff;">=""</span><span style="color: #ff0000;"> style</span><span style="color: #0000ff;">="width:200px"</span><span style="color: #0000ff;">/&gt;</span><br><span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">body</span><span style="color: #0000ff;">&gt;</span></pre>
+</div>
+<p>更多的参数和方法的设置可以查看API：http://www.ligerui.com/api/</p>
+<p>上面是TextBox的使用范例，其他的插件使用方式类似。</p>
+<h3>如何使用ligerUI对象</h3>
+<p>我们应用完插件以后，是返回一个ligerui对象的，可以把这个对象保存在一个全局的变量里面。在后续的操作中可能会用到。如果因为变量作用域的限制等，没有及时保存起来。我们可以用其他方式获取。见如下：</p>
+<p><strong>保存到一个全局的javascript变量：</strong></p>
+<div class="cnblogs_code">
+<pre><span style="color: #0000ff;">var</span> g;<br>$(<span style="color: #0000ff;">function</span> ()<br>{ <br>g = $("#txt1").ligerTextBox();<br>);</pre>
+</div>
+<p><strong>使用$.fn.ligerGetTextBoxManager</strong></p>
+<div class="cnblogs_code">
+<pre><span style="color: #0000ff;">var</span> g = $("#txt1").ligerGetTextBoxManager ();</pre>
+</div>
+<p><strong>使用$.ligerui.get方法</strong></p>
+<div class="cnblogs_code">
+<pre><span style="color: #0000ff;">var</span> g =  $.ligerui.get('txt1');</pre>
+</div>
+<blockquote>
+<div>
+<ul>
+<li>第三个方式的是使用ligerui对象的id直接获取的，在传入参数没有指定id的情况下，对象的id将会使用html元素的id，如果html元素没有id，将会自动生成一个。所以在这里我们可以用html文本框的id来获取。</li>
+<li>如果没有指定html元素的id，可以用第一种方式或者第二种方式。</li>
+<li>其实第二种方式可以用第一种方式来替代，实则上ligerText是可以重复调用的，不同的是第二次以后调用都是直接放回ligerui对象。当我们不确定html元素是否已经应用了插件的情况下可以使用第二种方式。</li>
+<li>其他插件的命名跟TextBox类同</li>
+</ul>
+</div>
+</blockquote>
+<h3><strong>事件处理</strong></h3>
+<p>事件处理有两种方式。一种是以参数的形式传入，一种是调用ligerui对象的bind方法。</p>
+<div class="cnblogs_code">
+<pre>            <span style="color: #008000;">//</span><span style="color: #008000;">方式一</span><span style="color: #008000;"><br></span>            <span style="color: #0000ff;">var</span> g = $("#txt1").ligerTextBox(<br>            {<br>                onChangeValue : <span style="color: #0000ff;">function</span>(value){alert(value);}<br>            });<br><br>           <span style="color: #008000;">//</span><span style="color: #008000;">方式二      </span><span style="color: #008000;"><br></span>            g.bind('changeValue', <span style="color: #0000ff;">function</span> (value)<br>            {<br>                alert(value);<br>            });</pre>
+</div>
+<blockquote>
+<div>
+<ul>
+<li>使用bind方法是没有带”on”的。</li>
+<li>事件监听是可以多次绑定的。</li>
+<li>对于某些事件，如果函数的返回值是false，那么后面还没有触发的函数将不会再执行</li>
+<li>第二种方式(bind)，是V1.1.3使用core机制以后引入的。</li>
+</ul>
+</div>
+</blockquote>
+<h3><strong>方法调用</strong></h3>
+<p>使用ligerui的接口很方便。只需要调用ligerui对象的方法即可。</p>
+<div class="cnblogs_code">
+<pre><span style="color: #008000;">//</span><span style="color: #008000;">这里设置文本框不能编辑</span><span style="color: #008000;"><br></span>g.setDisabled();<br><span style="color: #008000;">//</span><span style="color: #008000;">这里设置文本框可以编辑</span><span style="color: #008000;"><br></span>g.setEnabled();</pre>
+</div>
+<p>也可以使用这种方式</p>
+<div class="cnblogs_code">
+<pre>$(“#grid”).ligerGrid(‘setEnabled’);</pre>
+</div>
+<blockquote>
+<div>
+<ul>
+<li>至于这个对象有哪些方法，可以查看API</li>
+<li>对象的方法是可以扩展的，后面会有一篇ligerui扩展的章节来介绍</li>
+<li>第二种方式是在V1.1.4加入的</li>
+</ul>
+</div>
+</blockquote>
+<h3><strong>获取参数值</strong></h3>
+<p>每一个ligerui对象都会有get方法。可以获取参数值</p>
+<div class="cnblogs_code">
+<pre><span style="color: #0000ff;">var</span> url = g.get(‘url’);</pre>
+</div>
+<p>或者是：</p>
+<div class="cnblogs_code">
+<pre><span style="color: #0000ff;">var</span> url = $(“#grid”).ligerGrid(‘option’,’url’);</pre>
+</div>
+<h3>动态设置参数</h3>
+<p>每一个ligerui对象都会有set方法。用于动态得设置参数。比如改变Grid的url，那么可以这样写：</p>
+<div class="cnblogs_code">
+<pre>g.set(‘url’,url);</pre>
+</div>
+<p>或者是：</p>
+<div class="cnblogs_code">
+<pre>g.set({url:url});</pre>
+</div>
+<p>也可以用插件的方式：</p>
+<div class="cnblogs_code">
+<pre>$(“#grid”).ligerGrid(‘option’,’url’,url);</pre>
+</div>
+<blockquote>
+<div>
+<ul>
+<li>第二种方式是允许同时传入多个参数的。</li>
+<li>Set方法是所有插件的统一设置属性的接口</li>
+<li>Set方法是V1.1.3使用core机制以后引入的。</li>
+<li>插件传参的方式是V1.1.4引入的</li>
+</ul>
+</div>
+</blockquote>
+<div style="text-align: right;"><a href="#labelTop">回到顶部</a><a name="label4"></a></div>
+<h2>如何扩展</h2>
+<p>Ligerui的默认参数、方法都是可以扩展的，这里我们定义了两个入口: $.ligerDefaults和$.ligerMethods。</p>
+<p>比如要改变或者扩展Grid的默认参数，可以改变$.ligerDefaults.Grid</p>
+<h3>默认参数扩展</h3>
+<p>只需要扩展对象：$.ligerDefaults.{Plugin}</p>
+<p>比如要改变表格默认的头部标题：</p>
+<div class="cnblogs_code">
+<pre><span style="color: #0000ff;">if</span>($.ligerDefaults.Grid)<br>{<br>    $.ligerDefaults.Grid.title = "我的表格";<br>}</pre>
+</div>
+<h3>本地化支持扩展</h3>
+<p>只需要扩展对象：$.ligerDefaults.{Plugin}String</p>
+<p>比如把表格“加载时”翻译成英文：</p>
+<div class="cnblogs_code">
+<pre><span style="color: #0000ff;">if</span>($.ligerDefaults.GridString)<br>{<br>    $.ligerDefaults.GridString.loadingMessage = "loading...";<br>}</pre>
+</div>
+<h3>方法扩展</h3>
+<p>只需要扩展对象：$. ligerMethos.{Plugin}</p>
+<p>这里给Grid ligerui对象增加一个alert方法：</p>
+<div class="cnblogs_code">
+<pre>$.extend($.ligerMethods.Grid,<br>            {<br>                alert : <span style="color: #0000ff;">function</span> ()<br>                {<br>                     <span style="color: #008000;">//</span><span style="color: #008000;">要注意到一点，这里的this就是ligerui对象</span><span style="color: #008000;"><br></span>                    <span style="color: #0000ff;">var</span> rowdata = <span style="color: #0000ff;">this</span>.getSelectedRow();<br>                    <span style="color: #0000ff;">if</span> (!rowdata)<br>                        alert('空');<br>                    <span style="color: #0000ff;">else</span><br>                        alert(rowdata.CustomerID);<br>                }<br>            }<br>        );<br><br><span style="color: #0000ff;">function</span> show()<br>{<br>     <span style="color: #008000;">//</span><span style="color: #008000;">后面就可以这样使用</span><span style="color: #008000;"><br></span>     Var g = $(“#maingrid”).ligerGrid();<br>     g.alert();<br>}</pre>
+</div></div>
+</body>
+</html>

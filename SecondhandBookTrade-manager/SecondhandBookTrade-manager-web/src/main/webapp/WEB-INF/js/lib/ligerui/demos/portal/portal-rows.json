@@ -1,0 +1,30 @@
+﻿[
+{
+columns: [{
+                    width: 400,
+                    panels: [{
+                        title: '行1-列1-模块A',
+                        width: '100%',
+                        height: 200,
+                        url: 'frameContent.htm',
+                        showClose: true
+                    },
+                    {
+                        title: '行1-列1-模块B',
+                        width: '100%',
+                        height: 200,
+                        content: '内容。。。'
+                    }
+                    ]
+                }, {
+                    width: 400,
+                    panels: [{
+                        title: '行1-列2-模块A',
+                        width: '100%',
+                        height: 200,
+                        content: '内容。。。'
+                    }
+                    ]
+                }]
+}
+]

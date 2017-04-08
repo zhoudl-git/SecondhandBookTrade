@@ -1,0 +1,156 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <link href="../../../lib/ligerUI/skins/Aqua/css/ligerui-all.css" rel="stylesheet" type="text/css" />
+    <script src="../../../lib/jquery/jquery-1.9.0.min.js" type="text/javascript"></script>
+    <script src="../../../lib/json2.js" type="text/javascript"></script>
+    <script src="../../../lib/ligerUI/js/ligerui.all.js"></script>
+    <script src="../EmployeeData.js" type="text/javascript"></script>
+    <script src="../DepartmentData.js" type="text/javascript"></script>
+    <link href="../example.css" rel="stylesheet" type="text/css" />
+        <style>
+        .message {
+            width: 99%;
+            height: 100px;
+            overflow:auto;
+        }
+        .l-dialog-win .l-dialog-content { 
+            overflow: hidden;
+        }
+    </style>
+    <script type="text/javascript">
+
+        var DepartmentList = DepartmentData.Rows;
+        EmployeeData.Rows = [EmployeeData.Rows[0]];
+        var sexData = [{ Sex: 1, text: '男' }, { Sex: 2, text: '女'}];
+        $(f_initGrid);
+        var manager, g;
+        function f_initGrid()
+        { 
+           g =  manager = $("#maingrid").ligerGrid({
+                columns: [
+                { display: '主键', name: 'ID', width: 50, type: 'int',frozen:true },
+                { display: '名字', name: 'RealName',
+                    editor: { type: 'text' }
+                },
+                { display: '性别', width: 50, name: 'Sex',type:'int',
+                    editor: { type: 'select', data: sexData, valueColumnName: 'Sex' },
+                    render: function (item)
+                    {
+                        if (parseInt(item.Sex) == 1) return '男';
+                        return '女';
+                    }
+                },
+                { display: '年龄', name: 'Age', width: 50, type: 'int', editor: { type: 'int'} },
+                { display: '入职日期', name: 'IncomeDay', type: 'date', format: 'yyyy年MM月dd', width: 100, editor: { type: 'date'} },
+                { display: '部门', name: 'DepartmentID', width: 120, isSort: false,
+                    editor: { type: 'select', data: DepartmentList, valueColumnName: 'DepartmentID', displayColumnName: 'DepartmentName' }, render: function (item)
+                    {
+                        for (var i = 0; i < DepartmentList.length; i++)
+                        {
+                            if (DepartmentList[i]['DepartmentID'] == item.DepartmentID)
+                                return DepartmentList[i]['DepartmentName']
+                        }
+                        return item.DepartmentName;
+                    }
+                },
+                { display: '地址', name: 'Address',
+                    editor: { type: 'text' }, align: 'left', width: 300
+                }
+                ],
+                onSelectRow: function (rowdata, rowindex)
+                {
+                    $("#txtrowindex").val(rowindex);
+                },
+                enabledEdit: true, isScroll: false, checkbox:true,rownumbers:true,
+                data:EmployeeData,
+                width: '100%'
+           });
+
+           window.dialog = $.ligerDialog.open({
+               isResize: true,
+               isHidden: true,
+               target: $("<div id='message' class='message'></div>"),
+               buttons: [
+                   { text: '关闭', onclick: function (i, d) { d.hide(); } }
+               ]
+           });
+           dialog.hide();
+           window.alert = function (message) {
+               $("#message").html(message.toString());
+               dialog.show();
+           }
+        }
+        
+        function deleteRow()
+        { 
+            manager.deleteSelectedRow();
+        }
+        var newrowid = 100;
+        function addNewRow()
+        {
+            var row = manager.getSelectedRow();
+            //参数1:rowdata(非必填)
+            //参数2:插入的位置 Row Data 
+            //参数3:之前或者之后(非必填)
+            manager.addRow({ 
+                DepartmentID: 3,
+                DepartmentName: '销售部',
+                RealName: "分为" + newrowid,
+                ID: newrowid++,
+                Sex : 1,
+                Age : 25,
+                IncomeDay: new Date(1306108800000),
+                Phone : "2343434",
+                Address: "wwrere4"
+            }, row, document.getElementById("chkbefore").checked);
+        }
+        function getRows() {
+            var data = manager.rows;
+            alert(JSON.stringify(data));
+        }
+        function getData()
+        { 
+            var data = manager.getData();
+            alert(JSON.stringify(data));
+        } 
+        function getUpdate()
+        {
+            var data = manager.getUpdated();
+            alert(JSON.stringify(data));
+        }
+        function getDelete()
+        {
+            var data = manager.getDeleted();
+            alert(JSON.stringify(data));
+        }
+        function getAdd()
+        {
+            var data = manager.getAdded();
+            alert(JSON.stringify(data));
+        }
+    </script>
+</head>
+<body  style="padding:10px">
+<a class="l-button" style="width:120px;" onclick="deleteRow()">删除选择的行</a>
+<a class="l-button" style="width:100px;" onclick="addNewRow()">添加行</a> 
+<div> 
+是否之前：
+<input type="checkbox" id="chkbefore" />
+</div>
+
+ <div class="l-clear"></div>
+    <div id="maingrid" style="margin-top:20px"></div> <br />
+       <br />
+      <a class="l-button" onclick="getRows()">获取全部</a>
+   <a class="l-button" onclick="getData()">获取全部数据(格式化)</a>
+   <a class="l-button" onclick="getUpdate()">获取更新数据</a>
+   <a class="l-button"  onclick="getDelete()">获取删除数据</a>
+   <a class="l-button"  onclick="getAdd()">获取新增数据</a>
+  <div style="display:none;">
+  <!-- g data total ttt -->
+</div>
+</body>
+</html>

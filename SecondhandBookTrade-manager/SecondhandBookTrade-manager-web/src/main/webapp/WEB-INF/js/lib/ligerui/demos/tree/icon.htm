@@ -1,0 +1,48 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <script src="../../lib/jquery/jquery-1.9.0.min.js" type="text/javascript"></script>
+    <link href="../../lib/ligerUI/skins/Aqua/css/ligerui-all.css" rel="stylesheet" type="text/css" />
+    <script src="../../lib/ligerUI/js/core/base.js" type="text/javascript"></script>
+    <script src="../../lib/ligerUI/js/plugins/ligerTree.js" type="text/javascript"></script>
+    <style type="text/css"> 
+        .l-tree .l-tree-icon-none img{width:16px; height:16px; margin:3px;}
+    </style>
+    <script type="text/javascript">
+        $(function ()
+        {
+            var myaccount = '../../lib/ligerUI/skins/icons/myaccount.gif';
+            var memeber = '../../lib/ligerUI/skins/icons/memeber.gif';
+            var archives = '../../lib/ligerUI/skins/icons/archives.gif';
+            $("#tree1").ligerTree({
+                data: [
+                { text: '节点1', icon: myaccount, children: [
+                    { text: '节点1.1', icon: archives },
+                    { text: '节点1.2', icon: archives },
+                    { text: '节点1.3', icon: myaccount, children: [
+                         { text: '节点1.3.1', icon: archives },
+                         { text: '节点1.3.2', icon: archives }
+                    ]
+                    },
+                    { text: '节点1.4', icon: archives }
+                 ]
+                },
+                { text: '节点2', icon: memeber },
+                { text: '节点3', icon: memeber },
+                { text: '节点4', icon: memeber }
+            ]
+            });
+        });
+    </script>
+</head>
+<body style="padding: 10px">
+    <div style="width: 200px; height: 300px; margin: 10px; float: left; border: 1px solid #ccc;
+        overflow: auto;">
+        <ul id="tree1">
+        </ul>
+    </div>
+    <div style="display: none">
+    </div>
+</body>
+</html>

@@ -1,0 +1,49 @@
+﻿<html>
+	<head>
+		<title>ComboBox - jQuery LigerUI API</title>      
+		<meta http-equiv="content-type" content="text/html; charset=UTF-8" /> 
+		<link href="../common.css" rel="stylesheet" type="text/css" />
+		<script src="../core.js" type="text/javascript"></script> 
+	</head>
+	<body>
+		<h2>ligerComboBox</h2> 
+         
+        
+                    <p> 
+            <p>复杂的下拉框组件，适应不同类型的下拉框，包括：</p><p><ul><li>表单select元素</li><li>单选、多选下拉框</li><li>多列下拉框</li><li>分页表格下拉框(包括搜索)</li><li>树下拉框</li><li>自动完成</li></ul><br /></p>
+        </p>
+                     
+          
+                <h3>示例</h3>
+        <pre><div><!--
+
+Code highlighting produced by Actipro CodeHighlighter (freeware)
+http://www.CodeHighlighter.com/
+
+--><span style="color: #008080;"> 1</span> <span style="color: #0000FF;">var</span><span style="color: #000000;"> columns </span><span style="color: #000000;">=</span><span style="color: #000000;"> [
+</span><span style="color: #008080;"> 2</span> <span style="color: #000000;">                { header: </span><span style="color: #000000;">'</span><span style="color: #000000;">ID</span><span style="color: #000000;">'</span><span style="color: #000000;">, name: </span><span style="color: #000000;">'</span><span style="color: #000000;">id</span><span style="color: #000000;">'</span><span style="color: #000000;">, width: </span><span style="color: #000000;">80</span><span style="color: #000000;"> },
+</span><span style="color: #008080;"> 3</span> <span style="color: #000000;">                { header: </span><span style="color: #000000;">'</span><span style="color: #000000;">名字</span><span style="color: #000000;">'</span><span style="color: #000000;">, name: </span><span style="color: #000000;">'</span><span style="color: #000000;">name</span><span style="color: #000000;">'</span><span style="color: #000000;">, width: </span><span style="color: #000000;">170</span><span style="color: #000000;"> },
+</span><span style="color: #008080;"> 4</span> <span style="color: #000000;">                { header: </span><span style="color: #000000;">'</span><span style="color: #000000;">描述</span><span style="color: #000000;">'</span><span style="color: #000000;">, name: </span><span style="color: #000000;">'</span><span style="color: #000000;">desc</span><span style="color: #000000;">'</span><span style="color: #000000;">, width: </span><span style="color: #000000;">170</span><span style="color: #000000;"> }
+</span><span style="color: #008080;"> 5</span> <span style="color: #000000;">            ];
+</span><span style="color: #008080;"> 6</span> <span style="color: #000000;">
+</span><span style="color: #008080;"> 7</span> <span style="color: #000000;">            $(</span><span style="color: #000000;">&quot;</span><span style="color: #000000;">#txt1</span><span style="color: #000000;">&quot;</span><span style="color: #000000;">).ligerComboBox(
+</span><span style="color: #008080;"> 8</span> <span style="color: #000000;">                {
+</span><span style="color: #008080;"> 9</span> <span style="color: #000000;">                    url: </span><span style="color: #000000;">'</span><span style="color: #000000;">../../data/net/ComboBoxData.ashx</span><span style="color: #000000;">'</span><span style="color: #000000;">,
+</span><span style="color: #008080;">10</span> <span style="color: #000000;">                    valueField : </span><span style="color: #000000;">'</span><span style="color: #000000;">id</span><span style="color: #000000;">'</span><span style="color: #000000;">,
+</span><span style="color: #008080;">11</span> <span style="color: #000000;">                    textField: </span><span style="color: #000000;">'</span><span style="color: #000000;">name</span><span style="color: #000000;">'</span><span style="color: #000000;">,
+</span><span style="color: #008080;">12</span> <span style="color: #000000;">                    columns: columns,
+</span><span style="color: #008080;">13</span> <span style="color: #000000;">                    selectBoxWidth: </span><span style="color: #000000;">400</span><span style="color: #000000;">,
+</span><span style="color: #008080;">14</span> <span style="color: #000000;">                    autocomplete: </span><span style="color: #0000FF;">true</span><span style="color: #000000;">,
+</span><span style="color: #008080;">15</span> <span style="color: #000000;">                    width: </span><span style="color: #000000;">400</span><span style="color: #000000;">
+</span><span style="color: #008080;">16</span> <span style="color: #000000;">                }
+</span><span style="color: #008080;">17</span> <span style="color: #000000;">            );</span></div></pre>
+        
+        <h3>截图</h3>
+
+        <p>
+            <img src="../../uishow/ligerComboBox.jpg" />
+        </p>  
+        
+
+			</body>
+</html>

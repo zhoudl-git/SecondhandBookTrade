@@ -1,0 +1,193 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+        <link href="../../lib/ligerUI/skins/Aqua/css/ligerui-all.css" rel="stylesheet" type="text/css" />  
+    <script src="../../lib/jquery/jquery-1.9.0.min.js" type="text/javascript"></script>
+    <script src="../../lib/ligerUI/js/core/base.js" type="text/javascript"></script>
+    <script src="../../lib/ligerUI/js/plugins/ligerDrag.js" type="text/javascript"></script> 
+    <script src="../../lib/ligerUI/js/plugins/ligerDialog.js" type="text/javascript"></script>
+    
+     <style type="text/css">
+        .l-case-title{font-weight:bold; margin-top:20px;margin-bottom:20px;}
+     </style>
+     <script type="text/javascript">
+         $(function() {
+         });
+         function f_alert(type)
+         {
+             $.ligerDialog.alert('提示内容', '提示', type);
+         }
+         function f_alert2(type)
+         {
+             switch (type)
+             {
+                 case "success":
+                     $.ligerDialog.success('提示内容');
+                     break;
+                 case "warn":
+                     $.ligerDialog.warn('提示内容');
+                     break;
+                 case "question":
+                     $.ligerDialog.question('提示内容');
+                     break;
+                 case "error":
+                     $.ligerDialog.error('提示内容');
+                     break;
+                 case "confirm":
+                     $.ligerDialog.confirm('提示内容', function (yes)
+                     {
+                         alert(yes);
+                     });
+                     break;
+                 case "warning":
+                     $.ligerDialog.warning('提示内容', function (type)
+                     {
+                         alert(type);
+                     });
+                     break;
+                 case "prompt":
+                     $.ligerDialog.prompt('提示内容', function (yes, value)
+                     {
+                         if (yes) alert(value);
+                     }); 
+                     break;
+                 case "prompt2":
+                     $.ligerDialog.prompt('提示内容','初始化值', function (yes, value)
+                     {
+                         if (yes) alert(value);
+                     });
+                     break;
+                 case "prompt3":
+                     $.ligerDialog.prompt('提示内容', true, function (yes, value)
+                     {
+                         if (yes) alert(value);
+                     });
+                     break;
+                 case "prompt4":
+                     $.ligerDialog.prompt('提示内容', '初始化多选框值', true, function (yes, value)
+                     {
+                         if (yes) alert(value);
+                     });
+                     break;
+                 case "waitting":
+                     $.ligerDialog.waitting('正在保存中,请稍候...');
+                     setTimeout(function ()
+                     {
+                         $.ligerDialog.closeWaitting();
+                     }, 2000);
+                     break;
+                 case "waitting2":
+                     var manager = $.ligerDialog.waitting('正在保存中2,请稍候...');
+                     setTimeout(function ()
+                     {
+                         manager.close();
+                     }, 1000);
+                     break;
+             }
+         }
+     </script>
+</head>
+<body style="padding:10px;  padding-bottom:40px; ">
+<div class="l-case-title">实例一：$.ligerDialog.alert('提示内容', '提示', type); | $.ligerDialog.alert('提示内容', type);  </div>
+    
+    <input type="button" onclick="f_alert('success')" title="type:success" value="open success dialog" />
+
+    <input type="button" onclick="f_alert('error')" title="type:error" value="open error dialog" />
+
+    <input type="button" onclick="f_alert('warn')" title="type:warn" value="open warn dialog" />
+
+    <input type="button" onclick="f_alert('question')" title="type:question" value="open question dialog" />
+     
+     <input type="button" onclick="f_alert('none')" title="type:none" value="open dialog without image icon" />
+
+<div class="l-case-title">实例二：$.ligerDialog.success('提示内容')</div>
+
+
+ <input type="button" onclick="f_alert2('success')" value="open success dialog" />
+
+ <div  class="l-case-title">实例三：$.ligerDialog.warn('提示内容')</div>
+
+ <input type="button" onclick="f_alert2('warn')" value="open warn dialog" />
+
+  <div  class="l-case-title">实例四：$.ligerDialog.error('提示内容')</div>
+
+ <input type="button" onclick="f_alert2('error')" value="open error dialog" />
+
+   <div  class="l-case-title">实例五：$.ligerDialog.question('提示内容')</div>
+
+ <input type="button" onclick="f_alert2('question')"value="open question dialog" />
+
+
+    <div  class="l-case-title">实例六：$.ligerDialog.confirm('提示内容', function (yes)
+                     {
+                         alert(yes);
+                     });</div>
+
+ <input type="button" onclick="f_alert2('confirm')"value="open confirm dialog" />
+
+    <div  class="l-case-title">实例七：$.ligerDialog.warning('提示内容', function (type)
+                     {
+                         alert(type);
+                     });</div>
+
+ <input type="button" onclick="f_alert2('warning')"value="open warning dialog" />
+
+     <div  class="l-case-title">实例八：$.ligerDialog.prompt('提示内容', function (yes,value)
+                     {
+                         if(yes) alert(value);
+                     });</div>
+
+ <input type="button" onclick="f_alert2('prompt')"value="open prompt dialog" />
+
+      <div  class="l-case-title">实例九：$.ligerDialog.prompt('提示内容','初始化值', function (yes,value)
+                     {
+                         if(yes) alert(value);
+                     });</div>
+
+
+ <input type="button" onclick="f_alert2('prompt2')"value="open prompt dialog" />
+
+
+       <div  class="l-case-title">实例十：$.ligerDialog.prompt('提示内容',true, function (yes,value)
+                     {
+                         if(yes) alert(value);
+                     });</div>
+
+
+ <input type="button" onclick="f_alert2('prompt3')"value="open prompt dialog" />
+
+
+       <div  class="l-case-title">实例十一：$.ligerDialog.prompt('提示内容','初始化多选框值',true, function (yes,value)
+                     {
+                         if(yes) alert(value);
+                     });</div>
+
+ <input type="button" onclick="f_alert2('prompt3')"value="open prompt dialog" />
+
+
+       <div  class="l-case-title">实例十二：$.ligerDialog.waitting('正在保存中,请稍候...');
+                     setTimeout(function ()
+                     {
+                         $.ligerDialog.closeWaitting();
+                     }, 2000);</div>
+ <input type="button" onclick="f_alert2('waitting')"value="open waitting dialog" />
+
+
+       <div  class="l-case-title">实例十二：var manager = $.ligerDialog.waitting('正在保存中2,请稍候...');
+                     setTimeout(function ()
+                     {
+                         manager.close();
+                     }, 1000);</div>
+                      <input type="button" onclick="f_alert2('waitting2')"value="open waitting dialog" />
+
+
+
+
+      <div style="display:none;">
+      
+</div>
+</body>
+</html>
+    

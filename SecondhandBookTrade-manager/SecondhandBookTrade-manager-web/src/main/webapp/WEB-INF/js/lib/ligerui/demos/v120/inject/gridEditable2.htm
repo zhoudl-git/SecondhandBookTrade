@@ -1,0 +1,53 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title></title>
+    <link href="../../../lib/ligerUI/skins/Aqua/css/ligerui-all.css" rel="stylesheet" type="text/css" />
+    <link href="../../../lib/ligerUI/skins/Gray/css/all.css" rel="stylesheet" />
+    <script src="../../../lib/jquery/jquery-1.9.0.min.js" type="text/javascript"></script> 
+<script src="../../../lib/ligerUI/js/ligerui.all.js"></script>
+    <script src="../../grid/CustomersData.js" type="text/javascript"></script>
+
+</head>
+<body style="padding: 10px">
+     <div class="liger-grid" id="grid1" data-data="CustomersData" data-enabledEdit="true">
+        <ul class="columns">
+            <li data-name="CustomerID" data-width="200" data-display="客户"> 
+                <input class="editor" data-type="text" />
+            </li>
+            <li data-name="CompanyName" data-width="200" data-display="公司">
+                <input class="editor" data-type="text" />
+            </li>
+            <li data-name="CompanyName2" data-width="200" data-display="我的日期">
+                <input class="editor" data-type="date" />
+            </li>
+            <li data-display="国家" data-name="Country">
+                <input class="editor" data-type="select" data-data="getCountryData()" data-textField="Country" data-valueField="Country" /> 
+            </li>
+            <li data-display="国家" data-name="Country2">
+                <input class="editor" data-type="select" data-columns="[{header:'列1',name:'Country'},{header:'列2',name:'Country'}]" data-data="getCountryData()"  data-isMultiSelect="true" data-textField="Country" data-valueField="Country" /> 
+            </li>
+        </ul> 
+     </div>  
+    <script>
+
+        function getCountryData() {
+            var data = [];
+            $(CustomersData.Rows).each(function () {
+                if (!exist(this.Country, data)) {
+                    data.push(this);
+                }
+            }); 
+            return data;
+            function exist(country, data) {
+                for (var i = 0, l = data.length; i < l; i++) {
+                    if (data[i].Country == country) return true;
+                }
+                return false;
+            }
+        }
+
+    </script>
+</body>
+</html>

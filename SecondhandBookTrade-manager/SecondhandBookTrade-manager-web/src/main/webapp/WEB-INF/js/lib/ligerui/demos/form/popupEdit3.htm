@@ -1,0 +1,68 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <link href="../../lib/ligerUI/skins/Aqua/css/ligerui-all.css" rel="stylesheet" type="text/css" />
+    <link href="../../lib/ligerUI/skins/Gray/css/all.css" rel="stylesheet" /> 
+    <script src="../../lib/jquery/jquery-1.9.0.min.js" type="text/javascript"></script>  
+    <script src="../../lib/ligerUI/js/ligerui.all.js" type="text/javascript"></script> 
+     <script src="../grid/CustomersData.js" type="text/javascript"></script> 
+    <script src="../../lib/ligerUI/js/plugins/ligerForm.js"></script>
+    <script src="../../lib/ligerUI/js/plugins/ligerPopupEdit.js"></script>
+</head>
+<body style="padding:10px"> 
+ 
+  <div id="form1"></div>
+
+    <br />
+
+    <div id="btn1"></div>
+
+        <script type="text/javascript">
+            
+            $("#btn1").ligerButton({
+                text: '获取值',
+                click: function () {
+                    var value = liger.get("popTxt").getValue();
+                    alert(value);
+                }
+            });
+
+
+            $("#form1").ligerForm({
+                fields:[
+                    {
+                        type: 'popup',id:'popTxt', name: 'popTxt', label: '客户', editor: {
+                            condition: {
+                                prefixID: 'condtion_',
+                                fields: [{ name: 'CompanyName',type:'text', label: '客户' }]
+                            },
+                            grid: getGridOptions(true),
+                            valueField: 'CustomerID',
+                            textField: 'CustomerID',
+                            width: 600
+                        }
+                    }
+                ]
+            });
+
+            function getGridOptions(checkbox) {
+                var options = {
+                    columns: [
+                    { display: '顾客', name: 'CustomerID', align: 'left', width: 100, minWidth: 60 },
+                    { display: '公司名', name: 'CompanyName', minWidth: 120, width: 100 },
+                    { display: '联系名', name: 'ContactName', minWidth: 140, width: 100 },
+                    { display: '电话', name: 'Phone', width: 100 },
+                    { display: '城市', name: 'City', width: 100 },
+                    { display: '国家', name: 'Country', width: 100 }
+                    ], switchPageSizeApplyComboBox: false,
+                    data: $.extend({}, CustomersData),
+                    pageSize: 10,
+                    checkbox: checkbox
+                };
+                return options;
+            }
+        </script>
+</body>
+</html>

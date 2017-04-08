@@ -1,0 +1,43 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+     <script src="../../lib/jquery/jquery-1.9.0.min.js" type="text/javascript"></script>
+    <link href="../../lib/ligerUI/skins/Aqua/css/ligerui-all.css" rel="stylesheet" type="text/css" />
+    <script src="../../lib/ligerUI/js/core/base.js" type="text/javascript"></script>
+    <script src="../../lib/ligerUI/js/plugins/ligerTree.js" type="text/javascript"></script>
+    <script type="text/javascript">
+
+        var tree, t;
+        $(function ()
+        {
+            tree = $("#tree1").ligerTree({
+                url: 'treeBigData.ashx',
+                nodeWidth: 200,
+                checkbox: false,
+                idFieldName: 'id',
+                slide: false,
+                onAfterAppend: function ()
+                {
+                    alert("耗时:" + (new Date() - t) + "毫秒");
+                },
+                onBeforeAppend: function ()
+                {
+                    t = new Date();
+                }
+            });
+        });
+    </script>
+</head>
+<body style="padding:10px">   
+    <div style="width:200px; height:300px; margin:10px;  border:1px solid #ccc; overflow:auto;  ">
+    <ul id="tree1"></ul> 
+    </div> 
+  <div id="message">
+    设置节点数据isexpand = false, delayExpand = true 就可以实现了延迟加载Dom
+    </div>
+        <div style="display:none">
+     
+    </div>
+</body>
+</html>

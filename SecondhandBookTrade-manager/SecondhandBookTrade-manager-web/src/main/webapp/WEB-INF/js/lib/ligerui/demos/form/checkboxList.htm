@@ -1,0 +1,62 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+   <title>复选框列表</title>     
+    <meta name="keywords" content="免费控件,免费UI控件,免费开源UI,免费开源UI控件,免费开源UI框架,复选框列表" />  
+    <link href="../../lib/ligerUI/skins/Aqua/css/ligerui-all.css" rel="stylesheet" type="text/css" />
+    <style type="text/css">
+    </style>
+    <script src="../../lib/jquery/jquery-1.9.0.min.js" type="text/javascript"></script>  
+    <script src="../../lib/ligerUI/js/core/base.js" type="text/javascript"></script> 
+    <script src="../../lib/ligerUI/js/core/inject.js" type="text/javascript"></script> 
+    <script src="../../lib/ligerUI/js/plugins/ligerCheckBoxList.js" type="text/javascript"></script>
+    <script src="../../lib/ligerUI/js/plugins/ligerButton.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        $(function ()
+        { 
+            var dataGrid = [
+                { id: 1, name: '李三', sex: '男' }, 
+                { id: 2, name: '李四', sex: '女' },
+                { id: 3, name: '赵武', sex: '女' },
+                { id: 4, name: '陈留', sex: '女' },
+                { id: 5, name: '陈留2', sex: '女' },
+                { id: 7, name: '陈留3', sex: '女' },
+                { id: 6, name: '陈留4', sex: '女' }
+                ]; 
+            $("#checkboxlist1").ligerCheckBoxList({
+                data: dataGrid,
+                textField: 'name' 
+            });
+        });
+
+        function getValue()
+        {
+            var value = liger.get("checkboxlist1").getValue();
+            alert(value);
+        }
+        function setValue()
+        {
+            liger.get("checkboxlist1").setValue("2;4");
+        }
+        function setDisabled()
+        {
+            liger.get("checkboxlist1").set('disabled', true);
+        }
+        function setEnabled()
+        {
+            liger.get("checkboxlist1").set('disabled', false);
+        }
+    </script>
+</head>
+<body style="padding:10px"> 
+  <div id="checkboxlist1"></div>
+    <br />
+     <div class="liger-button" data-click="getValue" style="margin-top:9px;">获取值</div>
+ <div class="liger-button" data-click="setValue" style="margin-top:4px;">设置值(2;4)</div>
+    
+ <div class="liger-button" data-click="setDisabled" style="margin-top:4px;">设置不可用</div>
+    
+ <div class="liger-button" data-click="setEnabled" style="margin-top:4px;">设置可用</div>
+</body>
+</html>

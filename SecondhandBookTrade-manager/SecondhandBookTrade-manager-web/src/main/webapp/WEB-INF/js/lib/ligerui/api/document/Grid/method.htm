@@ -1,0 +1,1109 @@
+﻿<html>
+	<head>
+		<title>Grid - jQuery LigerUI API</title>      
+		<meta http-equiv="content-type" content="text/html; charset=UTF-8" /> 
+		<link href="../common.css" rel="stylesheet" type="text/css" />
+		<script src="../core.js" type="text/javascript"></script> 
+	</head>
+	<body>
+		<h2>方法列表</h2> 
+
+		<table class="apitable" cellpadding="0" cellspacing="0">
+			 <thead>
+            <tr> 
+				<td>方法</td>
+				<td>参数</td> 
+				<td>描述</td> 
+			</tr>
+            </thead>
+            <tbody>
+					<tr> 
+				<td>
+                        <a name="method_loadData(parm)" key="loadData(parm)"  class="linkname"></a>
+                                                                        loadData(parm)
+                                            				</td> 
+                <td>
+                                        parm:
+1,Function过滤函数,或者分页数
+2,Bool是否加载服务器数据
+3,Object data
+                    				</td> 
+                <td class="description">
+                                        加载数据,同名方法reload()
+                    				</td>  
+			</tr>
+					<tr> 
+				<td>
+                        <a name="method_loadServerData(param, clause)" key="loadServerData(param, clause)"  class="linkname"></a>
+                                                                        loadServerData(param, clause)
+                                            				</td> 
+                <td>
+                                        parm:ajax参数
+clause:过滤函数
+                    				</td> 
+                <td class="description">
+                                        加载服务器数据
+                    				</td>  
+			</tr>
+					<tr> 
+				<td>
+                        <a name="method_toggleLoading(show)" key="toggleLoading(show)"  class="linkname"></a>
+                                                                        toggleLoading(show)
+                                            				</td> 
+                <td>
+                                        show:显示或者隐藏
+                    				</td> 
+                <td class="description">
+                                        显示/隐藏加载层
+                    				</td>  
+			</tr>
+					<tr> 
+				<td>
+                        <a name="method_beginEdit(rowParm)" key="beginEdit(rowParm)"  class="linkname"></a>
+                                                                        beginEdit(rowParm)
+                                            				</td> 
+                <td>
+                                        rowParm:rowid或者rowdata
+                    				</td> 
+                <td class="description">
+                                        进入编辑状态
+                    				</td>  
+			</tr>
+					<tr> 
+				<td>
+                        <a name="method_cancelEdit(rowParm)" key="cancelEdit(rowParm)"  class="linkname"></a>
+                                                                        cancelEdit(rowParm)
+                                            				</td> 
+                <td>
+                                        rowParm:rowid或者rowdata
+                    				</td> 
+                <td class="description">
+                                        结束编辑
+                    				</td>  
+			</tr>
+					<tr> 
+				<td>
+                        <a name="method_addEditRow(rowdata)" key="addEditRow(rowdata)"  class="linkname"></a>
+                                                                        addEditRow(rowdata)
+                                            				</td> 
+                <td>
+                                        &nbsp;
+                    				</td> 
+                <td class="description">
+                                        新设一个编辑行
+                    				</td>  
+			</tr>
+					<tr> 
+				<td>
+                        <a name="method_submitEdit(rowParm)" key="submitEdit(rowParm)"  class="linkname"></a>
+                                                                        submitEdit(rowParm)
+                                            				</td> 
+                <td>
+                                        &nbsp;
+                    				</td> 
+                <td class="description">
+                                        提交编辑
+                    				</td>  
+			</tr>
+					<tr> 
+				<td>
+                        <a name="method_endEdit(rowParm)" key="endEdit(rowParm)"  class="linkname"></a>
+                                                                        endEdit(rowParm)
+                                            				</td> 
+                <td>
+                                        &nbsp;
+                    				</td> 
+                <td class="description">
+                                        结束编辑
+                    				</td>  
+			</tr>
+					<tr> 
+				<td>
+                        <a name="method_setWidth(width)" key="setWidth(width)"  class="linkname"></a>
+                                                                        setWidth(width)
+                                            				</td> 
+                <td>
+                                        &nbsp;
+                    				</td> 
+                <td class="description">
+                                        设置宽度
+                    				</td>  
+			</tr>
+					<tr> 
+				<td>
+                        <a name="method_setHeight(height)" key="setHeight(height)"  class="linkname"></a>
+                                                                        setHeight(height)
+                                            				</td> 
+                <td>
+                                        &nbsp;
+                    				</td> 
+                <td class="description">
+                                        设置高度
+                    				</td>  
+			</tr>
+					<tr> 
+				<td>
+                        <a name="method_enabledCheckbox()" key="enabledCheckbox()"  class="linkname"></a>
+                                                                        enabledCheckbox()
+                                            				</td> 
+                <td>
+                                        &nbsp;
+                    				</td> 
+                <td class="description">
+                                        是否启用复选框
+                    				</td>  
+			</tr>
+					<tr> 
+				<td>
+                        <a name="method_enabledFrozen()" key="enabledFrozen()"  class="linkname"></a>
+                                                                        enabledFrozen()
+                                            				</td> 
+                <td>
+                                        &nbsp;
+                    				</td> 
+                <td class="description">
+                                        是否冻结列
+                    				</td>  
+			</tr>
+					<tr> 
+				<td>
+                        <a name="method_enabledDetailEdit()" key="enabledDetailEdit()"  class="linkname"></a>
+                                                                        enabledDetailEdit()
+                                            				</td> 
+                <td>
+                                        &nbsp;
+                    				</td> 
+                <td class="description">
+                                        是否启用明细编辑
+                    				</td>  
+			</tr>
+					<tr> 
+				<td>
+                        <a name="method_enabledDetail()" key="enabledDetail()"  class="linkname"></a>
+                                                                        enabledDetail()
+                                            				</td> 
+                <td>
+                                        &nbsp;
+                    				</td> 
+                <td class="description">
+                                        是否启用明细
+                    				</td>  
+			</tr>
+					<tr> 
+				<td>
+                        <a name="method_enabledGroup()" key="enabledGroup()"  class="linkname"></a>
+                                                                        enabledGroup()
+                                            				</td> 
+                <td>
+                                        &nbsp;
+                    				</td> 
+                <td class="description">
+                                        是否分组
+                    				</td>  
+			</tr>
+					<tr> 
+				<td>
+                        <a name="method_deleteSelectedRow()" key="deleteSelectedRow()"  class="linkname"></a>
+                                                                        deleteSelectedRow()
+                                            				</td> 
+                <td>
+                                        &nbsp;
+                    				</td> 
+                <td class="description">
+                                        删除选择的行
+                    				</td>  
+			</tr>
+					<tr> 
+				<td>
+                        <a name="method_removeRange(rowArr)" key="removeRange(rowArr)"  class="linkname"></a>
+                                                                        removeRange(rowArr)
+                                            				</td> 
+                <td>
+                                        &nbsp;
+                    				</td> 
+                <td class="description">
+                                        移除行集合
+                    				</td>  
+			</tr>
+					<tr> 
+				<td>
+                        <a name="method_remove(rowParm)" key="remove(rowParm)"  class="linkname"></a>
+                                                                        remove(rowParm)
+                                            				</td> 
+                <td>
+                                        &nbsp;
+                    				</td> 
+                <td class="description">
+                                        移除
+                    				</td>  
+			</tr>
+					<tr> 
+				<td>
+                        <a name="method_deleteRange(rowArr)" key="deleteRange(rowArr)"  class="linkname"></a>
+                                                                        deleteRange(rowArr)
+                                            				</td> 
+                <td>
+                                        &nbsp;
+                    				</td> 
+                <td class="description">
+                                        删除行集合
+                    				</td>  
+			</tr>
+					<tr> 
+				<td>
+                        <a name="method_deleteRow(rowParm)" key="deleteRow(rowParm)"  class="linkname"></a>
+                                                                        deleteRow(rowParm)
+                                            				</td> 
+                <td>
+                                        &nbsp;
+                    				</td> 
+                <td class="description">
+                                        删除行
+                    				</td>  
+			</tr>
+					<tr> 
+				<td>
+                        <a name="method_updateCell(arg, value, rowParm)" key="updateCell(arg, value, rowParm)"  class="linkname"></a>
+                                                                        <a href="#link100" title="点击查看示例">updateCell(arg, value, rowParm)</a>
+                                            				</td> 
+                <td>
+                                        arg: column index、column name、column、单元格value: 值rowParm:rowindex或者rowdata
+                    				</td> 
+                <td class="description">
+                                        更新单元格
+                    				</td>  
+			</tr>
+					<tr> 
+				<td>
+                        <a name="method_addRows(rowdataArr, neardata, isBefore, parentRowData)" key="addRows(rowdataArr, neardata, isBefore, parentRowData)"  class="linkname"></a>
+                                                                        addRows(rowdataArr, neardata, isBefore, parentRowData)
+                                            				</td> 
+                <td>
+                                        &nbsp;
+                    				</td> 
+                <td class="description">
+                                        增加行集合
+                    				</td>  
+			</tr>
+					<tr> 
+				<td>
+                        <a name="method_move(from, to, isAfter)" key="move(from, to, isAfter)"  class="linkname"></a>
+                                                                        move(from, to, isAfter)
+                                            				</td> 
+                <td>
+                                        &nbsp;
+                    				</td> 
+                <td class="description">
+                                        移动行
+                    				</td>  
+			</tr>
+					<tr> 
+				<td>
+                        <a name="method_moveRange(from, to, isAfter)" key="moveRange(from, to, isAfter)"  class="linkname"></a>
+                                                                        moveRange(from, to, isAfter)
+                                            				</td> 
+                <td>
+                                        &nbsp;
+                    				</td> 
+                <td class="description">
+                                        移动行集合
+                    				</td>  
+			</tr>
+					<tr> 
+				<td>
+                        <a name="method_up(rowParm)" key="up(rowParm)"  class="linkname"></a>
+                                                                        up(rowParm)
+                                            				</td> 
+                <td>
+                                        &nbsp;
+                    				</td> 
+                <td class="description">
+                                        上移
+                    				</td>  
+			</tr>
+					<tr> 
+				<td>
+                        <a name="method_down(rowParm)" key="down(rowParm)"  class="linkname"></a>
+                                                                        down(rowParm)
+                                            				</td> 
+                <td>
+                                        &nbsp;
+                    				</td> 
+                <td class="description">
+                                        下移
+                    				</td>  
+			</tr>
+					<tr> 
+				<td>
+                        <a name="method_addRow(rowdata, neardata, isBefore, parentRowData)" key="addRow(rowdata, neardata, isBefore, parentRowData)"  class="linkname"></a>
+                                                                        addRow(rowdata, neardata, isBefore, parentRowData)
+                                            				</td> 
+                <td>
+                                        &nbsp;
+                    				</td> 
+                <td class="description">
+                                        增加行
+                    				</td>  
+			</tr>
+					<tr> 
+				<td>
+                        <a name="method_updateRow(rowDom, newRowData)" key="updateRow(rowDom, newRowData)"  class="linkname"></a>
+                                                                        <a href="#link107" title="点击查看示例">updateRow(rowDom, newRowData)</a>
+                                            				</td> 
+                <td>
+                                        &nbsp;
+                    				</td> 
+                <td class="description">
+                                        更新行
+                    				</td>  
+			</tr>
+					<tr> 
+				<td>
+                        <a name="method_setCellEditing(rowdata, column, editing)" key="setCellEditing(rowdata, column, editing)"  class="linkname"></a>
+                                                                        setCellEditing(rowdata, column, editing)
+                                            				</td> 
+                <td>
+                                        &nbsp;
+                    				</td> 
+                <td class="description">
+                                        设置单元格为编辑状态
+                    				</td>  
+			</tr>
+					<tr> 
+				<td>
+                        <a name="method_reRender(e)" key="reRender(e)"  class="linkname"></a>
+                                                                        reRender(e)
+                                            				</td> 
+                <td>
+                                        &nbsp;
+                    				</td> 
+                <td class="description">
+                                        重新渲染
+                    				</td>  
+			</tr>
+					<tr> 
+				<td>
+                        <a name="method_getData(status, removeStatus)" key="getData(status, removeStatus)"  class="linkname"></a>
+                                                                        getData(status, removeStatus)
+                                            				</td> 
+                <td>
+                                        &nbsp;
+                    				</td> 
+                <td class="description">
+                                        获取数据
+                    				</td>  
+			</tr>
+					<tr> 
+				<td>
+                        <a name="method_formatRecord(o, removeStatus)" key="formatRecord(o, removeStatus)"  class="linkname"></a>
+                                                                        formatRecord(o, removeStatus)
+                                            				</td> 
+                <td>
+                                        &nbsp;
+                    				</td> 
+                <td class="description">
+                                        格式化数据
+                    				</td>  
+			</tr>
+					<tr> 
+				<td>
+                        <a name="method_getUpdated()" key="getUpdated()"  class="linkname"></a>
+                                                                        getUpdated()
+                                            				</td> 
+                <td>
+                                        &nbsp;
+                    				</td> 
+                <td class="description">
+                                        获取更新的数据
+                    				</td>  
+			</tr>
+					<tr> 
+				<td>
+                        <a name="method_getDeleted()" key="getDeleted()"  class="linkname"></a>
+                                                                        getDeleted()
+                                            				</td> 
+                <td>
+                                        &nbsp;
+                    				</td> 
+                <td class="description">
+                                        获取删除的数据
+                    				</td>  
+			</tr>
+					<tr> 
+				<td>
+                        <a name="method_getAdded()" key="getAdded()"  class="linkname"></a>
+                                                                        getAdded()
+                                            				</td> 
+                <td>
+                                        &nbsp;
+                    				</td> 
+                <td class="description">
+                                        获取新增的数据
+                    				</td>  
+			</tr>
+					<tr> 
+				<td>
+                        <a name="method_getColumn()" key="getColumn()"  class="linkname"></a>
+                                                                        getColumn()
+                                            				</td> 
+                <td>
+                                        &nbsp;
+                    				</td> 
+                <td class="description">
+                                        获取列
+                    				</td>  
+			</tr>
+					<tr> 
+				<td>
+                        <a name="method_isTotalSummary()" key="isTotalSummary()"  class="linkname"></a>
+                                                                        isTotalSummary()
+                                            				</td> 
+                <td>
+                                        &nbsp;
+                    				</td> 
+                <td class="description">
+                                        是否汇总
+                    				</td>  
+			</tr>
+					<tr> 
+				<td>
+                        <a name="method_getColumns(columnLevel)" key="getColumns(columnLevel)"  class="linkname"></a>
+                                                                        getColumns(columnLevel)
+                                            				</td> 
+                <td>
+                                        &nbsp;
+                    				</td> 
+                <td class="description">
+                                        获取列集合
+                    				</td>  
+			</tr>
+					<tr> 
+				<td>
+                        <a name="method_changeSort(columnName, sortOrder)" key="changeSort(columnName, sortOrder)"  class="linkname"></a>
+                                                                        changeSort(columnName, sortOrder)
+                                            				</td> 
+                <td>
+                                        &nbsp;
+                    				</td> 
+                <td class="description">
+                                        改变排序
+                    				</td>  
+			</tr>
+					<tr> 
+				<td>
+                        <a name="method_changePage(ctype)" key="changePage(ctype)"  class="linkname"></a>
+                                                                        changePage(ctype)
+                                            				</td> 
+                <td>
+                                        ctype:first|prev|next|last|input
+                    				</td> 
+                <td class="description">
+                                        改变分页
+                    				</td>  
+			</tr>
+					<tr> 
+				<td>
+                        <a name="method_getSelectedRow()" key="getSelectedRow()"  class="linkname"></a>
+                                                                        getSelectedRow()
+                                            				</td> 
+                <td>
+                                        &nbsp;
+                    				</td> 
+                <td class="description">
+                                        获取选择行
+                    				</td>  
+			</tr>
+					<tr> 
+				<td>
+                        <a name="method_getSelectedRows()" key="getSelectedRows()"  class="linkname"></a>
+                                                                        getSelectedRows()
+                                            				</td> 
+                <td>
+                                        &nbsp;
+                    				</td> 
+                <td class="description">
+                                        获取选择行集合
+                    				</td>  
+			</tr>
+					<tr> 
+				<td>
+                        <a name="method_getRow(rowid)" key="getRow(rowid)"  class="linkname"></a>
+                                                                        getRow(rowid)
+                                            				</td> 
+                <td>
+                                        &nbsp;
+                    				</td> 
+                <td class="description">
+                                        获取行
+                    				</td>  
+			</tr>
+					<tr> 
+				<td>
+                        <a name="method_toggleCol(columnparm, visible, toggleByPopup)" key="toggleCol(columnparm, visible, toggleByPopup)"  class="linkname"></a>
+                                                                        toggleCol(columnparm, visible, toggleByPopup)
+                                            				</td> 
+                <td>
+                                        显示隐藏列
+                    				</td> 
+                <td class="description">
+                                        切换列
+                    				</td>  
+			</tr>
+					<tr> 
+				<td>
+                        <a name="method_setColumnWidth(columnparm, newwidth)" key="setColumnWidth(columnparm, newwidth)"  class="linkname"></a>
+                                                                        <a href="#link129" title="点击查看示例">setColumnWidth(columnparm, newwidth)</a>
+                                            				</td> 
+                <td>
+                                        &nbsp;
+                    				</td> 
+                <td class="description">
+                                        设置列宽
+                    				</td>  
+			</tr>
+					<tr> 
+				<td>
+                        <a name="method_changeHeaderText(columnparm, headerText)" key="changeHeaderText(columnparm, headerText)"  class="linkname"></a>
+                                                                        changeHeaderText(columnparm, headerText)
+                                            				</td> 
+                <td>
+                                        &nbsp;
+                    				</td> 
+                <td class="description">
+                                        改变表头
+                    				</td>  
+			</tr>
+					<tr> 
+				<td>
+                        <a name="method_changeCol(from, to, isAfter)" key="changeCol(from, to, isAfter)"  class="linkname"></a>
+                                                                        changeCol(from, to, isAfter)
+                                            				</td> 
+                <td>
+                                        &nbsp;
+                    				</td> 
+                <td class="description">
+                                        改变列的位置
+                    				</td>  
+			</tr>
+					<tr> 
+				<td>
+                        <a name="method_collapseDetail(rowParm)" key="collapseDetail(rowParm)"  class="linkname"></a>
+                                                                        collapseDetail(rowParm)
+                                            				</td> 
+                <td>
+                                        &nbsp;
+                    				</td> 
+                <td class="description">
+                                        收缩明细框
+                    				</td>  
+			</tr>
+					<tr> 
+				<td>
+                        <a name="method_extendDetail(rowParm)" key="extendDetail(rowParm)"  class="linkname"></a>
+                                                                        extendDetail(rowParm)
+                                            				</td> 
+                <td>
+                                        &nbsp;
+                    				</td> 
+                <td class="description">
+                                        展开明细框
+                    				</td>  
+			</tr>
+					<tr> 
+				<td>
+                        <a name="method_getParent(rowParm)" key="getParent(rowParm)"  class="linkname"></a>
+                                                                        getParent(rowParm)
+                                            				</td> 
+                <td>
+                                        &nbsp;
+                    				</td> 
+                <td class="description">
+                                        获取父节点数据
+                    				</td>  
+			</tr>
+					<tr> 
+				<td>
+                        <a name="method_getChildren(rowParm, deep)" key="getChildren(rowParm, deep)"  class="linkname"></a>
+                                                                        getChildren(rowParm, deep)
+                                            				</td> 
+                <td>
+                                        rowParm:行参数,rowid或者rowdata
+deep:递归加载
+                    				</td> 
+                <td class="description">
+                                        获取子节点数据
+                    				</td>  
+			</tr>
+					<tr> 
+				<td>
+                        <a name="method_isLeaf(rowParm)" key="isLeaf(rowParm)"  class="linkname"></a>
+                                                                        isLeaf(rowParm)
+                                            				</td> 
+                <td>
+                                        &nbsp;
+                    				</td> 
+                <td class="description">
+                                        是否叶节点
+                    				</td>  
+			</tr>
+					<tr> 
+				<td>
+                        <a name="method_hasChildren(rowParm)" key="hasChildren(rowParm)"  class="linkname"></a>
+                                                                        hasChildren(rowParm)
+                                            				</td> 
+                <td>
+                                        &nbsp;
+                    				</td> 
+                <td class="description">
+                                        是否包括子节点
+                    				</td>  
+			</tr>
+					<tr> 
+				<td>
+                        <a name="method_appendRange(rows, parentdata, neardata, isBefore)" key="appendRange(rows, parentdata, neardata, isBefore)"  class="linkname"></a>
+                                                                        appendRange(rows, parentdata, neardata, isBefore)
+                                            				</td> 
+                <td>
+                                        &nbsp;
+                    				</td> 
+                <td class="description">
+                                        附加行集合
+                    				</td>  
+			</tr>
+					<tr> 
+				<td>
+                        <a name="method_appendRow(rowdata, parentdata, neardata, isBefore)" key="appendRow(rowdata, parentdata, neardata, isBefore)"  class="linkname"></a>
+                                                                        appendRow(rowdata, parentdata, neardata, isBefore)
+                                            				</td> 
+                <td>
+                                        &nbsp;
+                    				</td> 
+                <td class="description">
+                                        附加行
+                    				</td>  
+			</tr>
+					<tr> 
+				<td>
+                        <a name="method_upgrade(rowParm)" key="upgrade(rowParm)"  class="linkname"></a>
+                                                                        upgrade(rowParm)
+                                            				</td> 
+                <td>
+                                        &nbsp;
+                    				</td> 
+                <td class="description">
+                                        升级(树)
+                    				</td>  
+			</tr>
+					<tr> 
+				<td>
+                        <a name="method_demotion(rowParm)" key="demotion(rowParm)"  class="linkname"></a>
+                                                                        demotion(rowParm)
+                                            				</td> 
+                <td>
+                                        &nbsp;
+                    				</td> 
+                <td class="description">
+                                        降级(树)
+                    				</td>  
+			</tr>
+					<tr> 
+				<td>
+                        <a name="method_collapse(rowParm)" key="collapse(rowParm)"  class="linkname"></a>
+                                                                        collapse(rowParm)
+                                            				</td> 
+                <td>
+                                        &nbsp;
+                    				</td> 
+                <td class="description">
+                                        收缩(树)
+                    				</td>  
+			</tr>
+					<tr> 
+				<td>
+                        <a name="method_expand(rowParm)" key="expand(rowParm)"  class="linkname"></a>
+                                                                        expand(rowParm)
+                                            				</td> 
+                <td>
+                                        &nbsp;
+                    				</td> 
+                <td class="description">
+                                        展开(树)
+                    				</td>  
+			</tr>
+					<tr> 
+				<td>
+                        <a name="method_toggle(rowParm)" key="toggle(rowParm)"  class="linkname"></a>
+                                                                        toggle(rowParm)
+                                            				</td> 
+                <td>
+                                        &nbsp;
+                    				</td> 
+                <td class="description">
+                                        收缩/展开(树)
+                    				</td>  
+			</tr>
+					<tr> 
+				<td>
+                        <a name="method_select(rowParm)" key="select(rowParm)"  class="linkname"></a>
+                                                                        select(rowParm)
+                                            				</td> 
+                <td>
+                                        &nbsp;
+                    				</td> 
+                <td class="description">
+                                        选择行
+                    				</td>  
+			</tr>
+					<tr> 
+				<td>
+                        <a name="method_unselect(rowParm)" key="unselect(rowParm)"  class="linkname"></a>
+                                                                        unselect(rowParm)
+                                            				</td> 
+                <td>
+                                        &nbsp;
+                    				</td> 
+                <td class="description">
+                                        取消选择行
+                    				</td>  
+			</tr>
+					<tr> 
+				<td>
+                        <a name="method_isSelected(rowParm)" key="isSelected(rowParm)"  class="linkname"></a>
+                                                                        isSelected(rowParm)
+                                            				</td> 
+                <td>
+                                        &nbsp;
+                    				</td> 
+                <td class="description">
+                                        是否已经选择
+                    				</td>  
+			</tr>
+					<tr> 
+				<td>
+                        <a name="method_enabledTotal()" key="enabledTotal()"  class="linkname"></a>
+                                                                        enabledTotal()
+                                            				</td> 
+                <td>
+                                        &nbsp;
+                    				</td> 
+                <td class="description">
+                                        是否启用汇总
+                    				</td>  
+			</tr>
+					<tr> 
+				<td>
+                        <a name="method_add()" key="add()"  class="linkname"></a>
+                                                                        <a href="#link150" title="点击查看示例">add()</a>
+                                            				</td> 
+                <td>
+                                        &nbsp;
+                    				</td> 
+                <td class="description">
+                                        增加行(同addRow方法)
+                    				</td>  
+			</tr>
+					<tr> 
+				<td>
+                        <a name="method_update()" key="update()"  class="linkname"></a>
+                                                                        update()
+                                            				</td> 
+                <td>
+                                        &nbsp;
+                    				</td> 
+                <td class="description">
+                                        更新行(同updateRow方法)
+                    				</td>  
+			</tr>
+					<tr> 
+				<td>
+                        <a name="method_append()" key="append()"  class="linkname"></a>
+                                                                        append()
+                                            				</td> 
+                <td>
+                                        &nbsp;
+                    				</td> 
+                <td class="description">
+                                        附加行(同appendRow方法)
+                    				</td>  
+			</tr>
+					<tr> 
+				<td>
+                        <a name="method_getSelected()" key="getSelected()"  class="linkname"></a>
+                                                                        getSelected()
+                                            				</td> 
+                <td>
+                                        &nbsp;
+                    				</td> 
+                <td class="description">
+                                        获取选择行(同getSelectedRow方法)
+                    				</td>  
+			</tr>
+					<tr> 
+				<td>
+                        <a name="method_getSelecteds()" key="getSelecteds()"  class="linkname"></a>
+                                                                        getSelecteds()
+                                            				</td> 
+                <td>
+                                        &nbsp;
+                    				</td> 
+                <td class="description">
+                                        获取选择行集合 (同getSelectedRows方法)
+                    				</td>  
+			</tr>
+					<tr> 
+				<td>
+                        <a name="method_reload()" key="reload()"  class="linkname"></a>
+                                                                        reload()
+                                            				</td> 
+                <td>
+                                        &nbsp;
+                    				</td> 
+                <td class="description">
+                                        重新加载 (同loadData方法)
+                    				</td>  
+			</tr>
+					<tr> 
+				<td>
+                        <a name="method_setParm(name,value)" key="setParm(name,value)"  class="linkname"></a>
+                                                                        setParm(name,value)
+                                            				</td> 
+                <td>
+                                        &nbsp;
+                    				</td> 
+                <td class="description">
+                                        设置ajax参数
+                    				</td>  
+			</tr>
+					<tr> 
+				<td>
+                        <a name="method_removeParm(name)" key="removeParm(name)"  class="linkname"></a>
+                                                                        removeParm(name)
+                                            				</td> 
+                <td>
+                                        &nbsp;
+                    				</td> 
+                <td class="description">
+                                        移除ajax参数
+                    				</td>  
+			</tr>
+					<tr> 
+				<td>
+                        <a name="method_getChanges()" key="getChanges()"  class="linkname"></a>
+                                                                        getChanges()
+                                            				</td> 
+                <td>
+                                        &nbsp;
+                    				</td> 
+                <td class="description">
+                                        获取更改过的数据
+                    				</td>  
+			</tr>
+					<tr> 
+				<td>
+                        <a name="method_collapseAll()" key="collapseAll()"  class="linkname"></a>
+                                                                        collapseAll()
+                                            				</td> 
+                <td>
+                                        &nbsp;
+                    				</td> 
+                <td class="description">
+                                        收缩全部
+                    				</td>  
+			</tr>
+					<tr> 
+				<td>
+                        <a name="method_expandAll()" key="expandAll()"  class="linkname"></a>
+                                                                        expandAll()
+                                            				</td> 
+                <td>
+                                        &nbsp;
+                    				</td> 
+                <td class="description">
+                                        展开全部
+                    				</td>  
+			</tr>
+					<tr> 
+				<td>
+                        <a name="method_showFilter()" key="showFilter()"  class="linkname"></a>
+                                                                        showFilter()
+                                            				</td> 
+                <td>
+                                        &nbsp;
+                    				</td> 
+                <td class="description">
+                                        显示高级过滤
+                    				</td>  
+			</tr>
+					<tr> 
+				<td>
+                        <a name="method_endEditToNext()" key="endEditToNext()"  class="linkname"></a>
+                                                                        <a href="#link1276" title="点击查看示例">endEditToNext()</a>
+                                            				</td> 
+                <td>
+                                        &nbsp;
+                    				</td> 
+                <td class="description">
+                                        编辑状态下进入下一个编辑位置
+                    				</td>  
+			</tr>
+					<tr> 
+				<td>
+                        <a name="method_getColumnByName()" key="getColumnByName()"  class="linkname"></a>
+                                                                        <a href="#link1277" title="点击查看示例">getColumnByName()</a>
+                                            				</td> 
+                <td>
+                                        &nbsp;
+                    				</td> 
+                <td class="description">
+                                        根据column name 获取column
+                    				</td>  
+			</tr>
+		        </tbody>
+		</table>
+
+                                                                                                                                                                                                                                                                                                                                                                                                                                                     <a name="link100"></a>
+                <h3 class="method">updateCell(arg, value, rowParm)方法 示例：</h3>
+
+                <p>
+                <pre><div><!--
+
+Code highlighting produced by Actipro CodeHighlighter (freeware)
+http://www.CodeHighlighter.com/
+
+--><span style="color: #008080;"> 1</span> <span style="color: #0000FF;">function</span><span style="color: #000000;"> f_initGrid()
+</span><span style="color: #008080;"> 2</span> <span style="color: #000000;">        {
+</span><span style="color: #008080;"> 3</span> <span style="color: #000000;">            window[</span><span style="color: #000000;">'</span><span style="color: #000000;">g</span><span style="color: #000000;">'</span><span style="color: #000000;">] </span><span style="color: #000000;">=</span><span style="color: #000000;"> 
+</span><span style="color: #008080;"> 4</span> <span style="color: #000000;">            manager </span><span style="color: #000000;">=</span><span style="color: #000000;"> $(</span><span style="color: #000000;">&quot;</span><span style="color: #000000;">#maingrid</span><span style="color: #000000;">&quot;</span><span style="color: #000000;">).ligerGrid({
+</span><span style="color: #008080;"> 5</span> <span style="color: #000000;">                columns: [
+</span><span style="color: #008080;"> 6</span> <span style="color: #000000;">                { display: </span><span style="color: #000000;">'</span><span style="color: #000000;">单价</span><span style="color: #000000;">'</span><span style="color: #000000;">, name: </span><span style="color: #000000;">'</span><span style="color: #000000;">UnitPrice</span><span style="color: #000000;">'</span><span style="color: #000000;">, width: </span><span style="color: #000000;">100</span><span style="color: #000000;">, type: </span><span style="color: #000000;">'</span><span style="color: #000000;">float</span><span style="color: #000000;">'</span><span style="color: #000000;">, editor: { type: </span><span style="color: #000000;">'</span><span style="color: #000000;">int</span><span style="color: #000000;">'</span><span style="color: #000000;"> } },
+</span><span style="color: #008080;"> 7</span> <span style="color: #000000;">               { display: </span><span style="color: #000000;">'</span><span style="color: #000000;">数量</span><span style="color: #000000;">'</span><span style="color: #000000;">, name: </span><span style="color: #000000;">'</span><span style="color: #000000;">Quantity</span><span style="color: #000000;">'</span><span style="color: #000000;">, width: </span><span style="color: #000000;">100</span><span style="color: #000000;">, type: </span><span style="color: #000000;">'</span><span style="color: #000000;">int</span><span style="color: #000000;">'</span><span style="color: #000000;">, editor: { type: </span><span style="color: #000000;">'</span><span style="color: #000000;">int</span><span style="color: #000000;">'</span><span style="color: #000000;">} },
+</span><span style="color: #008080;"> 8</span> <span style="color: #000000;">                { display: </span><span style="color: #000000;">'</span><span style="color: #000000;">金额</span><span style="color: #000000;">'</span><span style="color: #000000;">, name: </span><span style="color: #000000;">'</span><span style="color: #000000;">Price</span><span style="color: #000000;">'</span><span style="color: #000000;">, width: </span><span style="color: #000000;">100</span><span style="color: #000000;">, type: </span><span style="color: #000000;">'</span><span style="color: #000000;">int</span><span style="color: #000000;">'</span><span style="color: #000000;">}
+</span><span style="color: #008080;"> 9</span> <span style="color: #000000;">                ],
+</span><span style="color: #008080;">10</span> <span style="color: #000000;">                enabledEdit: </span><span style="color: #0000FF;">true</span><span style="color: #000000;">, usePager: </span><span style="color: #0000FF;">false</span><span style="color: #000000;">, isScroll: </span><span style="color: #0000FF;">false</span><span style="color: #000000;">, onAfterEdit: f_onAfterEdit,
+</span><span style="color: #008080;">11</span> <span style="color: #000000;">                data: { Rows: data },
+</span><span style="color: #008080;">12</span> <span style="color: #000000;">                width: </span><span style="color: #000000;">'</span><span style="color: #000000;">100%</span><span style="color: #000000;">'</span><span style="color: #000000;">
+</span><span style="color: #008080;">13</span> <span style="color: #000000;">            });
+</span><span style="color: #008080;">14</span> <span style="color: #000000;">        }
+</span><span style="color: #008080;">15</span> <span style="color: #000000;">        </span><span style="color: #0000FF;">function</span><span style="color: #000000;"> f_onAfterEdit(e)
+</span><span style="color: #008080;">16</span> <span style="color: #000000;">        {
+</span><span style="color: #008080;">17</span> <span style="color: #000000;">            manager.updateCell(</span><span style="color: #000000;">'</span><span style="color: #000000;">Price</span><span style="color: #000000;">'</span><span style="color: #000000;">, e.record.UnitPrice </span><span style="color: #000000;">*</span><span style="color: #000000;"> e.record.Quantity, e.record); 
+</span><span style="color: #008080;">18</span> <span style="color: #000000;">        }</span></div></pre>
+                </p>
+                                                                                                                                                                        <a name="link107"></a>
+                <h3 class="method">updateRow(rowDom, newRowData)方法 示例：</h3>
+
+                <p>
+                <pre><div><!--
+
+Code highlighting produced by Actipro CodeHighlighter (freeware)
+http://www.CodeHighlighter.com/
+
+--><span style="color: #008080;">1</span> <span style="color: #000000;"> </span><span style="color: #0000FF;">function</span><span style="color: #000000;"> updateRow()
+</span><span style="color: #008080;">2</span> <span style="color: #000000;">        {
+</span><span style="color: #008080;">3</span> <span style="color: #000000;">            </span><span style="color: #0000FF;">var</span><span style="color: #000000;"> selected </span><span style="color: #000000;">=</span><span style="color: #000000;"> manager.getSelected();
+</span><span style="color: #008080;">4</span> <span style="color: #000000;">            </span><span style="color: #0000FF;">if</span><span style="color: #000000;"> (</span><span style="color: #000000;">!</span><span style="color: #000000;">selected) { alert(</span><span style="color: #000000;">'</span><span style="color: #000000;">请选择行</span><span style="color: #000000;">'</span><span style="color: #000000;">); </span><span style="color: #0000FF;">return</span><span style="color: #000000;">; }
+</span><span style="color: #008080;">5</span> <span style="color: #000000;">            manager.updateRow(selected,{
+</span><span style="color: #008080;">6</span> <span style="color: #000000;">                UnitPrice: </span><span style="color: #000000;">40</span><span style="color: #000000;">,
+</span><span style="color: #008080;">7</span> <span style="color: #000000;">                Quantity: parseInt($(</span><span style="color: #000000;">&quot;</span><span style="color: #000000;">#txtQuantity</span><span style="color: #000000;">&quot;</span><span style="color: #000000;">).val())
+</span><span style="color: #008080;">8</span> <span style="color: #000000;">            });
+</span><span style="color: #008080;">9</span> <span style="color: #000000;">        }</span></div></pre>
+                </p>
+                                                                                                                                                                                                                                                                                                                                                                                <a name="link129"></a>
+                <h3 class="method">setColumnWidth(columnparm, newwidth)方法 示例：</h3>
+
+                <p>
+                <pre><div><!--
+
+Code highlighting produced by Actipro CodeHighlighter (freeware)
+http://www.CodeHighlighter.com/
+
+--><span style="color: #008080;">1</span> <span style="color: #0000FF;">var</span><span style="color: #000000;"> g </span><span style="color: #000000;">=</span><span style="color: #000000;"> $(</span><span style="color: #000000;">&quot;</span><span style="color: #000000;">#maingrid4</span><span style="color: #000000;">&quot;</span><span style="color: #000000;">).ligerGrid(...);
+</span><span style="color: #008080;">2</span> <span style="color: #000000;">g.setColumnWidth(</span><span style="color: #000000;">'</span><span style="color: #000000;">City1</span><span style="color: #000000;">'</span><span style="color: #000000;">, value);</span></div></pre>
+                </p>
+                                                                                                                                                                                                                                                                                                                                                                                                                                            <a name="link150"></a>
+                <h3 class="method">add()方法 示例：</h3>
+
+                <p>
+                <pre><div><!--
+
+Code highlighting produced by Actipro CodeHighlighter (freeware)
+http://www.CodeHighlighter.com/
+
+--><span style="color: #008080;"> 1</span> <span style="color: #000000;">  manager.add({ 
+</span><span style="color: #008080;"> 2</span> <span style="color: #000000;">                DepartmentID: </span><span style="color: #000000;">3</span><span style="color: #000000;">,
+</span><span style="color: #008080;"> 3</span> <span style="color: #000000;">                DepartmentName: </span><span style="color: #000000;">'</span><span style="color: #000000;">销售部</span><span style="color: #000000;">'</span><span style="color: #000000;">,
+</span><span style="color: #008080;"> 4</span> <span style="color: #000000;">                RealName: </span><span style="color: #000000;">&quot;</span><span style="color: #000000;">分为</span><span style="color: #000000;">&quot;</span><span style="color: #000000;"> </span><span style="color: #000000;">+</span><span style="color: #000000;"> newrowid,
+</span><span style="color: #008080;"> 5</span> <span style="color: #000000;">                ID: newrowid</span><span style="color: #000000;">++</span><span style="color: #000000;">,
+</span><span style="color: #008080;"> 6</span> <span style="color: #000000;">                Sex : </span><span style="color: #000000;">1</span><span style="color: #000000;">,
+</span><span style="color: #008080;"> 7</span> <span style="color: #000000;">                Age : </span><span style="color: #000000;">25</span><span style="color: #000000;">,
+</span><span style="color: #008080;"> 8</span> <span style="color: #000000;">                IncomeDay: </span><span style="color: #0000FF;">new</span><span style="color: #000000;"> Date(</span><span style="color: #000000;">1306108800000</span><span style="color: #000000;">),
+</span><span style="color: #008080;"> 9</span> <span style="color: #000000;">                Phone : </span><span style="color: #000000;">&quot;</span><span style="color: #000000;">2343434</span><span style="color: #000000;">&quot;</span><span style="color: #000000;">,
+</span><span style="color: #008080;">10</span> <span style="color: #000000;">                Address: </span><span style="color: #000000;">&quot;</span><span style="color: #000000;">wwrere4</span><span style="color: #000000;">&quot;</span><span style="color: #000000;">
+</span><span style="color: #008080;">11</span> <span style="color: #000000;">            }, row, document.getElementById(</span><span style="color: #000000;">&quot;</span><span style="color: #000000;">chkbefore</span><span style="color: #000000;">&quot;</span><span style="color: #000000;">).checked);</span></div></pre>
+                </p>
+                                                                                                                                                                                                                                                                            <a name="link1276"></a>
+                <h3 class="method">endEditToNext()方法 示例：</h3>
+
+                <p>
+                <pre><div><!--
+
+Code highlighting produced by Actipro CodeHighlighter (freeware)
+http://www.CodeHighlighter.com/
+
+--><span style="color: #008080;"> 1</span> <span style="color: #000000;"> </span><span style="color: #000000;">&lt;</span><span style="color: #000000;">div id</span><span style="color: #000000;">=</span><span style="color: #000000;">&quot;</span><span style="color: #000000;">navtab1</span><span style="color: #000000;">&quot;</span><span style="color: #000000;"> style</span><span style="color: #000000;">=</span><span style="color: #000000;">&quot;</span><span style="color: #000000;">width: 900px; overflow: hidden; border: 1px solid #D3D3d3;</span><span style="color: #000000;">&quot;</span><span style="color: #000000;"> class</span><span style="color: #000000;">=</span><span style="color: #000000;">&quot;</span><span style="color: #000000;">liger-tab</span><span style="color: #000000;">&quot;</span><span style="color: #000000;">&gt;</span><span style="color: #000000;">
+</span><span style="color: #008080;"> 2</span> <span style="color: #000000;">        </span><span style="color: #000000;">&lt;</span><span style="color: #000000;">div tabid</span><span style="color: #000000;">=</span><span style="color: #000000;">&quot;</span><span style="color: #000000;">home</span><span style="color: #000000;">&quot;</span><span style="color: #000000;"> title</span><span style="color: #000000;">=</span><span style="color: #000000;">&quot;</span><span style="color: #000000;">我的主页</span><span style="color: #000000;">&quot;</span><span style="color: #000000;"> lselected</span><span style="color: #000000;">=</span><span style="color: #000000;">&quot;</span><span style="color: #000000;">true</span><span style="color: #000000;">&quot;</span><span style="color: #000000;"> style</span><span style="color: #000000;">=</span><span style="color: #000000;">&quot;</span><span style="color: #000000;">height: 300px</span><span style="color: #000000;">&quot;</span><span style="color: #000000;">&gt;</span><span style="color: #000000;">
+</span><span style="color: #008080;"> 3</span> <span style="color: #000000;">           </span><span style="color: #000000;">&lt;</span><span style="color: #000000;">div id</span><span style="color: #000000;">=</span><span style="color: #000000;">&quot;</span><span style="color: #000000;">maingrid2</span><span style="color: #000000;">&quot;</span><span style="color: #000000;"> style</span><span style="color: #000000;">=</span><span style="color: #000000;">&quot;</span><span style="color: #000000;">margin: 10px; height: 300px;</span><span style="color: #000000;">&quot;</span><span style="color: #000000;">&gt;</span><span style="color: #000000;">我的主页</span><span style="color: #000000;">&lt;</span><span style="color: #000000;">/</span><span style="color: #000000;">div&gt;</span><span style="color: #000000;">
+</span><span style="color: #008080;"> 4</span> <span style="color: #000000;"></span><span style="color: #000000;">        </span><span style="color: #000000;">&lt;</span><span style="color: #000000;">/</span><span style="color: #000000;">div&gt; </span><span style="color: #000000;">
+</span><span style="color: #008080;"> 5</span> <span style="color: #000000;"></span><span style="color: #000000;">        </span><span style="color: #000000;">&lt;</span><span style="color: #000000;">div title</span><span style="color: #000000;">=</span><span style="color: #000000;">&quot;</span><span style="color: #000000;">我的主页3</span><span style="color: #000000;">&quot;</span><span style="color: #000000;"> showclose</span><span style="color: #000000;">=</span><span style="color: #000000;">&quot;</span><span style="color: #000000;">true</span><span style="color: #000000;">&quot;</span><span style="color: #000000;">&gt;</span><span style="color: #000000;">
+</span><span style="color: #008080;"> 6</span> <span style="color: #000000;">            </span><span style="color: #000000;">&lt;</span><span style="color: #000000;">div id</span><span style="color: #000000;">=</span><span style="color: #000000;">&quot;</span><span style="color: #000000;">Div1</span><span style="color: #000000;">&quot;</span><span style="color: #000000;"> style</span><span style="color: #000000;">=</span><span style="color: #000000;">&quot;</span><span style="color: #000000;">margin: 10px; height: 300px;</span><span style="color: #000000;">&quot;</span><span style="color: #000000;">&gt;</span><span style="color: #000000;">我的主页3</span><span style="color: #000000;">&lt;</span><span style="color: #000000;">/</span><span style="color: #000000;">div&gt;</span><span style="color: #000000;">
+</span><span style="color: #008080;"> 7</span> <span style="color: #000000;"></span><span style="color: #000000;">        </span><span style="color: #000000;">&lt;</span><span style="color: #000000;">/</span><span style="color: #000000;">div&gt;</span><span style="color: #000000;">
+</span><span style="color: #008080;"> 8</span> <span style="color: #000000;"></span><span style="color: #000000;">        </span><span style="color: #000000;">&lt;</span><span style="color: #000000;">div title</span><span style="color: #000000;">=</span><span style="color: #000000;">&quot;</span><span style="color: #000000;">我的主页4</span><span style="color: #000000;">&quot;</span><span style="color: #000000;"> showclose</span><span style="color: #000000;">=</span><span style="color: #000000;">&quot;</span><span style="color: #000000;">true</span><span style="color: #000000;">&quot;</span><span style="color: #000000;">&gt;</span><span style="color: #000000;">
+</span><span style="color: #008080;"> 9</span> <span style="color: #000000;">            </span><span style="color: #000000;">&lt;</span><span style="color: #000000;">div id</span><span style="color: #000000;">=</span><span style="color: #000000;">&quot;</span><span style="color: #000000;">Div2</span><span style="color: #000000;">&quot;</span><span style="color: #000000;"> style</span><span style="color: #000000;">=</span><span style="color: #000000;">&quot;</span><span style="color: #000000;">margin: 10px; height: 300px;</span><span style="color: #000000;">&quot;</span><span style="color: #000000;">&gt;</span><span style="color: #000000;">我的主页4</span><span style="color: #000000;">&lt;</span><span style="color: #000000;">/</span><span style="color: #000000;">div&gt;</span><span style="color: #000000;">
+</span><span style="color: #008080;">10</span> <span style="color: #000000;"></span><span style="color: #000000;">        </span><span style="color: #000000;">&lt;</span><span style="color: #000000;">/</span><span style="color: #000000;">div&gt;</span><span style="color: #000000;">
+</span><span style="color: #008080;">11</span> <span style="color: #000000;"></span><span style="color: #000000;">    </span><span style="color: #000000;">&lt;</span><span style="color: #000000;">/</span><span style="color: #000000;">div&gt;</span><span style="color: #000000;">
+</span><span style="color: #008080;">12</span> <span style="color: #000000;"></span><span style="color: #000000;">    </span><span style="color: #000000;">&lt;</span><span style="color: #000000;">br </span><span style="color: #000000;">/</span><span style="color: #000000;">&gt;</span><span style="color: #000000;">
+</span><span style="color: #008080;">13</span> <span style="color: #000000;"></span><span style="color: #000000;">    </span><span style="color: #000000;">&lt;</span><span style="color: #000000;">div class</span><span style="color: #000000;">=</span><span style="color: #000000;">&quot;</span><span style="color: #000000;">liger-button</span><span style="color: #000000;">&quot;</span><span style="color: #000000;"> data</span><span style="color: #000000;">-</span><span style="color: #000000;">click</span><span style="color: #000000;">=</span><span style="color: #000000;">&quot;</span><span style="color: #000000;">f_setHeader</span><span style="color: #000000;">&quot;</span><span style="color: #000000;">&gt;</span><span style="color: #000000;">改变标题</span><span style="color: #000000;">&lt;</span><span style="color: #000000;">/</span><span style="color: #000000;">div&gt;</span><span style="color: #000000;">
+</span><span style="color: #008080;">14</span> <span style="color: #000000;"></span><span style="color: #000000;">
+</span><span style="color: #008080;">15</span> <span style="color: #000000;">    </span><span style="color: #000000;">&lt;</span><span style="color: #000000;">script</span><span style="color: #000000;">&gt;</span><span style="color: #000000;">
+</span><span style="color: #008080;">16</span> <span style="color: #000000;">
+</span><span style="color: #008080;">17</span> <span style="color: #000000;">        </span><span style="color: #0000FF;">function</span><span style="color: #000000;"> f_setHeader()
+</span><span style="color: #008080;">18</span> <span style="color: #000000;">        {
+</span><span style="color: #008080;">19</span> <span style="color: #000000;">            </span><span style="color: #0000FF;">var</span><span style="color: #000000;"> tab </span><span style="color: #000000;">=</span><span style="color: #000000;"> liger.get(</span><span style="color: #000000;">&quot;</span><span style="color: #000000;">navtab1</span><span style="color: #000000;">&quot;</span><span style="color: #000000;">);
+</span><span style="color: #008080;">20</span> <span style="color: #000000;">            tab.setHeader(</span><span style="color: #000000;">&quot;</span><span style="color: #000000;">home</span><span style="color: #000000;">&quot;</span><span style="color: #000000;">, </span><span style="color: #000000;">&quot;</span><span style="color: #000000;">改变了文本</span><span style="color: #000000;">&quot;</span><span style="color: #000000;">);
+</span><span style="color: #008080;">21</span> <span style="color: #000000;">        }
+</span><span style="color: #008080;">22</span> <span style="color: #000000;">    </span><span style="color: #000000;">&lt;</span><span style="color: #000000;">/</span><span style="color: #000000;">script&gt;</span></div></pre>
+                </p>
+                                                <a name="link1277"></a>
+                <h3 class="method">getColumnByName()方法 示例：</h3>
+
+                <p>
+                <pre><div><!--
+
+Code highlighting produced by Actipro CodeHighlighter (freeware)
+http://www.CodeHighlighter.com/
+
+--><span style="color: #008080;"> 1</span> <span style="color: #000000;"> </span><span style="color: #000000;">&lt;</span><span style="color: #000000;">div id</span><span style="color: #000000;">=</span><span style="color: #000000;">&quot;</span><span style="color: #000000;">navtab1</span><span style="color: #000000;">&quot;</span><span style="color: #000000;"> style</span><span style="color: #000000;">=</span><span style="color: #000000;">&quot;</span><span style="color: #000000;">width: 900px; overflow: hidden; border: 1px solid #D3D3d3;</span><span style="color: #000000;">&quot;</span><span style="color: #000000;"> class</span><span style="color: #000000;">=</span><span style="color: #000000;">&quot;</span><span style="color: #000000;">liger-tab</span><span style="color: #000000;">&quot;</span><span style="color: #000000;">&gt;</span><span style="color: #000000;">
+</span><span style="color: #008080;"> 2</span> <span style="color: #000000;">        </span><span style="color: #000000;">&lt;</span><span style="color: #000000;">div tabid</span><span style="color: #000000;">=</span><span style="color: #000000;">&quot;</span><span style="color: #000000;">home</span><span style="color: #000000;">&quot;</span><span style="color: #000000;"> title</span><span style="color: #000000;">=</span><span style="color: #000000;">&quot;</span><span style="color: #000000;">我的主页</span><span style="color: #000000;">&quot;</span><span style="color: #000000;"> lselected</span><span style="color: #000000;">=</span><span style="color: #000000;">&quot;</span><span style="color: #000000;">true</span><span style="color: #000000;">&quot;</span><span style="color: #000000;"> style</span><span style="color: #000000;">=</span><span style="color: #000000;">&quot;</span><span style="color: #000000;">height: 300px</span><span style="color: #000000;">&quot;</span><span style="color: #000000;">&gt;</span><span style="color: #000000;">
+</span><span style="color: #008080;"> 3</span> <span style="color: #000000;">           </span><span style="color: #000000;">&lt;</span><span style="color: #000000;">div id</span><span style="color: #000000;">=</span><span style="color: #000000;">&quot;</span><span style="color: #000000;">maingrid2</span><span style="color: #000000;">&quot;</span><span style="color: #000000;"> style</span><span style="color: #000000;">=</span><span style="color: #000000;">&quot;</span><span style="color: #000000;">margin: 10px; height: 300px;</span><span style="color: #000000;">&quot;</span><span style="color: #000000;">&gt;</span><span style="color: #000000;">我的主页</span><span style="color: #000000;">&lt;</span><span style="color: #000000;">/</span><span style="color: #000000;">div&gt;</span><span style="color: #000000;">
+</span><span style="color: #008080;"> 4</span> <span style="color: #000000;"></span><span style="color: #000000;">        </span><span style="color: #000000;">&lt;</span><span style="color: #000000;">/</span><span style="color: #000000;">div&gt; </span><span style="color: #000000;">
+</span><span style="color: #008080;"> 5</span> <span style="color: #000000;"></span><span style="color: #000000;">        </span><span style="color: #000000;">&lt;</span><span style="color: #000000;">div title</span><span style="color: #000000;">=</span><span style="color: #000000;">&quot;</span><span style="color: #000000;">我的主页3</span><span style="color: #000000;">&quot;</span><span style="color: #000000;"> showclose</span><span style="color: #000000;">=</span><span style="color: #000000;">&quot;</span><span style="color: #000000;">true</span><span style="color: #000000;">&quot;</span><span style="color: #000000;">&gt;</span><span style="color: #000000;">
+</span><span style="color: #008080;"> 6</span> <span style="color: #000000;">            </span><span style="color: #000000;">&lt;</span><span style="color: #000000;">div id</span><span style="color: #000000;">=</span><span style="color: #000000;">&quot;</span><span style="color: #000000;">Div1</span><span style="color: #000000;">&quot;</span><span style="color: #000000;"> style</span><span style="color: #000000;">=</span><span style="color: #000000;">&quot;</span><span style="color: #000000;">margin: 10px; height: 300px;</span><span style="color: #000000;">&quot;</span><span style="color: #000000;">&gt;</span><span style="color: #000000;">我的主页3</span><span style="color: #000000;">&lt;</span><span style="color: #000000;">/</span><span style="color: #000000;">div&gt;</span><span style="color: #000000;">
+</span><span style="color: #008080;"> 7</span> <span style="color: #000000;"></span><span style="color: #000000;">        </span><span style="color: #000000;">&lt;</span><span style="color: #000000;">/</span><span style="color: #000000;">div&gt;</span><span style="color: #000000;">
+</span><span style="color: #008080;"> 8</span> <span style="color: #000000;"></span><span style="color: #000000;">        </span><span style="color: #000000;">&lt;</span><span style="color: #000000;">div title</span><span style="color: #000000;">=</span><span style="color: #000000;">&quot;</span><span style="color: #000000;">我的主页4</span><span style="color: #000000;">&quot;</span><span style="color: #000000;"> showclose</span><span style="color: #000000;">=</span><span style="color: #000000;">&quot;</span><span style="color: #000000;">true</span><span style="color: #000000;">&quot;</span><span style="color: #000000;">&gt;</span><span style="color: #000000;">
+</span><span style="color: #008080;"> 9</span> <span style="color: #000000;">            </span><span style="color: #000000;">&lt;</span><span style="color: #000000;">div id</span><span style="color: #000000;">=</span><span style="color: #000000;">&quot;</span><span style="color: #000000;">Div2</span><span style="color: #000000;">&quot;</span><span style="color: #000000;"> style</span><span style="color: #000000;">=</span><span style="color: #000000;">&quot;</span><span style="color: #000000;">margin: 10px; height: 300px;</span><span style="color: #000000;">&quot;</span><span style="color: #000000;">&gt;</span><span style="color: #000000;">我的主页4</span><span style="color: #000000;">&lt;</span><span style="color: #000000;">/</span><span style="color: #000000;">div&gt;</span><span style="color: #000000;">
+</span><span style="color: #008080;">10</span> <span style="color: #000000;"></span><span style="color: #000000;">        </span><span style="color: #000000;">&lt;</span><span style="color: #000000;">/</span><span style="color: #000000;">div&gt;</span><span style="color: #000000;">
+</span><span style="color: #008080;">11</span> <span style="color: #000000;"></span><span style="color: #000000;">    </span><span style="color: #000000;">&lt;</span><span style="color: #000000;">/</span><span style="color: #000000;">div&gt;</span><span style="color: #000000;">
+</span><span style="color: #008080;">12</span> <span style="color: #000000;"></span><span style="color: #000000;">    </span><span style="color: #000000;">&lt;</span><span style="color: #000000;">br </span><span style="color: #000000;">/</span><span style="color: #000000;">&gt;</span><span style="color: #000000;">
+</span><span style="color: #008080;">13</span> <span style="color: #000000;"></span><span style="color: #000000;">    </span><span style="color: #000000;">&lt;</span><span style="color: #000000;">div class</span><span style="color: #000000;">=</span><span style="color: #000000;">&quot;</span><span style="color: #000000;">liger-button</span><span style="color: #000000;">&quot;</span><span style="color: #000000;"> data</span><span style="color: #000000;">-</span><span style="color: #000000;">click</span><span style="color: #000000;">=</span><span style="color: #000000;">&quot;</span><span style="color: #000000;">f_setHeader</span><span style="color: #000000;">&quot;</span><span style="color: #000000;">&gt;</span><span style="color: #000000;">改变标题</span><span style="color: #000000;">&lt;</span><span style="color: #000000;">/</span><span style="color: #000000;">div&gt;</span><span style="color: #000000;">
+</span><span style="color: #008080;">14</span> <span style="color: #000000;"></span><span style="color: #000000;">
+</span><span style="color: #008080;">15</span> <span style="color: #000000;">    </span><span style="color: #000000;">&lt;</span><span style="color: #000000;">script</span><span style="color: #000000;">&gt;</span><span style="color: #000000;">
+</span><span style="color: #008080;">16</span> <span style="color: #000000;">
+</span><span style="color: #008080;">17</span> <span style="color: #000000;">        </span><span style="color: #0000FF;">function</span><span style="color: #000000;"> f_setHeader()
+</span><span style="color: #008080;">18</span> <span style="color: #000000;">        {
+</span><span style="color: #008080;">19</span> <span style="color: #000000;">            </span><span style="color: #0000FF;">var</span><span style="color: #000000;"> tab </span><span style="color: #000000;">=</span><span style="color: #000000;"> liger.get(</span><span style="color: #000000;">&quot;</span><span style="color: #000000;">navtab1</span><span style="color: #000000;">&quot;</span><span style="color: #000000;">);
+</span><span style="color: #008080;">20</span> <span style="color: #000000;">            tab.setHeader(</span><span style="color: #000000;">&quot;</span><span style="color: #000000;">home</span><span style="color: #000000;">&quot;</span><span style="color: #000000;">, </span><span style="color: #000000;">&quot;</span><span style="color: #000000;">改变了文本</span><span style="color: #000000;">&quot;</span><span style="color: #000000;">);
+</span><span style="color: #008080;">21</span> <span style="color: #000000;">        }
+</span><span style="color: #008080;">22</span> <span style="color: #000000;">    </span><span style="color: #000000;">&lt;</span><span style="color: #000000;">/</span><span style="color: #000000;">script&gt;</span></div></pre>
+                </p>
+                    	</body>
+</html>

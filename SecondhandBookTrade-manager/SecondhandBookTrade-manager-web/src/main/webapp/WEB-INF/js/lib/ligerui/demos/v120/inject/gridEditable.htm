@@ -1,0 +1,60 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title></title>
+    <link href="../../../lib/ligerUI/skins/Aqua/css/ligerui-all.css" rel="stylesheet" type="text/css" /> 
+    <script src="../../../lib/jquery/jquery-1.9.0.min.js" type="text/javascript"></script> 
+<script src="../../../lib/ligerUI/js/ligerui.all.js"></script>
+    <script src="../../grid/CustomersData.js" type="text/javascript"></script>
+    <script src="../../../lib/json2.js"></script>
+</head>
+<body style="padding: 10px">
+     <div class="liger-grid" id="grid1" data-data="CustomersData" data-enabledEdit="true">
+        <ul class="columns">
+            <li data-name="CustomerID" data-width="200" data-display="客户"> 
+                <input class="editor" data-type="text" />
+            </li>
+            <li data-name="CompanyName" data-width="200" data-display="公司">
+                <input class="editor" data-type="text" />
+            </li> 
+            <li data-display="客户(弹出框选择)(可以在onSelected事件中根据业务需求进行个性化处理)" data-name="CustomerID" data-align="left" data-width="500"  data-textField="CustomerID">
+                <div class="editor" data-type="popup" data-textField="CustomerID" data-valueField="CustomerID" data-onSelected="f_onSelected"> 
+                    <div class="grid" data-data="CustomersData">
+                        <ul class="columns">
+                            <li data-name="CustomerID" data-width="200">客户</li>
+                            <li data-name="CompanyName" data-width="200">公司</li>
+                            <li data-name="Address">地址</li> 
+                        </ul> 
+                    </div> 
+                    <div class="condition">
+                        <ul class="fields">
+                                <li data-name="CustomerID" data-width="200" data-op="like">客户</li>
+                        </ul>
+                    </div>  
+                </div>
+            </li>
+        </ul> 
+     </div>   
+    <div id="message" style="margin:10px;"></div>
+    <script> 
+
+        // e.value  e.text  e.data 
+        function f_onSelected(e) { 
+            if (!e.data || !e.data.length) return;
+
+            var grid = liger.get("grid1");
+
+            var selected = e.data[0]; 
+            grid.updateRow(grid.lastEditRow, {
+                CustomerID: selected.CustomerID,
+                CompanyName: selected.CompanyName
+            });
+
+            var out = JSON.stringify(selected);
+            $("#message").html('最后选择:'+out);
+        }
+
+    </script>
+</body>
+</html>

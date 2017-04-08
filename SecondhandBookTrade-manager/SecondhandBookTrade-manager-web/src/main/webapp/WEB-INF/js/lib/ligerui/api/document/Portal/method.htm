@@ -1,0 +1,131 @@
+﻿<html>
+	<head>
+		<title>Portal - jQuery LigerUI API</title>      
+		<meta http-equiv="content-type" content="text/html; charset=UTF-8" /> 
+		<link href="../common.css" rel="stylesheet" type="text/css" />
+		<script src="../core.js" type="text/javascript"></script> 
+	</head>
+	<body>
+		<h2>方法列表</h2> 
+
+		<table class="apitable" cellpadding="0" cellspacing="0">
+			 <thead>
+            <tr> 
+				<td>方法</td>
+				<td>参数</td> 
+				<td>描述</td> 
+			</tr>
+            </thead>
+            <tbody>
+					<tr> 
+				<td>
+                        <a name="method_remove(e)" key="remove(e)"  class="linkname"></a>
+                                                                        <a href="#link1249" title="点击查看示例">remove(e)</a>
+                                            				</td> 
+                <td>
+                                        <p>e:rowIndex、columnIndex、index</p><p>rowIndex:行序号</p><p>columnIndex:列序号</p><p>index:Panel序号</p>
+                    				</td> 
+                <td class="description">
+                                        移出Panel
+                    				</td>  
+			</tr>
+					<tr> 
+				<td>
+                        <a name="method_add(e)" key="add(e)"  class="linkname"></a>
+                                                                        <a href="#link1250" title="点击查看示例">add(e)</a>
+                                            				</td> 
+                <td>
+                                        <p>e:rowIndex、columnIndex、index、panel</p><p>rowIndex:行序号</p><p>columnIndex:列序号</p><p>index:panel序号</p><p>panel:同panel参数</p>
+                    				</td> 
+                <td class="description">
+                                        <p>增加panel</p>
+                    				</td>  
+			</tr>
+					<tr> 
+				<td>
+                        <a name="method_getPanels()" key="getPanels()"  class="linkname"></a>
+                                                                        getPanels()
+                                            				</td> 
+                <td>
+                                        数据结构：&nbsp;rowIndex: rowIndex,<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; columnIndex: columnIndex,<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; index: index,<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; panel : ligerUI Panel Object,<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; jpanel : jQuery panel Object
+                    				</td> 
+                <td class="description">
+                                        获取Panels
+                    				</td>  
+			</tr>
+					<tr> 
+				<td>
+                        <a name="method_getPanel(e)" key="getPanel(e)"  class="linkname"></a>
+                                                                        getPanel(e)
+                                            				</td> 
+                <td>
+                                        <p>e:rowIndex、columnIndex、index</p><p>rowIndex:行序号</p><p>columnIndex:列序号</p><p>index:Panel序号</p>
+                    				</td> 
+                <td class="description">
+                                        获取指定位置Panel
+                    				</td>  
+			</tr>
+					<tr> 
+				<td>
+                        <a name="method_collapseAll()" key="collapseAll()"  class="linkname"></a>
+                                                                        collapseAll()
+                                            				</td> 
+                <td>
+                                        &nbsp;
+                    				</td> 
+                <td class="description">
+                                        收缩全部
+                    				</td>  
+			</tr>
+					<tr> 
+				<td>
+                        <a name="method_expandAll()" key="expandAll()"  class="linkname"></a>
+                                                                        expandAll()
+                                            				</td> 
+                <td>
+                                        &nbsp;
+                    				</td> 
+                <td class="description">
+                                        展开全部
+                    				</td>  
+			</tr>
+		        </tbody>
+		</table>
+
+                                     <a name="link1249"></a>
+                <h3 class="method">remove(e)方法 示例：</h3>
+
+                <p>
+                <pre><div><!--
+
+Code highlighting produced by Actipro CodeHighlighter (freeware)
+http://www.CodeHighlighter.com/
+
+--><span style="color: #000000;">  g.remove({
+                rowIndex: </span><span style="color: #800080;">0</span><span style="color: #000000;">,
+                columnIndex: </span><span style="color: #800080;">0</span><span style="color: #000000;">,
+                index:</span><span style="color: #800080;">1</span><span style="color: #000000;">
+            });</span></div></pre>
+                </p>
+                                                <a name="link1250"></a>
+                <h3 class="method">add(e)方法 示例：</h3>
+
+                <p>
+                <pre><div><!--
+
+Code highlighting produced by Actipro CodeHighlighter (freeware)
+http://www.CodeHighlighter.com/
+
+--><span style="color: #008080;"> 1</span> <span style="color: #000000;">g.add({
+</span><span style="color: #008080;"> 2</span> <span style="color: #000000;">                rowIndex: </span><span style="color: #800080;">0</span><span style="color: #000000;">,
+</span><span style="color: #008080;"> 3</span> <span style="color: #000000;">                columnIndex: </span><span style="color: #800080;">0</span><span style="color: #000000;">,
+</span><span style="color: #008080;"> 4</span> <span style="color: #000000;">                panel: {
+</span><span style="color: #008080;"> 5</span> <span style="color: #000000;">                    title: </span><span style="color: #800000;">'</span><span style="color: #800000;">行1-列1-新Panel</span><span style="color: #800000;">'</span><span style="color: #000000;">,
+</span><span style="color: #008080;"> 6</span> <span style="color: #000000;">                    width: </span><span style="color: #800000;">'</span><span style="color: #800000;">100%</span><span style="color: #800000;">'</span><span style="color: #000000;">,
+</span><span style="color: #008080;"> 7</span> <span style="color: #000000;">                    height: </span><span style="color: #800080;">100</span><span style="color: #000000;">,
+</span><span style="color: #008080;"> 8</span> <span style="color: #000000;">                    content: </span><span style="color: #800000;">'</span><span style="color: #800000;">内容XXX</span><span style="color: #800000;">'</span><span style="color: #000000;">
+</span><span style="color: #008080;"> 9</span> <span style="color: #000000;">                }
+</span><span style="color: #008080;">10</span> <span style="color: #000000;">            });</span></div></pre>
+                </p>
+                                                                                                    	</body>
+</html>

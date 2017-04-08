@@ -1,0 +1,80 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <link href="../../lib/ligerUI/skins/Aqua/css/ligerui-all.css" rel="stylesheet" type="text/css" />
+    <script src="../../lib/jquery/jquery-1.9.0.min.js" type="text/javascript"></script> 
+    <script src="../../lib/ligerUI/js/core/base.js" type="text/javascript"></script>
+    <script src="../../lib/ligerUI/js/plugins/ligerMenu.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        var menu;
+        function f_addItem()
+        {
+            var menuitem = {
+                text: '动态项' + menu.getItemCount(),
+                click : onclick11
+            };
+            menu.addItem(menuitem);
+        }
+        function f_addItemLine()
+        {
+            var menuitem = { 
+                line:true
+            };
+            menu.addItem(menuitem);
+        }
+        function f_disableItem()
+        {
+            menu.setDisabled('close');
+        }
+        function f_removeItem()
+        {
+            menu.removeItem('add');
+        }
+        function f_enableItem()
+        {
+            menu.setEnabled('modify');
+        }
+        function onclick11(item, i)
+        {
+            alert(item.text);
+        }
+        function onclick112()
+        {
+            menu.hide();
+        }
+        $(function ()
+        {
+            menu = $.ligerMenu({ top: 100, left: 100, width: 120, items:
+            [
+            { id:'add',text: '增加', click: onclick11 },
+            { id: 'modify', text: '修改', click: onclick11, disable: true },
+            { line: true },
+            { id: 'view', text: '查看', click: onclick11 },
+            { id: 'close', text: '关闭', click: onclick112 }
+            ]
+            });
+            $(document).bind("contextmenu", function (e)
+            {
+                menu.show({ top: e.pageY, left: e.pageX });
+                return false;
+            });
+        });
+    </script>
+    <style type="text/css">
+    #menu1,.l-menu-shadow{top:30px; left:50px;}
+    #menu1{  width:200px;}
+    .l-btn2 { float:left; margin-left:10px; width:auto; padding-left:4px; padding-right:4px;}
+    </style>
+</head>
+<body style="padding:20px; overflow:hidden; "> 
+<a href="javascript:f_addItem()" class="l-button l-btn2">增加项</a>
+<a href="javascript:f_addItemLine()" class="l-button l-btn2">增加分割线</a>
+<a href="javascript:f_removeItem()" class="l-button l-btn2">删除项</a>
+<a href="javascript:f_disableItem()" class="l-button l-btn2">设置项不可用</a>
+<a href="javascript:f_enableItem()" class="l-button l-btn2">设置项可用</a>
+    <div id="div1" style="width:400px; height:400px;">
+    </div> 
+</body>
+</html>

@@ -1,0 +1,143 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head><title>
+</title>
+    <link href="../../../lib/ligerUI/skins/Aqua/css/ligerui-all.css" rel="stylesheet" type="text/css" /> 
+    <link href="../../../lib/ligerUI/skins/Gray/css/all.css" rel="stylesheet" type="text/css" /> 
+    <script src="../../../lib/jquery/jquery-1.9.0.min.js" type="text/javascript"></script>
+     <script src="../../../lib/ligerUI/js/core/base.js" type="text/javascript"></script>
+    <script src="../../../lib/ligerUI/js/plugins/ligerForm.js" type="text/javascript"></script>
+    <script src="../../../lib/ligerUI/js/plugins/ligerDateEditor.js" type="text/javascript"></script>
+    <script src="../../../lib/ligerUI/js/plugins/ligerComboBox.js" type="text/javascript"></script>
+    <script src="../../../lib/ligerUI/js/plugins/ligerCheckBox.js" type="text/javascript"></script>
+    <script src="../../../lib/ligerUI/js/plugins/ligerButton.js" type="text/javascript"></script>
+    <script src="../../../lib/ligerUI/js/plugins/ligerDialog.js" type="text/javascript"></script>
+    <script src="../../../lib/ligerUI/js/plugins/ligerRadio.js" type="text/javascript"></script>
+    <script src="../../../lib/ligerUI/js/plugins/ligerSpinner.js" type="text/javascript"></script>
+    <script src="../../../lib/ligerUI/js/plugins/ligerTextBox.js" type="text/javascript"></script> 
+    <script src="../../../lib/ligerUI/js/plugins/ligerTip.js" type="text/javascript"></script>
+    <script src="../../../lib/jquery-validation/jquery.validate.min.js" type="text/javascript"></script> 
+    <script src="../../../lib/jquery-validation/jquery.metadata.js" type="text/javascript"></script>
+    <script src="../../../lib/jquery-validation/messages_cn.js" type="text/javascript"></script>
+
+    <script type="text/javascript">
+        var eee;
+        $(function ()
+        {
+            $.metadata.setType("attr", "validate");
+            var v = $("form").validate({
+                debug: true,
+                errorPlacement: function (lable, element)
+                {
+                    if (element.hasClass("l-textarea"))
+                    {
+                        element.ligerTip({ content: lable.html(), target: element[0] }); 
+                    }
+                    else if (element.hasClass("l-text-field"))
+                    {
+                        element.parent().ligerTip({ content: lable.html(), target: element[0] });
+                    }
+                    else
+                    {
+                        lable.appendTo(element.parents("td:first").next("td"));
+                    }
+                },
+                success: function (lable)
+                {
+                    lable.ligerHideTip();
+                    lable.remove();
+                },
+                submitHandler: function ()
+                {
+                    $("form .l-text,.l-textarea").ligerHideTip();
+                    alert("Submitted!")
+                }
+            });
+            $("form").ligerForm();
+            $(".l-button-test").click(function ()
+            {
+                alert(v.element($("#txtName")));
+            });
+        });  
+    </script>
+    <style type="text/css">
+           body{ font-size:12px;}
+        .l-table-edit {}
+        .l-table-edit-td{ padding:4px;}
+        .l-button-submit,.l-button-test{width:80px; float:left; margin-left:10px; padding-bottom:2px;}
+        .l-verify-tip{ left:230px; top:120px;}
+    </style>
+
+</head>
+
+<body style="padding:10px">
+
+    <form name="form1" method="post" action="../service/EmployeeEdit.aspx?ID=0" id="form1">
+<div>
+</div>
+        <table cellpadding="0" cellspacing="0" class="l-table-edit" >
+            <tr>
+                <td align="right" class="l-table-edit-td">名字:</td>
+                <td align="left" class="l-table-edit-td"><input name="txtName" type="text" id="txtName" ltype="text" validate="{required:true,minlength:3,maxlength:10}" /></td>
+                <td align="left"></td>
+            </tr>
+           
+            <tr>
+                <td align="right" class="l-table-edit-td" valign="top">性别:</td>
+                <td align="left" class="l-table-edit-td">
+                    <input id="rbtnl_0" type="radio" name="rbtnl" value="1" checked="checked" /><label for="rbtnl_0">男</label> <input id="rbtnl_1" type="radio" name="rbtnl" value="2" /><label for="rbtnl_1">女</label>
+                </td><td align="left"></td>
+            </tr>   
+             <tr>
+                <td align="right" class="l-table-edit-td">Email:</td>
+                <td align="left" class="l-table-edit-td"><input name="txtEmail" type="text" id="txtEmail" ltype="text" validate="{required:true,email:true}" /></td>
+                <td align="left"></td>
+            </tr>
+            <tr>
+                <td align="right" class="l-table-edit-td" valign="top">爱好:</td>
+                <td align="left" class="l-table-edit-td">
+                     <input id="CheckBoxList1_0" type="checkbox" name="CheckBoxList1$0" checked="checked" /><label for="CheckBoxList1_0">篮球</label><br /><input id="CheckBoxList1_1" type="checkbox" name="CheckBoxList1$1" /><label for="CheckBoxList1_1">网球</label> <br /><input id="CheckBox1" type="checkbox" name="CheckBoxList1$1" /><label for="CheckBoxList1_1">足球</label>      
+                </td><td align="left"></td>
+            </tr>  
+                 
+            <tr>
+                <td align="right" class="l-table-edit-td">入职日期:</td>
+                <td align="left" class="l-table-edit-td">
+                    <input name="txtDate" type="text" id="txtDate" ltype="date" validate="{required:true}" />
+                </td><td align="left"></td>
+            </tr>
+            <tr>
+                <td align="right" class="l-table-edit-td">年龄:</td>
+                <td align="left" class="l-table-edit-td">
+                    <input name="txtAge" type="text" id="txtAge" ltype='spinner' ligerui="{type:'int'}" value="20" class="required" validate="{digits:true,min:1,max:100}" />
+                </td><td align="left"></td>
+            </tr>
+            <tr>
+                <td align="right" class="l-table-edit-td">部门:</td>
+                <td align="left" class="l-table-edit-td">
+                <select name="ddlDepart" id="ddlDepart" ltype="select">
+	<option value="1">主席</option>
+	<option value="2">研发中心</option>
+	<option value="3">销售部</option>
+	<option value="4">市场部</option>
+	<option value="5">顾问组</option>
+</select>
+                </td>
+            </tr>
+            <tr>
+                <td align="right" class="l-table-edit-td">地址:</td>
+                <td align="left" class="l-table-edit-td"> 
+                <textarea cols="100" rows="4" class="l-textarea" id="address" style="width:400px" validate="{required:true}" ></textarea>
+                </td><td align="left"></td>
+            </tr>
+        </table>
+ <br />
+<input type="submit" value="提交" id="Button1" class="l-button l-button-submit" /> 
+<input type="button" value="测试" class="l-button l-button-test"/>
+    </form>
+    <div style="display:none">
+    <!--  数据统计代码 --></div>
+
+    
+</body>
+</html>

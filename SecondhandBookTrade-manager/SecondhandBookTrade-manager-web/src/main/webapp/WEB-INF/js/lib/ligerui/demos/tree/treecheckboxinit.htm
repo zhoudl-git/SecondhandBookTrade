@@ -1,0 +1,44 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <script src="../../lib/jquery/jquery-1.9.0.min.js" type="text/javascript"></script>
+    <link href="../../lib/ligerUI/skins/Aqua/css/ligerui-all.css" rel="stylesheet" type="text/css" />
+    <script src="../../lib/ligerUI/js/core/base.js" type="text/javascript"></script>
+    <script src="../../lib/ligerUI/js/plugins/ligerTree.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        $(function ()
+        {
+            $("#tree1").ligerTree({ checkbox: true }); 
+        });
+    </script>
+</head>
+<body style="padding:10px">  
+    <!--带复选框和Icon-->
+    <div style="width:200px; height:300px; margin:10px; float:left; border:1px solid #ccc; overflow:auto;  ">
+    <ul id="tree1">
+        <li>
+            <span>节点1</span>
+            <ul>
+                <li>
+                    <span>节点1.1</span>
+                     <ul>
+                        <li ischecked="true"><span>节点1.1.2</span></li>
+                        <li><span>节点1.1.2</span></li>
+                     </ul>
+                 </li>
+                 <li  isexpand="false"><span>节点1.2</span>
+                        <ul>
+                            <li><span>节点1.2.1</span></li>
+                        </ul>
+                 </li>
+            </ul>
+        </li>  
+    </ul>
+    </div> 
+ 
+        <div style="display:none">
+     
+    </div>
+</body>
+</html>

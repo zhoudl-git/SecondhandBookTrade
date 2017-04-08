@@ -1,0 +1,51 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <link href="../../../lib/ligerUI/skins/Aqua/css/ligerui-all.css" rel="stylesheet" type="text/css" />
+    <script src="../../../lib/jquery/jquery-1.9.0.min.js" type="text/javascript"></script>
+    <script src="../../../lib/ligerUI/js/core/base.js" type="text/javascript"></script>
+    <script src="../../../lib/ligerUI/js/plugins/ligerGrid.js" type="text/javascript"></script> 
+        <script src="../../../lib/ligerUI/js/plugins/ligerResizable.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        var $grid;
+        $(function ()
+        {
+            //v1.02以上支持直接返回grid的管理对象
+            $grid = $("#maingrid").ligerGrid({
+                columns: [
+                { display: '主键', name: 'id', width: 50, type: 'int' },
+                { display: '名字', name: 'name', width: 50 },
+                { display: '性别', name: 'sex', width: 50 }
+                ], width: '100%', pkName: 'id', pageSizeOptions: [5, 10, 15, 20], height: '100%'
+            }
+            );
+            //延时加载数据
+            //grid.setOptions({ data: jsonObj }); //设置数据参数
+            // grid.loadData();//加载数据
+        });
+        function show()
+        {
+            var jsonObj = {};
+            jsonObj.Rows = [
+                { id: 3, name: "林三", sex: "男", birthday: "1989-01-12" },
+                { id: 43, name: "陈丽", sex: "女", birthday: "1989-01-12" },
+                { id: 33, name: "啊三", sex: "男", birthday: "1981-12-12" },
+                { id: 34, name: "表三", sex: "男", birthday: "1983-01-12" },
+                { id: 43, name: "陈丽", sex: "女", birthday: "1989-01-12" },
+                { id: 33, name: "成三", sex: "男", birthday: "1989-11-23" },
+                { id: 34, name: "都三", sex: "女", birthday: "1989-04-12" },
+                { id: 324, name: "鄂三", sex: "男", birthday: "1999-05-15" },
+                { id: 344, name: "林三", sex: "男", birthday: "1969-02-21" },
+                { id: 1, name: "王开", sex: "男", birthday: "1989-01-12" }
+            ];
+            $grid.set({ data: jsonObj }); 
+        } 
+    </script>
+</head>
+<body  style="padding:10px">
+	<input type="button" id="btnShow" onclick="show()" value="show Data"/>
+    <div id="maingrid"></div> 
+</body>
+</html>

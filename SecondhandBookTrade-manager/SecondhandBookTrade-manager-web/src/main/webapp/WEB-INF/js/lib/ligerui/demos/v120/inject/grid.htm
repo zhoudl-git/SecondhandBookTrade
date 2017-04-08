@@ -1,0 +1,39 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title></title>
+    <link href="../../../lib/ligerUI/skins/Aqua/css/ligerui-all.css" rel="stylesheet" type="text/css" />
+    <link href="../../../lib/ligerUI/skins/Gray/css/all.css" rel="stylesheet" />
+    <script src="../../../lib/jquery/jquery-1.9.0.min.js" type="text/javascript"></script> 
+    <script src="../../../lib/ligerUI/js/ligerui.all.js"></script>
+    <script src="../../grid/CustomersData.js" type="text/javascript"></script>
+
+</head>
+<body style="padding: 10px">
+     <div class="liger-grid" id="grid1" data="CustomersData">
+        <ul class="columns">
+            <li name="CustomerID" width="200">客户</li>
+            <li name="CompanyName" width="200">公司</li>
+            <li display="地址">
+                <ul class="columns">
+                    <li name="City" width="100">城市</li>
+                    <li name="Address" width="100">地址</li>
+                    <li name="PostalCode" width="100">PostalCode</li>
+                </ul>
+            </li>
+        </ul>
+        <div class= "detail" height="auto" onShowDetail="f_onShowDetail"></div>
+     </div> 
+
+    <script>
+        function f_onShowDetail(record, container, callback) {
+            var out = ['<div style="margin:10px">'];
+            out.push("<div>ContactTitle:" + record.ContactTitle + "</div>");
+            out.push("<div>Phone:" + record.Phone + "</div>");
+            out.push("</div>");
+            $(container).html(out.join(''));
+        } 
+    </script>
+</body>
+</html>

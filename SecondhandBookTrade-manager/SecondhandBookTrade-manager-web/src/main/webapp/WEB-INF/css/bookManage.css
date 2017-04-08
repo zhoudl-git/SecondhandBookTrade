@@ -1,0 +1,21 @@
+body {
+	font-size:18px;
+	font-family:"Microsoft YaHei",微软雅黑,"MicrosoftJhengHei",华文细黑,STHeiti,MingLiu
+}
+.layui-icon{
+	font-size: 30px; 
+	color: #1E9FFF;
+}
+.self-button-add{
+	font-size:13px;
+	background:#01AAED;/*#01AAED*/
+	position:relative;
+	margin-left:1052px;
+	cursor:pointer;
+}
+.self-button-delete{
+	font-size:13px;
+	background:#01AAED;/*#009688*/
+	position:relative;
+	cursor:pointer;
+}

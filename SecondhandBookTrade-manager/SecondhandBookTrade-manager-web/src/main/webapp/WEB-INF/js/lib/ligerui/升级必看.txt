@@ -1,0 +1,489 @@
+一，升级必看
+
+V1.1.3引入core机制,每一个插件都依赖于core/base.js,请在使用了ligerui的页面都增加这个引用：
+<script src="lib/ligerUI/js/core/base.js" type="text/javascript"></script> 
+V1.2.0引入解析html模块,如果需要请引用core/inject.js(已经包含在all.js、min.js)
+V1.2.1对表单表格的编辑器做了统一化处理,加强了表单的能力
+二，更新说明
+V1.3.2更新记录
+核心
+[优化]控件增加对data-XXX自动属性的加载
+表单
+[优化]所有异步加载数据组件都设置ajaxType参数
+[优化]优化editorBulider(html自动表单创建自定义函数)，使支持getData、setData和验证的正常使用
+[优化]combobox/listbox/checkboxlist/radiolist 增加对:hidden(隐藏域)初始化的支持
+树
+[优化]增加enabledCompleteCheckbox参数(是否启用半选择模式)
+下拉框
+[BUG]解决在firfox无法自动完成的问题
+[优化]解决 下拉框树 setValue 方法当值为0时不正常设置 的问题
+数值编辑器
+[BUG]解决在firfox无法正常显示的问题
+表格
+[BUG]解决表格树 展开/折叠 无法保持子节点 展开/折叠 状态 的问题
+V1.3.1更新记录
+表格
+[需求]增加滚动时分页的功能(参数scrollToPage)
+[优化]刷新方法reload()增加参数(指定页),比如 reload(1)
+核心
+[优化]优化所有需要用到异步加载数据的组件参数contentType
+下拉框
+[BUG]解决下拉框树如果用了delay，初始化时选不中的问题。
+[优化]增加初始化是否触发选择事件的选项
+[优化]增加conditionSearchClick(下拉框表格搜索按钮自定义函数)(应用例子：下拉框 - 分页表格(带搜索))
+Tree
+[优化]selectNode()和cancelSelect()增加是否触发选择事件(默认触发)
+Tab
+[优化]增加方法hideTabItem和showTabItem
+V1.3.0更新记录
+核心
+[优化]所有需要用到url加载数据或页面的地方，增加urlParms和contentType支持。
+[优化]重点整理了Grid、Form、ComboBox，增加了若干个属性参数和方法，优化了部分代码，增强了部分功能。
+表单
+[优化]优化TextBox ，增加 initSelect、precision参数，支持初始化全选和小数点控制
+[优化]优化checkboxList ，增加 getText方法
+[优化]日期控件赋值后获取值为NULL
+布局
+[优化]优化Tab，增加onSwitchRender事件，getTabItemTitle、setTabItemTitle、getTabItemSrc、setTabItemSrc方法
+[优化]优化Panel，增加showRefresh参数
+[优化]Tab组件addTabItem方法中的参数options.callback对于 content和target也有效
+[优化]accordion增加小图标的功能
+基础
+[优化]优化Menu ，增加 cls参数
+[优化]优化Drag，增加clickDelay参数
+[优化]优化Filter，增加buttonCls参数
+[优化]dialog组件使用load方式加载url时，不能设置height的问题
+弹窗
+[优化]优化Dialog，增加layoutMode参数
+树
+[优化]优化Tree，增加idField、parentIDField，支持线性数据的自动识别、支持局部刷新
+V1.2.5更新记录
+感谢Scott Yan和codfish提供的Pull Requests
+核心
+[优化]grid表格在第一列有系统控件（序号、checkbox等）按钮时，百分比列宽没有把它计算在内。
+[优化] 当在同一个div上反复调用liger组件时, 会导致后一次生成新的id, 而使数据错乱. 修改这个行为, 使得后一次的创建直接覆盖前一次
+下拉框
+[优化]打开下拉框以后，单击其他控件或空白处隐藏弹出框。以前单击其他输入框无法隐藏。
+[优化]清除下拉框内容的时候重设高度
+[优化]清除前下拉框高度会有auto和px两种情况，清除内容以后建议重新计算高度。
+[优化] 修复下拉框和日期选择器控件在IE6下的兼容性问题.
+[优化] 清除下拉框内容的时候重设高度（清除前下拉框高度会有auto和px两种情况，清除内容以后建议重新计算高度。）
+[需求] 新增下拉框中获取树对象的接口（二次开发的时候需要下拉框中的树对象，实现动态加载等功能）
+[优化] 下拉框避免同一界面弹出多个菜单的问题
+[优化] 修复下拉框findTextByValue不适用于下拉grid的情形。
+表单
+[需求]对于数据容器相关的控件，支持设置dictionary属性
+[优化]修复ligerForm中getEditor方法获取不到Tab中的编辑器
+[需求]form的field增加afterContent参数，可扩展后置内容
+[需求]ligerForm增加setEnabled和setVisible方法
+[需求]ligerForm增加showFieldError和hideFieldError方法，用于手工显示/隐藏指定字段的错误信息
+[需求]ligerForm增加setFieldValidate方法，用于动态设置字段的验证信息
+[优化]修复popup控件没有data-ligerid的问题
+[需求]radiolist增加onSelect事件
+[优化] form控件增加_setData内部方法
+[优化] 在IE8下会出现高度过低, 显示异常的问题. 所以显式指定高度为100%.
+[优化] 优化自动完成功能的性能: 当用户快速录入时, 并不是每敲一下键盘就需要到服务器取一次数据, 而是只在最后一次才取数据.
+[优化] ligerTextBox: 增加setValue方法. 便于以程序的方式设置控件的值.
+[需求] 给Input基类增加setReadonly方法
+表格
+[优化]grid的url支持动态设置(可以为function类型)
+[优化]修复grid分组行双击编辑时出错的问题
+[优化]修复grid中extendDetail方法遍历不对的问题
+[优化]修复grid误把已删除行汇总进去的问题
+[需求] grid增加属性autoFilter和方法showFilter ,用于高级过滤功能
+[优化] 修正toolbar父容器在低版本浏览器下, 因height为0 导致不能显示的问题
+[需求] grid 翻页时向服务器端提交一个标记. 用于区分翻页行为与重新加载行为. 当翻页时, 服务器端不再读取总行数. 只有刷新时才重新读取总行数.
+[优化] 修改getChanges函数,使返回的结果保留__status属性,否则返回的结果无法区分状态,没有实际用处.
+树
+[需求]tree增加reload方法
+[优化]解决树无法设置parms的问题
+[优化] tree修复多选checkbox为true时调用selectNode方法选择节点会取消已经选中节点的问题
+[优化] 修正tree数据重复显示的问题
+弹窗
+[需求] 给dialog增加contentCls属性. 否则无法控制内层div的样式.
+过滤器
+[需求] ligerFilter原condition功能仅能用于服务器端数据源, 增加对客户端数据源的搜索功能.
+V1.2.4更新记录
+核心
+[需求]所有组件统一增加cls属性
+Dialog
+[优化]解决界面样式在浏览器表现不一致的问题
+[需求]增加对自适应宽度的支持
+下拉框
+[优化]解决select类型数据清空的问题,默认不显示“空行”选项
+表单
+[BUG]修复没有生成ID导致验证有误的问题
+[优化]增加对页签的支持,field增加hideSpace和hideLabel参数
+布局
+[需求]accordion最后一个元素增加css类l-accordion-header-downfirst
+[优化]Layout增加centerbottom区域(中间下方区域),相关参数有centerBottomHeight、allowCenterBottomResize
+表格
+[优化]增加参数editorTopDiff(编辑器位置误差调整)
+菜单
+[优化]增加方法setMenuText(修改项文本)
+工具条
+[优化]项增加文本类型
+V1.2.3更新记录
+表格
+[优化]编辑时显示的输入框自动获得焦点
+[BUG]修复列对齐、行对齐的问题
+[优化]增加方法collapseAll、expandAll,增加事件onTreeCollapse、onTreeExpand、onTreeCollapsed、onTreeExpanded
+[BUG]修复Popup编辑器在多选模式下无法取消选项的问题
+树
+[需求]增加方法refreshTree
+Tab
+[需求]增加参数showSwitch(显示切换窗口按钮)、ShowSwitchInTab(切换窗口按钮显示在最后一项)
+[需求]事件onReload、onBeforeAddTabItem、onAfterAddTabItem参数改为Tab选项数据
+组件
+[需求]增加Panel和Portal组件
+下拉框
+[优化]增加参数emptyText,使得增加一个空白的选择项
+[优化]增加参数addRowButton、addRowButtonClick，使得在选择框下部增加一个新增按钮
+[优化]增加事件onButtonClick
+[优化]增加参数highLight,设置自动完成时是否匹配字符高亮显示
+Dialog
+[优化]对于iframe页面，增加对dialog的引用，方便窗口间的互动
+[优化]按钮增加cls参数(自定义css类)
+表单
+[优化]增加width参数
+
+V1.2.2更新记录
+Tree
+[需求]优化了加载数据的能力
+[需求]增加isExpand(支持灵活地控制展开/收缩状态)
+[需求]增加delay(支持延迟加载数据)
+表格
+[需求]对表格分页条数增加缓存处理
+[需求]增加参数toolbarShowInLeft(控制工具条显示在左边还是右边)
+表单
+[需求]验证部分增加对旧版本的兼容处理
+ListBox
+[需求]增加方法getDataByValue
+Tab
+[需求]增加事件onClose、onCloseOther、onCloseAll、onReload
+V1.2.1更新记录
+核心
+[需求]表单、表格编辑器的统一化处理
+[BUG]支持jQuery高版本
+[BUG]改善layout、dialog在ie下的拖拽操作体验
+表单
+[需求]表单内置验证支持
+[需求]相关表单元素增加参数valueFieldCssClass(隐藏域css样式)
+[需求]相关表单元素参数parms支持运行时动态获取
+[需求]下拉框组件增加参数alwayShowInTop，增加方法reload、getSelected
+[需求]listBox组件增加selectAll方法
+[需求]popupEdit增加parms参数
+[需求]文本框数值类型默认右对齐
+[需求] 表单增加getData setData方法
+表格
+[需求]优化表格工具条的显示位置,并增加工具条标题的支持
+[需求]表格树支持线性数据结构
+[需求]表格 列支持auto
+[BUG]修复grid不能确定取得更新数据的错误
+[BUG]修复grid编辑器位置在显示标题出现错位的情况
+[BUG]修改grid排序事件没有起效的问题
+树
+[需求]tree增加ajaxType、render(自定义html)、selectable(可选择判断函数)参数
+V1.2.0更新记录
+核心
+[需求]支持解析html(属性、事件直接在html元素中定义即可)
+表单
+[需求]新增RadioList组件
+[需求]新增CheckBoxList组件
+[需求]新增ListBox组件
+[需求]新增PopupEdit(弹出编辑)组件
+[需求]表单组件加上readonly支持
+[需求]TextBox增加属性currency(货币格式)
+[需求]ligerForm组件增加参数labelCss、fieldCss、spaceCss、readonly
+[需求]ligerForm组件增加事件onAfterSetFields
+[需求]ligerForm组件增加buttons属性
+[优化]ligerForm组件优化编辑构造器,增加popup、checkboxlist、radiolist、listbox等
+[需求]DateEditor增加属性cancelable、readonly
+[需求]DateEditor增加下拉图标样式
+[优化]DateEditor和ComboBox下拉框位置优化
+[需求]ComboBox增加属性condition(条件设置,配合grid使用)
+[需求]ComboBox增加属性cancelable、css、renderItem(下拉选项自定义html函数)
+[优化]ComboBox优化url模式，增加属性parms、ajaxType，方法setUrl、setParm
+[需求]ComboBox支持自动完成(url模式和grid模式)，增加autocomplete
+[优化]ComboBox增加方法getGridHeight、getText、setText
+[需求]Button增加属性icon(图标)
+树
+[需求]增加参数needCancel
+工具条
+[需求]增加方法removeItem、setEnabled、setDisabled、isEnable
+Tab
+[需求]增加方法setHeader(设置页签项标题)
+表格
+[需求]增加属性isSelected(选择初始化函数)
+[优化]优化编辑构造器,新增getText和setText
+[需求]增加方法setParm、removeParm(ajax参数设置)、getChanges(获取修改过的数据)
+[需求]增加事件onGroupExtend(分组展开事件)、onGroupCollapse(分组收缩事件)、onLoadData(加载数据前事件)
+[BUG]解决编辑表格在 日期选择框框，或者下拉框 点击会结束编辑状态的情况
+[BUG]解决grid刷新表格以后编辑状态还存在的问题
+[BUG]解决固定列模式下无法自动根据表格内容调整高度的问题
+[需求]增加loadData的别名方法reload
+[需求]表格主体的横向滚动条默认不显示
+[需求]column.editor的onChange、onChanged事件参数改变
+弹窗
+[需求]增加事件onContentHeightChange、onClose、onClosed、onStopResize
+[BUG]限制弹窗不能拖拽到窗口边界外
+
+V1.1.9更新记录
+表单
+[BUG]修复isChecked方法重复调用的问题
+表格
+[BUG]修复表格下拉框/日期 编辑有时无法更新值的问题
+[需求]分组行优化自定义函数
+下拉框
+[BUG]修复 调用updateStyle方法无法更新下拉框树的 问题
+其他
+[需求]过滤器插件增加设置规则方法
+
+
+V1.1.8更新记录
+基础
+[需求]增加条件过滤器插件(通用查询组件)
+表单
+[需求]增强表单插件，支持自动创建表单，支持表单元素自定义控件的构建扩展。
+[需求]文本框插件支持 整数、浮点数的限制
+表格
+[BUG]修复表格单元格编辑有时无法编辑的问题
+[BUG]修复上移，下移方法 选择状态会被取消的问题。
+[BUG]修复不能多行编辑的bug
+Tab
+[BUG]修复以target方式增加时loading不消失的问题
+综合
+[BUG]修复如果dialog里面带有grid editor ，editor会被覆盖在下面的问题。
+窗口
+[BUG]修复在dialog再次显示dialog，最后显示的dialog会被遮住的问题
+
+
+
+
+V1.1.7更新记录
+基础
+[需求]增加一套皮肤
+
+表格
+[BUG]修复grid重复加载数据的问题
+
+[BUG]优化grid 日期格式的自定义渲染函数，使之支持 /Date(XXXX)/ 这种格式
+
+[BUG]修复奇偶行效果
+
+[需求]支持改变行高和表头行高
+
+[需求]支持工具条.工具条支持图标图片
+
+对话框
+[BUG]修复ligerDialog.confirm() 和ligerMessageBox弹出的对话框位置不是屏幕居中的问题
+
+[BUG]修复ligerDialog里面带有下拉框、或者日期选择框时，选择框被遮住的问题。
+
+[BUG]修复ligerDialog里面带有下拉框、或者日期选择框时，选择框不会随着窗口移动而移动的问题。
+
+布局
+[需求]tab 页签项，增加content和target参数。
+
+[需求]tab 增加 loading效果。
+
+[需求]layout增加调整左/右侧宽度时的最小允许宽度
+
+表单
+[需求]支持设定表单元素的宽度
+
+
+V1.1.6更新记录
+基础
+[需求]全面优化框架图片
+
+[需求]整理简化皮肤Silvery,需要依赖默认的Aqua
+
+表格
+[BUG]修复 隐藏列后 再次加载数据，隐藏的列会再次显示 的问题
+
+[BUG]修复存在行序号时,汇总行错位的问题
+
+[需求]重写列调整,需要依赖ligerResizable
+
+[需求]支持动态设置columns
+
+[需求]支持行移位、列拖拽
+
+窗口/对话框
+[需求]支持最小化、最大化、可收缩
+
+树
+[需求]增加节点图标
+
+[需求]增加节点拖拽
+
+
+V1.1.5更新记录
+表格
+[需求]固定列
+
+[需求]多表头支持跨行合并
+
+[需求]增加行编辑模式
+
+[需求]增加明细编辑模式
+
+[需求]增加扩展接口：排序、格式化器,优化扩展接口：编辑器
+
+[需求]选择行支持Ctrl选择
+
+[需求]明细框可以设置高度(detail参数增加onExtend、onCollapse 和height)
+
+[需求]参数移除renderDate、dblClickToEdit 方法移除stringToDate、getFormatDate
+
+[需求]增加参数detailToEdit、frozen、frozenDetail、frozenCheckbox、detailHeight、rownumbers、frozenRownumbers、rownumbersColWidth；
+增加方法beginEdit、SubmitEdit、cancelEdit、reRender、addEditRow、extendDetail、collapseDetail、getSelectedRows(支持Ctrl)、getSelected、getSelecteds、getSelectedRowObjs；
+增加事件onBeforeChangeColumnWidth、onAfterChangeColumnWidth、onBeginEdit、onAfterBeginEdit、onCancelEdit、onBeforeSubmitEdit、onAfterSubmitEdit
+
+表单
+[需求]combobox 增加事件onToggle、onShow、onHide
+
+树
+[BUG]修复右键菜单不触发的问题
+
+
+
+
+V1.1.4更新记录
+核心
+[需求]增加方法的调用方式：liger{Plugin}(method) 
+
+[需求]增加获取属性的调用方式：liger{Plugin}("option",name)
+
+[需求]增加设置属性的调用方式：liger{Plugin}("option",name,value)
+
+综合
+[BUG]修复V1.1.3部分插件没有触发事件的BUG
+
+表单
+[BUG]修复V1.1.3验证出现的气泡没有消失的BUG
+
+布局
+[需求]Tab控件增加双击关闭页签
+
+[需求]Tab控件增加拖动页签功能
+
+
+
+
+V1.1.3更新记录
+核心
+[需求]引入core/base.js,每一个插件都需要依赖这个文件,其提供了ligerui内置事件处理机制、属性动态设置机制等等
+
+[需求]每一个插件拥有get、set、bind、trigger的方法
+
+基础
+[优化]优化了ligerResizable和ligerDrag
+
+[需求]ligerDrag增加副本模式
+
+[需求]ligerDrag增加指定区域释放拖动(Drop)的支持
+
+V1.1.2更新记录
+综合
+[需求]给每一个插件提供onRender和onRendered接口
+
+表格
+[需求]为表格编辑器提供扩展接口
+
+[需求]参数onRClickToSelect(右击行时是否选中)改名whenRClickToSelect
+
+[需求]增加参数clickToEdit、minColumnWidth
+
+[需求]增加事件onEndEdit
+
+[需求]增加方法setColumnWidth(调整列宽)
+
+[需求]参数onRClickToSelect改名whenRClickToSelect
+
+对话框
+[优化]移除ligerDialogImagePath,改为$.ligerui.DialogImagePath
+
+[需求]添加设置url方法
+
+[需求]增加加载完成事件onloaded
+
+[需求]增加参数：show、title
+
+Window
+[需求]添加load远程文件方法和设置url方法
+
+气泡
+[优化]优化气泡控件
+
+树
+[需求]增加方法arrayToTree
+
+V1.1.1更新记录
+综合
+[需求]给每一个组件管理器提供扩展接口
+
+表格
+[需求]增加addRows方法,一次性增加多行,参数为行数据数组
+
+[需求]增加了表格列初始化隐藏的属性hide
+
+[BUG]解决表格返回的数据为空时页面不反应的问题
+
+[BUG]解决表格隐藏列以后排序,依旧会把依把已经隐藏的数据显示出来的问题
+
+[BUG]解决在表头右键会出现【显示/隐藏列】，但是在表头点击 【显示/隐藏列】 不消失的问题
+
+[BUG]解决在表格的最后一列点击鼠标右键显示【显示/隐藏列】，【显示/隐藏列】错位的问题
+
+[BUG]解决在表格隐藏列以后，如果是明细情况，明细的宽度没有根据现有显示列改变的问题
+
+[BUG]解决调用显示/隐藏列后【显示/隐藏列菜单】没有更新的问题
+
+[BUG]解决树表格启用编辑状态时数据没有更新准确的问题
+
+[BUG]解决分组模式下启用明细出现问题的BUG
+
+[BUG]解决分组、明细展开框 显示时 没有右边框的问题
+
+[BUG]解决统计时存在 明细或者复选框 不能准确显示的问题
+
+[BUG]解决 分组显示时，收缩所有分组 不能准确显示的问题
+
+[BUG]解决 隐藏列后，调整表头宽度 不能准确显示的问题
+
+下拉框
+[BUG]解决带分页下拉框在调整grid宽度时没反应的问题
+
+表单
+[BUG]解决不能设置text长度。text本身是可以设置，但在form里初始化text时，没传参数的问题
+
+[需求]统一为每一个表单元素"管理器"提供 设置只读、获取值、设置值的接口
+
+
+
+
+三，目录说明
+
+api             -------------  API目录
+demos		-------------  本地demos目录
+lib		-------------  框架源代码目录
+lab             -------------  实验室，在这里可能会写一些综合应用和创意作品
+index.htm	-------------  主页面
+indexdata.js    -------------  demos目录树数据
+loading.gif	-------------  loading图标
+welcome.htm	-------------  欢迎页面
+
+dotnetdemos	-------------  .NET目录(服务器版本的demos目录) 
+index.aspx	-------------  .NET文件(服务器版本主页面)
+Web.config	-------------  .NET文件(配置文件)
+
+
+如果没有.net framework环境，可以直接把.NET的相关目录和文件删除，不会影响使用
+ 
+
+作者：稻米(daomi)
+mailto:gd_star@163.com
+version:v1.1.8
+ 

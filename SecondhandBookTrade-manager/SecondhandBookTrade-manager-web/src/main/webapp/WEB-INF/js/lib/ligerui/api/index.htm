@@ -1,0 +1,217 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>jQuery ligerUI API文档 </title>
+    <link href="../lib/ligerUI/skins/Aqua/css/ligerui-all.css" rel="stylesheet" type="text/css" />
+    <style type="text/css">
+        
+    </style>
+    <script src="../lib/jquery/jquery-1.9.0.min.js" type="text/javascript"></script> 
+    <script src="../lib/ligerUI/js/ligerui.min.js"></script>
+    <script type="text/javascript">
+        function f_getName(name)
+        {
+            if (name == "UIComponent") return "通用";
+            return name;
+        }
+        function getTreeData()
+        {
+            var getTreeItemData = function (p)
+            {
+                var name = p.name;
+                var itemdata = { text: f_getName(name), isexpand: false, children: [] };
+                if (!p.removeIndex)
+                    itemdata.children.push({ tabid: name + 'index', tag: name, text: '介绍', url: 'document/' + name + '/index.htm' });
+                if (!p.removeParms)
+                    itemdata.children.push({ tabid: name + 'parms', tag: name, text: '参数', url: 'document/' + name + '/parms.htm' });
+                if (!p.removeEvent)
+                    itemdata.children.push({ tabid: name + 'event', tag: name, text: '事件', url: 'document/' + name + '/event.htm' });
+                if (!p.removeMethod)
+                    itemdata.children.push({ tabid: name + 'method', tag: name, text: '方法', url: 'document/' + name + '/method.htm' });
+
+                return itemdata;
+            };
+            var arr = ['UIComponent', 'Grid', 'Tree', 'Accordion', 'CheckBox', 'ComboBox', 'DateEditor', 'CheckBoxList', 'RadioList', 'PopupEdit', 'Dialog', 'Drag', 'Form', 'Layout', 'Menu', 'Messagebox', 'Radio', 'Resizable', 'Spinner', 'Tab', 'textBox', 'ToolBar', 'Tree', 'Window', 'Filter', 'Panel', 'Portal'];
+            var data = [];
+            $(arr).each(function (i, name)
+            {
+                var parm = { name: name };
+                if ($.inArray(name, ["UIComponent"]) > -1)
+                {
+                    parm.removeParms = true;
+                }
+                if ($.inArray(name, ["Dialog",  "Filter"]) > -1)
+                {
+                    parm.removeEvent = true;
+                }
+                if ($.inArray(name, ["Drag", "Resizable" ]) > -1)
+                {
+                    parm.removeMethod = true;
+                }
+                if ($.inArray(name, ["UIComponent"]) > -1)
+                {
+                    parm.removeIndex = true;
+                }
+                data.push(getTreeItemData(parm));
+            });
+            return data;
+        }
+
+        var tab = null;
+        var tree = null;
+        function f_heightChanged(options)
+        {
+            if (tab)
+                tab.addHeight(options.diff);
+            $("#accordion1").each(function ()
+            {
+                $(this).height($(this).parent().height() - $(this).prev().height());
+            });
+
+        }
+        var tabnumber = 0;
+        $(function ()
+        {
+            //布局
+            $("#layout1").ligerLayout({
+                leftWidth: 190,
+                height: '100%',
+                heightDiff: -34,
+                space: 4,
+                onHeightChanged: f_heightChanged
+            });
+
+            var height = $(".l-layout-center").height();
+
+            //Tab
+            $("#framecenter").ligerTab({ height: height });
+
+
+            //树
+            $("#tree1").ligerTree({
+                checkbox: false,
+                slide: false,
+                nodeWidth: 100,
+                data: getTreeData(),
+                attribute: ['nodename', 'url', 'tabid'],
+                onSelect: function (node)
+                {
+                    if (!node.data.url) return;
+                    f_addTab(node.data.tabid, node.data.tag + " " + node.data.text, node.data.url);
+                }
+            });
+
+
+            tab = $("#framecenter").ligerGetTabManager();
+            tree = $("#tree1").ligerGetTreeManager();
+            $("#pageloading").hide();
+
+            $("#accordion1").each(function ()
+            {
+                $(this).height($(this).parent().height() - $(this).prev().height());
+            });
+
+            f_parminit();
+
+        });
+        function f_parminit()
+        {
+            var inittabid = getParm();
+            if (!inittabid) return;
+            $("#tree1 li[tabid=" + inittabid + "] span").click();
+        }
+
+        function f_addTab(tabid, text, url)
+        {
+            tabid = tabid || liger.getId();
+            tab.addTabItem({ tabid: tabid, text: text, url: url });
+        }
+
+        function f_closeWindow(frame)
+        {
+            for (var i = 0; i < document.frames.length; i++)
+            {
+                if (document.frames[i] == frame)
+                {
+                    $(".l-window[framename=" + document.frames[i].name + "]").remove();
+                    return;
+                }
+            }
+        }
+        function f_openWindow(url, title, width, height)
+        {
+            return $.ligerWindow.show({ width: width, height: height, left: 100, top: 100, title: title, url: url });
+        }
+        function f_open(url)
+        {
+            $.ligerWindow.show({ width: 300, height: 300, left: 100, top: 100, title: '我的标题', url: url });
+        }
+        function f_openWithContent(content)
+        {
+            var chtml = "<div style='padding:10px'>" + content + "</div>";
+            $.ligerWindow.show({ width: 300, height: 300, left: 200, top: 200, title: '我的标题', content: chtml });
+        }
+        function getParm()
+        {
+            if (location.href.indexOf("#") == -1)
+            {
+                return null;
+            }
+            else
+            {
+                var urlQuery = location.href.split("#");
+                return urlQuery[1];
+            }
+            return null;
+        }
+
+
+    </script>
+   
+<style type="text/css"> 
+    body,html{height:100%;}
+    body{ padding:0px; margin:0;   overflow:hidden;}  
+    .l-link{ display:block; height:26px; line-height:26px; padding-left:10px; text-decoration:underline; color:#333;}
+    .l-link2{text-decoration:underline; color:white; margin-left:2px;margin-right:2px;}
+    .l-layout-top{background:#102A49; color:White;}
+    .l-layout-bottom{ background:#E5EDEF; text-align:center;}
+    #pageloading{position:absolute; left:0px; top:0px; background:white url('loading.gif') no-repeat center; width:100%; height:100%;z-index:99999;}
+    .l-link{ display:block; line-height:22px; height:22px; padding-left:16px;border:1px solid white; margin:4px;}
+    .l-link-over{ background:#FFEEAC; border:1px solid #DB9F00;} 
+    .l-winbar{ background:#2B5A76; height:30px; position:absolute; left:0px; bottom:0px; width:100%; z-index:99999;}
+    .space{ color:#E7E7E7;}
+    /* 顶部 */ 
+    .l-topmenu{ margin:0; padding:0; height:31px; line-height:31px; background:url('../lib/images/top.jpg') repeat-x bottom;  position:relative; border-top:1px solid #1D438B;  }
+    .l-topmenu-logo{ color:#E7E7E7; padding-left:35px; line-height:26px;background:url('../lib/images/topicon.gif') no-repeat 10px 5px;}
+    .l-topmenu-welcome{  position:absolute; height:24px; line-height:24px;  right:30px; top:2px;color:#070A0C;}
+    .l-topmenu-welcome a{ color:#E7E7E7; text-decoration:underline}  
+ </style>
+</head>
+<body  style="padding:0px;background:#EAEEF5;">  
+    <div class="l-loading" style="display: block" id="pageloading">
+    </div>
+    <div id="topmenu" class="l-topmenu">
+    <div class="l-topmenu-logo">jQuery ligerUI API</div>
+    <div class="l-topmenu-welcome"> 
+                <span class="space">|</span>
+        <a href="http://www.ligerui.com/pay.html" class="l-link2" target="_blank">捐赠</a> 
+                <span class="space">|</span>
+        <a href="http://www.ligerui.com/server.html" class="l-link2" target="_blank">服务支持</a> 
+    </div> 
+</div>
+    <div id="layout1" style="width:99.2%; margin:0 auto; margin-top:4px; ">
+        <div position="left" title="插件列表" id="accordion1" style="overflow: auto">
+            <ul id="tree1" style="margin-top: 3px;">
+            </ul>
+        </div>
+        <div position="center" id="framecenter">
+            <div tabid="home" title="我的主页" style="height: 300px">
+                <iframe frameborder="0" name="home" src="document/search.htm"></iframe>
+            </div>
+        </div>  
+    </div>
+        <div  style="height:32px; line-height:32px; text-align:center;">
+            Copyright © 2011-2013 www.ligerui.com
+    </div>
+</body>
+</html>

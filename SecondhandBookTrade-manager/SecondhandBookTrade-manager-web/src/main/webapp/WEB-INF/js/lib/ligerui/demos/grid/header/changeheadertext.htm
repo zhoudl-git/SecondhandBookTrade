@@ -1,0 +1,51 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <link href="../../../lib/ligerUI/skins/Aqua/css/ligerui-all.css" rel="stylesheet" type="text/css" />
+    <script src="../../../lib/jquery/jquery-1.9.0.min.js" type="text/javascript"></script>
+    <script src="../../../lib/ligerUI/js/core/base.js" type="text/javascript"></script>
+    <script src="../../../lib/ligerUI/js/plugins/ligerGrid.js" type="text/javascript"></script> 
+        <script src="../../../lib/ligerUI/js/plugins/ligerResizable.js" type="text/javascript"></script>
+
+    <script src="../CustomersData.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        var g;
+        $(function () {
+            g = $("#maingrid4").ligerGrid({
+                columns: [
+                { display: '主键', name: 'CustomerID', align: 'left', width: 120 },
+                { display: '公司名', name: 'CompanyName', minWidth: 60 },
+
+                { display: '城市', name: 'City' },
+                 { display: '联系名', name: 'ContactName', width: 50, align: 'left' }
+                ],  pageSize:30,
+                data: CustomersData,  
+                width: '100%',height:'100%' 
+            });
+            
+
+            $("#pageloading").hide();
+        });
+        function f_changeHeaderText()
+        {
+            var txt = $("#txtCityHeader").val();
+            g.changeHeaderText('City', txt);
+        } 
+    </script>
+</head>
+<body style="padding:6px; overflow:hidden;">
+ <input type="text" id="txtCityHeader" value="城市X" />
+    <input type="button" onclick="f_changeHeaderText()" value="改变表头文本" />
+  
+    <div id="maingrid4" style="margin:0; padding:0"></div>
+ 
+
+
+  <div style="display:none;">
+  <!-- g data total ttt -->
+</div>
+ 
+</body>
+</html>

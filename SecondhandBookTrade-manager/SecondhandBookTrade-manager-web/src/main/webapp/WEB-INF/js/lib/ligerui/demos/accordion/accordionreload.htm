@@ -1,0 +1,68 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>折叠面板</title>     
+    <meta name="keywords" content="免费控件,免费UI控件,免费开源UI,免费开源UI控件,免费开源UI框架,accordion,面板插件,折叠面板插件" />   
+    <link href="../../lib/ligerUI/skins/Aqua/css/ligerui-all.css" rel="stylesheet" type="text/css" />
+    <style type="text/css">
+    </style>
+    <script src="../../lib/jquery/jquery-1.9.0.min.js" type="text/javascript"></script>   
+    <script src="../../lib/ligerUI/js/core/base.js" type="text/javascript"></script> 
+    <script src="../../lib/ligerUI/js/plugins/ligerAccordion.js" type="text/javascript"></script>
+        <script type="text/javascript">
+            $.ligerMethos.Accordion.reload = function (html) {
+                this.accordion.html(html);
+                this._render();
+            };
+
+            $(function ()
+            { 
+                $("#accordion1").ligerAccordion({ height: 300 }); 
+                $("#txtHtml").val('<div title="NEW功能列表">11111</div><div title="NEW列表">2222</div>');
+            });
+            function f_reload() {
+                var html = $("#txtHtml").val();
+                $("#accordion1").ligerAccordion('reload', html);
+            }
+     </script> 
+    <style type="text/css">
+        body{ padding:20px; margin:0;}
+        #txtHtml{ width:300px; height:200px;}
+        #accordion1{ width:160px;overflow:hidden;}
+    </style>
+</head>
+<body style="padding:10px">
+    <textarea id="txtHtml"></textarea><input id="Button1" type="button"
+        value="reload" onclick="f_reload()" />
+
+
+    <div id="accordion1"> 
+         <div title="功能列表">
+              <ul>
+                    <li>列表一</li>
+                    <li>列表二</li>
+                    <li>列表三</li>
+                    <li>列表四</li>
+                    <li>列表五</li>
+                </ul>
+        </div>
+         <div title="列表">
+                <ul>
+                    <li>列表一</li>
+                    <li>列表二</li>
+                    <li>列表三</li>
+                    <li>列表四</li>
+                    <li>列表五</li>
+                </ul>
+        </div> 
+        <div title="其他" style="padding:10px"> 
+        其他内容
+        </div>
+    </div>  
+    
+    <div style="display:none;">
+    
+</div>
+</body>
+</html>

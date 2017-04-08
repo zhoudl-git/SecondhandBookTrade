@@ -1,0 +1,48 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <link href="../../../lib/ligerUI/skins/Aqua/css/ligerui-all.css" rel="stylesheet" type="text/css" />
+ 
+    <script src="../../../lib/jquery/jquery-1.9.0.min.js" type="text/javascript"></script>
+    <script src="../../../lib/ligerUI/js/core/base.js" type="text/javascript"></script>
+    <script src="../../../lib/ligerUI/js/plugins/ligerGrid.js" type="text/javascript"></script>
+      <script src="../../../lib/ligerUI/js/plugins/ligerResizable.js" type="text/javascript"></script>  <script src="../../../lib/ligerUI/js/plugins/ligerDrag.js" type="text/javascript"></script>
+    <script src="../TreeDeptData.js" type="text/javascript"></script>
+
+    <script type="text/javascript">
+        var manager;
+        $(function ()
+        {
+            window['g'] =
+            manager = $("#maingrid").ligerGrid({
+                columns: [
+                    { display: '部门名', name: 'name', width: 250, align: 'left' },
+                { display: '部门标示', name: 'id', id: 'id1', width: 250, type: 'int', align: 'left' },
+
+                { display: '部门描述', name: 'remark', width: 250, align: 'left' }
+                ], width: '100%', pageSizeOptions: [5, 10, 15, 20], height: '97%',
+                allowHideColumn: false, rownumbers: true, colDraggable: true, rowDraggable: true, checkbox: false,
+                data: TreeDeptData, alternatingRow: false, tree: { columnName: 'name' },
+                rowDraggingRender: function (rows)
+                {
+                    return rows[0].name;
+                }
+            }
+            );
+        });
+     
+        
+    </script>
+</head>
+<body  style="padding:4px">  
+
+    <div id="maingrid"></div> 
+<div>
+
+
+</div>
+
+</body>
+</html>

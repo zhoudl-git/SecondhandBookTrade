@@ -1,0 +1,48 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <link href="../../lib/ligerUI/skins/Aqua/css/ligerui-all.css" rel="stylesheet" type="text/css" />
+    <style type="text/css">
+    </style>
+    <script src="../../lib/jquery/jquery-1.9.0.min.js" type="text/javascript"></script>  
+    <script src="../../lib/ligerUI/js/core/base.js" type="text/javascript"></script>
+    <script src="../../lib/ligerUI/js/core/inject.js" type="text/javascript"></script>
+    <script src="../../lib/ligerUI/js/plugins/ligerCheckBox.js" type="text/javascript"></script>  
+    <script src="../../lib/ligerUI/js/plugins/ligerButton.js" type="text/javascript"></script>
+    <script src="../../lib/ligerUI/js/plugins/ligerListBox.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        $(function ()
+        { 
+            $("#listbox1").ligerListBox({
+                isShowCheckBox: false, isMultiSelect: false,
+                data: [
+                    { text: '张三', id: '1' },
+                    { text: '李四', id: '2' },
+                    { text: '赵武2', id: '3' },
+                    { text: '赵武3', id: '4' },
+                    { text: '赵武4', id: '5' },
+                    { text: '赵武5', id: '6' },
+                    { text: '赵武6', id: '7' },
+                    { text: '赵武7', id: '8' }
+                ], valueFieldID: 'test3',height:140
+            }); 
+        });
+        function clickee()
+        {
+            alert($("#test3").val());
+        }
+        function setValue()
+        {
+            liger.get("listbox1").setValue("3");
+        }
+    </script>
+</head>
+<body style="padding:10px"> 
+     <div id="listbox1"></div> 
+
+ <div class="liger-button" data-click="clickee" style="margin-top:9px;">获取值</div>
+ <div class="liger-button" data-click="setValue" style="margin-top:4px;">设置值(3)</div>
+</body>
+</html>

@@ -1,0 +1,76 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <link href="../../../lib/ligerUI/skins/Aqua/css/ligerui-all.css" rel="stylesheet" type="text/css" />
+    <script src="../../../lib/jquery/jquery-1.9.0.min.js" type="text/javascript"></script>
+    <script src="../../../lib/ligerUI/js/core/base.js" type="text/javascript"></script> 
+    <script src="../../../lib/ligerUI/js/plugins/ligerGrid.js" type="text/javascript"></script>
+        <script src="../../../lib/ligerUI/js/plugins/ligerCheckBox.js" type="text/javascript"></script>
+    <script src="../CustomersData.js" type="text/javascript"></script>
+    <script src="../AllOrdersData.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        var g;
+        $(function ()
+        {
+            f_showCustomers(); 
+        });
+        //显示顾客
+        function f_showCustomers()
+        {
+            g = $("#maingrid").ligerGrid({
+                columns: [
+                { display: '顾客', name: 'CustomerID', align: 'left',frozen:true },
+                { display: '公司名', name: 'CompanyName' },
+                { display: '联系人', name: 'ContactName' },
+                { display: '地址', name: 'Address' },
+                { display: '邮编', name: 'PostalCode' },
+                { display: '城市', name: 'City' }
+                ], isScroll: false, frozen: false,
+                pageSizeOptions: [3, 10, 20, 30, 40, 50, 100],
+                data: CustomersData,
+                showTitle: false,width:'90%',columnWidth:120,
+                detail: { onShowDetail: f_showOrder,height:'auto' }
+            });
+        }
+        function f_getOrdersData(CustomerID)
+        {
+            var data = { Rows: [] };
+            for (var i = 0; i < AllOrdersData.Rows.length; i++)
+            {
+                if (AllOrdersData.Rows[i].CustomerID == CustomerID)
+                    data.Rows.push(AllOrdersData.Rows[i]);
+            }
+            return data;
+        }
+        //显示顾客订单
+        function f_showOrder(row, detailPanel,callback)
+        {
+            var grid = document.createElement('div'); 
+            $(detailPanel).append(grid);
+            $(grid).css('margin',10).ligerGrid({
+                columns:
+                            [
+                            { display: '订单序号', name: 'OrderID',type:'float' },
+                            { display: '运费', name: 'Freight', width: 50,type:'float' },
+                            { display: '收货人', name: 'ShipName' },
+                            { display: '收货地址', name: 'ShipAddress' },
+                            { display: '收货城市', name: 'ShipCity' },
+                            { display: '收货国家', name: 'ShipCountry' }
+                            ], isScroll: false, showToggleColBtn: false, width: '90%',
+                data: f_getOrdersData(row.CustomerID) , showTitle: false, columnWidth: 100
+                 , onAfterShowData: callback,frozen:false
+            });  
+        }
+    </script>
+</head>
+<body  style="padding:10px">
+ 
+    <div id="maingrid"></div>
+ <br /> 
+ <div style="display:none;">
+ <!-- g data total ttt -->
+</div>
+</body>
+</html>

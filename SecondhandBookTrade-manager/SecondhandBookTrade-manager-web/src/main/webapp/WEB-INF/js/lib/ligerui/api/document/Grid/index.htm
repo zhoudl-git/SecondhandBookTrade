@@ -1,0 +1,50 @@
+﻿<html>
+	<head>
+		<title>Grid - jQuery LigerUI API</title>      
+		<meta http-equiv="content-type" content="text/html; charset=UTF-8" /> 
+		<link href="../common.css" rel="stylesheet" type="text/css" />
+		<script src="../core.js" type="text/javascript"></script> 
+	</head>
+	<body>
+		<h2>ligerGrid</h2> 
+         
+        
+                    <p> 
+            <dt class="heading">描述: <div class="description"><ul><li>1,支持本地数据和服务器数据(配置data或者url) </li><li>2,支持排序和分页(包括Javascript排序和分页) </li><li>3,支持列的“显示/隐藏” </li><li>4,支持明细行(表格内嵌) </li><li>5,支持汇总行 </li><li>6,支持单元格模板 </li><li>7,支持编辑表格(ligerGrid的一个特色,需要其他表单插件的支持) </li><li>8,支持树表格 </li><li>8,支持分组 </li><li>8,支持多表头&nbsp;</li></ul></div></dt>
+        </p>
+                     
+          
+                <h3>示例</h3>
+        <pre><div><!--
+
+Code highlighting produced by Actipro CodeHighlighter (freeware)
+http://www.CodeHighlighter.com/
+
+--><span style="color: #008080;"> 1</span> <span style="color: #0000FF;">&lt;</span><span style="color: #800000;">div </span><span style="color: #FF0000;">class</span><span style="color: #0000FF;">=&quot;liger-treegrid&quot;</span><span style="color: #FF0000;"> id</span><span style="color: #0000FF;">=&quot;treegrid1&quot;</span><span style="color: #FF0000;"> data</span><span style="color: #0000FF;">=&quot;CustomersData&quot;</span><span style="color: #FF0000;"> enabledEdit</span><span style="color: #0000FF;">=&quot;true&quot;</span><span style="color: #0000FF;">&gt;</span><span style="color: #000000;">
+</span><span style="color: #008080;"> 2</span> <span style="color: #000000;">        </span><span style="color: #0000FF;">&lt;</span><span style="color: #800000;">ul </span><span style="color: #FF0000;">class</span><span style="color: #0000FF;">=&quot;liger-treegrid-columns&quot;</span><span style="color: #0000FF;">&gt;</span><span style="color: #000000;">
+</span><span style="color: #008080;"> 3</span> <span style="color: #000000;">            </span><span style="color: #0000FF;">&lt;</span><span style="color: #800000;">li </span><span style="color: #FF0000;">name</span><span style="color: #0000FF;">=&quot;CustomerID&quot;</span><span style="color: #FF0000;"> width</span><span style="color: #0000FF;">=&quot;200&quot;</span><span style="color: #0000FF;">&gt;</span><span style="color: #000000;">CustomerID 
+</span><span style="color: #008080;"> 4</span> <span style="color: #000000;">                    </span><span style="color: #0000FF;">&lt;</span><span style="color: #800000;">input </span><span style="color: #FF0000;">class</span><span style="color: #0000FF;">=&quot;liger-treegrid-editor&quot;</span><span style="color: #FF0000;"> ltype</span><span style="color: #0000FF;">=&quot;text&quot;</span><span style="color: #FF0000;"> </span><span style="color: #0000FF;">/&gt;</span><span style="color: #000000;">
+</span><span style="color: #008080;"> 5</span> <span style="color: #000000;">            </span><span style="color: #0000FF;">&lt;/</span><span style="color: #800000;">li</span><span style="color: #0000FF;">&gt;</span><span style="color: #000000;">
+</span><span style="color: #008080;"> 6</span> <span style="color: #000000;">            </span><span style="color: #0000FF;">&lt;</span><span style="color: #800000;">li </span><span style="color: #FF0000;">name</span><span style="color: #0000FF;">=&quot;CompanyName&quot;</span><span style="color: #FF0000;"> width</span><span style="color: #0000FF;">=&quot;200&quot;</span><span style="color: #0000FF;">&gt;</span><span style="color: #000000;">CompanyName
+</span><span style="color: #008080;"> 7</span> <span style="color: #000000;">                    </span><span style="color: #0000FF;">&lt;</span><span style="color: #800000;">input </span><span style="color: #FF0000;">class</span><span style="color: #0000FF;">=&quot;liger-treegrid-editor&quot;</span><span style="color: #FF0000;"> ltype</span><span style="color: #0000FF;">=&quot;date&quot;</span><span style="color: #FF0000;"> data-property</span><span style="color: #0000FF;">=&quot;type:'checkbox'&quot;</span><span style="color: #FF0000;"> </span><span style="color: #0000FF;">/&gt;</span><span style="color: #000000;">
+</span><span style="color: #008080;"> 8</span> <span style="color: #000000;">            </span><span style="color: #0000FF;">&lt;/</span><span style="color: #800000;">li</span><span style="color: #0000FF;">&gt;</span><span style="color: #000000;">
+</span><span style="color: #008080;"> 9</span> <span style="color: #000000;">            </span><span style="color: #0000FF;">&lt;</span><span style="color: #800000;">li </span><span style="color: #FF0000;">display</span><span style="color: #0000FF;">=&quot;Address&quot;</span><span style="color: #0000FF;">&gt;</span><span style="color: #000000;">
+</span><span style="color: #008080;">10</span> <span style="color: #000000;">                </span><span style="color: #0000FF;">&lt;</span><span style="color: #800000;">ul </span><span style="color: #FF0000;">class</span><span style="color: #0000FF;">=&quot;liger-treegrid-columns&quot;</span><span style="color: #0000FF;">&gt;</span><span style="color: #000000;">
+</span><span style="color: #008080;">11</span> <span style="color: #000000;">                    </span><span style="color: #0000FF;">&lt;</span><span style="color: #800000;">li </span><span style="color: #FF0000;">name</span><span style="color: #0000FF;">=&quot;City&quot;</span><span style="color: #FF0000;"> width</span><span style="color: #0000FF;">=&quot;100&quot;</span><span style="color: #0000FF;">&gt;</span><span style="color: #000000;">City</span><span style="color: #0000FF;">&lt;/</span><span style="color: #800000;">li</span><span style="color: #0000FF;">&gt;</span><span style="color: #000000;">
+</span><span style="color: #008080;">12</span> <span style="color: #000000;">                    </span><span style="color: #0000FF;">&lt;</span><span style="color: #800000;">li </span><span style="color: #FF0000;">name</span><span style="color: #0000FF;">=&quot;Address&quot;</span><span style="color: #FF0000;"> width</span><span style="color: #0000FF;">=&quot;100&quot;</span><span style="color: #0000FF;">&gt;</span><span style="color: #000000;">Address</span><span style="color: #0000FF;">&lt;/</span><span style="color: #800000;">li</span><span style="color: #0000FF;">&gt;</span><span style="color: #000000;">
+</span><span style="color: #008080;">13</span> <span style="color: #000000;">                    </span><span style="color: #0000FF;">&lt;</span><span style="color: #800000;">li </span><span style="color: #FF0000;">name</span><span style="color: #0000FF;">=&quot;PostalCode&quot;</span><span style="color: #FF0000;"> width</span><span style="color: #0000FF;">=&quot;100&quot;</span><span style="color: #0000FF;">&gt;</span><span style="color: #000000;">PostalCode</span><span style="color: #0000FF;">&lt;/</span><span style="color: #800000;">li</span><span style="color: #0000FF;">&gt;</span><span style="color: #000000;">
+</span><span style="color: #008080;">14</span> <span style="color: #000000;">                </span><span style="color: #0000FF;">&lt;/</span><span style="color: #800000;">ul</span><span style="color: #0000FF;">&gt;</span><span style="color: #000000;">
+</span><span style="color: #008080;">15</span> <span style="color: #000000;">            </span><span style="color: #0000FF;">&lt;/</span><span style="color: #800000;">li</span><span style="color: #0000FF;">&gt;</span><span style="color: #000000;">
+</span><span style="color: #008080;">16</span> <span style="color: #000000;">        </span><span style="color: #0000FF;">&lt;/</span><span style="color: #800000;">ul</span><span style="color: #0000FF;">&gt;</span><span style="color: #000000;">
+</span><span style="color: #008080;">17</span> <span style="color: #000000;">        </span><span style="color: #0000FF;">&lt;</span><span style="color: #800000;">div </span><span style="color: #FF0000;">class</span><span style="color: #0000FF;">= &quot;liger-treegrid-detail&quot;</span><span style="color: #0000FF;">&gt;&lt;/</span><span style="color: #800000;">div</span><span style="color: #0000FF;">&gt;</span><span style="color: #000000;">
+</span><span style="color: #008080;">18</span> <span style="color: #000000;">     </span><span style="color: #0000FF;">&lt;/</span><span style="color: #800000;">div</span><span style="color: #0000FF;">&gt;</span><span style="color: #000000;"> </span></div></pre>
+        
+        <h3>截图</h3>
+
+        <p>
+            <img src="../../uishow/ligerGrid.jpg" />
+        </p>  
+        
+
+			</body>
+</html>

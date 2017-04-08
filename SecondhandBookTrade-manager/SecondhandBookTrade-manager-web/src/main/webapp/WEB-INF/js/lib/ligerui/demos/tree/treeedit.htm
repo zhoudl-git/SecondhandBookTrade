@@ -1,0 +1,113 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <script src="../../lib/jquery/jquery-1.9.0.min.js" type="text/javascript"></script>
+    <link href="../../lib/ligerUI/skins/Aqua/css/ligerui-all.css" rel="stylesheet" type="text/css" />
+    <script src="../../lib/ligerUI/js/core/base.js" type="text/javascript"></script>
+    <script src="../../lib/ligerUI/js/plugins/ligerTree.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        var manager = null;
+        $(function ()
+        {
+            manager = $(".l-tree").ligerTree({ checkbox: true, ajaxType: 'get' });
+
+        });
+        function reload()
+        {
+            var node = manager.getSelected(); 
+            var parentnode = manager.getParent(node);
+            alert(parentnode);
+
+
+            manager.clear();
+            manager.loadData(null, 'tree.json');
+
+  
+        }
+
+        function addTreeItem()
+        {
+            var node = manager.getSelected();
+            var nodes = [];
+            nodes.push({ text: $("#txtNode").val() });
+            if (node)
+                manager.append(node.target, nodes); 
+            else
+                manager.append(null, nodes);
+        }
+        function addTreeItem2()
+        {
+            var node = manager.getSelected();
+            var nodes = [];
+            nodes.push({ text: $("#txtNode").val(), children: [{ text: '111', children: [{ text: '222'}]}] });
+            if (node)
+                manager.append(node.target, nodes);
+            else
+                manager.append(null, nodes);
+        }
+        function removeTreeItem()
+        {
+            var node = manager.getSelected();
+            if (node)
+                manager.remove(node.target);
+            else
+                alert('请先选择节点');
+        }
+        function updateTreeItem()
+        {
+            var node = manager.getSelected();
+            if (node)
+                manager.update(node.target, { text: $("#txtNode").val() });
+        }
+        function clearTreeItem()
+        {
+            manager.clear();
+        }
+    </script>
+</head>
+<body style="padding:10px">
+    <input type="text" class="l-text" value="节点名" id="txtNode" style="display:block; float:left; margin-right:10px;" /> 
+    
+    <a class="l-button" onclick="reload()" style="float:left;margin-right:10px;">重新加载</a>
+
+    <a class="l-button" onclick="addTreeItem()" style="float:left;margin-right:10px;">增加节点</a>
+    <a class="l-button" onclick="updateTreeItem()" style="float:left;margin-right:10px;">更新节点</a>
+        <a class="l-button" onclick="removeTreeItem()" style="float:left;margin-right:10px;">删除节点</a>
+     <a class="l-button" onclick="clearTreeItem()" style="float:left;margin-right:10px;">清空节点</a>
+
+     <a class="l-button" onclick="addTreeItem2()" style="width:150px;float:left;margin-right:10px;">增加节点(带子节点)</a>
+    <br />
+     <br />
+     <!-- 带复选框和图标 -->
+    <div style="width:200px; height:300px; border:1px solid #ccc; overflow:auto; clear:both;">
+    <ul class="l-tree">
+        <li>
+            <span>节点1</span>
+            <ul>
+                <li>
+                    <span>节点1.1</span>
+                     <ul>
+                        <li><span>节点1.1.2</span></li>
+                        <li><span>节点1.1.2</span></li>
+                     </ul>
+                 </li>
+                 <li><span>节点1.2</span></li>
+            </ul>
+        </li> 
+        <li><span>节点2</span></li>
+        <li isexpand="false">
+            <span>节点3</span>
+            <ul>
+                <li><span>节点3.1</span></li>
+                <li><span>节点3.2</span></li>
+            </ul>
+        </li>
+    </ul>
+    </div>
+
+        <div style="display:none">
+     
+    </div>
+</body>
+</html>

@@ -1,0 +1,74 @@
+﻿ 
+<html>
+<head> 
+    <title></title>
+    <link href="../../lib/ligerUI/skins/Aqua/css/ligerui-all.css" rel="stylesheet" type="text/css" /> 
+    <script src="../../lib/jquery/jquery-1.9.0.min.js" type="text/javascript"></script>
+    <script src="../../lib/ligerUI/js/core/base.js" type="text/javascript"></script>
+    <script src="../../lib/ligerUI/js/plugins/ligerTip.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        var i = 0;
+        $(function ()
+        {
+
+
+            $("#message .l-log-content-tag").ligerTip({ content: '气泡', width: 50 });
+
+        });
+         
+    </script>
+    <style type="text/css">
+        .l-verify-tip{ background:f1f1f1;}
+        p.l-log-content
+        {
+            margin: 0;
+            padding: 0;
+            padding-left: 20px;
+            line-height: 40px;
+            height: 40px;
+            font-size: 12px;
+        }
+        span.l-log-content-tag
+        {
+            color: #008000;
+            margin-right: 2px;
+            font-weight: bold;
+        }
+        h2.l-title
+        {
+            margin: 7px;
+            padding: 0;
+            font-size: 17px;
+            font-weight: bold;
+        }
+        h3.l-title
+        {
+            margin: 4px;
+            padding: 0;
+            font-size: 15px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body style="padding: 10px">
+    <div id="message">
+        <p class="l-log-content">
+            <span class="l-log-content-tag">[需求]</span>增加addRows方法,一次性增加多行,参数为行数据数组</p>
+        <p class="l-log-content">
+            <span class="l-log-content-tag">[需求]</span>增加了表格列初始化隐藏的属性hide</p>
+        <p class="l-log-content">
+            <span class="l-log-content-tag">[BUG]</span>解决表格返回的数据为空时页面不反应的问题</p>
+        <p class="l-log-content">
+            <span class="l-log-content-tag">[BUG]</span>解决表格隐藏列以后排序,依旧会把依把已经隐藏的数据显示出来的问题</p>
+        <p class="l-log-content">
+            <span class="l-log-content-tag">[BUG]</span>解决在表头右键会出现【显示/隐藏列】，但是在表头点击 【显示/隐藏列】
+            不消失的问题</p>
+        <p class="l-log-content">
+            <span class="l-log-content-tag">[BUG]</span>解决在表格的最后一列点击鼠标右键显示【显示/隐藏列】，【显示/隐藏列】错位的问题</p>
+    </div>
+    <div style="display: none">
+        <!--  数据统计代码 -->
+    </div>
+     
+</body>
+</html>

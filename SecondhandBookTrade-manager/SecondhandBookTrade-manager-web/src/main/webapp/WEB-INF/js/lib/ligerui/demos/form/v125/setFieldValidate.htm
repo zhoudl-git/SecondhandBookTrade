@@ -1,0 +1,101 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head><title>
+</title>
+    <link href="../../../lib/ligerUI/skins/Aqua/css/ligerui-all.css" rel="stylesheet" type="text/css" /> 
+    <link href="../../../lib/ligerUI/skins/Gray/css/all.css" rel="stylesheet" type="text/css" /> 
+    <script src="../../../lib/jquery/jquery-1.9.0.min.js" type="text/javascript"></script>
+    <script src="../../../lib/ligerUI/js/ligerui.all.js"></script> 
+    <script src="../../../lib/jquery-validation/jquery.validate.min.js" type="text/javascript"></script> 
+    <script src="../../../lib/jquery-validation/jquery.metadata.js" type="text/javascript"></script>
+    <script src="../../../lib/jquery-validation/messages_cn.js" type="text/javascript"></script>
+    <script type="text/javascript"> 
+        var groupicon = "../../../lib/ligerUI/skins/icons/communication.gif";
+        var form = null;
+        $(function ()
+        { 
+            //创建表单结构 
+            form = $("#form2").ligerForm({
+                inputWidth: 170, labelWidth: 90, space: 40,
+                fields: [  
+                {
+                    display: "折扣",
+                    name: "QuantityPerUnit",
+                    newline: true,
+                    type: "number",
+                    validate: {
+                        required: true
+                    }
+                }
+                ],
+                validate : true
+            });
+        });
+
+        function c1()
+        {
+            if (form.valid())
+            {
+                alert('验证通过');
+            }
+            else
+            {
+                form.showInvalid();
+            } 
+        }
+        function c2()
+        {
+            form.setFieldValidate("QuantityPerUnit", {
+                required: true,
+                min: 0,
+                max: 100
+            }, {
+                min: '不能小于0',
+                max : '不能大于100'
+            });
+            c1();
+        } 
+        function c3()
+        {
+            form.setFieldValidate("QuantityPerUnit", {
+                required: true,
+                min: 50,
+                max: 95
+            }, {
+                min: '不能小于50',
+                max: '不能大于95'
+            });
+            c1();
+        }
+        function c4()
+        {
+            form.setFieldValidate("QuantityPerUnit", {
+                required: false,
+                min: 0,
+                max: 100
+            }, {
+                min: '不能小于0',
+                max: '不能大于100'
+            });
+            c1();
+        }
+    </script> 
+        <style type="text/css">
+            .liger-button {
+                float:left;margin-left:10px;
+            }
+    </style>
+</head>
+
+<body style="padding:10px"> 
+ 
+  <form id="form2"></form> 
+
+<div class="liger-button" data-click="c1">验证信息</div>
+<div class="liger-button" data-click="c2" data-width="200">设置验证(折扣 大于0并且100)</div> 
+
+<div class="liger-button" data-click="c3" data-width="200">设置验证(折扣 大于50并且95)</div> 
+ 
+
+    <div class="liger-button" data-click="c4" data-width="200">设置验证(可以为空)</div> 
+</html>

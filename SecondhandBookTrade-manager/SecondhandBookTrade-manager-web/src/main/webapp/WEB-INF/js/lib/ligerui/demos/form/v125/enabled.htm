@@ -1,0 +1,74 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head><title>
+</title>
+    <link href="../../../lib/ligerUI/skins/Aqua/css/ligerui-all.css" rel="stylesheet" type="text/css" /> 
+    <link href="../../../lib/ligerUI/skins/Gray/css/all.css" rel="stylesheet" type="text/css" /> 
+    <script src="../../../lib/jquery/jquery-1.9.0.min.js" type="text/javascript"></script>
+    <script src="../../../lib/ligerUI/js/ligerui.all.js"></script>
+    <script src="../../grid/CustomersData.js"></script>
+    <script type="text/javascript"> 
+        var groupicon = "../../../lib/ligerUI/skins/icons/communication.gif";
+        var form = null;
+        $(function ()
+        { 
+            //创建表单结构 
+            form = $("#form2").ligerForm({
+                inputWidth: 170, labelWidth: 90, space: 40,
+                fields: [
+                {
+                    display: "类别 ", name: "CategoryID", newline: true, type: "select", dictionary: '001|002|003|004' 
+                },
+                { display: "类别2 ", name: "CategoryID2", newline: false, type: "radiolist", dictionary: '001|002|003|004', editor: { rowSize: 7 } },
+                { display: "日期 ", name: "AddTime", newline: true, type: "date" },
+                { display: "折扣", name: "QuantityPerUnit", newline: true, type: "number", editor: { onChangeValue: sum } },
+                {
+                    display: "单价", name: "UnitPrice", newline: false, type: "number", editor: { onChangeValue: sum } 
+                },
+                {
+                    display: "结算", name: "RealPrice", newline: true, type: "digits", groupicon: groupicon 
+                }
+                ]
+            });
+        });
+
+        function sum()
+        {
+            var data = form.getData(); 
+            $("[name=RealPrice]").val(data.QuantityPerUnit * data.UnitPrice / 100);
+        }
+
+        function c1()
+        {
+            form.setEnabled(["CategoryID2","QuantityPerUnit", "UnitPrice", "RealPrice"], true);
+        }
+        function c2()
+        {
+            form.setEnabled(["CategoryID2", "QuantityPerUnit", "UnitPrice", "RealPrice"], false);
+        }
+
+        function c3()
+        {
+            form.setVisible(["CategoryID2", "QuantityPerUnit", "UnitPrice", "RealPrice"], false);
+        }
+        function c4()
+        {
+            form.setVisible(["CategoryID2", "QuantityPerUnit", "UnitPrice", "RealPrice"], true);
+        }
+
+    </script> 
+        <style type="text/css">
+            .liger-button {
+                float:left;margin-left:10px;
+            }
+    </style>
+</head>
+
+<body style="padding:10px"> 
+  <div id="form2"></div> 
+
+<div class="liger-button" data-click="c1">设置可用</div>
+<div class="liger-button" data-click="c2" data-width="100">设置不可用</div>
+<div class="liger-button" data-click="c3" data-width="100">设置隐藏</div>
+<div class="liger-button" data-click="c4" data-width="100">设置显示</div>
+</html>

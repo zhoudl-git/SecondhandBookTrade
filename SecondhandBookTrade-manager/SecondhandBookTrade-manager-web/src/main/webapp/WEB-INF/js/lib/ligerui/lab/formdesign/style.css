@@ -1,0 +1,22 @@
+﻿
+.l-form .l-fieldcontainer { padding:0; border:1px solid #FFFFFF; }
+
+.l-form .l-fieldcontainer-over {
+	border:1px dashed #ff6a00; cursor:pointer;
+}
+
+.l-form .l-fieldcontainer-selected {
+	border:1px solid #ff6a00; cursor:pointer;
+}
+.l-form .l-fieldcontainer-over .labelcontainer, .l-form .l-fieldcontainer-over .fieldlcontainer {
+	 
+}
+
+.fieldproxy {
+	border:1px dashed #d3d3d3; background:#FAFAFA;  position:absolute; z-index:99;
+}
+.l-form .l-fieldcontainer-r {
+	border:1px solid #d3d3d3; background:#FAFAFA;  
+} 
+
+.l-textarea{ width:99%; margin:0px; height:80px;}

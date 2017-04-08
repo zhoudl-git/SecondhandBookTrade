@@ -1,0 +1,145 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <link href="../../lib/ligerUI/skins/Aqua/css/ligerui-all.css" rel="stylesheet" type="text/css" />
+    <script src="../../lib/jquery/jquery-1.9.0.min.js" type="text/javascript"></script> 
+    <script src="../../lib/ligerUI/js/core/base.js" type="text/javascript"></script>
+    <script src="../../lib/ligerUI/js/plugins/ligerTab.js" type="text/javascript"></script>
+    <script src="../../lib/ligerUI/js/plugins/ligerDialog.js" type="text/javascript"></script>
+    <script src="../../lib/ligerUI/js/plugins/ligerMenu.js" type="text/javascript"></script>
+    <script src="../../lib/ligerUI/js/plugins/ligerDrag.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        var navtab = null;
+        $(function ()
+        {
+            $("#tab1").ligerTab();
+            navtab = $("#tab1").ligerGetTabManager();
+        });
+        var alert = function (t)
+        {
+            $.ligerDialog.warn(t.toLocaleString());
+        }
+        function f_click(type)
+        {
+            switch (type)
+            {
+                case "moveToPrevTabItem":
+                    navtab.moveToPrevTabItem();
+                    break;
+                case "moveToNextTabItem": 
+                    navtab.moveToNextTabItem();
+                    break;
+                case "moveToLastTabItem":
+                    navtab.moveToLastTabItem();
+                    break;
+                case "getTabItemCount":
+                    alert(navtab.getTabItemCount());
+                    break;
+                case "getSelectedTabItemID":
+                    alert(navtab.getSelectedTabItemID());
+                    break;
+                case "removeSelectedTabItem":
+                    navtab.removeSelectedTabItem();
+                    break;
+                case "removeSelectedTabItem":
+                    navtab.removeSelectedTabItem();
+                    break;
+                case "removeSelectedTabItem":
+                    navtab.removeSelectedTabItem();
+                    break;
+                case "overrideSelectedTabItem":
+                    $.ligerDialog.prompt('请输入网址', 'http://www.baidu.com', function (yes, value)
+                    {
+                        if (yes) navtab.overrideSelectedTabItem({ url: value });
+                    });
+                    break;
+                case "selectTabItem":
+                    $.ligerDialog.prompt('请输入tabid', '', function (yes, value)
+                    {
+                        if (yes) navtab.selectTabItem(value);
+                    });
+                    break;
+                case "isTabItemExist":
+                    $.ligerDialog.prompt('请输入tabid', '', function (yes, value)
+                    { 
+                        if (yes) alert(navtab.isTabItemExist(value));
+                    });
+                    break;
+                case "addTabItem":
+                    $.ligerDialog.prompt('请输入网址', 'http://www.baidu.com', function (yes, value)
+                    {
+                        if (yes) navtab.addTabItem({ url: value });
+                    });
+                    break;
+                case "removeTabItem":
+                    $.ligerDialog.prompt('请输入tabid', '', function (yes, value)
+                    {
+                        if (yes) navtab.removeTabItem(value);
+                    });
+                    break;
+                case "removeOther":
+                    $.ligerDialog.prompt('请输入tabid', '', function (yes, value)
+                    {
+                        if (yes) navtab.removeOther(value);
+                    });
+                    break;
+                case "reload":
+                    navtab.reload(navtab.getSelectedTabItemID());
+                    break;
+                case "removeAll":
+                    navtab.removeAll();
+                    break;
+                case "hideTabItem":
+                    navtab.hideTabItem("item2");
+                    break;
+                case "showTabItem":
+                    navtab.showTabItem("item2");
+                    break;
+                    
+            }
+        }
+    </script>
+    <style type="text/css">
+        body{ font-size:11px;}
+      
+    </style>
+</head>
+<body style="padding:10px">
+
+        <input type="button" onclick="f_click('getTabItemCount')" value="getTabItemCount" />
+        <input type="button" onclick="f_click('getSelectedTabItemID')" value="getSelectedTabItemID" />
+        <input type="button" onclick="f_click('removeSelectedTabItem')" value="removeSelectedTabItem" />
+        <input type="button" onclick="f_click('overrideSelectedTabItem')" value="overrideSelectedTabItem" />
+        <input type="button" onclick="f_click('selectTabItem')" value="selectTabItem" /> 
+         
+        <input type="button" onclick="f_click('isTabItemExist')" value="isTabItemExist" />
+        <input type="button" onclick="f_click('addTabItem')" value="addTabItem" />
+        <input type="button" onclick="f_click('removeTabItem')" value="removeTabItem" />
+        <input type="button" onclick="f_click('removeOther')" value="removeOther" />
+        <input type="button" onclick="f_click('reload')" value="reload" />
+        <input type="button" onclick="f_click('removeAll')" value="removeAll" />
+
+      <input type="button" onclick="f_click('hideTabItem')" value="hideTabItem" />
+        <input type="button" onclick="f_click('showTabItem')" value="showTabItem" />
+
+                <br /> <br /> 
+        <div id="tab1" style="width: 600px;overflow:hidden; border:1px solid #A3C0E8; "> 
+            <div title="首页" style="height:300px">
+                <p>用法 : $('#tab1').ligerTab() ; </p>
+            </div>
+            <div tabid="item2" title="说明" style="height:300px">
+               <p>今天开始jquery的一些实用的插件. 来用于我们的项目.</p>
+            </div>
+            <div title="联系我们" style="height:300px">
+              <p> come: www.ligerui.com    
+              blog : leoxie2011.cnblog.com</p>
+            </div>
+        </div>
+
+        <div style="display:none">
+        
+        </div>
+</body>
+</html>

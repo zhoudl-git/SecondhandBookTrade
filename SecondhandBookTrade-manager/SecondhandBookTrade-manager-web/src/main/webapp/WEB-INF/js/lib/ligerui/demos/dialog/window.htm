@@ -1,0 +1,50 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <link href="../../lib/ligerUI/skins/Aqua/css/ligerui-all.css" rel="stylesheet" type="text/css" /> 
+    <link href="../../lib/ligerUI/skins/ligerui-icons.css" rel="stylesheet" type="text/css" />
+    <script src="../../lib/jquery/jquery-1.9.0.min.js" type="text/javascript"></script>
+    <script src="../../lib/ligerUI/js/core/base.js" type="text/javascript"></script>
+    <script src="../../lib/ligerUI/js/plugins/ligerDrag.js" type="text/javascript"></script>
+    <script src="../../lib/ligerUI/js/plugins/ligerDialog.js" type="text/javascript"></script>
+    <script src="../../lib/ligerUI/js/plugins/ligerResizable.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        $.ligerui.controls.Dialog.prototype._borderX = 2;
+        $.ligerui.controls.Dialog.prototype._borderY = 0;
+    </script>
+    <style type="text/css">
+        .l-case-title
+        {
+            font-weight: bold;
+            margin-top: 20px;
+            margin-bottom: 20px;
+        }
+        body,html{width:100%; height:100%; background:#f1f1f1;}
+    </style>
+    <script type="text/javascript">
+        var wincount = 0;
+        function title() {
+            return '窗口' + ++wincount;
+        }
+        function f_open1() {
+            $.ligerDialog.open({
+                height: 200, url: '../../welcome.htm', width: null,height:'auto', showMax: true, showToggle: true, showMin: true, isResize: true, modal: false, title: title(), buttons: [
+                    { text: '确定', onclick: function (item, dialog) { alert(item.text); } },
+                    { text: '取消', onclick: function (item, dialog) { dialog.close(); } }
+                ]
+            });
+        }
+        $(function ()
+        {
+            f_open1();
+        });
+    </script>
+</head>
+<body style="padding: 10px; padding-bottom: 800px; overflow:hidden;">
+    <div class="l-case-title"> 实例一 </div> 
+     
+
+
+</body>
+</html>

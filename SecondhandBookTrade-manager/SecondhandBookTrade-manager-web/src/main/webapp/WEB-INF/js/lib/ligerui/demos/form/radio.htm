@@ -1,0 +1,45 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+     <link href="../../lib/ligerUI/skins/Aqua/css/ligerui-all.css" rel="stylesheet" type="text/css" />
+     <script src="../../lib/jquery/jquery-1.9.0.min.js" type="text/javascript"></script>
+     <script src="../../lib/ligerUI/js/core/base.js" type="text/javascript"></script>
+    <script src="../../lib/ligerUI/js/plugins/ligerRadio.js" type="text/javascript"></script>
+    <style type="text/css">
+    </style>
+    
+
+     <script type="text/javascript">
+         $(function () {
+             $("#d1 input:radio").ligerRadio();
+
+             $("#btnGet").click(function () {
+                 var str = "";
+                 $("#d1 input:radio").each(function () {
+                     str += this.checked + ",";
+                 });
+                 alert(str);
+             });
+         });
+  
+    </script>
+</head>
+<body style="padding:10px">
+<form>
+   <div id="d1">
+     <table>
+        <tr><td><input type="radio" value="18-25" name="age" /></td><td>18-25</td></tr>
+        <tr><td><input type="radio" value="26-35" name="age" /></td><td>26-35</td></tr>
+        <tr><td><input type="radio" value="36-45" name="age" /></td><td>36-45</td></tr>
+     </table>
+   </div> 
+   
+   <input type="button" id="btnGet" value="获取值" class="l-button"/>
+   </form>
+    <div style="display:none;">
+    
+</div>
+</body>
+</html>

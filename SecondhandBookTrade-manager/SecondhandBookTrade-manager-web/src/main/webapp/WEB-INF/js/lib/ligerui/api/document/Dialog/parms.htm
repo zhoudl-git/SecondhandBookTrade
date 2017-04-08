@@ -1,0 +1,508 @@
+﻿<html>
+	<head>
+		<title>Dialog - jQuery LigerUI API</title>   
+		<meta http-equiv="content-type" content="text/html; charset=UTF-8" /> 
+		<link href="../common.css" rel="stylesheet" type="text/css" />
+		<script src="../core.js" type="text/javascript"></script> 
+	</head>
+	<body>
+		<h2>参数列表</h2> 
+
+		<table class="apitable" cellpadding="0" cellspacing="0">
+        <thead>
+            <tr> 
+				<td>参数名</td>
+				<td>类型</td> 
+				<td>描述</td>
+				<td>默认值</td> 
+            </tr>
+        </thead> 
+        <tbody>
+					<tr>
+				<td>  
+                    <a name="property_cls"  key="cls" class="linkname"></a>
+                                                                       cls
+                                            				</td>
+                <td>  
+                                        String
+                    				</td>
+                <td class="description">  
+                                        给dialog附加css class
+                    				</td>
+                <td>  
+                                        null
+                    				</td> 
+			</tr>
+					<tr>
+				<td>  
+                    <a name="property_id"  key="id" class="linkname"></a>
+                                                                       id
+                                            				</td>
+                <td>  
+                                        String
+                    				</td>
+                <td class="description">  
+                                        给dialog附加id
+                    				</td>
+                <td>  
+                                        null
+                    				</td> 
+			</tr>
+					<tr>
+				<td>  
+                    <a name="property_buttons"  key="buttons" class="linkname"></a>
+                                                                       buttons
+                                            				</td>
+                <td>  
+                                        Array
+                    				</td>
+                <td class="description">  
+                                        按钮集合
+                    				</td>
+                <td>  
+                                        null
+                    				</td> 
+			</tr>
+					<tr>
+				<td>  
+                    <a name="property_isDrag"  key="isDrag" class="linkname"></a>
+                                                                       isDrag
+                                            				</td>
+                <td>  
+                                        Bool
+                    				</td>
+                <td class="description">  
+                                        是否拖动
+                    				</td>
+                <td>  
+                                        true
+                    				</td> 
+			</tr>
+					<tr>
+				<td>  
+                    <a name="property_width"  key="width" class="linkname"></a>
+                                                                       width
+                                            				</td>
+                <td>  
+                                        Int
+                    				</td>
+                <td class="description">  
+                                        宽度
+                    				</td>
+                <td>  
+                                        280
+                    				</td> 
+			</tr>
+					<tr>
+				<td>  
+                    <a name="property_height"  key="height" class="linkname"></a>
+                                                                       height
+                                            				</td>
+                <td>  
+                                        Int
+                    				</td>
+                <td class="description">  
+                                        高度
+                    				</td>
+                <td>  
+                                        null
+                    				</td> 
+			</tr>
+					<tr>
+				<td>  
+                    <a name="property_content"  key="content" class="linkname"></a>
+                                                                       content
+                                            				</td>
+                <td>  
+                                        String
+                    				</td>
+                <td class="description">  
+                                        内容
+                    				</td>
+                <td>  
+                                        ''
+                    				</td> 
+			</tr>
+					<tr>
+				<td>  
+                    <a name="property_target"  key="target" class="linkname"></a>
+                                                                       target
+                                            				</td>
+                <td>  
+                                        Object
+                    				</td>
+                <td class="description">  
+                                        目标对象，指定它将以appendTo()的方式载入
+                    				</td>
+                <td>  
+                                        null
+                    				</td> 
+			</tr>
+					<tr>
+				<td>  
+                    <a name="property_url"  key="url" class="linkname"></a>
+                                                                       url
+                                            				</td>
+                <td>  
+                                        String
+                    				</td>
+                <td class="description">  
+                                        标页url，默认以iframe的方式载入目
+                    				</td>
+                <td>  
+                                        null
+                    				</td> 
+			</tr>
+					<tr>
+				<td>  
+                    <a name="property_load"  key="load" class="linkname"></a>
+                                                                       load
+                                            				</td>
+                <td>  
+                                        String
+                    				</td>
+                <td class="description">  
+                                        是否以load()的方式加载目标页的内容
+                    				</td>
+                <td>  
+                                        false
+                    				</td> 
+			</tr>
+					<tr>
+				<td>  
+                    <a name="property_type"  key="type" class="linkname"></a>
+                                                                       type
+                                            				</td>
+                <td>  
+                                        String
+                    				</td>
+                <td class="description">  
+                                        类型 warn、success、error、question
+                    				</td>
+                <td>  
+                                         'none'
+                    				</td> 
+			</tr>
+					<tr>
+				<td>  
+                    <a name="property_left"  key="left" class="linkname"></a>
+                                                                       left
+                                            				</td>
+                <td>  
+                                        Int
+                    				</td>
+                <td class="description">  
+                                        相对窗口left
+                    				</td>
+                <td>  
+                                        null
+                    				</td> 
+			</tr>
+					<tr>
+				<td>  
+                    <a name="property_top"  key="top" class="linkname"></a>
+                                                                       top
+                                            				</td>
+                <td>  
+                                        Int
+                    				</td>
+                <td class="description">  
+                                        相对窗口top
+                    				</td>
+                <td>  
+                                        null
+                    				</td> 
+			</tr>
+					<tr>
+				<td>  
+                    <a name="property_modal"  key="modal" class="linkname"></a>
+                                                                       modal
+                                            				</td>
+                <td>  
+                                        Bool
+                    				</td>
+                <td class="description">  
+                                        是否模态对话框
+                    				</td>
+                <td>  
+                                        true
+                    				</td> 
+			</tr>
+					<tr>
+				<td>  
+                    <a name="property_name"  key="name" class="linkname"></a>
+                                                                       name
+                                            				</td>
+                <td>  
+                                        String
+                    				</td>
+                <td class="description">  
+                                        创建iframe时 作为iframe的name和id
+                    				</td>
+                <td>  
+                                        null
+                    				</td> 
+			</tr>
+					<tr>
+				<td>  
+                    <a name="property_isResize"  key="isResize" class="linkname"></a>
+                                                                       isResize
+                                            				</td>
+                <td>  
+                                        Bool
+                    				</td>
+                <td class="description">  
+                                        是否调整大小
+                    				</td>
+                <td>  
+                                        false
+                    				</td> 
+			</tr>
+					<tr>
+				<td>  
+                    <a name="property_allowClose"  key="allowClose" class="linkname"></a>
+                                                                       allowClose
+                                            				</td>
+                <td>  
+                                        Bool
+                    				</td>
+                <td class="description">  
+                                        允许关闭
+                    				</td>
+                <td>  
+                                        false
+                    				</td> 
+			</tr>
+					<tr>
+				<td>  
+                    <a name="property_opener"  key="opener" class="linkname"></a>
+                                                                       opener
+                                            				</td>
+                <td>  
+                                        Object
+                    				</td>
+                <td class="description">  
+                                        引用opener到dialog对象
+                    				</td>
+                <td>  
+                                        null
+                    				</td> 
+			</tr>
+					<tr>
+				<td>  
+                    <a name="property_timeParmName"  key="timeParmName" class="linkname"></a>
+                                                                       timeParmName
+                                            				</td>
+                <td>  
+                                        String
+                    				</td>
+                <td class="description">  
+                                        是否给URL后面加上值为new Date().getTime()的参数，如果需要指定一个参数名即可
+                    				</td>
+                <td>  
+                                        null
+                    				</td> 
+			</tr>
+					<tr>
+				<td>  
+                    <a name="property_closeWhenEnter"  key="closeWhenEnter" class="linkname"></a>
+                                                                       closeWhenEnter
+                                            				</td>
+                <td>  
+                                        Bool
+                    				</td>
+                <td class="description">  
+                                        回车时是否关闭dialog
+                    				</td>
+                <td>  
+                                        null
+                    				</td> 
+			</tr>
+					<tr>
+				<td>  
+                    <a name="property_isHidden"  key="isHidden" class="linkname"></a>
+                                                                       isHidden
+                                            				</td>
+                <td>  
+                                        Bool
+                    				</td>
+                <td class="description">  
+                                        关闭对话框时是否只是隐藏，还是销毁对话框
+                    				</td>
+                <td>  
+                                        null
+                    				</td> 
+			</tr>
+					<tr>
+				<td>  
+                    <a name="property_show"  key="show" class="linkname"></a>
+                                                                       show
+                                            				</td>
+                <td>  
+                                        Bool
+                    				</td>
+                <td class="description">  
+                                        初始化时是否马上显示
+                    				</td>
+                <td>  
+                                        true
+                    				</td> 
+			</tr>
+					<tr>
+				<td>  
+                    <a name="property_title"  key="title" class="linkname"></a>
+                                                                       title
+                                            				</td>
+                <td>  
+                                        String
+                    				</td>
+                <td class="description">  
+                                        标题
+                    				</td>
+                <td>  
+                                        '提示'
+                    				</td> 
+			</tr>
+					<tr>
+				<td>  
+                    <a name="property_showMax"  key="showMax" class="linkname"></a>
+                                                                       showMax
+                                            				</td>
+                <td>  
+                                        Bool
+                    				</td>
+                <td class="description">  
+                                        是否显示最大化
+                    				</td>
+                <td>  
+                                        false
+                    				</td> 
+			</tr>
+					<tr>
+				<td>  
+                    <a name="property_showToggle"  key="showToggle" class="linkname"></a>
+                                                                       showToggle
+                                            				</td>
+                <td>  
+                                        Bool
+                    				</td>
+                <td class="description">  
+                                        是否显示收缩
+                    				</td>
+                <td>  
+                                        false
+                    				</td> 
+			</tr>
+					<tr>
+				<td>  
+                    <a name="property_showMin"  key="showMin" class="linkname"></a>
+                                                                       showMin
+                                            				</td>
+                <td>  
+                                        Bool
+                    				</td>
+                <td class="description">  
+                                        是否显示最小化
+                    				</td>
+                <td>  
+                                        false
+                    				</td> 
+			</tr>
+					<tr>
+				<td>  
+                    <a name="property_slide"  key="slide" class="linkname"></a>
+                                                                       slide
+                                            				</td>
+                <td>  
+                                        Bool
+                    				</td>
+                <td class="description">  
+                                        动画效果
+                    				</td>
+                <td>  
+                                         $.browser.msie ? false : true
+                    				</td> 
+			</tr>
+					<tr>
+				<td>  
+                    <a name="property_fixedType"  key="fixedType" class="linkname"></a>
+                                                                       fixedType
+                                            				</td>
+                <td>  
+                                        String
+                    				</td>
+                <td class="description">  
+                                        在固定的位置显示, 可以设置的值有n, e, s, w, ne, se, sw, nw
+                    				</td>
+                <td>  
+                                        null
+                    				</td> 
+			</tr>
+					<tr>
+				<td>  
+                    <a name="property_showType"  key="showType" class="linkname"></a>
+                                                                       showType
+                                            				</td>
+                <td>  
+                                        String
+                    				</td>
+                <td class="description">  
+                                        显示类型,可以设置为slide(固定显示时有效)
+                    				</td>
+                <td>  
+                                        null
+                    				</td> 
+			</tr>
+					<tr>
+				<td>  
+                    <a name="property_contentCls"  key="contentCls" class="linkname"></a>
+                                                                       contentCls
+                                            				</td>
+                <td>  
+                                        String
+                    				</td>
+                <td class="description">  
+                                        设置内层div的样式
+                    				</td>
+                <td>  
+                                        null
+                    				</td> 
+			</tr>
+					<tr>
+				<td>  
+                    <a name="property_urlParms"  key="urlParms" class="linkname"></a>
+                                                                       urlParms
+                                            				</td>
+                <td>  
+                                        Object
+                    				</td>
+                <td class="description">  
+                                        url参数
+                    				</td>
+                <td>  
+                                        null
+                    				</td> 
+			</tr>
+					<tr>
+				<td>  
+                    <a name="property_layoutMode"  key="layoutMode" class="linkname"></a>
+                                                                       layoutMode
+                                            				</td>
+                <td>  
+                                        Int
+                    				</td>
+                <td class="description">  
+                                        布局方式 1 九宫布局, 2 上中下布局
+                    				</td>
+                <td>  
+                                        null
+                    				</td> 
+			</tr>
+		        </tbody>
+		</table>
+
+        
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         
+
+         	</body>
+</html>

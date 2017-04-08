@@ -1,0 +1,162 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+     <script src="../../lib/jquery/jquery-1.9.0.min.js" type="text/javascript"></script>
+    <link href="../../lib/ligerUI/skins/Aqua/css/ligerui-all.css" rel="stylesheet" type="text/css" />
+    <script src="../../lib/ligerUI/js/core/base.js" type="text/javascript"></script>
+    <script src="../../lib/ligerUI/js/plugins/ligerTree.js" type="text/javascript"></script>
+    <style type="text/css">
+        .box
+        {
+            float: left;
+        }
+        .tree
+        {
+            width:330px;
+            height:300px;
+            margin: 10px;
+            border: 1px solid #ccc;
+            overflow: auto;
+        }
+        h4
+        { margin: 10px;
+        }
+        h2
+        {
+            margin: 10px;font-weight:bold; font-size:14px; clear:both; color:#E55100;
+        }
+    </style>
+    <script type="text/javascript">
+
+        $(function ()
+        { 
+              
+            $("#tree1").ligerTree({
+                nodeWidth: 300,
+                url: 'treeDeptData.ashx?type=company',
+                isLeaf : function(data)
+                {
+                    if (!data) return false;
+                    return data.type == "employee";
+                },
+                delay: function(e)
+                {
+                    var data = e.data;
+                    if (data.type == "company")
+                    {
+                        return { url: 'treeDeptData.ashx?type=deptment&prev=' + data.id }
+                    }
+                    if (data.type == "deptment")
+                    {
+                        return { url: 'treeDeptData.ashx?type=employee&prev=' + data.id }
+                    }
+                    return false;
+                },
+                checkbox: true,
+                idFieldName: 'id', 
+                slide: false
+            });
+ 
+
+            $("#tree2").ligerTree({
+                nodeWidth: 300,
+                data: createData1(),
+                isLeaf: function (data)
+                {
+                    if (!data) return false;
+                    return data.type == "employee";
+                }, 
+                checkbox: true,
+                idFieldName: 'id',
+                slide: false
+            });
+
+
+            $("#tree3").ligerTree({
+                nodeWidth: 300,
+                data: createData2(),
+                isLeaf: function (data)
+                {
+                    if (!data) return false;
+                    return data.type == "employee";
+                },
+                checkbox: true,
+                idFieldName: 'id',
+                slide: false
+            });
+        });
+         
+        function createData1()
+        {
+            var data = [];
+            for (var i = 0, l = 100 ; i < l ; i++)
+            {
+                var num = i + 1, id = num;
+                var o = {
+                    text: "部门" + id,
+                    index: num,
+                    delay: 'treeDeptData.ashx?type=employee&prev=' + num
+                };
+                data.push(o);
+            }
+            return data;
+        }
+        
+        function createData2()
+        {
+            var data = [];
+            for (var i = 0, l = 100 ; i < l ; i++)
+            {
+                var num = i + 1, id = num;
+                var o = {
+                    text: "部门" + id,
+                    index: num,
+                    delay: {
+                        url: 'treeDeptData.ashx',
+                        parms: {
+                            type: 'employee',
+                            prev : num
+                        }
+                    }
+                };
+                data.push(o);
+            }
+            return data;
+        }
+    </script>
+</head>
+<body style="padding:10px">  
+
+    <h2>延迟加载,“远程模式”,即不立刻加载出全部数据,在展开节点的时候才加载数据</h2>
+
+    <div class="box">
+        <h4>全局定义模式</h4>
+         <div class="tree"> 
+            <ul id="tree1"></ul> 
+        </div> 
+    </div>
+    
+     <div class="box">
+        <h4>节点数据定义模式,delay设置为字符串(该方式是在“节点数据”中设置)</h4>
+         <div class="tree"> 
+            <ul id="tree2"></ul> 
+        </div> 
+    </div>
+
+      <div class="box">
+        <h4>节点数据定义模式,delay设置为Object(该方式是在“节点数据”中设置)</h4>
+         <div class="tree"> 
+            <ul id="tree3"></ul> 
+        </div> 
+    </div>
+
+    <div class="l-clear"></div>
+    <div id="message">
+ 
+    </div>
+        <div style="display:none">
+     
+    </div>
+</body>
+</html>

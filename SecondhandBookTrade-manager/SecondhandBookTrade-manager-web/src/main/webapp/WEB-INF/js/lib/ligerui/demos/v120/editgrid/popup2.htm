@@ -1,0 +1,67 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title></title>
+    <link href="../../../lib/ligerUI/skins/Aqua/css/ligerui-all.css" rel="stylesheet" type="text/css" />
+    <link href="../../../lib/ligerUI/skins/Gray/css/all.css" rel="stylesheet" />
+    <script src="../../../lib/jquery/jquery-1.9.0.min.js" type="text/javascript"></script> 
+<script src="../../../lib/ligerUI/js/ligerui.all.js"></script>
+    <script src="../../grid/CustomersData.js" type="text/javascript"></script>
+    <script src="../../../lib/json2.js"></script>
+</head>
+<body style="padding: 10px">
+     <div id="grid1"></div>   
+    <div id="message" style="margin:10px;"></div>
+    <script> 
+        $("#grid1").ligerGrid({
+            columns: [
+                { name: 'CustomerID', display: '客户', width: 200, editor: { type: 'text' } },
+                { name: 'CompanyName', display: '公司', width: 200, editor: { type: 'text' } },
+                {
+                    name: 'CustomerID', display: '客户(弹出框选择)', width: 400, align: 'left', textField: 'CustomerID'
+                    , editor:
+                        {
+                            type: 'popup', valueField: 'CustomerID', textField: 'CustomerID', grid:
+                            {
+                                data: CustomersData, columns: [
+                                { name: 'CustomerID', width: 200, display: 'CustomerID' }, { name: 'CompanyName', width: 200, display: 'CompanyName' }
+                                ]
+                            },
+                            condition: {
+                                prefixID: 'condtion_',
+                                fields: [
+                                    { name: 'Customer2', type: 'text', label: '客户', width: 200 }
+                                ]
+                            }, onSelected: f_onSelected,
+                            searchClick: function (e)
+                            {
+                                alert("这里可以根据搜索规则来搜索（下面的代码已经本地搜索),搜索规则:" + liger.toJSON(e.rules));
+                                e.grid.loadData($.ligerFilter.getFilterFunction(e.rules));
+                            }
+                        }
+                }
+            ],
+            data: CustomersData, enabledEdit: true
+        });
+
+
+        // e.value  e.text  e.data 
+        function f_onSelected(e) { 
+            if (!e.data || !e.data.length) return;
+
+            var grid = liger.get("grid1");
+
+            var selected = e.data[0]; 
+            grid.updateRow(grid.lastEditRow, {
+                CustomerID: selected.CustomerID,
+                CompanyName: selected.CompanyName
+            });
+
+            var out = JSON.stringify(selected);
+            $("#message").html('最后选择:'+out);
+        }
+
+    </script>
+</body>
+</html>

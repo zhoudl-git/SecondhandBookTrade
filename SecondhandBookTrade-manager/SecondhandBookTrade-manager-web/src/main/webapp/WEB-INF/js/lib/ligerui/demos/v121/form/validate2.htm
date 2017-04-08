@@ -1,0 +1,55 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title></title>
+    <link href="../../../lib/ligerUI/skins/Aqua/css/ligerui-all.css" rel="stylesheet" type="text/css" />
+    <link href="../../../lib/ligerUI/skins/Gray/css/all.css" rel="stylesheet" />
+    <script src="../../../lib/jquery/jquery-1.9.0.min.js" type="text/javascript"></script> 
+    <script src="../../../lib/ligerUI/js/ligerui.all.js" type="text/javascript"></script>  
+
+    <script src="../../../lib/jquery-validation/jquery.validate.min.js"></script>
+    <script src="../../../lib/jquery-validation/jquery.metadata.js" type="text/javascript"></script>
+    <script src="../../../lib/jquery-validation/messages_cn.js" type="text/javascript"></script>
+    <style>
+        .liger-button {
+            margin-bottom: 3px;
+        }
+    </style>
+</head>
+<body style="padding: 10px">
+   <form id="form1"> 
+    </form> 
+
+    <div class="liger-button" data-click="f_validate" data-width="150">验证</div> 
+    <script>
+        var form = $("#form1").ligerForm({
+            validate: true,
+            fields: [
+                {type:'text',label:'标题',name:'Title',validate:{required:true,minlength:5}},
+                { type: 'date', label: '入职日期', name: 'addDate', validate: { required: true } },
+                { type: 'select', label: '国家', name: 'Country', textField: "Country", validate: { required: true }, editor: { data: getCountryData(), textField: "Name", valueField: "Code" } }
+                ]
+        }); 
+        function getCountryData() {
+            return [
+            { Name: '中国', Code: 'ZG' },
+            { Name: '德国', Code: 'DG' },
+            { Name: '美国', Code: 'MG' },
+            { Name: '澳大利亚', Code: 'ADLY' },
+            { Name: '加拿大', Code: 'JND' }
+            ];
+        }
+        function f_validate() {
+            var form = liger.get('form1');
+            if (form.valid()) {
+                alert('验证通过');
+            }
+            else {
+                form.showInvalid();
+            }
+        } 
+
+    </script>
+</body>
+</html>

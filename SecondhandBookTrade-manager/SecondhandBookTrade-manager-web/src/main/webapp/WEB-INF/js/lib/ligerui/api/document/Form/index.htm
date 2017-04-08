@@ -1,0 +1,54 @@
+﻿<html>
+	<head>
+		<title>Form - jQuery LigerUI API</title>      
+		<meta http-equiv="content-type" content="text/html; charset=UTF-8" /> 
+		<link href="../common.css" rel="stylesheet" type="text/css" />
+		<script src="../core.js" type="text/javascript"></script> 
+	</head>
+	<body>
+		<h2>ligerForm</h2> 
+         
+        
+                    <p> 
+            <ul><li>自定义表单：根据指定的字段列表创建表单(支持自定义字段类型、宽度等)</li><li>将表单元素转换为自定义的控件(默认提供了ligerui内置的表单控件集合，你也可以自己定义)&nbsp;</li></ul><br />
+        </p>
+                     
+          
+                <h3>示例</h3>
+        <pre><div><!--
+
+Code highlighting produced by Actipro CodeHighlighter (freeware)
+http://www.CodeHighlighter.com/
+
+--><span style="color: #008080;"> 1</span> <span style="color: #000000;">   </span><span style="color: #0000FF;">&lt;</span><span style="color: #800000;">div </span><span style="color: #FF0000;">id</span><span style="color: #0000FF;">=&quot;form1&quot;</span><span style="color: #FF0000;"> class</span><span style="color: #0000FF;">=&quot;liger-form&quot;</span><span style="color: #0000FF;">&gt;</span><span style="color: #000000;">
+</span><span style="color: #008080;"> 2</span> <span style="color: #000000;">        </span><span style="color: #0000FF;">&lt;</span><span style="color: #800000;">div </span><span style="color: #FF0000;">class</span><span style="color: #0000FF;">=&quot;fields&quot;</span><span style="color: #0000FF;">&gt;</span><span style="color: #000000;">
+</span><span style="color: #008080;"> 3</span> <span style="color: #000000;">            </span><span style="color: #0000FF;">&lt;</span><span style="color: #800000;">input </span><span style="color: #FF0000;">data-type</span><span style="color: #0000FF;">=&quot;text&quot;</span><span style="color: #FF0000;"> data-label</span><span style="color: #0000FF;">=&quot;标题&quot;</span><span style="color: #FF0000;"> data-name</span><span style="color: #0000FF;">=&quot;Title&quot;</span><span style="color: #FF0000;"> </span><span style="color: #0000FF;">/&gt;</span><span style="color: #000000;">
+</span><span style="color: #008080;"> 4</span> <span style="color: #000000;">            </span><span style="color: #0000FF;">&lt;</span><span style="color: #800000;">input </span><span style="color: #FF0000;">data-type</span><span style="color: #0000FF;">=&quot;date&quot;</span><span style="color: #FF0000;"> data-label</span><span style="color: #0000FF;">=&quot;入职日期&quot;</span><span style="color: #FF0000;"> data-name</span><span style="color: #0000FF;">=&quot;addDate&quot;</span><span style="color: #FF0000;"> data-newline</span><span style="color: #0000FF;">=&quot;false&quot;</span><span style="color: #0000FF;">/&gt;</span><span style="color: #000000;">
+</span><span style="color: #008080;"> 5</span> <span style="color: #000000;">            </span><span style="color: #0000FF;">&lt;</span><span style="color: #800000;">div </span><span style="color: #FF0000;">data-type</span><span style="color: #0000FF;">=&quot;select&quot;</span><span style="color: #FF0000;"> data-label</span><span style="color: #0000FF;">=&quot;国家&quot;</span><span style="color: #FF0000;"> data-name</span><span style="color: #0000FF;">=&quot;Country&quot;</span><span style="color: #FF0000;"> </span><span style="color: #0000FF;">&gt;</span><span style="color: #000000;">
+</span><span style="color: #008080;"> 6</span> <span style="color: #000000;">                </span><span style="color: #0000FF;">&lt;</span><span style="color: #800000;">input </span><span style="color: #FF0000;">class</span><span style="color: #0000FF;">=&quot;editor&quot;</span><span style="color: #FF0000;">  data-data</span><span style="color: #0000FF;">=&quot;getCountryData()&quot;</span><span style="color: #FF0000;"> data-onSelected</span><span style="color: #0000FF;">=&quot;f_onCountryChanged&quot;</span><span style="color: #FF0000;"> data-textField</span><span style="color: #0000FF;">=&quot;Country&quot;</span><span style="color: #FF0000;"> data-valueField</span><span style="color: #0000FF;">=&quot;Country&quot;</span><span style="color: #0000FF;">/&gt;</span><span style="color: #000000;"> 
+</span><span style="color: #008080;"> 7</span> <span style="color: #000000;">            </span><span style="color: #0000FF;">&lt;/</span><span style="color: #800000;">div</span><span style="color: #0000FF;">&gt;</span><span style="color: #000000;">
+</span><span style="color: #008080;"> 8</span> <span style="color: #000000;">            </span><span style="color: #0000FF;">&lt;</span><span style="color: #800000;">div </span><span style="color: #FF0000;">data-type</span><span style="color: #0000FF;">=&quot;select&quot;</span><span style="color: #FF0000;"> data-label</span><span style="color: #0000FF;">=&quot;城市&quot;</span><span style="color: #FF0000;"> data-name</span><span style="color: #0000FF;">=&quot;City&quot;</span><span style="color: #0000FF;">&gt;</span><span style="color: #000000;">
+</span><span style="color: #008080;"> 9</span> <span style="color: #000000;">                </span><span style="color: #0000FF;">&lt;</span><span style="color: #800000;">input </span><span style="color: #FF0000;">class</span><span style="color: #0000FF;">=&quot;editor&quot;</span><span style="color: #FF0000;">  data-textField</span><span style="color: #0000FF;">=&quot;City&quot;</span><span style="color: #FF0000;"> data-valueField</span><span style="color: #0000FF;">=&quot;City&quot;</span><span style="color: #0000FF;">/&gt;</span><span style="color: #000000;">  
+</span><span style="color: #008080;">10</span> <span style="color: #000000;">            </span><span style="color: #0000FF;">&lt;/</span><span style="color: #800000;">div</span><span style="color: #0000FF;">&gt;</span><span style="color: #000000;">
+</span><span style="color: #008080;">11</span> <span style="color: #000000;">        </span><span style="color: #0000FF;">&lt;/</span><span style="color: #800000;">div</span><span style="color: #0000FF;">&gt;</span><span style="color: #000000;">  
+</span><span style="color: #008080;">12</span> <span style="color: #000000;">    </span><span style="color: #0000FF;">&lt;/</span><span style="color: #800000;">div</span><span style="color: #0000FF;">&gt;</span><span style="color: #000000;"> 
+</span><span style="color: #008080;">13</span> <span style="color: #000000;">    </span><span style="color: #0000FF;">&lt;</span><span style="color: #800000;">script</span><span style="color: #0000FF;">&gt;</span><span style="background-color: #F5F5F5; color: #000000;">
+</span><span style="color: #008080;">14</span> <span style="background-color: #F5F5F5; color: #000000;">        </span><span style="background-color: #F5F5F5; color: #008000;">//</span><span style="background-color: #F5F5F5; color: #008000;">国家 改变事件：清空城市,重新绑定数据</span><span style="background-color: #F5F5F5; color: #008000;">
+</span><span style="color: #008080;">15</span> <span style="background-color: #F5F5F5; color: #008000;"></span><span style="background-color: #F5F5F5; color: #000000;">        </span><span style="background-color: #F5F5F5; color: #0000FF;">function</span><span style="background-color: #F5F5F5; color: #000000;"> f_onCountryChanged(value)
+</span><span style="color: #008080;">16</span> <span style="background-color: #F5F5F5; color: #000000;">        {
+</span><span style="color: #008080;">17</span> <span style="background-color: #F5F5F5; color: #000000;">            </span><span style="background-color: #F5F5F5; color: #0000FF;">var</span><span style="background-color: #F5F5F5; color: #000000;"> combo </span><span style="background-color: #F5F5F5; color: #000000;">=</span><span style="background-color: #F5F5F5; color: #000000;"> liger.get(</span><span style="background-color: #F5F5F5; color: #000000;">'</span><span style="background-color: #F5F5F5; color: #000000;">City</span><span style="background-color: #F5F5F5; color: #000000;">'</span><span style="background-color: #F5F5F5; color: #000000;">);
+</span><span style="color: #008080;">18</span> <span style="background-color: #F5F5F5; color: #000000;">            </span><span style="background-color: #F5F5F5; color: #0000FF;">var</span><span style="background-color: #F5F5F5; color: #000000;"> data </span><span style="background-color: #F5F5F5; color: #000000;">=</span><span style="background-color: #F5F5F5; color: #000000;"> getCityData(value); 
+</span><span style="color: #008080;">19</span> <span style="background-color: #F5F5F5; color: #000000;">            combo.clear();
+</span><span style="color: #008080;">20</span> <span style="background-color: #F5F5F5; color: #000000;">            combo.set(</span><span style="background-color: #F5F5F5; color: #000000;">'</span><span style="background-color: #F5F5F5; color: #000000;">data</span><span style="background-color: #F5F5F5; color: #000000;">'</span><span style="background-color: #F5F5F5; color: #000000;">, data);
+</span><span style="color: #008080;">21</span> <span style="background-color: #F5F5F5; color: #000000;">        } 
+</span><span style="color: #008080;">22</span> <span style="background-color: #F5F5F5; color: #000000;">    </span><span style="color: #0000FF;">&lt;/</span><span style="color: #800000;">script</span><span style="color: #0000FF;">&gt;</span></div></pre>
+        
+        <h3>截图</h3>
+
+        <p>
+            <img src="../../uishow/ligerForm.jpg" />
+        </p>  
+        
+
+			</body>
+</html>

@@ -1,0 +1,47 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title></title>
+    <link href="../../../lib/ligerUI/skins/Aqua/css/ligerui-all.css" rel="stylesheet" type="text/css" />
+    <link href="../../../lib/ligerUI/skins/Gray/css/all.css" rel="stylesheet" />
+    <script src="../../../lib/jquery/jquery-1.9.0.min.js" type="text/javascript"></script> 
+    <script src="../../../lib/ligerUI/js/ligerui.all.js"></script>
+    <script src="../../grid/CustomersData.js" type="text/javascript"></script>
+    <script src="../citylink.js"></script>
+    <script src="../../../lib/json2.js"></script>
+</head>
+<body style="padding: 10px">
+
+    <div class="liger-grid" id="grid1" data-data="CustomersData" data-enabledEdit="true">
+        <ul class="columns">
+            <li data-name="CustomerID" data-width="200" data-display="客户"> 
+                <input class="editor" data-type="text" />
+            </li> 
+            <li data-display="国家" data-name="Country" data-width="200">
+                <input class="editor" data-type="select" data-data="getCountryData()" data-textField="Country" data-valueField="Country" data-onChanged="f_onCountryChanged"/> 
+            </li>
+            <li data-display="城市" data-name="City" data-width="200">
+                <input class="editor" data-type="select" data-textField="City" data-valueField="City" data-ext="f_createCityData" /> 
+            </li>
+        </ul> 
+     </div>  
+    <div id="message" style="margin:10px;"></div>
+    <script> 
+        //国家 改变事件：清空城市
+        function f_onCountryChanged(e)
+        { 
+            liger.get("grid1").updateCell('City', '', e.record);
+        }
+        //城市 下拉框 数据初始化,这里也可以改成 改变服务器参数( parms,url )
+        function f_createCityData(e)
+        {
+            var Country = e.record.Country;
+            var options =  {
+                data: getCityData(Country)
+            }; 
+            return options;
+        }  
+    </script>
+</body>
+</html>

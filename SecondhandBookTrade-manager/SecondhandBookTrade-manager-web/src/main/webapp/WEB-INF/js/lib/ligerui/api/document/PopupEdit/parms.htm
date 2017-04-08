@@ -1,0 +1,328 @@
+﻿<html>
+	<head>
+		<title>PopupEdit - jQuery LigerUI API</title>   
+		<meta http-equiv="content-type" content="text/html; charset=UTF-8" /> 
+		<link href="../common.css" rel="stylesheet" type="text/css" />
+		<script src="../core.js" type="text/javascript"></script> 
+	</head>
+	<body>
+		<h2>参数列表</h2> 
+
+		<table class="apitable" cellpadding="0" cellspacing="0">
+        <thead>
+            <tr> 
+				<td>参数名</td>
+				<td>类型</td> 
+				<td>描述</td>
+				<td>默认值</td> 
+            </tr>
+        </thead> 
+        <tbody>
+					<tr>
+				<td>  
+                    <a name="property_valueFieldID"  key="valueFieldID" class="linkname"></a>
+                                                                       valueFieldID
+                                            				</td>
+                <td>  
+                                        String
+                    				</td>
+                <td class="description">  
+                                        值保存表单隐藏域
+                    				</td>
+                <td>  
+                                        null
+                    				</td> 
+			</tr>
+					<tr>
+				<td>  
+                    <a name="property_css"  key="css" class="linkname"></a>
+                                                                       css
+                                            				</td>
+                <td>  
+                                        String
+                    				</td>
+                <td class="description">  
+                                        附加class name
+                    				</td>
+                <td>  
+                                        null
+                    				</td> 
+			</tr>
+					<tr>
+				<td>  
+                    <a name="property_nullText"  key="nullText" class="linkname"></a>
+                                                                       nullText
+                                            				</td>
+                <td>  
+                                        String
+                    				</td>
+                <td class="description">  
+                                        空值时显示的值
+                    				</td>
+                <td>  
+                                        null
+                    				</td> 
+			</tr>
+					<tr>
+				<td>  
+                    <a name="property_disabled"  key="disabled" class="linkname"></a>
+                                                                       disabled
+                                            				</td>
+                <td>  
+                                        String
+                    				</td>
+                <td class="description">  
+                                        是否无效
+                    				</td>
+                <td>  
+                                        null
+                    				</td> 
+			</tr>
+					<tr>
+				<td>  
+                    <a name="property_cancelable"  key="cancelable" class="linkname"></a>
+                                                                       cancelable
+                                            				</td>
+                <td>  
+                                        Bool
+                    				</td>
+                <td class="description">  
+                                        是否允许取消
+                    				</td>
+                <td>  
+                                        null
+                    				</td> 
+			</tr>
+					<tr>
+				<td>  
+                    <a name="property_width"  key="width" class="linkname"></a>
+                                                                       width
+                                            				</td>
+                <td>  
+                                        Int
+                    				</td>
+                <td class="description">  
+                                        高度
+                    				</td>
+                <td>  
+                                        null
+                    				</td> 
+			</tr>
+					<tr>
+				<td>  
+                    <a name="property_heigth"  key="heigth" class="linkname"></a>
+                                                                       heigth
+                                            				</td>
+                <td>  
+                                        Int
+                    				</td>
+                <td class="description">  
+                                        宽度
+                    				</td>
+                <td>  
+                                        null
+                    				</td> 
+			</tr>
+					<tr>
+				<td>  
+                    <a name="property_render"  key="render" class="linkname"></a>
+                                                                       render
+                                            				</td>
+                <td>  
+                                        Function
+                    				</td>
+                <td class="description">  
+                                        自定义函数
+                    				</td>
+                <td>  
+                                        null
+                    				</td> 
+			</tr>
+					<tr>
+				<td>  
+                    <a name="property_split"  key="split" class="linkname"></a>
+                                                                       split
+                                            				</td>
+                <td>  
+                                        String
+                    				</td>
+                <td class="description">  
+                                        分隔符
+                    				</td>
+                <td>  
+                                        null
+                    				</td> 
+			</tr>
+					<tr>
+				<td>  
+                    <a name="property_grid"  key="grid" class="linkname"></a>
+                                                                       grid
+                                            				</td>
+                <td>  
+                                        Object
+                    				</td>
+                <td class="description">  
+                                        <a href="../Grid/parms.htm">同表格参数</a>
+                    				</td>
+                <td>  
+                                        null
+                    				</td> 
+			</tr>
+					<tr>
+				<td>  
+                    <a name="property_condition"  key="condition" class="linkname"></a>
+                                                                       condition
+                                            				</td>
+                <td>  
+                                        Object
+                    				</td>
+                <td class="description">  
+                                        <a href="../Form/parms.htm">同表单参数</a>
+                    				</td>
+                <td>  
+                                        null
+                    				</td> 
+			</tr>
+					<tr>
+				<td>  
+                    <a name="property_valueField"  key="valueField" class="linkname"></a>
+                                                                       valueField
+                                            				</td>
+                <td>  
+                                        String
+                    				</td>
+                <td class="description">  
+                                        值成员字段名
+                    				</td>
+                <td>  
+                                        null
+                    				</td> 
+			</tr>
+					<tr>
+				<td>  
+                    <a name="property_textField"  key="textField" class="linkname"></a>
+                                                                       textField
+                                            				</td>
+                <td>  
+                                        String
+                    				</td>
+                <td class="description">  
+                                        显示成员字段名
+                    				</td>
+                <td>  
+                                        null
+                    				</td> 
+			</tr>
+					<tr>
+				<td>  
+                    <a name="property_readonly"  key="readonly" class="linkname"></a>
+                                                                       readonly
+                                            				</td>
+                <td>  
+                                        Bool
+                    				</td>
+                <td class="description">  
+                                        是否只读
+                    				</td>
+                <td>  
+                                        false
+                    				</td> 
+			</tr>
+					<tr>
+				<td>  
+                    <a name="property_valueFieldCssClass"  key="valueFieldCssClass" class="linkname"></a>
+                                                                       valueFieldCssClass
+                                            				</td>
+                <td>  
+                                        String
+                    				</td>
+                <td class="description">  
+                                        隐藏域css
+                    				</td>
+                <td>  
+                                        NULL
+                    				</td> 
+			</tr>
+					<tr>
+				<td>  
+                    <a name="property_parms"  key="parms" class="linkname"></a>
+                                                                       parms
+                                            				</td>
+                <td>  
+                                        Object
+                    				</td>
+                <td class="description">  
+                                        异步数据请求参数
+                    				</td>
+                <td>  
+                                        null
+                    				</td> 
+			</tr>
+					<tr>
+				<td>  
+                    <a name="property_method"  key="method" class="linkname"></a>
+                                                                       method
+                                            				</td>
+                <td>  
+                                        String
+                    				</td>
+                <td class="description">  
+                                        &nbsp;
+                    				</td>
+                <td>  
+                                        null
+                    				</td> 
+			</tr>
+					<tr>
+				<td>  
+                    <a name="property_async"  key="async" class="linkname"></a>
+                                                                       async
+                                            				</td>
+                <td>  
+                                        Bool
+                    				</td>
+                <td class="description">  
+                                        &nbsp;
+                    				</td>
+                <td>  
+                                        null
+                    				</td> 
+			</tr>
+					<tr>
+				<td>  
+                    <a name="property_data"  key="data" class="linkname"></a>
+                                                                       data
+                                            				</td>
+                <td>  
+                                        Array
+                    				</td>
+                <td class="description">  
+                                        &nbsp;
+                    				</td>
+                <td>  
+                                        null
+                    				</td> 
+			</tr>
+					<tr>
+				<td>  
+                    <a name="property_searchClick"  key="searchClick" class="linkname"></a>
+                                                                       searchClick
+                                            				</td>
+                <td>  
+                                        Function
+                    				</td>
+                <td class="description">  
+                                        &nbsp;
+                    				</td>
+                <td>  
+                                        null
+                    				</td> 
+			</tr>
+		        </tbody>
+		</table>
+
+        
+                                                                                                                                                                                                                                                                                                                                                                                                                         
+
+         	</body>
+</html>

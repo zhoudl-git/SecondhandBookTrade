@@ -1,0 +1,39 @@
+﻿ 
+<html>
+<head> 
+    <title></title>
+    <link href="../../lib/ligerUI/skins/Aqua/css/ligerui-all.css" rel="stylesheet" type="text/css" /> 
+    <script src="../../lib/jquery/jquery-1.9.0.min.js" type="text/javascript"></script>
+    <script src="../../lib/ligerUI/js/core/base.js" type="text/javascript"></script>
+    <script src="../../lib/ligerUI/js/plugins/ligerTip.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        var i = 0;
+        $(function () {
+            
+            //这里是在鼠标经过时才显示，没有传入参数，或者传入的参数列表有 auto:true这个参数/值
+            $("#message1").ligerTip();
+
+            //这里调用一次就会显示一下
+            $("#message2").ligerTip({ content: $("#message2").html() });
+
+        });
+         
+    </script>
+    <style type="text/css">
+       .message{ position:absolute; left:100px; top:100px; background:#F1F1F1; border:1px solid #DEDEDE; padding:10px;}
+    </style>
+</head>
+<body style="padding: 10px">
+    
+     
+    <div id="message1" class="message" title="这里是title..." >
+    这里是内容。。。
+    这个元素使用ligerTip，不传入任何参数，将会利用这个Dom元素的title作为ligerTip的content
+    </div>
+    
+
+     <div id="message2" style="left:400px; top:300px" class="message" title="这里是title..." >
+    这里是内容2222。。。 
+    </div>
+</body>
+</html>

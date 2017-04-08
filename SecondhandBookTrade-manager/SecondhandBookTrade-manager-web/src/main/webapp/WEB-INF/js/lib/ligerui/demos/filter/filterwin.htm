@@ -1,0 +1,73 @@
+﻿ 
+<html>
+<head> 
+    <title></title>
+    <link href="../../lib/ligerUI/skins/Aqua/css/ligerui-all.css" rel="stylesheet" type="text/css" /> 
+    <link href="../../lib/ligerUI/skins/Gray/css/all.css" rel="stylesheet" type="text/css" />
+    <script src="../../lib/jquery/jquery-1.9.0.min.js" type="text/javascript"></script>
+    <script src="../../lib/ligerUI/js/core/base.js" type="text/javascript"></script> 
+    <script src="../../lib/ligerUI/js/ligerui.min.js" type="text/javascript"></script>
+    <script src="../../lib/ligerUI/js/plugins/ligerFilter.js" type="text/javascript"></script>  
+    <script type="text/javascript">
+        $(function ()
+        {
+            var fields = [
+                { display: '主键', name: 'CustomerID' },
+                { display: '公司名', name: 'CompanyName', editor: { type: 'string'} },
+                { display: '加入时间', name: 'AddTime', editor: { type: 'date', options: { showTime: true}} },
+                { display: '金额', name: 'Amount', type: 'number', editor: { type: 'number', options: { type: 'float'}} }
+            ];
+
+
+
+
+            var filter = $("#filter").ligerFilter({ fields: fields });
+            $("#btnShow").click(function ()
+            {
+                if (window.winfilter)
+                {
+                    window.winfilter.show();
+                }
+                else
+                {
+                    //这里一个要有一个ID
+                    var filtercontainer = $('<div id="filtercontainer"></div>').width(380).height(120).hide();
+                    window.filter =  filtercontainer.ligerFilter({ fields: fields });
+                    window.winfilter = $.ligerDialog.open({
+                        width: 420, height: 208,
+                        target: filtercontainer, isResize: true, top: 50,
+                        buttons: [
+                            { text: '确定', onclick: function (item, dialog) { loadData(); dialog.hide(); } },
+                            { text: '取消', onclick: function (item, dialog) { dialog.hide(); } }
+                        ]
+                    });
+                }
+            });
+
+            function loadData()
+            {
+                var group = window.filter.getData();
+                $("#txtGroup").val($.ligerui.toJSON(group));
+            }
+
+
+        });
+         
+    </script> 
+    <style type="text/css">
+        #txtGroup
+        {
+            height: 282px;
+            width: 463px;
+        }
+    </style>
+</head>
+<body style="padding: 10px"> 
+<form id="form">
+    <div id="filter" style="border:1px solid #d3d3d3; display:none; width:370px; height:120px;"></div></form>
+    <p>
+     <textarea id="txtGroup"></textarea></p>
+    <p>
+    <input id="btnShow" type="button" value="显示过滤" /> </p> 
+</body>
+</html>

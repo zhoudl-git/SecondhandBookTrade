@@ -1,0 +1,30 @@
+﻿ .jloading{ position:absolute; right:0; top:0; padding:4px; color:White; background:#6287AC; z-index:99999; border-left:1px solid #53779D; border-bottom:1px solid #53779D;filter:alpha(opacity=70);opacity:0.70;}
+ 
+ 
+.chk-icon{ background:url(../lib/ligerUI/skins/Aqua/images/controls/checkbox.gif) 0px 0px; height:13px; line-height:13px; width:13px; margin:4px 20px; display:block; cursor:pointer;}
+.chk-icon-selected{ background-position:0px -13px;}
+
+/* 按钮 */
+.button{line-height:25px;height:25px;background:url('images/button1.gif') repeat-x; position:relative; margin-top:8px; margin-bottom:8px;color:#2C69A2; width:120px; cursor:pointer;}
+.button-l,.button-r{ width:2px;height:25px;background:url('images/button1.gif') no-repeat; position:absolute; }
+.button-l{ left:0px; background-position:0px -25px;}
+.button-r{ right:0px;background-position:0px -50px;}
+.button-icon{ position:absolute; left:7px; top:6px;}
+.button img{ width:16px; height:16px;}
+.button span{ display:block; margin-left:30px;text-align: center; } 
+.buttonnoicon span{ margin-left:4px; } 
+ 
+ 
+.button2,.button2 .button-l,.button2 .button-r{background-image:url('images/button2.gif'); line-height:23px; height:23px; color:#333;}
+.button2 .button-icon{   top:4px;}
+.button2 .button-l,.button2 .button-r{ background-position:0px -23px; width:1px;}
+
+/* 搜索框 */
+.searchtitle{ padding-left:28px; position:relative;}
+.searchtitle img{ width:22px; height:22px; position:absolute; left:0; top:0;}
+.searchtitle span{ font-size:14px; font-weight:bold;}
+.searchtitle .togglebtn{ position:absolute; top:6px; right:15px; background:url(images/toggle.gif) no-repeat 0px 0px; height:10px; width:9px; cursor:pointer;}
+.searchtitle .togglebtn-down{ background-position:0px -10px;}
+
+/* 一条线 导航线 */
+.navline{ height:1px; line-height:1px; width:100%;border-bottom:1px solid #f5f5f5; background-color:#D9D9D9;width:99%; }

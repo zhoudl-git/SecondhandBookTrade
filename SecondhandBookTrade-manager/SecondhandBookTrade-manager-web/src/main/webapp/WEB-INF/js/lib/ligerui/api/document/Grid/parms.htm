@@ -1,0 +1,2243 @@
+﻿<html>
+	<head>
+		<title>Grid - jQuery LigerUI API</title>   
+		<meta http-equiv="content-type" content="text/html; charset=UTF-8" /> 
+		<link href="../common.css" rel="stylesheet" type="text/css" />
+		<script src="../core.js" type="text/javascript"></script> 
+	</head>
+	<body>
+		<h2>参数列表</h2> 
+
+		<table class="apitable" cellpadding="0" cellspacing="0">
+        <thead>
+            <tr> 
+				<td>参数名</td>
+				<td>类型</td> 
+				<td>描述</td>
+				<td>默认值</td> 
+            </tr>
+        </thead> 
+        <tbody>
+					<tr>
+				<td>  
+                    <a name="property_title"  key="title" class="linkname"></a>
+                                                                       title
+                                            				</td>
+                <td>  
+                                        String
+                    				</td>
+                <td class="description">  
+                                        表格标题
+                    				</td>
+                <td>  
+                                        null
+                    				</td> 
+			</tr>
+					<tr>
+				<td>  
+                    <a name="property_width"  key="width" class="linkname"></a>
+                                                                       width
+                                            				</td>
+                <td>  
+                                        String|Int
+                    				</td>
+                <td class="description">  
+                                        宽度值,支持百分比
+                    				</td>
+                <td>  
+                                        'auto'
+                    				</td> 
+			</tr>
+					<tr>
+				<td>  
+                    <a name="property_height"  key="height" class="linkname"></a>
+                                                                       height
+                                            				</td>
+                <td>  
+                                        String|Int
+                    				</td>
+                <td class="description">  
+                                        高度值,支持百分比
+                    				</td>
+                <td>  
+                                        'auto'
+                    				</td> 
+			</tr>
+					<tr>
+				<td>  
+                    <a name="property_columnWidth"  key="columnWidth" class="linkname"></a>
+                                                                       columnWidth
+                                            				</td>
+                <td>  
+                                        Int
+                    				</td>
+                <td class="description">  
+                                        默认列宽度
+                    				</td>
+                <td>  
+                                        null
+                    				</td> 
+			</tr>
+					<tr>
+				<td>  
+                    <a name="property_resizable"  key="resizable" class="linkname"></a>
+                                                                       resizable
+                                            				</td>
+                <td>  
+                                        String
+                    				</td>
+                <td class="description">  
+                                        table是否可伸缩(暂不支持)
+                    				</td>
+                <td>  
+                                        true
+                    				</td> 
+			</tr>
+					<tr>
+				<td>  
+                    <a name="property_url"  key="url" class="linkname"></a>
+                                                                       url
+                                            				</td>
+                <td>  
+                                        String
+                    				</td>
+                <td class="description">  
+                                        ajax url
+                    				</td>
+                <td>  
+                                        null
+                    				</td> 
+			</tr>
+					<tr>
+				<td>  
+                    <a name="property_data"  key="data" class="linkname"></a>
+                                                                       data
+                                            				</td>
+                <td>  
+                                        Object
+                    				</td>
+                <td class="description">  
+                                        table data
+                    				</td>
+                <td>  
+                                        null
+                    				</td> 
+			</tr>
+					<tr>
+				<td>  
+                    <a name="property_usePager"  key="usePager" class="linkname"></a>
+                                                                       usePager
+                                            				</td>
+                <td>  
+                                        Boolean
+                    				</td>
+                <td class="description">  
+                                        是否分页
+                    				</td>
+                <td>  
+                                        true
+                    				</td> 
+			</tr>
+					<tr>
+				<td>  
+                    <a name="property_page"  key="page" class="linkname"></a>
+                                                                       page
+                                            				</td>
+                <td>  
+                                        Int
+                    				</td>
+                <td class="description">  
+                                        默认当前页
+                    				</td>
+                <td>  
+                                        1
+                    				</td> 
+			</tr>
+					<tr>
+				<td>  
+                    <a name="property_pageSize"  key="pageSize" class="linkname"></a>
+                                                                       pageSize
+                                            				</td>
+                <td>  
+                                        Int
+                    				</td>
+                <td class="description">  
+                                        每页默认的结果数
+                    				</td>
+                <td>  
+                                        10
+                    				</td> 
+			</tr>
+					<tr>
+				<td>  
+                    <a name="property_pageSizeOptions"  key="pageSizeOptions" class="linkname"></a>
+                                                                       pageSizeOptions
+                                            				</td>
+                <td>  
+                                        Array
+                    				</td>
+                <td class="description">  
+                                        可选择设定的每页结果数
+                    				</td>
+                <td>  
+                                        [10, 20, 30, 40, 50]
+                    				</td> 
+			</tr>
+					<tr>
+				<td>  
+                    <a name="property_parms"  key="parms" class="linkname"></a>
+                                                                       parms
+                                            				</td>
+                <td>  
+                                        Object
+                    				</td>
+                <td class="description">  
+                                        ajax 参数
+                    				</td>
+                <td>  
+                                        []
+                    				</td> 
+			</tr>
+					<tr>
+				<td>  
+                    <a name="property_columns"  key="columns" class="linkname"></a>
+                                                                       columns
+                                            				</td>
+                <td>  
+                                        Array
+                    				</td>
+                <td class="description">  
+                                        <a href="#columns">列</a>
+                    				</td>
+                <td>  
+                                        []
+                    				</td> 
+			</tr>
+					<tr>
+				<td>  
+                    <a name="property_minColToggle"  key="minColToggle" class="linkname"></a>
+                                                                       minColToggle
+                                            				</td>
+                <td>  
+                                        Int
+                    				</td>
+                <td class="description">  
+                                        最小显示的列数目
+                    				</td>
+                <td>  
+                                        1
+                    				</td> 
+			</tr>
+					<tr>
+				<td>  
+                    <a name="property_dataAction"  key="dataAction" class="linkname"></a>
+                                                                       dataAction
+                                            				</td>
+                <td>  
+                                        String
+                    				</td>
+                <td class="description">  
+                                        提交数据的方式：本地(local)或(server),选择本地方式时将在客服端分页、排序
+                    				</td>
+                <td>  
+                                        'server'
+                    				</td> 
+			</tr>
+					<tr>
+				<td>  
+                    <a name="property_showTableToggleBtn"  key="showTableToggleBtn" class="linkname"></a>
+                                                                       showTableToggleBtn
+                                            				</td>
+                <td>  
+                                        Bool
+                    				</td>
+                <td class="description">  
+                                        是否显示'显示隐藏Grid'按钮
+                    				</td>
+                <td>  
+                                        false
+                    				</td> 
+			</tr>
+					<tr>
+				<td>  
+                    <a name="property_switchPageSizeApplyComboBox"  key="switchPageSizeApplyComboBox" class="linkname"></a>
+                                                                       switchPageSizeApplyComboBox
+                                            				</td>
+                <td>  
+                                        Bool
+                    				</td>
+                <td class="description">  
+                                        切换每页记录数是否应用ligerComboBox
+                    				</td>
+                <td>  
+                                        false
+                    				</td> 
+			</tr>
+					<tr>
+				<td>  
+                    <a name="property_allowAdjustColWidth"  key="allowAdjustColWidth" class="linkname"></a>
+                                                                       allowAdjustColWidth
+                                            				</td>
+                <td>  
+                                        Int
+                    				</td>
+                <td class="description">  
+                                        是否允许调整列宽
+                    				</td>
+                <td>  
+                                        true
+                    				</td> 
+			</tr>
+					<tr>
+				<td>  
+                    <a name="property_checkbox"  key="checkbox" class="linkname"></a>
+                                                                       checkbox
+                                            				</td>
+                <td>  
+                                        Bool
+                    				</td>
+                <td class="description">  
+                                        是否显示复选框
+                    				</td>
+                <td>  
+                                        false
+                    				</td> 
+			</tr>
+					<tr>
+				<td>  
+                    <a name="property_allowHideColumn"  key="allowHideColumn" class="linkname"></a>
+                                                                       allowHideColumn
+                                            				</td>
+                <td>  
+                                        Bool
+                    				</td>
+                <td class="description">  
+                                        是否显示'切换列层'按钮
+                    				</td>
+                <td>  
+                                        true
+                    				</td> 
+			</tr>
+					<tr>
+				<td>  
+                    <a name="property_enabledEdit"  key="enabledEdit" class="linkname"></a>
+                                                                       enabledEdit
+                                            				</td>
+                <td>  
+                                        Bool
+                    				</td>
+                <td class="description">  
+                                        是否允许编辑
+                    				</td>
+                <td>  
+                                        false
+                    				</td> 
+			</tr>
+					<tr>
+				<td>  
+                    <a name="property_isScroll"  key="isScroll" class="linkname"></a>
+                                                                       isScroll
+                                            				</td>
+                <td>  
+                                        Bool
+                    				</td>
+                <td class="description">  
+                                        设置为false时将不会显示滚动条，高度自适应
+                    				</td>
+                <td>  
+                                        true
+                    				</td> 
+			</tr>
+					<tr>
+				<td>  
+                    <a name="property_dateFormat"  key="dateFormat" class="linkname"></a>
+                                                                       dateFormat
+                                            				</td>
+                <td>  
+                                        String
+                    				</td>
+                <td class="description">  
+                                        默认时间显示格式
+                    				</td>
+                <td>  
+                                        'yyyy-MM-dd'
+                    				</td> 
+			</tr>
+					<tr>
+				<td>  
+                    <a name="property_inWindow"  key="inWindow" class="linkname"></a>
+                                                                       inWindow
+                                            				</td>
+                <td>  
+                                        Bool
+                    				</td>
+                <td class="description">  
+                                        是否以窗口的高度为准 height设置为百分比时可用
+                    				</td>
+                <td>  
+                                        true
+                    				</td> 
+			</tr>
+					<tr>
+				<td>  
+                    <a name="property_statusName"  key="statusName" class="linkname"></a>
+                                                                       statusName
+                                            				</td>
+                <td>  
+                                        String
+                    				</td>
+                <td class="description">  
+                                        状态名
+                    				</td>
+                <td>  
+                                        '__status'
+                    				</td> 
+			</tr>
+					<tr>
+				<td>  
+                    <a name="property_method"  key="method" class="linkname"></a>
+                                                                       method
+                                            				</td>
+                <td>  
+                                        String
+                    				</td>
+                <td class="description">  
+                                        服务器提交方式
+                    				</td>
+                <td>  
+                                        'post'
+                    				</td> 
+			</tr>
+					<tr>
+				<td>  
+                    <a name="property_async"  key="async" class="linkname"></a>
+                                                                       async
+                                            				</td>
+                <td>  
+                                        Bool
+                    				</td>
+                <td class="description">  
+                                        是否异步
+                    				</td>
+                <td>  
+                                        true
+                    				</td> 
+			</tr>
+					<tr>
+				<td>  
+                    <a name="property_fixedCellHeight"  key="fixedCellHeight" class="linkname"></a>
+                                                                       fixedCellHeight
+                                            				</td>
+                <td>  
+                                        Bool
+                    				</td>
+                <td class="description">  
+                                        是否固定单元格的高度
+                    				</td>
+                <td>  
+                                        true
+                    				</td> 
+			</tr>
+					<tr>
+				<td>  
+                    <a name="property_heightDiff"  key="heightDiff" class="linkname"></a>
+                                                                       heightDiff
+                                            				</td>
+                <td>  
+                                        Int
+                    				</td>
+                <td class="description">  
+                                        高度补差,当设置height:100%时，可能会有高度的误差，可以通过这个属性调整
+                    				</td>
+                <td>  
+                                        0
+                    				</td> 
+			</tr>
+					<tr>
+				<td>  
+                    <a name="property_cssClass"  key="cssClass" class="linkname"></a>
+                                                                       cssClass
+                                            				</td>
+                <td>  
+                                        String
+                    				</td>
+                <td class="description">  
+                                        附加给Grid的类名
+                    				</td>
+                <td>  
+                                        null
+                    				</td> 
+			</tr>
+					<tr>
+				<td>  
+                    <a name="property_root"  key="root" class="linkname"></a>
+                                                                       root
+                                            				</td>
+                <td>  
+                                        String
+                    				</td>
+                <td class="description">  
+                                        数据源字段名
+                    				</td>
+                <td>  
+                                        'Rows'
+                    				</td> 
+			</tr>
+					<tr>
+				<td>  
+                    <a name="property_record"  key="record" class="linkname"></a>
+                                                                       record
+                                            				</td>
+                <td>  
+                                        String
+                    				</td>
+                <td class="description">  
+                                        数据源记录数字段名
+                    				</td>
+                <td>  
+                                        'Total'
+                    				</td> 
+			</tr>
+					<tr>
+				<td>  
+                    <a name="property_pageParmName"  key="pageParmName" class="linkname"></a>
+                                                                       pageParmName
+                                            				</td>
+                <td>  
+                                        String
+                    				</td>
+                <td class="description">  
+                                        页索引参数名，(提交给服务器)
+                    				</td>
+                <td>  
+                                        'page'
+                    				</td> 
+			</tr>
+					<tr>
+				<td>  
+                    <a name="property_pagesizeParmName"  key="pagesizeParmName" class="linkname"></a>
+                                                                       pagesizeParmName
+                                            				</td>
+                <td>  
+                                        String
+                    				</td>
+                <td class="description">  
+                                        页记录数参数名，(提交给服务器)
+                    				</td>
+                <td>  
+                                        'pagesize'
+                    				</td> 
+			</tr>
+					<tr>
+				<td>  
+                    <a name="property_sortnameParmName"  key="sortnameParmName" class="linkname"></a>
+                                                                       sortnameParmName
+                                            				</td>
+                <td>  
+                                        String
+                    				</td>
+                <td class="description">  
+                                        页排序列名(提交给服务器)
+                    				</td>
+                <td>  
+                                        'sortname'
+                    				</td> 
+			</tr>
+					<tr>
+				<td>  
+                    <a name="property_sortorderParmName"  key="sortorderParmName" class="linkname"></a>
+                                                                       sortorderParmName
+                                            				</td>
+                <td>  
+                                        String
+                    				</td>
+                <td class="description">  
+                                        页排序方向(提交给服务器)
+                    				</td>
+                <td>  
+                                        'sortorder'
+                    				</td> 
+			</tr>
+					<tr>
+				<td>  
+                    <a name="property_allowUnSelectRow"  key="allowUnSelectRow" class="linkname"></a>
+                                                                       allowUnSelectRow
+                                            				</td>
+                <td>  
+                                        Bool
+                    				</td>
+                <td class="description">  
+                                        是否允许取消选择行
+                    				</td>
+                <td>  
+                                        false
+                    				</td> 
+			</tr>
+					<tr>
+				<td>  
+                    <a name="property_alternatingRow"  key="alternatingRow" class="linkname"></a>
+                                                                       alternatingRow
+                                            				</td>
+                <td>  
+                                        Bool
+                    				</td>
+                <td class="description">  
+                                        是否附加奇偶行效果行
+                    				</td>
+                <td>  
+                                        true
+                    				</td> 
+			</tr>
+					<tr>
+				<td>  
+                    <a name="property_mouseoverRowCssClass"  key="mouseoverRowCssClass" class="linkname"></a>
+                                                                       mouseoverRowCssClass
+                                            				</td>
+                <td>  
+                                        String
+                    				</td>
+                <td class="description">  
+                                        鼠标经过行时的样式
+                    				</td>
+                <td>  
+                                        'l-grid-row-over'
+                    				</td> 
+			</tr>
+					<tr>
+				<td>  
+                    <a name="property_enabledSort"  key="enabledSort" class="linkname"></a>
+                                                                       enabledSort
+                                            				</td>
+                <td>  
+                                        Bool
+                    				</td>
+                <td class="description">  
+                                        是否允许排序
+                    				</td>
+                <td>  
+                                        true
+                    				</td> 
+			</tr>
+					<tr>
+				<td>  
+                    <a name="property_rowAttrRender"  key="rowAttrRender" class="linkname"></a>
+                                                                       <a href="#linkpro125" title="点击查看示例">rowAttrRender</a>
+                                            				</td>
+                <td>  
+                                        Function
+                    				</td>
+                <td class="description">  
+                                        行自定义属性渲染器(包括style，也可以定义)
+                    				</td>
+                <td>  
+                                        null
+                    				</td> 
+			</tr>
+					<tr>
+				<td>  
+                    <a name="property_groupColumnName"  key="groupColumnName" class="linkname"></a>
+                                                                       <a href="#linkpro126" title="点击查看示例">groupColumnName</a>
+                                            				</td>
+                <td>  
+                                        String
+                    				</td>
+                <td class="description">  
+                                        分组列名
+                    				</td>
+                <td>  
+                                        null
+                    				</td> 
+			</tr>
+					<tr>
+				<td>  
+                    <a name="property_groupColumnDisplay"  key="groupColumnDisplay" class="linkname"></a>
+                                                                       groupColumnDisplay
+                                            				</td>
+                <td>  
+                                        String
+                    				</td>
+                <td class="description">  
+                                        分组列显示名字
+                    				</td>
+                <td>  
+                                        '分组'
+                    				</td> 
+			</tr>
+					<tr>
+				<td>  
+                    <a name="property_groupRender"  key="groupRender" class="linkname"></a>
+                                                                       <a href="#linkpro128" title="点击查看示例">groupRender</a>
+                                            				</td>
+                <td>  
+                                        Function
+                    				</td>
+                <td class="description">  
+                                        分组渲染器
+                    				</td>
+                <td>  
+                                        null
+                    				</td> 
+			</tr>
+					<tr>
+				<td>  
+                    <a name="property_totalRender"  key="totalRender" class="linkname"></a>
+                                                                       <a href="#linkpro129" title="点击查看示例">totalRender</a>
+                                            				</td>
+                <td>  
+                                        String
+                    				</td>
+                <td class="description">  
+                                        统计行(全部数据)
+                    				</td>
+                <td>  
+                                        null
+                    				</td> 
+			</tr>
+					<tr>
+				<td>  
+                    <a name="property_delayLoad"  key="delayLoad" class="linkname"></a>
+                                                                       delayLoad
+                                            				</td>
+                <td>  
+                                        Bool
+                    				</td>
+                <td class="description">  
+                                        初始化是是否不加载
+                    				</td>
+                <td>  
+                                        false
+                    				</td> 
+			</tr>
+					<tr>
+				<td>  
+                    <a name="property_where"  key="where" class="linkname"></a>
+                                                                       where
+                                            				</td>
+                <td>  
+                                        Function
+                    				</td>
+                <td class="description">  
+                                        数据过滤查询函数,(参数一 data item，参数二 data item index)
+                    				</td>
+                <td>  
+                                        null
+                    				</td> 
+			</tr>
+					<tr>
+				<td>  
+                    <a name="property_selectRowButtonOnly"  key="selectRowButtonOnly" class="linkname"></a>
+                                                                       selectRowButtonOnly
+                                            				</td>
+                <td>  
+                                        Bool
+                    				</td>
+                <td class="description">  
+                                        复选框模式时，是否只允许点击复选框才能选择行
+                    				</td>
+                <td>  
+                                        false
+                    				</td> 
+			</tr>
+					<tr>
+				<td>  
+                    <a name="property_whenRClickToSelect"  key="whenRClickToSelect" class="linkname"></a>
+                                                                       whenRClickToSelect
+                                            				</td>
+                <td>  
+                                        Bool
+                    				</td>
+                <td class="description">  
+                                        右击行时是否选中
+                    				</td>
+                <td>  
+                                        false
+                    				</td> 
+			</tr>
+					<tr>
+				<td>  
+                    <a name="property_contentType"  key="contentType" class="linkname"></a>
+                                                                       contentType
+                                            				</td>
+                <td>  
+                                        String
+                    				</td>
+                <td class="description">  
+                                        Ajax contentType参数
+                    				</td>
+                <td>  
+                                        null
+                    				</td> 
+			</tr>
+					<tr>
+				<td>  
+                    <a name="property_checkboxColWidth"  key="checkboxColWidth" class="linkname"></a>
+                                                                       checkboxColWidth
+                                            				</td>
+                <td>  
+                                        Int
+                    				</td>
+                <td class="description">  
+                                        复选框列宽度
+                    				</td>
+                <td>  
+                                        27
+                    				</td> 
+			</tr>
+					<tr>
+				<td>  
+                    <a name="property_detailColWidth"  key="detailColWidth" class="linkname"></a>
+                                                                       detailColWidth
+                                            				</td>
+                <td>  
+                                        Int
+                    				</td>
+                <td class="description">  
+                                        明细列宽度
+                    				</td>
+                <td>  
+                                        29
+                    				</td> 
+			</tr>
+					<tr>
+				<td>  
+                    <a name="property_clickToEdit"  key="clickToEdit" class="linkname"></a>
+                                                                       clickToEdit
+                                            				</td>
+                <td>  
+                                        Bool
+                    				</td>
+                <td class="description">  
+                                        单元格编辑状态
+                    				</td>
+                <td>  
+                                        true
+                    				</td> 
+			</tr>
+					<tr>
+				<td>  
+                    <a name="property_detailToEdit"  key="detailToEdit" class="linkname"></a>
+                                                                       <a href="#linkpro138" title="点击查看示例">detailToEdit</a>
+                                            				</td>
+                <td>  
+                                        Bool
+                    				</td>
+                <td class="description">  
+                                        明细编辑状态
+                    				</td>
+                <td>  
+                                        false
+                    				</td> 
+			</tr>
+					<tr>
+				<td>  
+                    <a name="property_minColumnWidth"  key="minColumnWidth" class="linkname"></a>
+                                                                       minColumnWidth
+                                            				</td>
+                <td>  
+                                        Int
+                    				</td>
+                <td class="description">  
+                                        最小列宽
+                    				</td>
+                <td>  
+                                        80
+                    				</td> 
+			</tr>
+					<tr>
+				<td>  
+                    <a name="property_tree"  key="tree" class="linkname"></a>
+                                                                       tree
+                                            				</td>
+                <td>  
+                                        Object
+                    				</td>
+                <td class="description">  
+                                        树模式
+                    				</td>
+                <td>  
+                                        null
+                    				</td> 
+			</tr>
+					<tr>
+				<td>  
+                    <a name="property_isChecked"  key="isChecked" class="linkname"></a>
+                                                                       isChecked
+                                            				</td>
+                <td>  
+                                        Function
+                    				</td>
+                <td class="description">  
+                                        初始化选择行 函数
+                    				</td>
+                <td>  
+                                        null
+                    				</td> 
+			</tr>
+					<tr>
+				<td>  
+                    <a name="property_frozen"  key="frozen" class="linkname"></a>
+                                                                       frozen
+                                            				</td>
+                <td>  
+                                        Bool
+                    				</td>
+                <td class="description">  
+                                        冻结列状态
+                    				</td>
+                <td>  
+                                        true
+                    				</td> 
+			</tr>
+					<tr>
+				<td>  
+                    <a name="property_frozenDetail"  key="frozenDetail" class="linkname"></a>
+                                                                       frozenDetail
+                                            				</td>
+                <td>  
+                                        Bool
+                    				</td>
+                <td class="description">  
+                                        明细按钮是否在固定列中
+                    				</td>
+                <td>  
+                                        false
+                    				</td> 
+			</tr>
+					<tr>
+				<td>  
+                    <a name="property_frozenCheckbox"  key="frozenCheckbox" class="linkname"></a>
+                                                                       frozenCheckbox
+                                            				</td>
+                <td>  
+                                        Bool
+                    				</td>
+                <td class="description">  
+                                        复选框按钮是否在固定列中
+                    				</td>
+                <td>  
+                                        true
+                    				</td> 
+			</tr>
+					<tr>
+				<td>  
+                    <a name="property_detailHeight"  key="detailHeight" class="linkname"></a>
+                                                                       detailHeight
+                                            				</td>
+                <td>  
+                                        Int
+                    				</td>
+                <td class="description">  
+                                        明细框的高度
+                    				</td>
+                <td>  
+                                        260
+                    				</td> 
+			</tr>
+					<tr>
+				<td>  
+                    <a name="property_rownumbers"  key="rownumbers" class="linkname"></a>
+                                                                       rownumbers
+                                            				</td>
+                <td>  
+                                        Bool
+                    				</td>
+                <td class="description">  
+                                        是否显示行序号
+                    				</td>
+                <td>  
+                                        false
+                    				</td> 
+			</tr>
+					<tr>
+				<td>  
+                    <a name="property_frozenRownumbers"  key="frozenRownumbers" class="linkname"></a>
+                                                                       frozenRownumbers
+                                            				</td>
+                <td>  
+                                        Bool
+                    				</td>
+                <td class="description">  
+                                        行序号是否在固定列中
+                    				</td>
+                <td>  
+                                        true
+                    				</td> 
+			</tr>
+					<tr>
+				<td>  
+                    <a name="property_rownumbersColWidth"  key="rownumbersColWidth" class="linkname"></a>
+                                                                       rownumbersColWidth
+                                            				</td>
+                <td>  
+                                        Int
+                    				</td>
+                <td class="description">  
+                                        序号列宽
+                    				</td>
+                <td>  
+                                        26
+                    				</td> 
+			</tr>
+					<tr>
+				<td>  
+                    <a name="property_colDraggable"  key="colDraggable" class="linkname"></a>
+                                                                       colDraggable
+                                            				</td>
+                <td>  
+                                        Bool
+                    				</td>
+                <td class="description">  
+                                        是否允许表头拖拽
+                    				</td>
+                <td>  
+                                        false
+                    				</td> 
+			</tr>
+					<tr>
+				<td>  
+                    <a name="property_rowDraggable"  key="rowDraggable" class="linkname"></a>
+                                                                       rowDraggable
+                                            				</td>
+                <td>  
+                                        Bool
+                    				</td>
+                <td class="description">  
+                                        是否允许行拖拽
+                    				</td>
+                <td>  
+                                        false
+                    				</td> 
+			</tr>
+					<tr>
+				<td>  
+                    <a name="property_rowDraggingRender"  key="rowDraggingRender" class="linkname"></a>
+                                                                       <a href="#linkpro151" title="点击查看示例">rowDraggingRender</a>
+                                            				</td>
+                <td>  
+                                        Object
+                    				</td>
+                <td class="description">  
+                                        行拖动时渲染函数
+                    				</td>
+                <td>  
+                                        null
+                    				</td> 
+			</tr>
+					<tr>
+				<td>  
+                    <a name="property_autoCheckChildren"  key="autoCheckChildren" class="linkname"></a>
+                                                                       autoCheckChildren
+                                            				</td>
+                <td>  
+                                        Bool
+                    				</td>
+                <td class="description">  
+                                        是否自动选中子节点
+                    				</td>
+                <td>  
+                                        true
+                    				</td> 
+			</tr>
+					<tr>
+				<td>  
+                    <a name="property_rowHeight"  key="rowHeight" class="linkname"></a>
+                                                                       rowHeight
+                                            				</td>
+                <td>  
+                                        Int
+                    				</td>
+                <td class="description">  
+                                        行默认的高度
+                    				</td>
+                <td>  
+                                        22
+                    				</td> 
+			</tr>
+					<tr>
+				<td>  
+                    <a name="property_headerRowHeight"  key="headerRowHeight" class="linkname"></a>
+                                                                       headerRowHeight
+                                            				</td>
+                <td>  
+                                        Int
+                    				</td>
+                <td class="description">  
+                                        表头行的高度
+                    				</td>
+                <td>  
+                                        23
+                    				</td> 
+			</tr>
+					<tr>
+				<td>  
+                    <a name="property_toolbar"  key="toolbar" class="linkname"></a>
+                                                                       toolbar
+                                            				</td>
+                <td>  
+                                        Object
+                    				</td>
+                <td class="description">  
+                                        工具条,参数同 ligerToolbar的
+                    				</td>
+                <td>  
+                                        null
+                    				</td> 
+			</tr>
+					<tr>
+				<td>  
+                    <a name="property_headerImg"  key="headerImg" class="linkname"></a>
+                                                                       headerImg
+                                            				</td>
+                <td>  
+                                        String
+                    				</td>
+                <td class="description">  
+                                        表格头部图标
+                    				</td>
+                <td>  
+                                        null
+                    				</td> 
+			</tr>
+					<tr>
+				<td>  
+                    <a name="property_isSelected"  key="isSelected" class="linkname"></a>
+                                                                       isSelected
+                                            				</td>
+                <td>  
+                                        Function
+                    				</td>
+                <td class="description">  
+                                        是否选择的判断函数
+                    				</td>
+                <td>  
+                                        null
+                    				</td> 
+			</tr>
+					<tr>
+				<td>  
+                    <a name="property_detail"  key="detail" class="linkname"></a>
+                                                                       <a href="#linkpro419" title="点击查看示例">detail</a>
+                                            				</td>
+                <td>  
+                                        Object
+                    				</td>
+                <td class="description">  
+                                        <a href="#Detail">明细</a>
+                    				</td>
+                <td>  
+                                        null
+                    				</td> 
+			</tr>
+					<tr>
+				<td>  
+                    <a name="property_isShowDetailToggle"  key="isShowDetailToggle" class="linkname"></a>
+                                                                       isShowDetailToggle
+                                            				</td>
+                <td>  
+                                        Function
+                    				</td>
+                <td class="description">  
+                                        是否显示展开/收缩明细的判断函数(rowdata)
+                    				</td>
+                <td>  
+                                        null
+                    				</td> 
+			</tr>
+					<tr>
+				<td>  
+                    <a name="property_toolbarShowInLeft"  key="toolbarShowInLeft" class="linkname"></a>
+                                                                       toolbarShowInLeft
+                                            				</td>
+                <td>  
+                                        bool
+                    				</td>
+                <td class="description">  
+                                        工具条显示在左边
+                    				</td>
+                <td>  
+                                        &nbsp;
+                    				</td> 
+			</tr>
+					<tr>
+				<td>  
+                    <a name="property_unSetValidateAttr"  key="unSetValidateAttr" class="linkname"></a>
+                                                                       unSetValidateAttr
+                                            				</td>
+                <td>  
+                                        Bool
+                    				</td>
+                <td class="description">  
+                                        不设置validate
+                    				</td>
+                <td>  
+                                        &nbsp;
+                    				</td> 
+			</tr>
+					<tr>
+				<td>  
+                    <a name="property_editorTopDiff"  key="editorTopDiff" class="linkname"></a>
+                                                                       editorTopDiff
+                                            				</td>
+                <td>  
+                                        Init
+                    				</td>
+                <td class="description">  
+                                        编辑器位置误差调整
+                    				</td>
+                <td>  
+                                        &nbsp;
+                    				</td> 
+			</tr>
+					<tr>
+				<td>  
+                    <a name="property_editorLeftDiff"  key="editorLeftDiff" class="linkname"></a>
+                                                                       editorLeftDiff
+                                            				</td>
+                <td>  
+                                        Init
+                    				</td>
+                <td class="description">  
+                                        编辑器位置误差调整
+                    				</td>
+                <td>  
+                                        &nbsp;
+                    				</td> 
+			</tr>
+					<tr>
+				<td>  
+                    <a name="property_editorHeightDiff"  key="editorHeightDiff" class="linkname"></a>
+                                                                       editorHeightDiff
+                                            				</td>
+                <td>  
+                                        Init
+                    				</td>
+                <td class="description">  
+                                        编辑器高度误差调整
+                    				</td>
+                <td>  
+                                        &nbsp;
+                    				</td> 
+			</tr>
+					<tr>
+				<td>  
+                    <a name="property_urlParms"  key="urlParms" class="linkname"></a>
+                                                                       urlParms
+                                            				</td>
+                <td>  
+                                        Object
+                    				</td>
+                <td class="description">  
+                                        url带参(支持函数)
+                    				</td>
+                <td>  
+                                        null
+                    				</td> 
+			</tr>
+					<tr>
+				<td>  
+                    <a name="property_hideLoadButton"  key="hideLoadButton" class="linkname"></a>
+                                                                       hideLoadButton
+                                            				</td>
+                <td>  
+                                        Bool
+                    				</td>
+                <td class="description">  
+                                        是否隐藏刷新按钮
+                    				</td>
+                <td>  
+                                        false
+                    				</td> 
+			</tr>
+					<tr>
+				<td>  
+                    <a name="property_pageRender"  key="pageRender" class="linkname"></a>
+                                                                       pageRender
+                                            				</td>
+                <td>  
+                                        Function
+                    				</td>
+                <td class="description">  
+                                        分页栏自定义函数
+                    				</td>
+                <td>  
+                                        null
+                    				</td> 
+			</tr>
+					<tr>
+				<td>  
+                    <a name="property_isSingleCheck"  key="isSingleCheck" class="linkname"></a>
+                                                                       isSingleCheck
+                                            				</td>
+                <td>  
+                                        Bool
+                    				</td>
+                <td class="description">  
+                                        复选框选择的时候是否单选模式
+                    				</td>
+                <td>  
+                                        false
+                    				</td> 
+			</tr>
+					<tr>
+				<td>  
+                    <a name="property_rowClsRender"  key="rowClsRender" class="linkname"></a>
+                                                                       rowClsRender
+                                            				</td>
+                <td>  
+                                        Function
+                    				</td>
+                <td class="description">  
+                                        行自定义css类名函数
+                    				</td>
+                <td>  
+                                        null
+                    				</td> 
+			</tr>
+					<tr>
+				<td>  
+                    <a name="property_selectable"  key="selectable" class="linkname"></a>
+                                                                       selectable
+                                            				</td>
+                <td>  
+                                        Bool
+                    				</td>
+                <td class="description">  
+                                        是否可选择
+                    				</td>
+                <td>  
+                                        true
+                    				</td> 
+			</tr>
+					<tr>
+				<td>  
+                    <a name="property_rowSelectable"  key="rowSelectable" class="linkname"></a>
+                                                                       rowSelectable
+                                            				</td>
+                <td>  
+                                        Bool
+                    				</td>
+                <td class="description">  
+                                        是否可选择
+                    				</td>
+                <td>  
+                                        true
+                    				</td> 
+			</tr>
+					<tr>
+				<td>  
+                    <a name="property_scrollToPage"  key="scrollToPage" class="linkname"></a>
+                                                                       scrollToPage
+                                            				</td>
+                <td>  
+                                        Bool
+                    				</td>
+                <td class="description">  
+                                        滚动时加载分页数据
+                    				</td>
+                <td>  
+                                        &nbsp;
+                    				</td> 
+			</tr>
+					<tr>
+				<td>  
+                    <a name="property_scrollToAppend"  key="scrollToAppend" class="linkname"></a>
+                                                                       scrollToAppend
+                                            				</td>
+                <td>  
+                                        Bool
+                    				</td>
+                <td class="description">  
+                                        滚动时分页 是否追加分页的形式
+                    				</td>
+                <td>  
+                                        &nbsp;
+                    				</td> 
+			</tr>
+		        </tbody>
+		</table>
+
+                <a name="ColumnEditor"></a>
+        <h2>ColumnEditor</h2>
+        
+        <table class="apitable" cellpadding="0" cellspacing="0">
+        <thead>
+            <tr> 
+				<td>参数名</td>
+				<td>类型</td> 
+				<td>描述</td>
+				<td>默认值</td> 
+            </tr>
+        </thead> 
+        <tbody>
+		 			<tr>
+				<td>  
+                                                                       onChange
+                                            				</td>
+                <td>  
+                                        Function
+                    				</td>
+                <td>  
+                                        <span style="color:#ff0000;">{<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; record: rowdata,<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; value: editValue,<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; column: column,<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; rowindex: rowIndex,<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; grid: liger grid object<br />}</span>
+                    				</td>
+                <td>  
+                                        &nbsp;
+                    				</td> 
+			</tr>
+					<tr>
+				<td>  
+                                                                       type
+                                            				</td>
+                <td>  
+                                        &nbsp;
+                    				</td>
+                <td>  
+                                        编辑器类型，包括text、checkbox、date、select、spinner|int|float (column)
+                    				</td>
+                <td>  
+                                        &nbsp;
+                    				</td> 
+			</tr>
+					<tr>
+				<td>  
+                                                                       data
+                                            				</td>
+                <td>  
+                                        &nbsp;
+                    				</td>
+                <td>  
+                                        编辑器类型包olumn)
+                    				</td>
+                <td>  
+                                        &nbsp;
+                    				</td> 
+			</tr>
+					<tr>
+				<td>  
+                                                                       valueField
+                                            				</td>
+                <td>  
+                                        &nbsp;
+                    				</td>
+                <td>  
+                                        &nbsp;
+                    				</td>
+                <td>  
+                                        &nbsp;
+                    				</td> 
+			</tr>
+					<tr>
+				<td>  
+                                                                       textField
+                                            				</td>
+                <td>  
+                                        &nbsp;
+                    				</td>
+                <td>  
+                                        &nbsp;
+                    				</td>
+                <td>  
+                                        &nbsp;
+                    				</td> 
+			</tr>
+					<tr>
+				<td>  
+                                                                       minValue
+                                            				</td>
+                <td>  
+                                        &nbsp;
+                    				</td>
+                <td>  
+                                        &nbsp;
+                    				</td>
+                <td>  
+                                        &nbsp;
+                    				</td> 
+			</tr>
+					<tr>
+				<td>  
+                                                                       maxValue
+                                            				</td>
+                <td>  
+                                        &nbsp;
+                    				</td>
+                <td>  
+                                        &nbsp;
+                    				</td>
+                <td>  
+                                        &nbsp;
+                    				</td> 
+			</tr>
+					<tr>
+				<td>  
+                                                                       ext
+                                            				</td>
+                <td>  
+                                        &nbsp;
+                    				</td>
+                <td>  
+                                        &nbsp;
+                    				</td>
+                <td>  
+                                        &nbsp;
+                    				</td> 
+			</tr>
+					<tr>
+				<td>  
+                                                                       <a href="#linksubpro24" title="点击查看示例">onChanged</a>
+                                            				</td>
+                <td>  
+                                        Function
+                    				</td>
+                <td>  
+                                        <span style="color: rgb(255, 0, 0);">{</span><br style="color: rgb(255, 0, 0);" /><span style="color: rgb(255, 0, 0);">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; record: rowdata,</span><br style="color: rgb(255, 0, 0);" /><span style="color: rgb(255, 0, 0);">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; value: editValue,</span><br style="color: rgb(255, 0, 0);" /><span style="color: rgb(255, 0, 0);">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; column: column,</span><br style="color: rgb(255, 0, 0);" /><span style="color: rgb(255, 0, 0);">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; rowindex: rowIndex,</span><br style="color: rgb(255, 0, 0);" /><span style="color: rgb(255, 0, 0);">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; grid: liger grid object</span><br style="color: rgb(255, 0, 0);" /><span style="color: rgb(255, 0, 0);">}</span>
+                    				</td>
+                <td>  
+                                        &nbsp;
+                    				</td> 
+			</tr>
+		        </tbody>
+		</table> 
+
+                <a name="Columns"></a>
+        <h2>Columns</h2>
+        
+        <table class="apitable" cellpadding="0" cellspacing="0">
+        <thead>
+            <tr> 
+				<td>参数名</td>
+				<td>类型</td> 
+				<td>描述</td>
+				<td>默认值</td> 
+            </tr>
+        </thead> 
+        <tbody>
+		 			<tr>
+				<td>  
+                                                                       id
+                                            				</td>
+                <td>  
+                                        String
+                    				</td>
+                <td>  
+                                        列ID
+                    				</td>
+                <td>  
+                                        &nbsp;
+                    				</td> 
+			</tr>
+					<tr>
+				<td>  
+                                                                       name
+                                            				</td>
+                <td>  
+                                        String
+                    				</td>
+                <td>  
+                                        表格列名
+                    				</td>
+                <td>  
+                                        &nbsp;
+                    				</td> 
+			</tr>
+					<tr>
+				<td>  
+                                                                       <a href="#linksubpro3" title="点击查看示例">totalSummary</a>
+                                            				</td>
+                <td>  
+                                        Object
+                    				</td>
+                <td>  
+                                        汇总 
+                    				</td>
+                <td>  
+                                        &nbsp;
+                    				</td> 
+			</tr>
+					<tr>
+				<td>  
+                                                                       columns
+                                            				</td>
+                <td>  
+                                        Object
+                    				</td>
+                <td>  
+                                        多表头支持
+                    				</td>
+                <td>  
+                                        &nbsp;
+                    				</td> 
+			</tr>
+					<tr>
+				<td>  
+                                                                       isAllowHide
+                                            				</td>
+                <td>  
+                                        Bool
+                    				</td>
+                <td>  
+                                        是否允许隐藏,如果允许，将会出现在【显示/隐藏列右键菜单】
+                    				</td>
+                <td>  
+                                        &nbsp;
+                    				</td> 
+			</tr>
+					<tr>
+				<td>  
+                                                                       isSort
+                                            				</td>
+                <td>  
+                                        Bool
+                    				</td>
+                <td>  
+                                        是否允许排序
+                    				</td>
+                <td>  
+                                        &nbsp;
+                    				</td> 
+			</tr>
+					<tr>
+				<td>  
+                                                                       type
+                                            				</td>
+                <td>  
+                                        String
+                    				</td>
+                <td>  
+                                        排序类型,包括string、int、float、date
+                    				</td>
+                <td>  
+                                        &nbsp;
+                    				</td> 
+			</tr>
+					<tr>
+				<td>  
+                                                                       width
+                                            				</td>
+                <td>  
+                                        Int
+                    				</td>
+                <td>  
+                                        表格列宽度
+                    				</td>
+                <td>  
+                                        &nbsp;
+                    				</td> 
+			</tr>
+					<tr>
+				<td>  
+                                                                       minWidth
+                                            				</td>
+                <td>  
+                                        Int
+                    				</td>
+                <td>  
+                                        表格列最小允许宽度(调整大小时将不允许小于这个值)
+                    				</td>
+                <td>  
+                                        &nbsp;
+                    				</td> 
+			</tr>
+					<tr>
+				<td>  
+                                                                       format
+                                            				</td>
+                <td>  
+                                        String
+                    				</td>
+                <td>  
+                                        格式化
+                    				</td>
+                <td>  
+                                        &nbsp;
+                    				</td> 
+			</tr>
+					<tr>
+				<td>  
+                                                                       align
+                                            				</td>
+                <td>  
+                                        String
+                    				</td>
+                <td>  
+                                        左右对齐,left、right、center
+                    				</td>
+                <td>  
+                                        &nbsp;
+                    				</td> 
+			</tr>
+					<tr>
+				<td>  
+                                                                       hide
+                                            				</td>
+                <td>  
+                                        String
+                    				</td>
+                <td>  
+                                        初始化隐藏
+                    				</td>
+                <td>  
+                                        &nbsp;
+                    				</td> 
+			</tr>
+					<tr>
+				<td>  
+                                                                       editor
+                                            				</td>
+                <td>  
+                                        Obect
+                    				</td>
+                <td>  
+                                        <a href="#ColumnEditor">编辑器</a>
+                    				</td>
+                <td>  
+                                        &nbsp;
+                    				</td> 
+			</tr>
+					<tr>
+				<td>  
+                                                                       <a href="#linksubpro14" title="点击查看示例">render</a>
+                                            				</td>
+                <td>  
+                                        Function
+                    				</td>
+                <td>  
+                                        单元格渲染器
+                    				</td>
+                <td>  
+                                        &nbsp;
+                    				</td> 
+			</tr>
+					<tr>
+				<td>  
+                                                                       display
+                                            				</td>
+                <td>  
+                                        String
+                    				</td>
+                <td>  
+                                        表格列标题
+                    				</td>
+                <td>  
+                                        &nbsp;
+                    				</td> 
+			</tr>
+					<tr>
+				<td>  
+                                                                       headerRender
+                                            				</td>
+                <td>  
+                                        Function
+                    				</td>
+                <td>  
+                                        头部单元格渲染器(column)
+                    				</td>
+                <td>  
+                                        &nbsp;
+                    				</td> 
+			</tr>
+		        </tbody>
+		</table> 
+
+                <a name="Detail"></a>
+        <h2>Detail</h2>
+        
+        <table class="apitable" cellpadding="0" cellspacing="0">
+        <thead>
+            <tr> 
+				<td>参数名</td>
+				<td>类型</td> 
+				<td>描述</td>
+				<td>默认值</td> 
+            </tr>
+        </thead> 
+        <tbody>
+		 			<tr>
+				<td>  
+                                                                       onShowDetail
+                                            				</td>
+                <td>  
+                                        Function
+                    				</td>
+                <td>  
+                                        &nbsp;
+                    				</td>
+                <td>  
+                                        &nbsp;
+                    				</td> 
+			</tr>
+					<tr>
+				<td>  
+                                                                       onExtend
+                                            				</td>
+                <td>  
+                                        Function
+                    				</td>
+                <td>  
+                                        &nbsp;
+                    				</td>
+                <td>  
+                                        &nbsp;
+                    				</td> 
+			</tr>
+					<tr>
+				<td>  
+                                                                       height
+                                            				</td>
+                <td>  
+                                        Int
+                    				</td>
+                <td>  
+                                        高度
+                    				</td>
+                <td>  
+                                        &nbsp;
+                    				</td> 
+			</tr>
+					<tr>
+				<td>  
+                                                                       onCollapse
+                                            				</td>
+                <td>  
+                                        Function
+                    				</td>
+                <td>  
+                                        &nbsp;
+                    				</td>
+                <td>  
+                                        &nbsp;
+                    				</td> 
+			</tr>
+		        </tbody>
+		</table> 
+
+        
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     <a name="linkpro125"></a>
+                <h3 class="property">rowAttrRender参数  示例：</h3>
+
+                <p>
+                <pre><div><!--
+
+Code highlighting produced by Actipro CodeHighlighter (freeware)
+http://www.CodeHighlighter.com/
+
+--><span style="color: #008080;"> 1</span> <span style="color: #000000;"> $(</span><span style="color: #000000;">&quot;</span><span style="color: #000000;">#maingrid4</span><span style="color: #000000;">&quot;</span><span style="color: #000000;">).ligerGrid({
+</span><span style="color: #008080;"> 2</span> <span style="color: #000000;">                columns: [
+</span><span style="color: #008080;"> 3</span> <span style="color: #000000;">                  {display: </span><span style="color: #000000;">'</span><span style="color: #000000;">主键</span><span style="color: #000000;">'</span><span style="color: #000000;">, name: </span><span style="color: #000000;">'</span><span style="color: #000000;">CustomerID</span><span style="color: #000000;">'</span><span style="color: #000000;">, align: </span><span style="color: #000000;">'</span><span style="color: #000000;">left</span><span style="color: #000000;">'</span><span style="color: #000000;">, width: </span><span style="color: #000000;">120</span><span style="color: #000000;"> } ,
+</span><span style="color: #008080;"> 4</span> <span style="color: #000000;">                  { display: </span><span style="color: #000000;">'</span><span style="color: #000000;">公司名</span><span style="color: #000000;">'</span><span style="color: #000000;">, name: </span><span style="color: #000000;">'</span><span style="color: #000000;">CompanyName</span><span style="color: #000000;">'</span><span style="color: #000000;">, minWidth: </span><span style="color: #000000;">60</span><span style="color: #000000;"> },
+</span><span style="color: #008080;"> 5</span> <span style="color: #000000;">                  { display: </span><span style="color: #000000;">'</span><span style="color: #000000;">联系名</span><span style="color: #000000;">'</span><span style="color: #000000;">, name: </span><span style="color: #000000;">'</span><span style="color: #000000;">ContactName</span><span style="color: #000000;">'</span><span style="color: #000000;">, width: </span><span style="color: #000000;">50</span><span style="color: #000000;">, align: </span><span style="color: #000000;">'</span><span style="color: #000000;">left</span><span style="color: #000000;">'</span><span style="color: #000000;"> },
+</span><span style="color: #008080;"> 6</span> <span style="color: #000000;">                  { display: </span><span style="color: #000000;">'</span><span style="color: #000000;">联系名</span><span style="color: #000000;">'</span><span style="color: #000000;">, name: </span><span style="color: #000000;">'</span><span style="color: #000000;">ContactName</span><span style="color: #000000;">'</span><span style="color: #000000;">, minWidth: </span><span style="color: #000000;">140</span><span style="color: #000000;"> }, 
+</span><span style="color: #008080;"> 7</span> <span style="color: #000000;">                  { display: </span><span style="color: #000000;">'</span><span style="color: #000000;">城市</span><span style="color: #000000;">'</span><span style="color: #000000;">, name: </span><span style="color: #000000;">'</span><span style="color: #000000;">City</span><span style="color: #000000;">'</span><span style="color: #000000;"> }
+</span><span style="color: #008080;"> 8</span> <span style="color: #000000;">                ], data: CustomersData, pageSize: </span><span style="color: #000000;">20</span><span style="color: #000000;">, sortName: </span><span style="color: #000000;">'</span><span style="color: #000000;">CustomerID</span><span style="color: #000000;">'</span><span style="color: #000000;">,
+</span><span style="color: #008080;"> 9</span> <span style="color: #000000;">                width: </span><span style="color: #000000;">'</span><span style="color: #000000;">100%</span><span style="color: #000000;">'</span><span style="color: #000000;">, height: </span><span style="color: #000000;">'</span><span style="color: #000000;">99%</span><span style="color: #000000;">'</span><span style="color: #000000;">, checkbox: </span><span style="color: #0000FF;">false</span><span style="color: #000000;">, rowAttrRender: </span><span style="color: #0000FF;">function</span><span style="color: #000000;"> (rowdata,rowid)
+</span><span style="color: #008080;">10</span> <span style="color: #000000;">                {
+</span><span style="color: #008080;">11</span> <span style="color: #000000;">                    </span><span style="color: #0000FF;">if</span><span style="color: #000000;"> (rowdata.CustomerID.indexOf(</span><span style="color: #000000;">'</span><span style="color: #000000;">A</span><span style="color: #000000;">'</span><span style="color: #000000;">) </span><span style="color: #000000;">==</span><span style="color: #000000;"> </span><span style="color: #000000;">0</span><span style="color: #000000;">)
+</span><span style="color: #008080;">12</span> <span style="color: #000000;">                    {
+</span><span style="color: #008080;">13</span> <span style="color: #000000;">                        </span><span style="color: #0000FF;">return</span><span style="color: #000000;"> </span><span style="color: #000000;">&quot;</span><span style="color: #000000;">style='background:#F1D3F7;'</span><span style="color: #000000;">&quot;</span><span style="color: #000000;">;
+</span><span style="color: #008080;">14</span> <span style="color: #000000;">                    }
+</span><span style="color: #008080;">15</span> <span style="color: #000000;">                    </span><span style="color: #0000FF;">return</span><span style="color: #000000;"> </span><span style="color: #000000;">&quot;&quot;</span><span style="color: #000000;">;
+</span><span style="color: #008080;">16</span> <span style="color: #000000;">                }
+</span><span style="color: #008080;">17</span> <span style="color: #000000;">            }); </span></div></pre>
+                </p>
+                                                <a name="linkpro126"></a>
+                <h3 class="property">groupColumnName参数  示例：</h3>
+
+                <p>
+                <pre><div><!--
+
+Code highlighting produced by Actipro CodeHighlighter (freeware)
+http://www.CodeHighlighter.com/
+
+--><span style="color: #008080;"> 1</span> <span style="color: #000000;">$(</span><span style="color: #000000;">&quot;</span><span style="color: #000000;">#maingrid4</span><span style="color: #000000;">&quot;</span><span style="color: #000000;">).ligerGrid({
+</span><span style="color: #008080;"> 2</span> <span style="color: #000000;">                columns: [
+</span><span style="color: #008080;"> 3</span> <span style="color: #000000;">                { display: </span><span style="color: #000000;">'</span><span style="color: #000000;">主键</span><span style="color: #000000;">'</span><span style="color: #000000;">, name: </span><span style="color: #000000;">'</span><span style="color: #000000;">CustomerID</span><span style="color: #000000;">'</span><span style="color: #000000;">, align: </span><span style="color: #000000;">'</span><span style="color: #000000;">left</span><span style="color: #000000;">'</span><span style="color: #000000;">, width: </span><span style="color: #000000;">120</span><span style="color: #000000;"> },
+</span><span style="color: #008080;"> 4</span> <span style="color: #000000;">                { display: </span><span style="color: #000000;">'</span><span style="color: #000000;">公司名</span><span style="color: #000000;">'</span><span style="color: #000000;">, name: </span><span style="color: #000000;">'</span><span style="color: #000000;">CompanyName</span><span style="color: #000000;">'</span><span style="color: #000000;">, minWidth: </span><span style="color: #000000;">60</span><span style="color: #000000;"> },
+</span><span style="color: #008080;"> 5</span> <span style="color: #000000;">                { display: </span><span style="color: #000000;">'</span><span style="color: #000000;">联系名</span><span style="color: #000000;">'</span><span style="color: #000000;">, name: </span><span style="color: #000000;">'</span><span style="color: #000000;">ContactName</span><span style="color: #000000;">'</span><span style="color: #000000;">, width: </span><span style="color: #000000;">50</span><span style="color: #000000;">, align: </span><span style="color: #000000;">'</span><span style="color: #000000;">left</span><span style="color: #000000;">'</span><span style="color: #000000;"> }, 
+</span><span style="color: #008080;"> 6</span> <span style="color: #000000;">                { display: </span><span style="color: #000000;">'</span><span style="color: #000000;">城市</span><span style="color: #000000;">'</span><span style="color: #000000;">, name: </span><span style="color: #000000;">'</span><span style="color: #000000;">City</span><span style="color: #000000;">'</span><span style="color: #000000;"> }
+</span><span style="color: #008080;"> 7</span> <span style="color: #000000;">                ],  pageSize:</span><span style="color: #000000;">20</span><span style="color: #000000;">,
+</span><span style="color: #008080;"> 8</span> <span style="color: #000000;">                data: CustomersData, 
+</span><span style="color: #008080;"> 9</span> <span style="color: #000000;">                height:</span><span style="color: #000000;">'</span><span style="color: #000000;">100%</span><span style="color: #000000;">'</span><span style="color: #000000;">,groupColumnName:</span><span style="color: #000000;">'</span><span style="color: #000000;">City</span><span style="color: #000000;">'</span><span style="color: #000000;">,groupColumnDisplay:</span><span style="color: #000000;">'</span><span style="color: #000000;">城市</span><span style="color: #000000;">'</span><span style="color: #000000;">
+</span><span style="color: #008080;">10</span> <span style="color: #000000;">            });</span></div></pre>
+                </p>
+                                                                    <a name="linkpro128"></a>
+                <h3 class="property">groupRender参数  示例：</h3>
+
+                <p>
+                <pre><div><!--
+
+Code highlighting produced by Actipro CodeHighlighter (freeware)
+http://www.CodeHighlighter.com/
+
+--><span style="color: #008080;"> 1</span> <span style="color: #000000;"> $(</span><span style="color: #000000;">&quot;</span><span style="color: #000000;">#maingrid4</span><span style="color: #000000;">&quot;</span><span style="color: #000000;">).ligerGrid({
+</span><span style="color: #008080;"> 2</span> <span style="color: #000000;">                columns: [
+</span><span style="color: #008080;"> 3</span> <span style="color: #000000;">                { display: </span><span style="color: #000000;">'</span><span style="color: #000000;">主键</span><span style="color: #000000;">'</span><span style="color: #000000;">, name: </span><span style="color: #000000;">'</span><span style="color: #000000;">CustomerID</span><span style="color: #000000;">'</span><span style="color: #000000;">, align: </span><span style="color: #000000;">'</span><span style="color: #000000;">left</span><span style="color: #000000;">'</span><span style="color: #000000;">, width: </span><span style="color: #000000;">120</span><span style="color: #000000;"> },
+</span><span style="color: #008080;"> 4</span> <span style="color: #000000;">                { display: </span><span style="color: #000000;">'</span><span style="color: #000000;">公司名</span><span style="color: #000000;">'</span><span style="color: #000000;">, name: </span><span style="color: #000000;">'</span><span style="color: #000000;">CompanyName</span><span style="color: #000000;">'</span><span style="color: #000000;">, minWidth: </span><span style="color: #000000;">60</span><span style="color: #000000;"> },
+</span><span style="color: #008080;"> 5</span> <span style="color: #000000;">                { display: </span><span style="color: #000000;">'</span><span style="color: #000000;">联系名</span><span style="color: #000000;">'</span><span style="color: #000000;">, name: </span><span style="color: #000000;">'</span><span style="color: #000000;">ContactName</span><span style="color: #000000;">'</span><span style="color: #000000;">, width: </span><span style="color: #000000;">50</span><span style="color: #000000;">, align: </span><span style="color: #000000;">'</span><span style="color: #000000;">left</span><span style="color: #000000;">'</span><span style="color: #000000;"> },
+</span><span style="color: #008080;"> 6</span> <span style="color: #000000;">                { display: </span><span style="color: #000000;">'</span><span style="color: #000000;">城市</span><span style="color: #000000;">'</span><span style="color: #000000;">, name: </span><span style="color: #000000;">'</span><span style="color: #000000;">City</span><span style="color: #000000;">'</span><span style="color: #000000;"> }
+</span><span style="color: #008080;"> 7</span> <span style="color: #000000;">                ], pageSize: </span><span style="color: #000000;">20</span><span style="color: #000000;">,
+</span><span style="color: #008080;"> 8</span> <span style="color: #000000;">                data: CustomersData,
+</span><span style="color: #008080;"> 9</span> <span style="color: #000000;">                height: </span><span style="color: #000000;">'</span><span style="color: #000000;">100%</span><span style="color: #000000;">'</span><span style="color: #000000;">, 
+</span><span style="color: #008080;">10</span> <span style="color: #000000;">                groupColumnName: </span><span style="color: #000000;">'</span><span style="color: #000000;">City</span><span style="color: #000000;">'</span><span style="color: #000000;">, 
+</span><span style="color: #008080;">11</span> <span style="color: #000000;">                groupRender: </span><span style="color: #0000FF;">function</span><span style="color: #000000;"> (city,groupdata)
+</span><span style="color: #008080;">12</span> <span style="color: #000000;">                {
+</span><span style="color: #008080;">13</span> <span style="color: #000000;">                    </span><span style="color: #0000FF;">return</span><span style="color: #000000;"> </span><span style="color: #000000;">'</span><span style="color: #000000;">城市 </span><span style="color: #000000;">'</span><span style="color: #000000;"> </span><span style="color: #000000;">+</span><span style="color: #000000;"> city </span><span style="color: #000000;">+</span><span style="color: #000000;"> </span><span style="color: #000000;">'</span><span style="color: #000000;">(Count=</span><span style="color: #000000;">'</span><span style="color: #000000;"> </span><span style="color: #000000;">+</span><span style="color: #000000;"> groupdata.length </span><span style="color: #000000;">+</span><span style="color: #000000;"> </span><span style="color: #000000;">'</span><span style="color: #000000;">)</span><span style="color: #000000;">'</span><span style="color: #000000;">;
+</span><span style="color: #008080;">14</span> <span style="color: #000000;">                }
+</span><span style="color: #008080;">15</span> <span style="color: #000000;">            });</span></div></pre>
+                </p>
+                                                <a name="linkpro129"></a>
+                <h3 class="property">totalRender参数  示例：</h3>
+
+                <p>
+                <pre><div><!--
+
+Code highlighting produced by Actipro CodeHighlighter (freeware)
+http://www.CodeHighlighter.com/
+
+--><span style="color: #008080;"> 1</span> <span style="color: #000000;"> $(</span><span style="color: #0000FF;">function</span><span style="color: #000000;"> () { 
+</span><span style="color: #008080;"> 2</span> <span style="color: #000000;">            $(</span><span style="color: #000000;">&quot;</span><span style="color: #000000;">#maingrid</span><span style="color: #000000;">&quot;</span><span style="color: #000000;">).ligerGrid({
+</span><span style="color: #008080;"> 3</span> <span style="color: #000000;">                columns: [...], dataAction: </span><span style="color: #000000;">'</span><span style="color: #000000;">local</span><span style="color: #000000;">'</span><span style="color: #000000;">,
+</span><span style="color: #008080;"> 4</span> <span style="color: #000000;">                data: AllProductData, sortName: </span><span style="color: #000000;">'</span><span style="color: #000000;">ProductID</span><span style="color: #000000;">'</span><span style="color: #000000;">,
+</span><span style="color: #008080;"> 5</span> <span style="color: #000000;">                showTitle: </span><span style="color: #0000FF;">false</span><span style="color: #000000;">, totalRender: f_totalRender,
+</span><span style="color: #008080;"> 6</span> <span style="color: #000000;">                width: </span><span style="color: #000000;">'</span><span style="color: #000000;">100%</span><span style="color: #000000;">'</span><span style="color: #000000;">, height: </span><span style="color: #000000;">'</span><span style="color: #000000;">100%</span><span style="color: #000000;">'</span><span style="color: #000000;">,heightDiff:</span><span style="color: #000000;">-</span><span style="color: #000000;">10</span><span style="color: #000000;">
+</span><span style="color: #008080;"> 7</span> <span style="color: #000000;">            });
+</span><span style="color: #008080;"> 8</span> <span style="color: #000000;">
+</span><span style="color: #008080;"> 9</span> <span style="color: #000000;">            $(</span><span style="color: #000000;">&quot;</span><span style="color: #000000;">#pageloading</span><span style="color: #000000;">&quot;</span><span style="color: #000000;">).hide();
+</span><span style="color: #008080;">10</span> <span style="color: #000000;">        });
+</span><span style="color: #008080;">11</span> <span style="color: #000000;">        </span><span style="color: #0000FF;">function</span><span style="color: #000000;"> f_totalRender(data, currentPageData)
+</span><span style="color: #008080;">12</span> <span style="color: #000000;">        {
+</span><span style="color: #008080;">13</span> <span style="color: #000000;">            </span><span style="color: #0000FF;">return</span><span style="color: #000000;"> </span><span style="color: #000000;">&quot;</span><span style="color: #000000;">总仓库数量:</span><span style="color: #000000;">&quot;</span><span style="color: #000000;">+</span><span style="color: #000000;">data.UnitsInStockTotal; 
+</span><span style="color: #008080;">14</span> <span style="color: #000000;">        }</span></div></pre>
+                </p>
+                                                                                                                                                                                                                <a name="linkpro138"></a>
+                <h3 class="property">detailToEdit参数  示例：</h3>
+
+                <p>
+                <pre><div><!--
+
+Code highlighting produced by Actipro CodeHighlighter (freeware)
+http://www.CodeHighlighter.com/
+
+--><span style="color: #008080;"> 1</span> <span style="color: #0000FF;">function</span><span style="color: #000000;"> f_initGrid()
+</span><span style="color: #008080;"> 2</span> <span style="color: #000000;">        { 
+</span><span style="color: #008080;"> 3</span> <span style="color: #000000;">           $(</span><span style="color: #000000;">&quot;</span><span style="color: #000000;">#maingrid</span><span style="color: #000000;">&quot;</span><span style="color: #000000;">).ligerGrid({
+</span><span style="color: #008080;"> 4</span> <span style="color: #000000;">                columns: [
+</span><span style="color: #008080;"> 5</span> <span style="color: #000000;">                { display: </span><span style="color: #000000;">'</span><span style="color: #000000;">主键</span><span style="color: #000000;">'</span><span style="color: #000000;">, name: </span><span style="color: #000000;">'</span><span style="color: #000000;">ID</span><span style="color: #000000;">'</span><span style="color: #000000;">, width: </span><span style="color: #000000;">50</span><span style="color: #000000;">, type: </span><span style="color: #000000;">'</span><span style="color: #000000;">int</span><span style="color: #000000;">'</span><span style="color: #000000;"> },
+</span><span style="color: #008080;"> 6</span> <span style="color: #000000;">                { display: </span><span style="color: #000000;">'</span><span style="color: #000000;">名字</span><span style="color: #000000;">'</span><span style="color: #000000;">, name: </span><span style="color: #000000;">'</span><span style="color: #000000;">RealName</span><span style="color: #000000;">'</span><span style="color: #000000;">,
+</span><span style="color: #008080;"> 7</span> <span style="color: #000000;">                    editor: { type: </span><span style="color: #000000;">'</span><span style="color: #000000;">text</span><span style="color: #000000;">'</span><span style="color: #000000;"> }
+</span><span style="color: #008080;"> 8</span> <span style="color: #000000;">                },
+</span><span style="color: #008080;"> 9</span> <span style="color: #000000;">                { display: </span><span style="color: #000000;">'</span><span style="color: #000000;">性别</span><span style="color: #000000;">'</span><span style="color: #000000;">, width: </span><span style="color: #000000;">50</span><span style="color: #000000;">, name: </span><span style="color: #000000;">'</span><span style="color: #000000;">Sex</span><span style="color: #000000;">'</span><span style="color: #000000;">,type:</span><span style="color: #000000;">'</span><span style="color: #000000;">int</span><span style="color: #000000;">'</span><span style="color: #000000;">,
+</span><span style="color: #008080;">10</span> <span style="color: #000000;">                    editor: { type: </span><span style="color: #000000;">'</span><span style="color: #000000;">select</span><span style="color: #000000;">'</span><span style="color: #000000;">, data: sexData, valueField: </span><span style="color: #000000;">'</span><span style="color: #000000;">Sex</span><span style="color: #000000;">'</span><span style="color: #000000;"> },
+</span><span style="color: #008080;">11</span> <span style="color: #000000;">                    render: </span><span style="color: #0000FF;">function</span><span style="color: #000000;"> (item)
+</span><span style="color: #008080;">12</span> <span style="color: #000000;">                    {
+</span><span style="color: #008080;">13</span> <span style="color: #000000;">                        </span><span style="color: #0000FF;">if</span><span style="color: #000000;"> (parseInt(item.Sex) </span><span style="color: #000000;">==</span><span style="color: #000000;"> </span><span style="color: #000000;">1</span><span style="color: #000000;">) </span><span style="color: #0000FF;">return</span><span style="color: #000000;"> </span><span style="color: #000000;">'</span><span style="color: #000000;">男</span><span style="color: #000000;">'</span><span style="color: #000000;">;
+</span><span style="color: #008080;">14</span> <span style="color: #000000;">                        </span><span style="color: #0000FF;">return</span><span style="color: #000000;"> </span><span style="color: #000000;">'</span><span style="color: #000000;">女</span><span style="color: #000000;">'</span><span style="color: #000000;">;
+</span><span style="color: #008080;">15</span> <span style="color: #000000;">                    }
+</span><span style="color: #008080;">16</span> <span style="color: #000000;">                },
+</span><span style="color: #008080;">17</span> <span style="color: #000000;">                { display: </span><span style="color: #000000;">'</span><span style="color: #000000;">年龄</span><span style="color: #000000;">'</span><span style="color: #000000;">, name: </span><span style="color: #000000;">'</span><span style="color: #000000;">Age</span><span style="color: #000000;">'</span><span style="color: #000000;">, width: </span><span style="color: #000000;">50</span><span style="color: #000000;">, type: </span><span style="color: #000000;">'</span><span style="color: #000000;">int</span><span style="color: #000000;">'</span><span style="color: #000000;">, editor: { type: </span><span style="color: #000000;">'</span><span style="color: #000000;">int</span><span style="color: #000000;">'</span><span style="color: #000000;">} },
+</span><span style="color: #008080;">18</span> <span style="color: #000000;">                 { display: </span><span style="color: #000000;">'</span><span style="color: #000000;">入职日期</span><span style="color: #000000;">'</span><span style="color: #000000;">, name: </span><span style="color: #000000;">'</span><span style="color: #000000;">IncomeDay</span><span style="color: #000000;">'</span><span style="color: #000000;">, type: </span><span style="color: #000000;">'</span><span style="color: #000000;">date</span><span style="color: #000000;">'</span><span style="color: #000000;">, format: </span><span style="color: #000000;">'</span><span style="color: #000000;">yyyy年MM月dd</span><span style="color: #000000;">'</span><span style="color: #000000;">, width: </span><span style="color: #000000;">100</span><span style="color: #000000;">, editor: { type: </span><span style="color: #000000;">'</span><span style="color: #000000;">date</span><span style="color: #000000;">'</span><span style="color: #000000;">} },
+</span><span style="color: #008080;">19</span> <span style="color: #000000;">                { display: </span><span style="color: #000000;">'</span><span style="color: #000000;">部门</span><span style="color: #000000;">'</span><span style="color: #000000;">, name: </span><span style="color: #000000;">'</span><span style="color: #000000;">DepartmentID</span><span style="color: #000000;">'</span><span style="color: #000000;">, width: </span><span style="color: #000000;">120</span><span style="color: #000000;">, isSort: </span><span style="color: #0000FF;">false</span><span style="color: #000000;">,
+</span><span style="color: #008080;">20</span> <span style="color: #000000;">                editor: { type: </span><span style="color: #000000;">'</span><span style="color: #000000;">select</span><span style="color: #000000;">'</span><span style="color: #000000;">, data: DepartmentList, valueField: </span><span style="color: #000000;">'</span><span style="color: #000000;">DepartmentID</span><span style="color: #000000;">'</span><span style="color: #000000;">, textField: </span><span style="color: #000000;">'</span><span style="color: #000000;">DepartmentName</span><span style="color: #000000;">'</span><span style="color: #000000;"> }, render: </span><span style="color: #0000FF;">function</span><span style="color: #000000;"> (item)
+</span><span style="color: #008080;">21</span> <span style="color: #000000;">                    {
+</span><span style="color: #008080;">22</span> <span style="color: #000000;">                        </span><span style="color: #0000FF;">for</span><span style="color: #000000;"> (</span><span style="color: #0000FF;">var</span><span style="color: #000000;"> i </span><span style="color: #000000;">=</span><span style="color: #000000;"> </span><span style="color: #000000;">0</span><span style="color: #000000;">; i </span><span style="color: #000000;">&lt;</span><span style="color: #000000;"> DepartmentList.length; i</span><span style="color: #000000;">++</span><span style="color: #000000;">)
+</span><span style="color: #008080;">23</span> <span style="color: #000000;">                        {
+</span><span style="color: #008080;">24</span> <span style="color: #000000;">                            </span><span style="color: #0000FF;">if</span><span style="color: #000000;"> (DepartmentList[i][</span><span style="color: #000000;">'</span><span style="color: #000000;">DepartmentID</span><span style="color: #000000;">'</span><span style="color: #000000;">] </span><span style="color: #000000;">==</span><span style="color: #000000;"> item.DepartmentID)
+</span><span style="color: #008080;">25</span> <span style="color: #000000;">                                </span><span style="color: #0000FF;">return</span><span style="color: #000000;"> DepartmentList[i][</span><span style="color: #000000;">'</span><span style="color: #000000;">DepartmentName</span><span style="color: #000000;">'</span><span style="color: #000000;">]
+</span><span style="color: #008080;">26</span> <span style="color: #000000;">                        }
+</span><span style="color: #008080;">27</span> <span style="color: #000000;">                        </span><span style="color: #0000FF;">return</span><span style="color: #000000;"> item.DepartmentName;
+</span><span style="color: #008080;">28</span> <span style="color: #000000;">                    }
+</span><span style="color: #008080;">29</span> <span style="color: #000000;">                } 
+</span><span style="color: #008080;">30</span> <span style="color: #000000;">                ],
+</span><span style="color: #008080;">31</span> <span style="color: #000000;">                onSelectRow: </span><span style="color: #0000FF;">function</span><span style="color: #000000;"> (rowdata, rowindex)
+</span><span style="color: #008080;">32</span> <span style="color: #000000;">                {
+</span><span style="color: #008080;">33</span> <span style="color: #000000;">                    $(</span><span style="color: #000000;">&quot;</span><span style="color: #000000;">#txtrowindex</span><span style="color: #000000;">&quot;</span><span style="color: #000000;">).val(rowindex);
+</span><span style="color: #008080;">34</span> <span style="color: #000000;">                },
+</span><span style="color: #008080;">35</span> <span style="color: #000000;">                enabledEdit: </span><span style="color: #0000FF;">true</span><span style="color: #000000;">, detailToEdit: </span><span style="color: #0000FF;">true</span><span style="color: #000000;">, 
+</span><span style="color: #008080;">36</span> <span style="color: #000000;">                isScroll: </span><span style="color: #0000FF;">false</span><span style="color: #000000;">,  frozen:</span><span style="color: #0000FF;">false</span><span style="color: #000000;">,
+</span><span style="color: #008080;">37</span> <span style="color: #000000;">                data:EmployeeData,
+</span><span style="color: #008080;">38</span> <span style="color: #000000;">                width: </span><span style="color: #000000;">'</span><span style="color: #000000;">100%</span><span style="color: #000000;">'</span><span style="color: #000000;">
+</span><span style="color: #008080;">39</span> <span style="color: #000000;">            });   
+</span><span style="color: #008080;">40</span> <span style="color: #000000;">        }</span></div></pre>
+                </p>
+                                                                                                                                                                                                                                                                                                <a name="linkpro151"></a>
+                <h3 class="property">rowDraggingRender参数  示例：</h3>
+
+                <p>
+                <pre><div><!--
+
+Code highlighting produced by Actipro CodeHighlighter (freeware)
+http://www.CodeHighlighter.com/
+
+--><span style="color: #008080;"> 1</span> <span style="color: #000000;">$(</span><span style="color: #000000;">&quot;</span><span style="color: #000000;">#maingrid</span><span style="color: #000000;">&quot;</span><span style="color: #000000;">).ligerGrid({
+</span><span style="color: #008080;"> 2</span> <span style="color: #000000;">                columns: [
+</span><span style="color: #008080;"> 3</span> <span style="color: #000000;">                    { display: </span><span style="color: #000000;">'</span><span style="color: #000000;">部门名</span><span style="color: #000000;">'</span><span style="color: #000000;">, name: </span><span style="color: #000000;">'</span><span style="color: #000000;">name</span><span style="color: #000000;">'</span><span style="color: #000000;">, width: </span><span style="color: #000000;">250</span><span style="color: #000000;">, align: </span><span style="color: #000000;">'</span><span style="color: #000000;">left</span><span style="color: #000000;">'</span><span style="color: #000000;"> },
+</span><span style="color: #008080;"> 4</span> <span style="color: #000000;">                { display: </span><span style="color: #000000;">'</span><span style="color: #000000;">部门标示</span><span style="color: #000000;">'</span><span style="color: #000000;">, name: </span><span style="color: #000000;">'</span><span style="color: #000000;">id</span><span style="color: #000000;">'</span><span style="color: #000000;">, id: </span><span style="color: #000000;">'</span><span style="color: #000000;">id1</span><span style="color: #000000;">'</span><span style="color: #000000;">, width: </span><span style="color: #000000;">250</span><span style="color: #000000;">, type: </span><span style="color: #000000;">'</span><span style="color: #000000;">int</span><span style="color: #000000;">'</span><span style="color: #000000;">, align: </span><span style="color: #000000;">'</span><span style="color: #000000;">left</span><span style="color: #000000;">'</span><span style="color: #000000;"> },
+</span><span style="color: #008080;"> 5</span> <span style="color: #000000;">
+</span><span style="color: #008080;"> 6</span> <span style="color: #000000;">                { display: </span><span style="color: #000000;">'</span><span style="color: #000000;">部门描述</span><span style="color: #000000;">'</span><span style="color: #000000;">, name: </span><span style="color: #000000;">'</span><span style="color: #000000;">remark</span><span style="color: #000000;">'</span><span style="color: #000000;">, width: </span><span style="color: #000000;">250</span><span style="color: #000000;">, align: </span><span style="color: #000000;">'</span><span style="color: #000000;">left</span><span style="color: #000000;">'</span><span style="color: #000000;"> }
+</span><span style="color: #008080;"> 7</span> <span style="color: #000000;">                ], width: </span><span style="color: #000000;">'</span><span style="color: #000000;">100%</span><span style="color: #000000;">'</span><span style="color: #000000;">, pageSizeOptions: [</span><span style="color: #000000;">5</span><span style="color: #000000;">, </span><span style="color: #000000;">10</span><span style="color: #000000;">, </span><span style="color: #000000;">15</span><span style="color: #000000;">, </span><span style="color: #000000;">20</span><span style="color: #000000;">], height: </span><span style="color: #000000;">'</span><span style="color: #000000;">97%</span><span style="color: #000000;">'</span><span style="color: #000000;">,
+</span><span style="color: #008080;"> 8</span> <span style="color: #000000;">                allowHideColumn: </span><span style="color: #0000FF;">false</span><span style="color: #000000;">, rownumbers: </span><span style="color: #0000FF;">true</span><span style="color: #000000;">, colDraggable: </span><span style="color: #0000FF;">true</span><span style="color: #000000;">, rowDraggable: </span><span style="color: #0000FF;">true</span><span style="color: #000000;">, checkbox: </span><span style="color: #0000FF;">false</span><span style="color: #000000;">,
+</span><span style="color: #008080;"> 9</span> <span style="color: #000000;">                data: TreeDeptData, alternatingRow: </span><span style="color: #0000FF;">false</span><span style="color: #000000;">, tree: { columnName: </span><span style="color: #000000;">'</span><span style="color: #000000;">name</span><span style="color: #000000;">'</span><span style="color: #000000;"> },
+</span><span style="color: #008080;">10</span> <span style="color: #000000;">                rowDraggingRender: </span><span style="color: #0000FF;">function</span><span style="color: #000000;"> (rows)
+</span><span style="color: #008080;">11</span> <span style="color: #000000;">                {
+</span><span style="color: #008080;">12</span> <span style="color: #000000;">                    </span><span style="color: #0000FF;">return</span><span style="color: #000000;"> rows[</span><span style="color: #000000;">0</span><span style="color: #000000;">].name;
+</span><span style="color: #008080;">13</span> <span style="color: #000000;">                }
+</span><span style="color: #008080;">14</span> <span style="color: #000000;">            }
+</span><span style="color: #008080;">15</span> <span style="color: #000000;">            );</span></div></pre>
+                </p>
+                                                                                                                                                                        <a name="linkpro419"></a>
+                <h3 class="property">detail参数  示例：</h3>
+
+                <p>
+                <pre><div><!--
+
+Code highlighting produced by Actipro CodeHighlighter (freeware)
+http://www.CodeHighlighter.com/
+
+--><span style="color: #008080;"> 1</span> <span style="color: #000000;">     </span><span style="color: #0000FF;">&lt;</span><span style="color: #800000;">div </span><span style="color: #FF0000;">class</span><span style="color: #0000FF;">=&quot;liger-grid&quot;</span><span style="color: #FF0000;"> id</span><span style="color: #0000FF;">=&quot;grid1&quot;</span><span style="color: #FF0000;"> data</span><span style="color: #0000FF;">=&quot;CustomersData&quot;</span><span style="color: #0000FF;">&gt;</span><span style="color: #000000;">
+</span><span style="color: #008080;"> 2</span> <span style="color: #000000;">        </span><span style="color: #0000FF;">&lt;</span><span style="color: #800000;">ul </span><span style="color: #FF0000;">class</span><span style="color: #0000FF;">=&quot;columns&quot;</span><span style="color: #0000FF;">&gt;</span><span style="color: #000000;">
+</span><span style="color: #008080;"> 3</span> <span style="color: #000000;">            </span><span style="color: #0000FF;">&lt;</span><span style="color: #800000;">li </span><span style="color: #FF0000;">name</span><span style="color: #0000FF;">=&quot;CustomerID&quot;</span><span style="color: #FF0000;"> width</span><span style="color: #0000FF;">=&quot;200&quot;</span><span style="color: #0000FF;">&gt;</span><span style="color: #000000;">客户</span><span style="color: #0000FF;">&lt;/</span><span style="color: #800000;">li</span><span style="color: #0000FF;">&gt;</span><span style="color: #000000;">
+</span><span style="color: #008080;"> 4</span> <span style="color: #000000;">            </span><span style="color: #0000FF;">&lt;</span><span style="color: #800000;">li </span><span style="color: #FF0000;">name</span><span style="color: #0000FF;">=&quot;CompanyName&quot;</span><span style="color: #FF0000;"> width</span><span style="color: #0000FF;">=&quot;200&quot;</span><span style="color: #0000FF;">&gt;</span><span style="color: #000000;">公司</span><span style="color: #0000FF;">&lt;/</span><span style="color: #800000;">li</span><span style="color: #0000FF;">&gt;</span><span style="color: #000000;">
+</span><span style="color: #008080;"> 5</span> <span style="color: #000000;">            </span><span style="color: #0000FF;">&lt;</span><span style="color: #800000;">li </span><span style="color: #FF0000;">display</span><span style="color: #0000FF;">=&quot;地址&quot;</span><span style="color: #0000FF;">&gt;</span><span style="color: #000000;">
+</span><span style="color: #008080;"> 6</span> <span style="color: #000000;">                </span><span style="color: #0000FF;">&lt;</span><span style="color: #800000;">ul </span><span style="color: #FF0000;">class</span><span style="color: #0000FF;">=&quot;columns&quot;</span><span style="color: #0000FF;">&gt;</span><span style="color: #000000;">
+</span><span style="color: #008080;"> 7</span> <span style="color: #000000;">                    </span><span style="color: #0000FF;">&lt;</span><span style="color: #800000;">li </span><span style="color: #FF0000;">name</span><span style="color: #0000FF;">=&quot;City&quot;</span><span style="color: #FF0000;"> width</span><span style="color: #0000FF;">=&quot;100&quot;</span><span style="color: #0000FF;">&gt;</span><span style="color: #000000;">城市</span><span style="color: #0000FF;">&lt;/</span><span style="color: #800000;">li</span><span style="color: #0000FF;">&gt;</span><span style="color: #000000;">
+</span><span style="color: #008080;"> 8</span> <span style="color: #000000;">                    </span><span style="color: #0000FF;">&lt;</span><span style="color: #800000;">li </span><span style="color: #FF0000;">name</span><span style="color: #0000FF;">=&quot;Address&quot;</span><span style="color: #FF0000;"> width</span><span style="color: #0000FF;">=&quot;100&quot;</span><span style="color: #0000FF;">&gt;</span><span style="color: #000000;">地址</span><span style="color: #0000FF;">&lt;/</span><span style="color: #800000;">li</span><span style="color: #0000FF;">&gt;</span><span style="color: #000000;">
+</span><span style="color: #008080;"> 9</span> <span style="color: #000000;">                    </span><span style="color: #0000FF;">&lt;</span><span style="color: #800000;">li </span><span style="color: #FF0000;">name</span><span style="color: #0000FF;">=&quot;PostalCode&quot;</span><span style="color: #FF0000;"> width</span><span style="color: #0000FF;">=&quot;100&quot;</span><span style="color: #0000FF;">&gt;</span><span style="color: #000000;">PostalCode</span><span style="color: #0000FF;">&lt;/</span><span style="color: #800000;">li</span><span style="color: #0000FF;">&gt;</span><span style="color: #000000;">
+</span><span style="color: #008080;">10</span> <span style="color: #000000;">                </span><span style="color: #0000FF;">&lt;/</span><span style="color: #800000;">ul</span><span style="color: #0000FF;">&gt;</span><span style="color: #000000;">
+</span><span style="color: #008080;">11</span> <span style="color: #000000;">            </span><span style="color: #0000FF;">&lt;/</span><span style="color: #800000;">li</span><span style="color: #0000FF;">&gt;</span><span style="color: #000000;">
+</span><span style="color: #008080;">12</span> <span style="color: #000000;">        </span><span style="color: #0000FF;">&lt;/</span><span style="color: #800000;">ul</span><span style="color: #0000FF;">&gt;</span><span style="color: #000000;">
+</span><span style="color: #008080;">13</span> <span style="color: #000000;">        </span><span style="color: #0000FF;">&lt;</span><span style="color: #800000;">div </span><span style="color: #FF0000;">class</span><span style="color: #0000FF;">= &quot;detail&quot;</span><span style="color: #FF0000;"> height</span><span style="color: #0000FF;">=&quot;auto&quot;</span><span style="color: #FF0000;"> onShowDetail</span><span style="color: #0000FF;">=&quot;f_onShowDetail&quot;</span><span style="color: #0000FF;">&gt;&lt;/</span><span style="color: #800000;">div</span><span style="color: #0000FF;">&gt;</span><span style="color: #000000;">
+</span><span style="color: #008080;">14</span> <span style="color: #000000;">     </span><span style="color: #0000FF;">&lt;/</span><span style="color: #800000;">div</span><span style="color: #0000FF;">&gt;</span><span style="color: #000000;"> 
+</span><span style="color: #008080;">15</span> <span style="color: #000000;">
+</span><span style="color: #008080;">16</span> <span style="color: #000000;">    </span><span style="color: #0000FF;">&lt;</span><span style="color: #800000;">script</span><span style="color: #0000FF;">&gt;</span><span style="background-color: #F5F5F5; color: #000000;">
+</span><span style="color: #008080;">17</span> <span style="background-color: #F5F5F5; color: #000000;">        </span><span style="background-color: #F5F5F5; color: #0000FF;">function</span><span style="background-color: #F5F5F5; color: #000000;"> f_onShowDetail(record, container, callback) {
+</span><span style="color: #008080;">18</span> <span style="background-color: #F5F5F5; color: #000000;">            </span><span style="background-color: #F5F5F5; color: #0000FF;">var</span><span style="background-color: #F5F5F5; color: #000000;"> out </span><span style="background-color: #F5F5F5; color: #000000;">=</span><span style="background-color: #F5F5F5; color: #000000;"> [</span><span style="background-color: #F5F5F5; color: #000000;">'</span><span style="background-color: #F5F5F5; color: #000000;">&lt;div style=&quot;margin:10px&quot;&gt;</span><span style="background-color: #F5F5F5; color: #000000;">'</span><span style="background-color: #F5F5F5; color: #000000;">];
+</span><span style="color: #008080;">19</span> <span style="background-color: #F5F5F5; color: #000000;">            out.push(</span><span style="background-color: #F5F5F5; color: #000000;">&quot;</span><span style="background-color: #F5F5F5; color: #000000;">&lt;div&gt;ContactTitle:</span><span style="background-color: #F5F5F5; color: #000000;">&quot;</span><span style="background-color: #F5F5F5; color: #000000;"> </span><span style="background-color: #F5F5F5; color: #000000;">+</span><span style="background-color: #F5F5F5; color: #000000;"> record.ContactTitle </span><span style="background-color: #F5F5F5; color: #000000;">+</span><span style="background-color: #F5F5F5; color: #000000;"> </span><span style="background-color: #F5F5F5; color: #000000;">&quot;</span><span style="background-color: #F5F5F5; color: #000000;">&lt;/div&gt;</span><span style="background-color: #F5F5F5; color: #000000;">&quot;</span><span style="background-color: #F5F5F5; color: #000000;">);
+</span><span style="color: #008080;">20</span> <span style="background-color: #F5F5F5; color: #000000;">            out.push(</span><span style="background-color: #F5F5F5; color: #000000;">&quot;</span><span style="background-color: #F5F5F5; color: #000000;">&lt;div&gt;Phone:</span><span style="background-color: #F5F5F5; color: #000000;">&quot;</span><span style="background-color: #F5F5F5; color: #000000;"> </span><span style="background-color: #F5F5F5; color: #000000;">+</span><span style="background-color: #F5F5F5; color: #000000;"> record.Phone </span><span style="background-color: #F5F5F5; color: #000000;">+</span><span style="background-color: #F5F5F5; color: #000000;"> </span><span style="background-color: #F5F5F5; color: #000000;">&quot;</span><span style="background-color: #F5F5F5; color: #000000;">&lt;/div&gt;</span><span style="background-color: #F5F5F5; color: #000000;">&quot;</span><span style="background-color: #F5F5F5; color: #000000;">);
+</span><span style="color: #008080;">21</span> <span style="background-color: #F5F5F5; color: #000000;">            out.push(</span><span style="background-color: #F5F5F5; color: #000000;">&quot;</span><span style="background-color: #F5F5F5; color: #000000;">&lt;/div&gt;</span><span style="background-color: #F5F5F5; color: #000000;">&quot;</span><span style="background-color: #F5F5F5; color: #000000;">);
+</span><span style="color: #008080;">22</span> <span style="background-color: #F5F5F5; color: #000000;">            $(container).html(out.join(</span><span style="background-color: #F5F5F5; color: #000000;">''</span><span style="background-color: #F5F5F5; color: #000000;">));
+</span><span style="color: #008080;">23</span> <span style="background-color: #F5F5F5; color: #000000;">        } 
+</span><span style="color: #008080;">24</span> <span style="background-color: #F5F5F5; color: #000000;">    </span><span style="color: #0000FF;">&lt;/</span><span style="color: #800000;">script</span><span style="color: #0000FF;">&gt;</span></div></pre><br /><pre><div><!--
+
+Code highlighting produced by Actipro CodeHighlighter (freeware)
+http://www.CodeHighlighter.com/
+
+--><span style="color: #008080;"> 1</span> <span style="color: #000000;">    </span><span style="color: #0000FF;">&lt;</span><span style="color: #800000;">script </span><span style="color: #FF0000;">type</span><span style="color: #0000FF;">=&quot;text/javascript&quot;</span><span style="color: #0000FF;">&gt;</span><span style="background-color: #F5F5F5; color: #000000;">
+</span><span style="color: #008080;"> 2</span> <span style="background-color: #F5F5F5; color: #000000;">        </span><span style="background-color: #F5F5F5; color: #0000FF;">var</span><span style="background-color: #F5F5F5; color: #000000;"> g;
+</span><span style="color: #008080;"> 3</span> <span style="background-color: #F5F5F5; color: #000000;">        $(</span><span style="background-color: #F5F5F5; color: #0000FF;">function</span><span style="background-color: #F5F5F5; color: #000000;"> ()
+</span><span style="color: #008080;"> 4</span> <span style="background-color: #F5F5F5; color: #000000;">        {
+</span><span style="color: #008080;"> 5</span> <span style="background-color: #F5F5F5; color: #000000;">            f_showCustomers(); 
+</span><span style="color: #008080;"> 6</span> <span style="background-color: #F5F5F5; color: #000000;">        });
+</span><span style="color: #008080;"> 7</span> <span style="background-color: #F5F5F5; color: #000000;">        </span><span style="background-color: #F5F5F5; color: #008000;">//</span><span style="background-color: #F5F5F5; color: #008000;">显示顾客</span><span style="background-color: #F5F5F5; color: #008000;">
+</span><span style="color: #008080;"> 8</span> <span style="background-color: #F5F5F5; color: #008000;"></span><span style="background-color: #F5F5F5; color: #000000;">        </span><span style="background-color: #F5F5F5; color: #0000FF;">function</span><span style="background-color: #F5F5F5; color: #000000;"> f_showCustomers()
+</span><span style="color: #008080;"> 9</span> <span style="background-color: #F5F5F5; color: #000000;">        {
+</span><span style="color: #008080;">10</span> <span style="background-color: #F5F5F5; color: #000000;">            g </span><span style="background-color: #F5F5F5; color: #000000;">=</span><span style="background-color: #F5F5F5; color: #000000;"> $(</span><span style="background-color: #F5F5F5; color: #000000;">&quot;</span><span style="background-color: #F5F5F5; color: #000000;">#maingrid</span><span style="background-color: #F5F5F5; color: #000000;">&quot;</span><span style="background-color: #F5F5F5; color: #000000;">).ligerGrid({
+</span><span style="color: #008080;">11</span> <span style="background-color: #F5F5F5; color: #000000;">                columns: [
+</span><span style="color: #008080;">12</span> <span style="background-color: #F5F5F5; color: #000000;">                { display: </span><span style="background-color: #F5F5F5; color: #000000;">'</span><span style="background-color: #F5F5F5; color: #000000;">顾客</span><span style="background-color: #F5F5F5; color: #000000;">'</span><span style="background-color: #F5F5F5; color: #000000;">, name: </span><span style="background-color: #F5F5F5; color: #000000;">'</span><span style="background-color: #F5F5F5; color: #000000;">CustomerID</span><span style="background-color: #F5F5F5; color: #000000;">'</span><span style="background-color: #F5F5F5; color: #000000;">, align: </span><span style="background-color: #F5F5F5; color: #000000;">'</span><span style="background-color: #F5F5F5; color: #000000;">left</span><span style="background-color: #F5F5F5; color: #000000;">'</span><span style="background-color: #F5F5F5; color: #000000;">,frozen:</span><span style="background-color: #F5F5F5; color: #0000FF;">true</span><span style="background-color: #F5F5F5; color: #000000;"> },
+</span><span style="color: #008080;">13</span> <span style="background-color: #F5F5F5; color: #000000;">                { display: </span><span style="background-color: #F5F5F5; color: #000000;">'</span><span style="background-color: #F5F5F5; color: #000000;">公司名</span><span style="background-color: #F5F5F5; color: #000000;">'</span><span style="background-color: #F5F5F5; color: #000000;">, name: </span><span style="background-color: #F5F5F5; color: #000000;">'</span><span style="background-color: #F5F5F5; color: #000000;">CompanyName</span><span style="background-color: #F5F5F5; color: #000000;">'</span><span style="background-color: #F5F5F5; color: #000000;"> },
+</span><span style="color: #008080;">14</span> <span style="background-color: #F5F5F5; color: #000000;">                { display: </span><span style="background-color: #F5F5F5; color: #000000;">'</span><span style="background-color: #F5F5F5; color: #000000;">联系人</span><span style="background-color: #F5F5F5; color: #000000;">'</span><span style="background-color: #F5F5F5; color: #000000;">, name: </span><span style="background-color: #F5F5F5; color: #000000;">'</span><span style="background-color: #F5F5F5; color: #000000;">ContactName</span><span style="background-color: #F5F5F5; color: #000000;">'</span><span style="background-color: #F5F5F5; color: #000000;"> },
+</span><span style="color: #008080;">15</span> <span style="background-color: #F5F5F5; color: #000000;">                { display: </span><span style="background-color: #F5F5F5; color: #000000;">'</span><span style="background-color: #F5F5F5; color: #000000;">地址</span><span style="background-color: #F5F5F5; color: #000000;">'</span><span style="background-color: #F5F5F5; color: #000000;">, name: </span><span style="background-color: #F5F5F5; color: #000000;">'</span><span style="background-color: #F5F5F5; color: #000000;">Address</span><span style="background-color: #F5F5F5; color: #000000;">'</span><span style="background-color: #F5F5F5; color: #000000;"> },
+</span><span style="color: #008080;">16</span> <span style="background-color: #F5F5F5; color: #000000;">                { display: </span><span style="background-color: #F5F5F5; color: #000000;">'</span><span style="background-color: #F5F5F5; color: #000000;">邮编</span><span style="background-color: #F5F5F5; color: #000000;">'</span><span style="background-color: #F5F5F5; color: #000000;">, name: </span><span style="background-color: #F5F5F5; color: #000000;">'</span><span style="background-color: #F5F5F5; color: #000000;">PostalCode</span><span style="background-color: #F5F5F5; color: #000000;">'</span><span style="background-color: #F5F5F5; color: #000000;"> },
+</span><span style="color: #008080;">17</span> <span style="background-color: #F5F5F5; color: #000000;">                { display: </span><span style="background-color: #F5F5F5; color: #000000;">'</span><span style="background-color: #F5F5F5; color: #000000;">城市</span><span style="background-color: #F5F5F5; color: #000000;">'</span><span style="background-color: #F5F5F5; color: #000000;">, name: </span><span style="background-color: #F5F5F5; color: #000000;">'</span><span style="background-color: #F5F5F5; color: #000000;">City</span><span style="background-color: #F5F5F5; color: #000000;">'</span><span style="background-color: #F5F5F5; color: #000000;"> }
+</span><span style="color: #008080;">18</span> <span style="background-color: #F5F5F5; color: #000000;">                ], isScroll: </span><span style="background-color: #F5F5F5; color: #0000FF;">false</span><span style="background-color: #F5F5F5; color: #000000;">, frozen: </span><span style="background-color: #F5F5F5; color: #0000FF;">false</span><span style="background-color: #F5F5F5; color: #000000;">,
+</span><span style="color: #008080;">19</span> <span style="background-color: #F5F5F5; color: #000000;">                pageSizeOptions: [</span><span style="background-color: #F5F5F5; color: #000000;">3</span><span style="background-color: #F5F5F5; color: #000000;">, </span><span style="background-color: #F5F5F5; color: #000000;">10</span><span style="background-color: #F5F5F5; color: #000000;">, </span><span style="background-color: #F5F5F5; color: #000000;">20</span><span style="background-color: #F5F5F5; color: #000000;">, </span><span style="background-color: #F5F5F5; color: #000000;">30</span><span style="background-color: #F5F5F5; color: #000000;">, </span><span style="background-color: #F5F5F5; color: #000000;">40</span><span style="background-color: #F5F5F5; color: #000000;">, </span><span style="background-color: #F5F5F5; color: #000000;">50</span><span style="background-color: #F5F5F5; color: #000000;">, </span><span style="background-color: #F5F5F5; color: #000000;">100</span><span style="background-color: #F5F5F5; color: #000000;">],
+</span><span style="color: #008080;">20</span> <span style="background-color: #F5F5F5; color: #000000;">                data: CustomersData,
+</span><span style="color: #008080;">21</span> <span style="background-color: #F5F5F5; color: #000000;">                showTitle: </span><span style="background-color: #F5F5F5; color: #0000FF;">false</span><span style="background-color: #F5F5F5; color: #000000;">,width:</span><span style="background-color: #F5F5F5; color: #000000;">'</span><span style="background-color: #F5F5F5; color: #000000;">90%</span><span style="background-color: #F5F5F5; color: #000000;">'</span><span style="background-color: #F5F5F5; color: #000000;">,columnWidth:</span><span style="background-color: #F5F5F5; color: #000000;">120</span><span style="background-color: #F5F5F5; color: #000000;">,
+</span><span style="color: #008080;">22</span> <span style="background-color: #F5F5F5; color: #000000;">                detail: { onShowDetail: f_showOrder,height:</span><span style="background-color: #F5F5F5; color: #000000;">'</span><span style="background-color: #F5F5F5; color: #000000;">auto</span><span style="background-color: #F5F5F5; color: #000000;">'</span><span style="background-color: #F5F5F5; color: #000000;"> }
+</span><span style="color: #008080;">23</span> <span style="background-color: #F5F5F5; color: #000000;">            });
+</span><span style="color: #008080;">24</span> <span style="background-color: #F5F5F5; color: #000000;">        }
+</span><span style="color: #008080;">25</span> <span style="background-color: #F5F5F5; color: #000000;">        </span><span style="background-color: #F5F5F5; color: #0000FF;">function</span><span style="background-color: #F5F5F5; color: #000000;"> f_getOrdersData(CustomerID)
+</span><span style="color: #008080;">26</span> <span style="background-color: #F5F5F5; color: #000000;">        {
+</span><span style="color: #008080;">27</span> <span style="background-color: #F5F5F5; color: #000000;">            </span><span style="background-color: #F5F5F5; color: #0000FF;">var</span><span style="background-color: #F5F5F5; color: #000000;"> data </span><span style="background-color: #F5F5F5; color: #000000;">=</span><span style="background-color: #F5F5F5; color: #000000;"> { Rows: [] };
+</span><span style="color: #008080;">28</span> <span style="background-color: #F5F5F5; color: #000000;">            </span><span style="background-color: #F5F5F5; color: #0000FF;">for</span><span style="background-color: #F5F5F5; color: #000000;"> (</span><span style="background-color: #F5F5F5; color: #0000FF;">var</span><span style="background-color: #F5F5F5; color: #000000;"> i </span><span style="background-color: #F5F5F5; color: #000000;">=</span><span style="background-color: #F5F5F5; color: #000000;"> </span><span style="background-color: #F5F5F5; color: #000000;">0</span><span style="background-color: #F5F5F5; color: #000000;">; i </span><span style="background-color: #F5F5F5; color: #000000;">&lt;</span><span style="background-color: #F5F5F5; color: #000000;"> AllOrdersData.Rows.length; i</span><span style="background-color: #F5F5F5; color: #000000;">++</span><span style="background-color: #F5F5F5; color: #000000;">)
+</span><span style="color: #008080;">29</span> <span style="background-color: #F5F5F5; color: #000000;">            {
+</span><span style="color: #008080;">30</span> <span style="background-color: #F5F5F5; color: #000000;">                </span><span style="background-color: #F5F5F5; color: #0000FF;">if</span><span style="background-color: #F5F5F5; color: #000000;"> (AllOrdersData.Rows[i].CustomerID </span><span style="background-color: #F5F5F5; color: #000000;">==</span><span style="background-color: #F5F5F5; color: #000000;"> CustomerID)
+</span><span style="color: #008080;">31</span> <span style="background-color: #F5F5F5; color: #000000;">                    data.Rows.push(AllOrdersData.Rows[i]);
+</span><span style="color: #008080;">32</span> <span style="background-color: #F5F5F5; color: #000000;">            }
+</span><span style="color: #008080;">33</span> <span style="background-color: #F5F5F5; color: #000000;">            </span><span style="background-color: #F5F5F5; color: #0000FF;">return</span><span style="background-color: #F5F5F5; color: #000000;"> data;
+</span><span style="color: #008080;">34</span> <span style="background-color: #F5F5F5; color: #000000;">        }
+</span><span style="color: #008080;">35</span> <span style="background-color: #F5F5F5; color: #000000;">        </span><span style="background-color: #F5F5F5; color: #008000;">//</span><span style="background-color: #F5F5F5; color: #008000;">显示顾客订单</span><span style="background-color: #F5F5F5; color: #008000;">
+</span><span style="color: #008080;">36</span> <span style="background-color: #F5F5F5; color: #008000;"></span><span style="background-color: #F5F5F5; color: #000000;">        </span><span style="background-color: #F5F5F5; color: #0000FF;">function</span><span style="background-color: #F5F5F5; color: #000000;"> f_showOrder(row, detailPanel,callback)
+</span><span style="color: #008080;">37</span> <span style="background-color: #F5F5F5; color: #000000;">        {
+</span><span style="color: #008080;">38</span> <span style="background-color: #F5F5F5; color: #000000;">            </span><span style="background-color: #F5F5F5; color: #0000FF;">var</span><span style="background-color: #F5F5F5; color: #000000;"> grid </span><span style="background-color: #F5F5F5; color: #000000;">=</span><span style="background-color: #F5F5F5; color: #000000;"> document.createElement(</span><span style="background-color: #F5F5F5; color: #000000;">'</span><span style="background-color: #F5F5F5; color: #000000;">div</span><span style="background-color: #F5F5F5; color: #000000;">'</span><span style="background-color: #F5F5F5; color: #000000;">); 
+</span><span style="color: #008080;">39</span> <span style="background-color: #F5F5F5; color: #000000;">            $(detailPanel).append(grid);
+</span><span style="color: #008080;">40</span> <span style="background-color: #F5F5F5; color: #000000;">            $(grid).css(</span><span style="background-color: #F5F5F5; color: #000000;">'</span><span style="background-color: #F5F5F5; color: #000000;">margin</span><span style="background-color: #F5F5F5; color: #000000;">'</span><span style="background-color: #F5F5F5; color: #000000;">,</span><span style="background-color: #F5F5F5; color: #000000;">10</span><span style="background-color: #F5F5F5; color: #000000;">).ligerGrid({
+</span><span style="color: #008080;">41</span> <span style="background-color: #F5F5F5; color: #000000;">                columns:
+</span><span style="color: #008080;">42</span> <span style="background-color: #F5F5F5; color: #000000;">                            [
+</span><span style="color: #008080;">43</span> <span style="background-color: #F5F5F5; color: #000000;">                            { display: </span><span style="background-color: #F5F5F5; color: #000000;">'</span><span style="background-color: #F5F5F5; color: #000000;">订单序号</span><span style="background-color: #F5F5F5; color: #000000;">'</span><span style="background-color: #F5F5F5; color: #000000;">, name: </span><span style="background-color: #F5F5F5; color: #000000;">'</span><span style="background-color: #F5F5F5; color: #000000;">OrderID</span><span style="background-color: #F5F5F5; color: #000000;">'</span><span style="background-color: #F5F5F5; color: #000000;">,type:</span><span style="background-color: #F5F5F5; color: #000000;">'</span><span style="background-color: #F5F5F5; color: #000000;">float</span><span style="background-color: #F5F5F5; color: #000000;">'</span><span style="background-color: #F5F5F5; color: #000000;"> },
+</span><span style="color: #008080;">44</span> <span style="background-color: #F5F5F5; color: #000000;">                            { display: </span><span style="background-color: #F5F5F5; color: #000000;">'</span><span style="background-color: #F5F5F5; color: #000000;">运费</span><span style="background-color: #F5F5F5; color: #000000;">'</span><span style="background-color: #F5F5F5; color: #000000;">, name: </span><span style="background-color: #F5F5F5; color: #000000;">'</span><span style="background-color: #F5F5F5; color: #000000;">Freight</span><span style="background-color: #F5F5F5; color: #000000;">'</span><span style="background-color: #F5F5F5; color: #000000;">, width: </span><span style="background-color: #F5F5F5; color: #000000;">50</span><span style="background-color: #F5F5F5; color: #000000;">,type:</span><span style="background-color: #F5F5F5; color: #000000;">'</span><span style="background-color: #F5F5F5; color: #000000;">float</span><span style="background-color: #F5F5F5; color: #000000;">'</span><span style="background-color: #F5F5F5; color: #000000;"> },
+</span><span style="color: #008080;">45</span> <span style="background-color: #F5F5F5; color: #000000;">                            { display: </span><span style="background-color: #F5F5F5; color: #000000;">'</span><span style="background-color: #F5F5F5; color: #000000;">收货人</span><span style="background-color: #F5F5F5; color: #000000;">'</span><span style="background-color: #F5F5F5; color: #000000;">, name: </span><span style="background-color: #F5F5F5; color: #000000;">'</span><span style="background-color: #F5F5F5; color: #000000;">ShipName</span><span style="background-color: #F5F5F5; color: #000000;">'</span><span style="background-color: #F5F5F5; color: #000000;"> },
+</span><span style="color: #008080;">46</span> <span style="background-color: #F5F5F5; color: #000000;">                            { display: </span><span style="background-color: #F5F5F5; color: #000000;">'</span><span style="background-color: #F5F5F5; color: #000000;">收货地址</span><span style="background-color: #F5F5F5; color: #000000;">'</span><span style="background-color: #F5F5F5; color: #000000;">, name: </span><span style="background-color: #F5F5F5; color: #000000;">'</span><span style="background-color: #F5F5F5; color: #000000;">ShipAddress</span><span style="background-color: #F5F5F5; color: #000000;">'</span><span style="background-color: #F5F5F5; color: #000000;"> },
+</span><span style="color: #008080;">47</span> <span style="background-color: #F5F5F5; color: #000000;">                            { display: </span><span style="background-color: #F5F5F5; color: #000000;">'</span><span style="background-color: #F5F5F5; color: #000000;">收货城市</span><span style="background-color: #F5F5F5; color: #000000;">'</span><span style="background-color: #F5F5F5; color: #000000;">, name: </span><span style="background-color: #F5F5F5; color: #000000;">'</span><span style="background-color: #F5F5F5; color: #000000;">ShipCity</span><span style="background-color: #F5F5F5; color: #000000;">'</span><span style="background-color: #F5F5F5; color: #000000;"> },
+</span><span style="color: #008080;">48</span> <span style="background-color: #F5F5F5; color: #000000;">                            { display: </span><span style="background-color: #F5F5F5; color: #000000;">'</span><span style="background-color: #F5F5F5; color: #000000;">收货国家</span><span style="background-color: #F5F5F5; color: #000000;">'</span><span style="background-color: #F5F5F5; color: #000000;">, name: </span><span style="background-color: #F5F5F5; color: #000000;">'</span><span style="background-color: #F5F5F5; color: #000000;">ShipCountry</span><span style="background-color: #F5F5F5; color: #000000;">'</span><span style="background-color: #F5F5F5; color: #000000;"> }
+</span><span style="color: #008080;">49</span> <span style="background-color: #F5F5F5; color: #000000;">                            ], isScroll: </span><span style="background-color: #F5F5F5; color: #0000FF;">false</span><span style="background-color: #F5F5F5; color: #000000;">, showToggleColBtn: </span><span style="background-color: #F5F5F5; color: #0000FF;">false</span><span style="background-color: #F5F5F5; color: #000000;">, width: </span><span style="background-color: #F5F5F5; color: #000000;">'</span><span style="background-color: #F5F5F5; color: #000000;">90%</span><span style="background-color: #F5F5F5; color: #000000;">'</span><span style="background-color: #F5F5F5; color: #000000;">,
+</span><span style="color: #008080;">50</span> <span style="background-color: #F5F5F5; color: #000000;">                data: f_getOrdersData(row.CustomerID) , showTitle: </span><span style="background-color: #F5F5F5; color: #0000FF;">false</span><span style="background-color: #F5F5F5; color: #000000;">, columnWidth: </span><span style="background-color: #F5F5F5; color: #000000;">100</span><span style="background-color: #F5F5F5; color: #000000;">
+</span><span style="color: #008080;">51</span> <span style="background-color: #F5F5F5; color: #000000;">                 , onAfterShowData: callback,frozen:</span><span style="background-color: #F5F5F5; color: #0000FF;">false</span><span style="background-color: #F5F5F5; color: #000000;">
+</span><span style="color: #008080;">52</span> <span style="background-color: #F5F5F5; color: #000000;">            });  
+</span><span style="color: #008080;">53</span> <span style="background-color: #F5F5F5; color: #000000;">        }
+</span><span style="color: #008080;">54</span> <span style="background-color: #F5F5F5; color: #000000;">    </span><span style="color: #0000FF;">&lt;/</span><span style="color: #800000;">script</span><span style="color: #0000FF;">&gt;</span></div></pre>
+                </p>
+                                                                                                                                                                                                                                                                                                                                
+
+         		 
+         
+		
+         
+		
+         
+		
+         
+		
+         
+		
+         
+		
+         
+		
+         
+		
+                         <a name="linksubpro24"></a>
+                <h3 class="property">ColumnEditor onChanged参数 示例：</h3> 
+                <p>
+                <pre><div><!--
+
+Code highlighting produced by Actipro CodeHighlighter (freeware)
+http://www.CodeHighlighter.com/
+
+--><span style="color: #008080;"> 1</span> <span style="color: #0000FF;">&lt;</span><span style="color: #800000;">div </span><span style="color: #FF0000;">class</span><span style="color: #0000FF;">=&quot;liger-grid&quot;</span><span style="color: #FF0000;"> id</span><span style="color: #0000FF;">=&quot;grid1&quot;</span><span style="color: #FF0000;"> data-data</span><span style="color: #0000FF;">=&quot;CustomersData&quot;</span><span style="color: #FF0000;"> data-enabledEdit</span><span style="color: #0000FF;">=&quot;true&quot;</span><span style="color: #0000FF;">&gt;</span><span style="color: #000000;">
+</span><span style="color: #008080;"> 2</span> <span style="color: #000000;">        </span><span style="color: #0000FF;">&lt;</span><span style="color: #800000;">ul </span><span style="color: #FF0000;">class</span><span style="color: #0000FF;">=&quot;columns&quot;</span><span style="color: #0000FF;">&gt;</span><span style="color: #000000;">
+</span><span style="color: #008080;"> 3</span> <span style="color: #000000;">            </span><span style="color: #0000FF;">&lt;</span><span style="color: #800000;">li </span><span style="color: #FF0000;">data-name</span><span style="color: #0000FF;">=&quot;CustomerID&quot;</span><span style="color: #FF0000;"> data-width</span><span style="color: #0000FF;">=&quot;200&quot;</span><span style="color: #FF0000;"> data-display</span><span style="color: #0000FF;">=&quot;客户&quot;</span><span style="color: #0000FF;">&gt;</span><span style="color: #000000;"> 
+</span><span style="color: #008080;"> 4</span> <span style="color: #000000;">                </span><span style="color: #0000FF;">&lt;</span><span style="color: #800000;">input </span><span style="color: #FF0000;">class</span><span style="color: #0000FF;">=&quot;editor&quot;</span><span style="color: #FF0000;"> data-type</span><span style="color: #0000FF;">=&quot;text&quot;</span><span style="color: #FF0000;"> </span><span style="color: #0000FF;">/&gt;</span><span style="color: #000000;">
+</span><span style="color: #008080;"> 5</span> <span style="color: #000000;">            </span><span style="color: #0000FF;">&lt;/</span><span style="color: #800000;">li</span><span style="color: #0000FF;">&gt;</span><span style="color: #000000;"> 
+</span><span style="color: #008080;"> 6</span> <span style="color: #000000;">            </span><span style="color: #0000FF;">&lt;</span><span style="color: #800000;">li </span><span style="color: #FF0000;">data-display</span><span style="color: #0000FF;">=&quot;国家&quot;</span><span style="color: #FF0000;"> data-name</span><span style="color: #0000FF;">=&quot;Country&quot;</span><span style="color: #FF0000;"> data-width</span><span style="color: #0000FF;">=&quot;200&quot;</span><span style="color: #0000FF;">&gt;</span><span style="color: #000000;">
+</span><span style="color: #008080;"> 7</span> <span style="color: #000000;">                </span><span style="color: #0000FF;">&lt;</span><span style="color: #800000;">input </span><span style="color: #FF0000;">class</span><span style="color: #0000FF;">=&quot;editor&quot;</span><span style="color: #FF0000;"> data-type</span><span style="color: #0000FF;">=&quot;select&quot;</span><span style="color: #FF0000;"> data-data</span><span style="color: #0000FF;">=&quot;getCountryData()&quot;</span><span style="color: #FF0000;"> data-textField</span><span style="color: #0000FF;">=&quot;Country&quot;</span><span style="color: #FF0000;"> data-valueField</span><span style="color: #0000FF;">=&quot;Country&quot;</span><span style="color: #FF0000;"> data-onChanged</span><span style="color: #0000FF;">=&quot;f_onCountryChanged&quot;</span><span style="color: #0000FF;">/&gt;</span><span style="color: #000000;"> 
+</span><span style="color: #008080;"> 8</span> <span style="color: #000000;">            </span><span style="color: #0000FF;">&lt;/</span><span style="color: #800000;">li</span><span style="color: #0000FF;">&gt;</span><span style="color: #000000;">
+</span><span style="color: #008080;"> 9</span> <span style="color: #000000;">            </span><span style="color: #0000FF;">&lt;</span><span style="color: #800000;">li </span><span style="color: #FF0000;">data-display</span><span style="color: #0000FF;">=&quot;城市&quot;</span><span style="color: #FF0000;"> data-name</span><span style="color: #0000FF;">=&quot;City&quot;</span><span style="color: #FF0000;"> data-width</span><span style="color: #0000FF;">=&quot;200&quot;</span><span style="color: #0000FF;">&gt;</span><span style="color: #000000;">
+</span><span style="color: #008080;">10</span> <span style="color: #000000;">                </span><span style="color: #0000FF;">&lt;</span><span style="color: #800000;">input </span><span style="color: #FF0000;">class</span><span style="color: #0000FF;">=&quot;editor&quot;</span><span style="color: #FF0000;"> data-type</span><span style="color: #0000FF;">=&quot;select&quot;</span><span style="color: #FF0000;"> data-textField</span><span style="color: #0000FF;">=&quot;City&quot;</span><span style="color: #FF0000;"> data-valueField</span><span style="color: #0000FF;">=&quot;City&quot;</span><span style="color: #FF0000;"> data-ext</span><span style="color: #0000FF;">=&quot;f_createCityData&quot;</span><span style="color: #FF0000;"> </span><span style="color: #0000FF;">/&gt;</span><span style="color: #000000;"> 
+</span><span style="color: #008080;">11</span> <span style="color: #000000;">            </span><span style="color: #0000FF;">&lt;/</span><span style="color: #800000;">li</span><span style="color: #0000FF;">&gt;</span><span style="color: #000000;">
+</span><span style="color: #008080;">12</span> <span style="color: #000000;">        </span><span style="color: #0000FF;">&lt;/</span><span style="color: #800000;">ul</span><span style="color: #0000FF;">&gt;</span><span style="color: #000000;"> 
+</span><span style="color: #008080;">13</span> <span style="color: #000000;">     </span><span style="color: #0000FF;">&lt;/</span><span style="color: #800000;">div</span><span style="color: #0000FF;">&gt;</span><span style="color: #000000;">  
+</span><span style="color: #008080;">14</span> <span style="color: #000000;">    </span><span style="color: #0000FF;">&lt;</span><span style="color: #800000;">div </span><span style="color: #FF0000;">id</span><span style="color: #0000FF;">=&quot;message&quot;</span><span style="color: #FF0000;"> style</span><span style="color: #0000FF;">=&quot;margin:10px;&quot;</span><span style="color: #0000FF;">&gt;&lt;/</span><span style="color: #800000;">div</span><span style="color: #0000FF;">&gt;</span><span style="color: #000000;">
+</span><span style="color: #008080;">15</span> <span style="color: #000000;">    </span><span style="color: #0000FF;">&lt;</span><span style="color: #800000;">script</span><span style="color: #0000FF;">&gt;</span><span style="background-color: #F5F5F5; color: #000000;"> 
+</span><span style="color: #008080;">16</span> <span style="background-color: #F5F5F5; color: #000000;">        </span><span style="background-color: #F5F5F5; color: #008000;">//</span><span style="background-color: #F5F5F5; color: #008000;">国家 改变事件：清空城市</span><span style="background-color: #F5F5F5; color: #008000;">
+</span><span style="color: #008080;">17</span> <span style="background-color: #F5F5F5; color: #008000;"></span><span style="background-color: #F5F5F5; color: #000000;">        </span><span style="background-color: #F5F5F5; color: #0000FF;">function</span><span style="background-color: #F5F5F5; color: #000000;"> f_onCountryChanged(e)
+</span><span style="color: #008080;">18</span> <span style="background-color: #F5F5F5; color: #000000;">        {
+</span><span style="color: #008080;">19</span> <span style="background-color: #F5F5F5; color: #000000;">            liger.get(</span><span style="background-color: #F5F5F5; color: #000000;">&quot;</span><span style="background-color: #F5F5F5; color: #000000;">grid1</span><span style="background-color: #F5F5F5; color: #000000;">&quot;</span><span style="background-color: #F5F5F5; color: #000000;">).updateCell(</span><span style="background-color: #F5F5F5; color: #000000;">'</span><span style="background-color: #F5F5F5; color: #000000;">City</span><span style="background-color: #F5F5F5; color: #000000;">'</span><span style="background-color: #F5F5F5; color: #000000;">, </span><span style="background-color: #F5F5F5; color: #000000;">''</span><span style="background-color: #F5F5F5; color: #000000;">, e.record);
+</span><span style="color: #008080;">20</span> <span style="background-color: #F5F5F5; color: #000000;">        }
+</span><span style="color: #008080;">21</span> <span style="background-color: #F5F5F5; color: #000000;">        </span><span style="background-color: #F5F5F5; color: #008000;">//</span><span style="background-color: #F5F5F5; color: #008000;">城市 下拉框 数据初始化,这里也可以改成 改变服务器参数( parms,url )</span><span style="background-color: #F5F5F5; color: #008000;">
+</span><span style="color: #008080;">22</span> <span style="background-color: #F5F5F5; color: #008000;"></span><span style="background-color: #F5F5F5; color: #000000;">        </span><span style="background-color: #F5F5F5; color: #0000FF;">function</span><span style="background-color: #F5F5F5; color: #000000;"> f_createCityData(e)
+</span><span style="color: #008080;">23</span> <span style="background-color: #F5F5F5; color: #000000;">        {
+</span><span style="color: #008080;">24</span> <span style="background-color: #F5F5F5; color: #000000;">            </span><span style="background-color: #F5F5F5; color: #0000FF;">var</span><span style="background-color: #F5F5F5; color: #000000;"> Country </span><span style="background-color: #F5F5F5; color: #000000;">=</span><span style="background-color: #F5F5F5; color: #000000;"> e.record.Country;
+</span><span style="color: #008080;">25</span> <span style="background-color: #F5F5F5; color: #000000;">            </span><span style="background-color: #F5F5F5; color: #0000FF;">var</span><span style="background-color: #F5F5F5; color: #000000;"> options </span><span style="background-color: #F5F5F5; color: #000000;">=</span><span style="background-color: #F5F5F5; color: #000000;">  {
+</span><span style="color: #008080;">26</span> <span style="background-color: #F5F5F5; color: #000000;">                data: getCityData(Country)
+</span><span style="color: #008080;">27</span> <span style="background-color: #F5F5F5; color: #000000;">            }; 
+</span><span style="color: #008080;">28</span> <span style="background-color: #F5F5F5; color: #000000;">            </span><span style="background-color: #F5F5F5; color: #0000FF;">return</span><span style="background-color: #F5F5F5; color: #000000;"> options;
+</span><span style="color: #008080;">29</span> <span style="background-color: #F5F5F5; color: #000000;">        }  
+</span><span style="color: #008080;">30</span> <span style="background-color: #F5F5F5; color: #000000;">    </span><span style="color: #0000FF;">&lt;/</span><span style="color: #800000;">script</span><span style="color: #0000FF;">&gt;</span></div></pre>
+                </p>
+            
+		        		 
+         
+		
+         
+		
+                         <a name="linksubpro3"></a>
+                <h3 class="property">Columns totalSummary参数 示例：</h3> 
+                <p>
+                <pre><div><!--
+
+Code highlighting produced by Actipro CodeHighlighter (freeware)
+http://www.CodeHighlighter.com/
+
+--><span style="color: #008080;"> 1</span> <span style="color: #000000;"> $(</span><span style="color: #000000;">&quot;</span><span style="color: #000000;">#maingrid</span><span style="color: #000000;">&quot;</span><span style="color: #000000;">).ligerGrid({
+</span><span style="color: #008080;"> 2</span> <span style="color: #000000;">                columns: [
+</span><span style="color: #008080;"> 3</span> <span style="color: #000000;">                { display: </span><span style="color: #000000;">'</span><span style="color: #000000;">主键</span><span style="color: #000000;">'</span><span style="color: #000000;">, name: </span><span style="color: #000000;">'</span><span style="color: #000000;">ProductID</span><span style="color: #000000;">'</span><span style="color: #000000;">, type: </span><span style="color: #000000;">'</span><span style="color: #000000;">int</span><span style="color: #000000;">'</span><span style="color: #000000;">, totalSummary:
+</span><span style="color: #008080;"> 4</span> <span style="color: #000000;">                    {
+</span><span style="color: #008080;"> 5</span> <span style="color: #000000;">                        type: </span><span style="color: #000000;">'</span><span style="color: #000000;">count</span><span style="color: #000000;">'</span><span style="color: #000000;">
+</span><span style="color: #008080;"> 6</span> <span style="color: #000000;">                    }
+</span><span style="color: #008080;"> 7</span> <span style="color: #000000;">                },
+</span><span style="color: #008080;"> 8</span> <span style="color: #000000;">                { display: </span><span style="color: #000000;">'</span><span style="color: #000000;">产品名</span><span style="color: #000000;">'</span><span style="color: #000000;">, name: </span><span style="color: #000000;">'</span><span style="color: #000000;">ProductName</span><span style="color: #000000;">'</span><span style="color: #000000;">, align: </span><span style="color: #000000;">'</span><span style="color: #000000;">left</span><span style="color: #000000;">'</span><span style="color: #000000;">,width:</span><span style="color: #000000;">200</span><span style="color: #000000;"> },
+</span><span style="color: #008080;"> 9</span> <span style="color: #000000;">                { display: </span><span style="color: #000000;">'</span><span style="color: #000000;">单价</span><span style="color: #000000;">'</span><span style="color: #000000;">, name: </span><span style="color: #000000;">'</span><span style="color: #000000;">UnitPrice</span><span style="color: #000000;">'</span><span style="color: #000000;">, align: </span><span style="color: #000000;">'</span><span style="color: #000000;">right</span><span style="color: #000000;">'</span><span style="color: #000000;">,type:</span><span style="color: #000000;">'</span><span style="color: #000000;">float</span><span style="color: #000000;">'</span><span style="color: #000000;">,
+</span><span style="color: #008080;">10</span> <span style="color: #000000;">                    totalSummary:
+</span><span style="color: #008080;">11</span> <span style="color: #000000;">                    {
+</span><span style="color: #008080;">12</span> <span style="color: #000000;">                        type: </span><span style="color: #000000;">'</span><span style="color: #000000;">sum,max</span><span style="color: #000000;">'</span><span style="color: #000000;">
+</span><span style="color: #008080;">13</span> <span style="color: #000000;">                    }
+</span><span style="color: #008080;">14</span> <span style="color: #000000;">                },
+</span><span style="color: #008080;">15</span> <span style="color: #000000;">                { display: </span><span style="color: #000000;">'</span><span style="color: #000000;">仓库数量</span><span style="color: #000000;">'</span><span style="color: #000000;">, name: </span><span style="color: #000000;">'</span><span style="color: #000000;">UnitsInStock</span><span style="color: #000000;">'</span><span style="color: #000000;">, align: </span><span style="color: #000000;">'</span><span style="color: #000000;">right</span><span style="color: #000000;">'</span><span style="color: #000000;">, type: </span><span style="color: #000000;">'</span><span style="color: #000000;">float</span><span style="color: #000000;">'</span><span style="color: #000000;">,
+</span><span style="color: #008080;">16</span> <span style="color: #000000;">                    totalSummary:
+</span><span style="color: #008080;">17</span> <span style="color: #000000;">                    {
+</span><span style="color: #008080;">18</span> <span style="color: #000000;">                        type: </span><span style="color: #000000;">'</span><span style="color: #000000;">sum</span><span style="color: #000000;">'</span><span style="color: #000000;">
+</span><span style="color: #008080;">19</span> <span style="color: #000000;">                    }
+</span><span style="color: #008080;">20</span> <span style="color: #000000;">                }
+</span><span style="color: #008080;">21</span> <span style="color: #000000;">                ],   isScroll: </span><span style="color: #0000FF;">false</span><span style="color: #000000;">,  data: data, sortName: </span><span style="color: #000000;">'</span><span style="color: #000000;">ProductID</span><span style="color: #000000;">'</span><span style="color: #000000;">,
+</span><span style="color: #008080;">22</span> <span style="color: #000000;">                groupColumnName:</span><span style="color: #000000;">'</span><span style="color: #000000;">SupplierID</span><span style="color: #000000;">'</span><span style="color: #000000;">, groupColumnDisplay:</span><span style="color: #000000;">'</span><span style="color: #000000;">SupplierID</span><span style="color: #000000;">'</span><span style="color: #000000;">
+</span><span style="color: #008080;">23</span> <span style="color: #000000;">            });</span></div></pre>
+                </p>
+            
+		
+         
+		
+         
+		
+         
+		
+         
+		
+         
+		
+         
+		
+         
+		
+         
+		
+         
+		
+         
+		
+                         <a name="linksubpro14"></a>
+                <h3 class="property">Columns render参数 示例：</h3> 
+                <p>
+                <pre><div><!--
+
+Code highlighting produced by Actipro CodeHighlighter (freeware)
+http://www.CodeHighlighter.com/
+
+--><span style="color: #008080;"> 1</span> <span style="color: #000000;">$(&quot;#maingrid&quot;).ligerGrid({
+</span><span style="color: #008080;"> 2</span> <span style="color: #000000;">                columns: [
+</span><span style="color: #008080;"> 3</span> <span style="color: #000000;">                { display: '标示', name: 'id', width: 250, type: 'int', align: 'left' },
+</span><span style="color: #008080;"> 4</span> <span style="color: #000000;">                { display: '金额', name: 'amount', width: 250, align: 'left', render: f_renderAmount, editor: { type: 'int'} }
+</span><span style="color: #008080;"> 5</span> <span style="color: #000000;">                ], width: '100%', pageSizeOptions: [5, 10, 15, 20], height: '97%',
+</span><span style="color: #008080;"> 6</span> <span style="color: #000000;">                data: TreeData, alternatingRow: false, tree: { columnName: 'id' },
+</span><span style="color: #008080;"> 7</span> <span style="color: #000000;">                enabledEdit: true
+</span><span style="color: #008080;"> 8</span> <span style="color: #000000;">            });
+</span><span style="color: #008080;"> 9</span> <span style="color: #000000;"> function f_renderAmount(rowdata, index, value)
+</span><span style="color: #008080;">10</span> <span style="color: #000000;">        {
+</span><span style="color: #008080;">11</span> <span style="color: #000000;">            if (!this.hasChildren(rowdata))
+</span><span style="color: #008080;">12</span> <span style="color: #000000;">            {
+</span><span style="color: #008080;">13</span> <span style="color: #000000;">                return value;
+</span><span style="color: #008080;">14</span> <span style="color: #000000;">            }
+</span><span style="color: #008080;">15</span> <span style="color: #000000;">            else
+</span><span style="color: #008080;">16</span> <span style="color: #000000;">            {
+</span><span style="color: #008080;">17</span> <span style="color: #000000;">                var children = this.getChildren(rowdata, true);
+</span><span style="color: #008080;">18</span> <span style="color: #000000;">                var sum = 0;
+</span><span style="color: #008080;">19</span> <span style="color: #000000;">                for (var i = 0, l = children.length; i </span><span style="color: #0000FF;">&lt;</span><span style="color: #800000;"> l</span><span style="color: #FF0000;">; i++)
+</span><span style="color: #008080;">20</span> <span style="color: #FF0000;">                {
+</span><span style="color: #008080;">21</span> <span style="color: #FF0000;">                    sum +</span><span style="color: #0000FF;">= children[i].amount </span><span style="color: #FF0000;">|| 0;
+</span><span style="color: #008080;">22</span> <span style="color: #FF0000;">                }
+</span><span style="color: #008080;">23</span> <span style="color: #FF0000;">                return sum;
+</span><span style="color: #008080;">24</span> <span style="color: #FF0000;">            }
+</span><span style="color: #008080;">25</span> <span style="color: #FF0000;">        }</span></div></pre>
+                </p>
+            
+		
+         
+		
+         
+		        		 
+         
+		
+         
+		
+         
+		
+         
+		        	</body>
+</html>

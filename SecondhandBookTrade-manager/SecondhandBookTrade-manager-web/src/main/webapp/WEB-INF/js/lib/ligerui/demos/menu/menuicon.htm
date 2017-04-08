@@ -1,0 +1,53 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+     <link href="../../lib/ligerUI/skins/ligerui-icons.css" rel="stylesheet" type="text/css" />
+    <link href="../../lib/ligerUI/skins/Aqua/css/ligerui-all.css" rel="stylesheet" type="text/css" />
+    <script src="../../lib/jquery/jquery-1.9.0.min.js" type="text/javascript"></script> 
+    <script src="../../lib/ligerUI/js/core/base.js" type="text/javascript"></script>
+    <script src="../../lib/ligerUI/js/plugins/ligerMenu.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        var menu;
+        function onclick11(item, i)
+        {
+            alert(item.text);
+        }
+        function onclick112()
+        {
+            menu.hide();
+        }
+        $(function ()
+        {
+            menu = $.ligerMenu({ top: 100, left: 100, width: 120, items:
+            [
+            { text: '增加', click: onclick11,icon:'add' },
+            { text: '修改', click: onclick11, icon: 'modify' },
+            { line: true },
+            { text: '查看', click: onclick11,icon:'show',children:
+            [
+            { text: '报表', click: onclick11,icon:'report' },
+            { text: '导出', children: [{ text: 'Excel', click: onclick11 }, { text: 'Word'}]
+            }
+            ] },
+            { text: '关闭', click: onclick112, icon: 'close' }
+            ]
+            });
+            $(document).bind("contextmenu", function (e)
+            {
+                menu.show({ top: e.pageY, left: e.pageX });
+                return false;
+            });
+        });
+    </script>
+    <style type="text/css">
+    #menu1,.l-menu-shadow{top:30px; left:50px;}
+    #menu1{  width:200px;}
+    </style>
+</head>
+<body style="padding:20px; overflow:hidden; "> 
+    <div id="div1" style="width:400px; height:400px;">
+    </div> 
+</body>
+</html>

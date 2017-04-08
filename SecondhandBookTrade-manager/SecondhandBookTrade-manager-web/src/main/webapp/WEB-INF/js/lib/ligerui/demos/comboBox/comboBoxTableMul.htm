@@ -1,0 +1,41 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <link href="../../lib/ligerUI/skins/Aqua/css/ligerui-all.css" rel="stylesheet" type="text/css" />
+    <style type="text/css">
+    </style>
+    <script src="../../lib/jquery/jquery-1.9.0.min.js" type="text/javascript"></script>  
+    <script src="../../lib/ligerUI/js/core/base.js" type="text/javascript"></script>
+    <script src="../../lib/ligerUI/js/plugins/ligerCheckBox.js" type="text/javascript"></script>
+    <script src="../../lib/ligerUI/js/plugins/ligerResizable.js" type="text/javascript"></script>
+    <script src="../../lib/ligerUI/js/plugins/ligerComboBox.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        $(function ()
+        {
+            var dataGrid = [
+                { id: 1, name: '李三', sex: '男' },
+                { id: 2, name: '李四', sex: '女' },
+                { id: 3, name: '赵武', sex: '女' },
+                { id: 4, name: '陈留', sex: '女' }
+                ];
+            var dataGridColumns = [
+                { header: 'ID', name: 'id', width: 20 },
+                { header: '名字', name: 'name' },
+                { header: '性别', name: 'sex' }
+            ];
+            $("#txtGrid").ligerComboBox({ data: dataGrid, textField: 'name', columns: dataGridColumns, selectBoxWidth: 200, isMultiSelect: true
+            });
+        }); 
+    </script>
+</head>
+<body style="padding:10px"> 
+    <h3>表格</h3>   
+   <input type="text" id="txtGrid"/>
+   <br />   
+ <div style="display:none;">
+ 
+</div>
+</body>
+</html>

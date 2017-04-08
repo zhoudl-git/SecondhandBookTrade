@@ -1,0 +1,117 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title></title>
+    <link href="../../lib/ligerUI/skins/Aqua/css/ligerui-all.css" rel="stylesheet" type="text/css" />
+    <script src="../../lib/jquery/jquery-1.9.0.min.js" type="text/javascript"></script>
+    <script src="../../lib/ligerUI/js/core/base.js" type="text/javascript"></script>
+    <script src="../../lib/ligerUI/js/plugins/ligerDrag.js" type="text/javascript"></script>
+    <script type="text/javascript">
+
+        $(function ()
+        {
+
+            $('.box,.receive').ligerDrag({ proxy: 'clone', revert: true, receive: '.receive',
+                onStartDrag: function ()
+                {
+                    this.set({ cursor: "not-allowed" });
+                },
+                onDragEnter: function (receive, source, e)
+                {
+                    this.set({ cursor: "pointer" });
+                    //this.proxy.html("释放注入颜色");
+                },
+                onDragLeave: function (receive, source, e)
+                {
+                    this.set({ cursor: "not-allowed" });
+                    //this.proxy.html("");
+                },
+                onDrop: function (receive, source, e)
+                {
+                    if (!this.proxy) return;
+                    this.proxy.hide();
+
+                    var bgcolor = this.proxy.css('backgroundColor');
+                    if (this.target.hasClass("receive"))
+                    {
+                        //颜色调换
+                        this.target.css("backgroundColor", $(receive).css("backgroundColor"));
+                    }
+                    $(receive).css("backgroundColor", bgcolor);
+                }
+            });
+        });
+         
+    </script>
+    <style type="text/css">
+        .proxy
+        {
+            border: 1px splid #333;
+            position: absolute;
+            z-index: 4;
+            background: #f1f1f1;
+        }
+        .box
+        {
+            width: 80px;
+            height: 80px;
+            border: 2px solid #bbb;
+            float: left;
+            margin: 5px;
+        }
+        .receive
+        {
+            width: 120px;
+            height: 120px;
+            border: 1px solid #bbb;
+            float: left;
+            margin: 4px; 
+        }
+        
+        .txt
+        {
+            margin: 2px;
+            width: 60px;
+            border: 1px solid #333;
+        }
+    </style>
+</head>
+<body style="padding: 10px">
+    <div>
+        <div class="box" style="background: #A6DBD8;">
+        </div>
+        <div class="box" style="background: #AFCCF1;">
+        </div>
+        <div class="box" style="background: #DA9188;">
+        </div>
+        <div class="box" style="background: #9CD88A;">
+        </div>
+        <div class="box" style="background: #D09CC5;">
+        </div>
+        <div class="box" style="background: #E2DC6B;">
+        </div>
+         <div class="box" style="background: #F2f2f2;">
+        </div>
+    </div>
+    <div style=" position:absolute; top:160px; width:400px; ">
+        <div class="receive">
+        </div>
+        <div class="receive">
+        </div>
+        <div class="receive">
+        </div>
+        <div class="receive">
+        </div>
+        <div class="receive">
+        </div>
+        <div class="receive">
+        </div> 
+    </div>
+    
+    <div id="message">
+    </div>
+    <div style="display: none">
+    </div>
+</body>
+</html>

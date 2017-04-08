@@ -1,0 +1,210 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <link href="../../lib/ligerUI/skins/Aqua/css/ligerui-form.css" rel="stylesheet" />
+    <style type="text/css">
+    </style>
+    <script src="../../lib/jquery/jquery-1.9.0.min.js" type="text/javascript"></script>  
+    <script src="../../lib/ligerUI/js/core/base.js" type="text/javascript"></script>
+    <script src="../../lib/ligerUI/js/plugins/ligerListBox.js" type="text/javascript"></script>
+    <script type="text/javascript">
+
+        var all_data = [];
+        var listbox1, listbox2, listbox3;
+        var width = 200;
+        $(function ()
+        { 
+            listbox1 = $("#listbox1").ligerListBox({
+                isShowCheckBox: false,
+                width: width,
+                data: [
+                ],
+                onSelected: function (id)
+                {
+                    loadData(2, id);
+                }
+            });
+
+            listbox2 = $("#listbox2").ligerListBox({
+                isShowCheckBox: false,
+                width: width,
+                data: [
+                ],
+                onSelected: function (id)
+                {
+                    loadData(3, id);
+                }
+            });
+
+            listbox3 = $("#listbox3").ligerListBox({
+                isShowCheckBox: false,
+                width: width,
+                data: [
+                ]
+            });
+
+            $.ajax({
+                type: "get",//使用get方法访问后台
+                dataType: "json",//返回json格式的数据
+                url: 'data.txt',
+                success: function (data)
+                {
+                    all_data = data;
+
+                    loadData(1, "0");
+                  
+                }
+            });
+        });
+
+        function loadData(level, id)
+        { 
+            var items = getItems(id);
+
+            if (level == 1)
+            {  
+                if (items.length)
+                {
+                    listbox1.setData(items); 
+                    listbox1.setValue(items[0].id);
+                    loadData(2, items[0].id);
+                } else
+                {
+                    listbox1.clear();
+                    listbox1.clearContent();
+                    listbox2.clear();
+                    listbox2.clearContent();
+                    listbox3.clear();
+                    listbox3.clearContent();
+                }
+
+            } else if (level == 2)
+            {
+                if (items.length)
+                {
+                    listbox2.setData(items);
+                    loadData(3, items[0].id);
+                } else
+                { 
+                    listbox2.clear();
+                    listbox2.clearContent();
+                    listbox3.clear();
+                    listbox3.clearContent();
+                }
+            }
+            else if (level == 3)
+            {
+                if (items.length)
+                {
+                    listbox3.setData(items); 
+                } else
+                { 
+                    listbox3.clear();
+                    listbox3.clearContent();
+                }
+            }
+        }
+
+        function getItems(id)
+        {
+            var items = null;
+            for (var i = 0; i < all_data.length; i++)
+            {
+                var item = all_data[i];
+                if (item.id == id)
+                {
+                    items = item.items;
+                    break;
+                }
+            }
+
+            if (!items) return [];
+            var list = [];
+            for (var i = 0; i < items.length; i++)
+            {
+                list.push({
+                    id: id + "_" + i,
+                    text: items[i]
+                });
+            }
+            return list;
+        }
+
+        function hasData(level)
+        {
+            if (level == 1)
+            {
+                return $("table tr", listbox1.selectBox).length ? true : false;
+
+            } else if (level == 2)
+            {
+                return $("table tr", listbox2.selectBox).length ? true : false;
+            }
+            else if (level == 3)
+            {
+                return $("table tr", listbox3.selectBox).length ? true : false;
+            }
+        }
+
+        function showselect()
+        {
+            var val1 = listbox1.getValue(), val2 = listbox2.getValue(), val3 = listbox3.getValue();
+
+            var text1 = listbox1.getText(), text2 = listbox2.getText(), text3 = listbox3.getText();
+
+
+            if (hasData(2) && !val2)
+            {
+                alert("二级类目必须选择");
+                return;
+            } 
+            if (hasData(3) && !val3)
+            {
+                alert("三级类目必须选择");
+                return;
+            }
+
+            alert("选择的是: " + text1 + "," + text2 + "," + text3);
+
+
+        }
+    </script>
+    <style type="text/css">
+        .box {
+            float: left;
+            width:220px;
+            margin-right:10px;
+        }
+        .box h4 {
+            text-align:center; 
+            line-height:24px;
+        }
+
+    </style>
+</head>
+<body style="padding:10px"> 
+
+    <div class="box">
+         <h4>一级类目</h4>
+         <div id="listbox1"></div> 
+    </div>
+
+     <div class="box">
+         <h4>二级类目</h4>
+         <div id="listbox2"></div> 
+    </div>
+
+     <div class="box">
+         <h4>三级类目</h4>
+         <div id="listbox3"></div> 
+    </div>
+
+    <div  style="clear:both; margin-top:20px;"> 
+
+           <input style="margin-top:10px;padding:4px 10px;" type="button" class="btn" onclick="showselect()" value="选择" />
+    </div>
+ 
+</body>
+</html>

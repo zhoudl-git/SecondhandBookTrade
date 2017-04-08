@@ -1,0 +1,66 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title></title>
+    <link href="../../../lib/ligerUI/skins/Aqua/css/ligerui-all.css" rel="stylesheet" type="text/css" />
+    <link href="../../../lib/ligerUI/skins/Gray/css/all.css" rel="stylesheet" />
+    <script src="../../../lib/jquery/jquery-1.9.0.min.js" type="text/javascript"></script> 
+    <script src="../../../lib/ligerUI/js/ligerui.all.js" type="text/javascript"></script>  
+    <style>
+        .liger-button {
+            margin-bottom: 3px;
+        }
+    </style>
+</head>
+<body style="padding: 10px">
+   <div id="form1" class="liger-form">
+        <div class="fields">
+            <input data-type="text" data-label="标题" data-name="Title" />
+            <input data-type="date" data-label="入职日期" data-name="addDate"/>
+            <li data-label="国家" data-type="select" data-name="Country" data-width="200">
+                <input class="editor" data-data="getCountryData()" data-textField="Name" data-valueField="Code"  /> 
+            </li>
+        </div>  
+    </div> 
+
+    <div class="liger-button" data-click="f_getAddDate1" data-width="150">获取 入职日期(方法一)</div>
+    <div class="liger-button" data-click="f_getAddDate2" data-width="150">获取 入职日期(方法二)</div>
+    <div class="liger-button" data-click="f_getAddDate3" data-width="150">获取 入职日期(方法三)</div>
+    <div class="liger-button" data-click="f_getCountry" data-width="150">获取 国家</div>
+    <script> 
+        function getCountryData() {
+            return [
+            { Name: '中国', Code: 'ZG' },
+            { Name: '德国', Code: 'DG' },
+            { Name: '美国', Code: 'MG' },
+            { Name: '澳大利亚', Code: 'ADLY' },
+            { Name: '加拿大', Code: 'JND' }
+            ];
+        }
+        function f_getCountry() {
+            //var form = liger.get('form1');
+            //var editor = form.getEditor("Country");   
+            var editor = liger.get("Country");
+            alert(editor.getValue());
+        }
+        function f_getAddDate1() {
+             
+            alert($("#addDate").val());
+        }
+
+        function f_getAddDate2()
+        {
+            var add = liger.get('addDate');
+            alert(add.getValue());
+        }
+
+        function f_getAddDate3() {
+            var form = liger.get('form1');
+            var editor = form.getEditor("addDate");
+            alert(editor.getValue());
+        }
+
+    </script>
+</body>
+</html>

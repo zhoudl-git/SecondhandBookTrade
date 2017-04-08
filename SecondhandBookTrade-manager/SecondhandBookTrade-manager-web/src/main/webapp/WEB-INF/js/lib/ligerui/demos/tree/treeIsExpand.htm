@@ -1,0 +1,159 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+     <script src="../../lib/jquery/jquery-1.9.0.min.js" type="text/javascript"></script>
+    <link href="../../lib/ligerUI/skins/Aqua/css/ligerui-all.css" rel="stylesheet" type="text/css" />
+    <script src="../../lib/ligerUI/js/core/base.js" type="text/javascript"></script>
+    <script src="../../lib/ligerUI/js/plugins/ligerTree.js" type="text/javascript"></script>
+    <style type="text/css">
+        .box
+        {
+            float: left;
+        }
+        .tree
+        {
+            width: 230px;
+            height: 200px;
+            margin: 10px;
+            border: 1px solid #ccc;
+            overflow: auto;
+        }
+        h4
+        { margin: 10px;
+        }
+    </style>
+    <script type="text/javascript">
+
+        $(function ()
+        { 
+            $("#tree1").ligerTree({ 
+                nodeWidth: 200,
+                data : createData(),
+                checkbox: true,
+                idFieldName: 'id', 
+                isExpand: false, 
+                slide: false 
+            });
+              
+
+            $("#tree2").ligerTree({
+                nodeWidth: 200,
+                data: createData(),
+                checkbox: true,
+                idFieldName: 'id',
+                isExpand: true,
+                slide: false
+            });
+
+            $("#tree3").ligerTree({
+                nodeWidth: 200,
+                data: createData(),
+                checkbox: true,
+                idFieldName: 'id',
+                isExpand: 2,
+                slide: false
+            });
+
+            $("#tree4").ligerTree({
+                nodeWidth: 200,
+                data: createData(),
+                checkbox: true,
+                idFieldName: 'id',
+                isExpand: function (e)
+                {
+                    var data = e.data; 
+                    return data.index % 2 == 0;
+                },
+                slide: false
+            });
+
+            var data5 = createData();
+            data5[2].isExpand = true;
+            $("#tree5").ligerTree({
+                nodeWidth: 200,
+                data: data5,
+                checkbox: true,
+                idFieldName: 'id',
+                isExpand: false,
+                slide: false
+            });
+        });
+         
+
+        var counts = [
+            20,10,5
+        ];
+        function createData(e)
+        {
+            e = e || {};
+            var level = e.level || 1,
+                prev = e.prev || "",
+                count = counts[level-1],
+                data = [];
+            var hasChildren = level < counts.length; 
+            for (var i = 0, l = parseInt(count) ; i < l ; i++)
+            {
+                var num = i + 1, id = prev + num;
+                var o = {
+                    text: "node" + id,
+                    index : num
+                };
+                if (hasChildren)
+                { 
+                    o.children = createData({
+                        level: level + 1,
+                        prev: id + "-"
+                    });
+                }
+                data.push(o);
+            }
+            return data;
+        }
+
+        
+    </script>
+</head>
+<body style="padding:10px"> 
+    <div class="box">
+        <h4>不展开节点</h4>
+         <div class="tree"> 
+            <ul id="tree1"></ul> 
+        </div> 
+    </div>
+    <div class="box">
+        <h4>展开节点</h4>
+         <div class="tree"> 
+            <ul id="tree2"></ul> 
+        </div> 
+    </div>
+    <div class="box">
+        <h4>展开第1、2级节点</h4>
+         <div class="tree"> 
+            <ul id="tree3"></ul> 
+        </div> 
+    </div>
+
+     <div class="box">
+        <h4>展开"偶数"节点(该方式可以根据节点内容定制)</h4>
+         <div class="tree"> 
+            <ul id="tree4"></ul> 
+        </div> 
+    </div> 
+
+     <div class="box">
+        <h4>展开第3个节点(该方式是在“节点数据”中设置)</h4>
+         <div class="tree"> 
+            <ul id="tree5"></ul> 
+        </div> 
+    </div>
+    
+    <div class="l-clear"></div>
+    <div id="message">
+ 
+    </div>
+        <div style="display:none">
+     
+    </div>
+</body>
+</html>

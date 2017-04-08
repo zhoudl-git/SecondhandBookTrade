@@ -1,0 +1,37 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+    <script type="text/javascript">
+        var dialog = frameElement.dialog; //调用页面的dialog对象(ligerui对象)
+       
+     
+        
+        function setTitle()
+        {
+            dialog.set('title', '新标题'); //设置标题
+        }
+        function closeDialog()
+        {
+            dialog.close();//关闭dialog 
+        }
+        function showDialogData()
+        {
+            var dialogData = dialog.get('data');//获取data参数
+   
+
+            document.getElementById("message").innerHTML = "dialog.get('data'):" + dialogData.name + "<br>dialog.get('myDataName'):" + dialog.get('myDataName');
+        }
+
+        
+    </script>
+</head>
+<body>
+    <input type="button" value="改变Dialog标题" onclick="setTitle()" />
+    <input type="button" value="关闭Dialog" onclick="closeDialog()" />
+    <input type="button" value="获取Dialog参数" onclick="showDialogData()" />
+    <br />
+    <div id="message"></div>
+</body>
+</html>

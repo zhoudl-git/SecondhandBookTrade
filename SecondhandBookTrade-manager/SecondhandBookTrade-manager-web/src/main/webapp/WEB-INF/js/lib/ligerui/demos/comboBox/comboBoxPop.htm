@@ -1,0 +1,67 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <link href="../../lib/ligerUI/skins/Aqua/css/ligerui-all.css" rel="stylesheet" type="text/css" />
+    <style type="text/css">
+    </style>
+    <script src="../../lib/jquery/jquery-1.9.0.min.js" type="text/javascript"></script>  
+    <script src="../../lib/ligerUI/js/core/base.js" type="text/javascript"></script>
+    <script src="../../lib/ligerUI/js/plugins/ligerCheckBox.js" type="text/javascript"></script>
+    <script src="../../lib/ligerUI/js/plugins/ligerComboBox.js" type="text/javascript"></script>
+    <script src="../../lib/ligerUI/js/plugins/ligerResizable.js" type="text/javascript"></script> 
+    <script src="../../lib/ligerUI/js/plugins/ligerDialog.js" type="text/javascript"></script>
+    <script src="../../lib/ligerUI/js/plugins/ligerDrag.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        $(function ()
+        { 
+            $("#txtContactName").ligerComboBox({
+                onBeforeOpen: f_selectContact, valueFieldID: 'hidCustomerID',width:300
+            });
+        });
+        function f_selectContact()
+        {
+            $.ligerDialog.open({ title: '选择联系人', name:'winselector',width: 700, height: 300, url: 'SelectContact.htm', buttons: [
+                { text: '确定', onclick: f_selectContactOK },
+                { text: '取消', onclick: f_selectContactCancel }
+            ]
+            });
+            return false;
+        }
+        function f_selectContactOK(item, dialog)
+        {
+			var fn = dialog.frame.f_select || dialog.frame.window.f_select; 
+            var data = fn(); 
+            if (!data)
+            {
+                alert('请选择行!');
+                return;
+            }
+            $("#txtContactName").val(data.CompanyName+","+data.ContactName);
+            $("#hidCustomerID").val(data.CustomerID);
+            dialog.close();
+        }
+        function f_selectContactCancel(item, dialog)
+        {
+            dialog.close();
+        }
+
+        function clickee()
+        {
+            alert($("#hidCustomerID").val());
+        }
+    </script>
+</head>
+<body style="padding:10px"> 
+      <input type="text" id="txtContactName" />
+       <input type="hidden" id="hidCustomerID" />
+      <br />
+         
+<a href="javascript:clickee()" class="l-button" style="width:100px">获取</a>
+<br /><br /><br /><br />
+ <div style="display:none;">
+ <!-- g data total ttt -->
+</div>
+</body>
+</html>

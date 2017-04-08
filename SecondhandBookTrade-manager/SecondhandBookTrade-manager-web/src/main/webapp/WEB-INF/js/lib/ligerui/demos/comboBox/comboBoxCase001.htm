@@ -1,0 +1,60 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <link href="../../lib/ligerUI/skins/Aqua/css/ligerui-all.css" rel="stylesheet" type="text/css" />
+    <style type="text/css">
+    </style>
+    <script src="../../lib/jquery/jquery-1.9.0.min.js" type="text/javascript"></script> 
+    <script src="../../lib/ligerUI/js/core/base.js" type="text/javascript"></script>
+    <script src="../../lib/ligerUI/js/plugins/ligerCheckBox.js" type="text/javascript"></script>
+    <script src="../../lib/ligerUI/js/plugins/ligerResizable.js" type="text/javascript"></script>
+    <script src="../../lib/ligerUI/js/plugins/ligerComboBox.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        $(function ()
+        {
+            var proData = 
+            [{ id: 1, text: '广东' }, 
+            { id: 2, text: '福建'}];
+            var cityData =
+            [{ id: 1, text: '潮州', pid: 1 },
+            { id: 2, text: '福州', pid: 2 },
+            { id: 3, text: '广州', pid: 1 }, 
+            { id: 4, text: '厦门', pid: 2 }];
+
+
+            $("#city").ligerComboBox({ data: null, isMultiSelect: true, isShowCheckBox: true });
+
+            $("#pro").ligerComboBox({
+                data: proData, isMultiSelect: false,
+                onSelected: function (newvalue)
+                {
+                    var newData = new Array();
+                    for (i = 0; i < cityData.length; i++)
+                    {
+                        if (cityData[i].pid == newvalue)
+                        {
+                            newData.push(cityData[i]);
+                        }
+                    }
+                    liger.get("city").setData(newData);
+                }
+            });
+            
+             
+        }); 
+    </script>
+</head>
+<body style="padding:10px">
+<h3>联动效果</h3>   
+   <input type="text" id="pro"/>
+   <br />
+   <input type="text" id="city"/>
+    <br />
+     
+ <div style="display:none;">
+ 
+</div>
+</body>
+</html>

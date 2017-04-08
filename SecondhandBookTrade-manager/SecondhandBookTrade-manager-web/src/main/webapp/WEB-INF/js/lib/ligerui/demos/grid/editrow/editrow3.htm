@@ -1,0 +1,151 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <link href="../../../lib/ligerUI/skins/Aqua/css/ligerui-all.css" rel="stylesheet" type="text/css" />
+    <script src="../../../lib/jquery/jquery-1.9.0.min.js" type="text/javascript"></script>
+    <script src="../../../lib/json2.js" type="text/javascript"></script>
+    <script src="../../../lib/ligerUI/js/core/base.js" type="text/javascript"></script>
+    <script src="../../../lib/ligerUI/js/plugins/ligerDialog.js" type="text/javascript"></script>
+    <script src="../../../lib/ligerUI/js/plugins/ligerTextBox.js" type="text/javascript"></script>
+    <script src="../../../lib/ligerUI/js/plugins/ligerCheckBox.js" type="text/javascript"></script>
+    <script src="../../../lib/ligerUI/js/plugins/ligerComboBox.js" type="text/javascript"></script>
+    <script src="../../../lib/ligerUI/js/plugins/ligerGrid.js" type="text/javascript"></script>
+    <script src="../../../lib/ligerUI/js/plugins/ligerDateEditor.js" type="text/javascript"></script>
+    <script src="../../../lib/ligerUI/js/plugins/ligerSpinner.js" type="text/javascript"></script>
+    <script src="../EmployeeData.js" type="text/javascript"></script>
+    <script src="../DepartmentData.js" type="text/javascript"></script>
+    <script type="text/javascript">
+
+        var DepartmentList = DepartmentData.Rows;
+        var sexData = [{ Sex: 1, text: '男' }, { Sex: 2, text: '女'}];
+        $(f_initGrid);
+        var manager, g;
+        function f_initGrid()
+        {
+            g = manager = $("#maingrid").ligerGrid({
+                columns: [ 
+                {
+                    display: '名字', width: 150, name: 'RealName',
+                    editor: { type: 'text' }
+                },
+                { display: '性别', width: 150, name: 'Sex', type: 'int',
+                editor: {
+                    type: 'select', data: sexData, valueField: 'Sex',
+                    onSelected: function (value)
+                    {
+                        if (value == 1)
+                        {
+                            //拿到grid 行的dom
+                            var rowObj = $(this.element).parents(".l-grid-row:first").get(0);
+                            if (!rowObj) return;
+                            var rowdata = g.getRow(rowObj); 
+                            var column = g.getColumnByName("Sel2"); 
+                            if (!column) return;
+                          
+                            var editor = g.editors[rowdata['__id']][column['__id']];
+                            if (!editor) return;
+                            //找到你要变换列的 comobobox对象
+                            var select = editor.input; 
+                            var data = select.get('data');
+                            data.push({ id: '5', text: '增加的值' });
+                            select.set('data', data);
+                        }
+                    }
+
+                },
+                    render: function (item)
+                    {
+                        if (parseInt(item.Sex) == 1) return '男';
+                        return '女';
+                    }
+                },
+                {
+                    display: '动态下拉框', width: 150, name: 'Sel2',textField:'sel2_text',
+                    editor: {
+                        type: 'select', data: [
+                            { text: '值1', id: '1' },
+                            { text: '值2', id: '2' },
+                            { text: '值3', id: '3' }
+                        ],  
+                    }
+                },
+                { display: '年龄', name: 'Age', width: 50, type: 'int', editor: { type: 'int' } },
+
+                { display: '操作', isSort: false, width: 120, render: function (rowdata, rowindex, value)
+                {
+                    var h = "";
+                    if (!rowdata._editing)
+                    {
+                        h += "<a href='javascript:beginEdit(" + rowindex + ")'>修改</a> ";
+                        h += "<a href='javascript:deleteRow(" + rowindex + ")'>删除</a> "; 
+                    }
+                    else
+                    {
+                        h += "<a href='javascript:endEdit(" + rowindex + ")'>提交</a> ";
+                        h += "<a href='javascript:cancelEdit(" + rowindex + ")'>取消</a> "; 
+                    }
+                    return h;
+                }
+                }
+                ],
+                onSelectRow: function (rowdata, rowindex)
+                {
+                    $("#txtrowindex").val(rowindex);
+                },
+                enabledEdit: true,clickToEdit:false, isScroll: false,
+                data: EmployeeData,
+                width: '100%'
+            });   
+        }
+        function beginEdit(rowid) { 
+            manager.beginEdit(rowid);
+        }
+        function cancelEdit(rowid) { 
+            manager.cancelEdit(rowid);
+        }
+        function endEdit(rowid)
+        {
+            manager.endEdit(rowid);
+        }
+
+        function deleteRow(rowid)
+        {
+            if (confirm('确定删除?'))
+            {
+                manager.deleteRow(rowid);
+            }
+        }
+        var newrowid = 100;
+        function addNewRow()
+        {
+            manager.addEditRow();
+        } 
+         
+        function getSelected()
+        { 
+            var row = manager.getSelectedRow();
+            if (!row) { alert('请选择行'); return; }
+            alert(JSON.stringify(row));
+        }
+        function getData()
+        { 
+            var data = manager.getData();
+            alert(JSON.stringify(data));
+        } 
+    </script>
+</head>
+<body  style="padding:10px">  
+ <div class="l-clear"></div>
+    <div id="maingrid" style="margin-top:20px"></div> <br />
+       <br />
+   <a class="l-button" style="width:120px" onclick="getSelected()">获取选中的值(选择行)</a>
+ 
+   <br />
+   <a class="l-button" style="width:120px" onclick="getData()">获取当前的值</a>
+  <div style="display:none;">
+  <!-- g data total ttt -->
+</div>
+</body>
+</html>

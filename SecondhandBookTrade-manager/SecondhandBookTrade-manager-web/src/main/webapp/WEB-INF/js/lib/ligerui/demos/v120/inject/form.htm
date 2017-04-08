@@ -1,0 +1,70 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title></title>
+    <link href="../../../lib/ligerUI/skins/Aqua/css/ligerui-all.css" rel="stylesheet" type="text/css" />
+    <link href="../../../lib/ligerUI/skins/Gray/css/all.css" rel="stylesheet" />
+    <script src="../../../lib/jquery/jquery-1.9.0.min.js" type="text/javascript"></script> 
+    <script src="../../../lib/ligerUI/js/ligerui.all.js" type="text/javascript"></script> 
+    <script src="../../grid/CustomersData.js"></script>
+</head>
+<body style="padding: 10px">
+   <div id="form1" class="liger-form">
+        <div class="fields">
+            <input data-type="text" data-label="标题" name="Title" />
+            <input data-type="date" data-label="入职日期" name="addDate" data-newline="false"/>
+            <div data-type="select" data-label="客户" data-name="customer">
+                 <div class="editor" data-data="CustomersData.Rows" data-textField="CustomerID" data-valueField="CustomerID"></div>
+            </div>
+            <input data-type="spinner" data-label="数目" name="no"  data-newline="false">
+            <input data-type="number" data-label="数目2" name="no2">
+            <div data-type="select" data-label="客户2" data-name="customer2">
+                 <div class="editor" data-textField="CustomerID" data-valueField="CustomerID" data-selectBoxWidth="500" data-selectBoxHeight="200"> 
+                    <div class="grid" data-data="CustomersData">
+                        <ul class="columns">
+                            <li data-name="CustomerID" data-width="200">客户</li>
+                            <li data-name="CompanyName" data-width="200">公司</li>
+                            <li data-name="Address">地址</li> 
+                        </ul> 
+                    </div> 
+                 </div>
+            </div>
+            <div data-type="select" data-label="客户3" data-name="customer2" data-newline="false">
+                 <div class="editor" data-textField="CustomerID" data-valueField="CustomerID" data-selectBoxWidth="500" data-selectBoxHeight="200"> 
+                    <div class="grid" data-data="CustomersData">
+                        <ul class="columns">
+                            <li data-name="CustomerID" data-width="200">客户</li>
+                            <li data-name="CompanyName" data-width="200">公司</li>
+                            <li data-name="Address">地址</li> 
+                        </ul> 
+                    </div> 
+                     <div class="condition">
+                        <ul class="fields">
+                             <li data-name="CustomerID" data-type="text" data-width="200" data-op="like">客户</li>
+                        </ul>
+                    </div>
+                 </div>
+            </div>
+
+             <div data-type="popup" data-label="客户4" data-name="customer4" data-newline="true">
+                 <div class="editor" data-textField="CustomerID" data-valueField="CustomerID" data-selectBoxWidth="500" data-selectBoxHeight="200">  
+                    <div class="grid" data-data="CustomersData">
+                        <ul class="columns">
+                            <li data-name="CustomerID" data-width="200">客户</li>
+                            <li data-name="CompanyName" data-width="200">公司</li>
+                            <li data-name="Address">地址</li> 
+                        </ul> 
+                    </div> 
+                    <div class="condition">
+                        <ul class="fields">
+                                <li data-name="CustomerID" data-width="200" data-op="like">客户</li>
+                        </ul>
+                    </div>  
+                 </div>
+            </div>
+
+        </div>  
+</div>
+</body>
+</html>
