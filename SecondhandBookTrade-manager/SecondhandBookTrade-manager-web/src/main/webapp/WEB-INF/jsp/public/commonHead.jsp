@@ -23,3 +23,5 @@
 <script src="/js/lib/layui/lay/dest/layui.all.js"></script>
 <!-- ajax封装JS -->
 <script src="/js/commons/ajaxEncapsulation.js"></script> 
+<!-- 系统工具类 -->
+<script src="/js/commons/jsUtils.js"></script>
