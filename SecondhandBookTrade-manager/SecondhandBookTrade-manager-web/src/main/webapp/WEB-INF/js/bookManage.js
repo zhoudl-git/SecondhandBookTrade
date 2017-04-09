@@ -1,41 +1,25 @@
 $(function () {
 	// 书籍列表grid对象
-	var dataFieldGrid = {};
+	var bookGrid = {};
 	// 书籍列表grid数据对象
 	//var jsonObjDataFile = {};
 	var url = "/item/list.do";
 	// 获取dataGrid数据
 	getDataFieldGrid();
+	
 	function getDataFieldGrid(){
-		/*$.ax(url,null,null,null,null, 
-				function(data){
-					var jsonObjDataFile = {};
-					jsonObjDataFile.Rows = data.rows;
-					jsonObjDataFile.total = data.total;
-					setDataFieldGrid(jsonObjDataFile);
-				}, function(){
-					alert("出错了");
-				}
-		);*/
-		/*$.axs(url,null,function(data){
-			var jsonObjDataFile = {};
-			jsonObjDataFile.Rows = data.rows;
-			jsonObjDataFile.total = data.total;
-			setDataFieldGrid(jsonObjDataFile);
-		});*/
-		$.axse(url,null,function(data){
-			var jsonObjDataFile = {};
-			jsonObjDataFile.Rows = data.rows;
-			jsonObjDataFile.total = data.total;
-			setDataFieldGrid(jsonObjDataFile);
-		},function(){
-			pop("调用失败",0);
-		});
-		
+		$.axse(url,null,
+			function(data){
+				setDataFieldGrid(ligerUIDataGrid(data));
+			},function(){
+				pop("调用失败",0);
+			}
+		);
 	}
+	
 	// 利用LigerUI Grid创建书籍列表
 	function setDataFieldGrid(jsonObjDataFile){
-		$("#dataFieldGrid").ligerGrid({
+		bookGrid = $("#dataFieldGrid").ligerGrid({
 				checkbox: true,
 				rownumbers: true,
 				pageSizeOptions: [10, 20, 30, 40, 50],
@@ -64,6 +48,9 @@ $(function () {
 					display: '价格',
 					name: 'price',
 					width: 100,
+					render: function(row) {
+						return fen2yuan(row.price);
+					}
 				}, {
 					display: '状态',
 					name: 'status',
@@ -89,23 +76,54 @@ $(function () {
 				{
 					display: '创建时间',
 					name: 'created',
-					minWidth: 100
+					minWidth: 100,
+					render: function(row) {
+						return new Date(row.created).toLocaleString();
+					}
 				}, {
 					display: '更新时间',
 					name: 'updated',
-					minWidth: 100
+					minWidth: 100,
+					render: function(row) {
+						return new Date(row.updated).toLocaleString();
+					}
 				}, {
 					display: '操作',
 					name: 'id',
 					width: 100,
 					align: 'center',
 					render: function(row) {
-						var html = "<img src='images/update.png' onclick='javascript:editDataField("+row.id+")' title='编辑'  style='cursor:pointer'/>";
-							html += '<a href="javascript:deleteDateFieldsById(' + row.id + ');" class="btn-small  btn-icon" data-click-data="' + row.id + '" data-click="delete"><img src="images/delete.png" title="删除"/></a> ';
+						var html = "<img src='images/update.png' onclick='javascript:editBookById("+row.id+")' title='编辑'  style='cursor:pointer'/>";
+						    html += "<img src='images/delete.png' onclick='javascript:deleteBookById("+row.id+")' title='删除'  style='cursor:pointer'/>";
 						return html;
 					}
 				}]
 			});
 	}
 	
+	// 按钮点击事件绑定
+	// 添加
+	$("#book-add").on("click",function (){
+		window.location.href = "book-add";
+	});
+	// 批量删除
+	$("#book-deletes").on("click",function (){
+		var selected = bookGrid.getSelected();
+		if(selected != null){
+			
+		}else{
+			pop("请选择要删除的数据",0);
+		}
+	});
+	
 });
+	//删除按钮
+	function deleteBookById(bookId){
+		pop("确定删除？",3,deleteBookByIdOK);
+	}
+	function deleteBookByIdOK(){
+	}
+	// 编辑按钮
+	function editBookById(bookId){
+		pop("功能尚在开发中，敬请期待！",1);
+	}
