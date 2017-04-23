@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 
 import com.booktrade.dao.TbItemMapper;
 import com.booktrade.pojo.LigerUIDataGridResult;
+import com.booktrade.pojo.SystemReturnResult;
 import com.booktrade.pojo.TbItem;
 import com.booktrade.pojo.TbItemExample;
 import com.booktrade.pojo.TbItemExample.Criteria;
@@ -49,6 +50,16 @@ public class ItemServiceImpl implements ItemService {
 		LigerUIDataGridResult result = new LigerUIDataGridResult(total, list);
 		
 		return result;
+	}
+	@Override
+	public int deleteBookById(Long bookId) {
+		int flag = itemMapper.deleteByPrimaryKey(bookId);
+		return flag;
+	}
+	@Override
+	public int deleteBooksByIdsOK(Long[] bookIds) {
+		int flag = itemMapper.deletesByPrimaryKey(bookIds);
+		return flag;
 	}
 
 
