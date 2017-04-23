@@ -4,7 +4,7 @@
  * @param status 状态标记 0 黑色无确认 1 对号图标无确认 2 需确认 3 询问框
  * @param method 询问框点击确认后执行的方法名称(其他提示信息无需该参数)
  */
-function pop(str,status,method){
+function pop(str,status,method,params){
 	if(status == 0){
 		layer.msg(str);
 	}else if(status == 1){
@@ -24,15 +24,15 @@ function pop(str,status,method){
 			}, function(){
 				var flag = true;
 				try {
-					method();// 调用点击确定后的操作方法
+					method(params);// 调用点击确定后的操作方法
 				} catch (e) {
 					flag = false;
 					var fName = getFName(method.toString());
 					pop("调用方法 "+fName+" 异常,异常原因为："+e.name + ": " + e.message,2);
 				}
-				if(flag){
+				/*if(flag){
 					pop("执行成功",1);
-				}
+				}*/
 			});
 	}else if(status == 4){
 		layer.msg(str, {icon: 1});

@@ -80,12 +80,12 @@ $(function(){
 			data: data,
 			url: url,
 			dataType: "json",
-			beforeSend : function(){
+			/*beforeSend : function(){
 				 index = loadingTO();
 			},
 			complete: function(){
 				loadindClose(index); 
-			},
+			},*/
 			success: function(d){
 				successfn(d);
 			},
