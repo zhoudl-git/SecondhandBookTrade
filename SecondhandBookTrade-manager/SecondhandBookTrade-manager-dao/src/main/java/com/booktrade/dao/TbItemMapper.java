@@ -13,6 +13,7 @@ public interface TbItemMapper {
     int deleteByExample(TbItemExample example);
 
     int deleteByPrimaryKey(Long id);
+    int deletesByPrimaryKey(Long []ids);
 
     int insert(TbItem record);
 

@@ -302,4 +302,13 @@
       updated = #{updated,jdbcType=TIMESTAMP}
     where id = #{id,jdbcType=BIGINT}
   </update>
+  <delete id="deletesByPrimaryKey" parameterType="java.lang.Long">
+   	delete from tb_item
+   	<where>  
+        id  
+        <foreach  collection="array" item="id" open="in (" close=")" separator=",">   
+            #{id}  
+        </foreach>  
+    </where> 
+  </delete>
 </mapper>
