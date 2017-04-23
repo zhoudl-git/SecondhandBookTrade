@@ -1,5 +1,7 @@
 package com.booktrade.controller;
 
+import javax.servlet.http.HttpServletRequest;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -8,6 +10,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.booktrade.pojo.LigerUIDataGridResult;
+import com.booktrade.pojo.SystemReturnResult;
 import com.booktrade.pojo.TbItem;
 import com.booktrade.service.ItemService;
 
@@ -39,6 +42,18 @@ public class ItemController {
 		
 		LigerUIDataGridResult result = itemService.getAllItem(page, rows);
 		return result;
+	}
+	@RequestMapping("/deleteBookById")
+	@ResponseBody
+	public SystemReturnResult deleteBookById(Long bookId) {
+		int flag = itemService.deleteBookById(bookId);
+		return new SystemReturnResult(flag);
+	}
+	@RequestMapping("/deleteBooksById")
+	@ResponseBody
+	public SystemReturnResult deleteBooksByIdsOK(@RequestParam("bookIds")Long []bookIds) {
+		int flag = itemService.deleteBooksByIdsOK(bookIds);
+		return new SystemReturnResult(flag);
 	}
 	
 
