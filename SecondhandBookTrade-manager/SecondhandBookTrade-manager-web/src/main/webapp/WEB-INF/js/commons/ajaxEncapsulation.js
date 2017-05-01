@@ -25,10 +25,10 @@ $(function(){
 			url: url,
 			dataType: dataType,
 			beforeSend : function(){
-				 index = loadingTO();
+				addloadding(); 
 			},
 			complete: function(){
-				loadindClose(index); 
+				delloadding();
 			},
 			success: function(d){
 				successfn(d);
@@ -52,10 +52,10 @@ $(function(){
 			url: url,
 			dataType: "json",
 			beforeSend : function(){
-				 index = loadingTO();
+				addloadding(); 
 			},
 			complete: function(){
-				loadindClose(index); 
+				delloadding();
 			},
 			success: function(d){
 				successfn(d);
@@ -80,12 +80,12 @@ $(function(){
 			data: data,
 			url: url,
 			dataType: "json",
-			/*beforeSend : function(){
-				 index = loadingTO();
+			beforeSend : function(){
+				addloadding(); 
 			},
 			complete: function(){
-				loadindClose(index); 
-			},*/
+				delloadding();
+			},
 			success: function(d){
 				successfn(d);
 			},
@@ -94,7 +94,26 @@ $(function(){
 			}
 		});
 	};
+	function addloadding(){
+		var loadingimg=document.createElement("img");
+		loadingimg.style.position="fixed";
+		loadingimg.style.zIndex="2000";
+		loadingimg.src="images/loading.gif";
+		loadingimg.id="loadimgid";
+		var sTop=document.body.scrollTop+document.documentElement.scrollTop;
+		var w=document.body.clientWidth;
+		loadingimg.style.top=(sTop+200)+"px";
+		loadingimg.style.left=(w-62)/2+"px";
+		loadingimg.style.height="62px";
+		loadingimg.style.width="62px";
+		document.body.appendChild(loadingimg);
+	}
+	function delloadding(){
+		var id = document.getElementById("loadimgid");
+		document.body.removeChild(id);
+	}
 }); 
+
 /*封装后ajax调用示例*/
 /*$.ax(url,null,null,null,null, 
 function(data){
