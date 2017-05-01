@@ -1,6 +1,5 @@
 package com.booktrade.controller;
 
-import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -12,6 +11,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import com.booktrade.pojo.LigerUIDataGridResult;
 import com.booktrade.pojo.SystemReturnResult;
 import com.booktrade.pojo.TbItem;
+import com.booktrade.pojo.TbItemDesc;
 import com.booktrade.service.ItemService;
 
 /**   
@@ -55,6 +55,14 @@ public class ItemController {
 		int flag = itemService.deleteBooksByIdsOK(bookIds);
 		return new SystemReturnResult(flag);
 	}
-	
+	@RequestMapping("/save")
+	@ResponseBody
+	//添加一个itemParams参数接收规格参数的数据。
+	public SystemReturnResult addItem(TbItem item, String desc, String itemParams) {
+		TbItemDesc itemDesc = new TbItemDesc();
+		itemDesc.setItemDesc(desc);
+		SystemReturnResult result = itemService.addItem(item, itemDesc, itemParams);
+		return result;
+	}
 
 }
