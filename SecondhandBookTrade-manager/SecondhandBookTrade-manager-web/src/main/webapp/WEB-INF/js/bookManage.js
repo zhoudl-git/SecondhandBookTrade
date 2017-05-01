@@ -1,10 +1,31 @@
+// 全局grid对象
+var bookGrid = {}; 
 $(function () {
 	// 书籍列表grid对象
-	var bookGrid = {};
+	
 	// 书籍列表grid数据对象
 	//var jsonObjDataFile = {};
 	// 获取dataGrid数据
 	getDataFieldGrid();
+	// 按钮点击事件绑定
+	// 添加
+	$("#book-add").on("click",function (){
+		window.location.href = "book-add";
+	});
+	// 批量删除
+	$("#book-deletes").on("click",function (){
+		// 获取选中行
+		var selecteds = bookGrid.getSelecteds();
+		if(selecteds != null && selecteds.length > 0){
+			var selectIds = [];
+			for(var i=0;i<selecteds.length;i++){
+				selectIds.push(selecteds[i].id);
+			}
+			pop("确定删除？",3,deleteBooksByIdsOK,selectIds);
+		}else{
+			pop("请选择要删除的数据",0);
+		}
+	});
 });
 function getDataFieldGrid(){
 	var url = "/item/list.do";
@@ -17,27 +38,6 @@ function getDataFieldGrid(){
 	);
 }
 
-
-
-// 按钮点击事件绑定
-// 添加
-$("#book-add").on("click",function (){
-	window.location.href = "book-add";
-});
-// 批量删除
-$("#book-deletes").on("click",function (){
-	// 获取选中行
-	var selecteds = bookGrid.getSelecteds();
-	if(selecteds != null){
-		var selectIds = [];
-		for(var i=0;i<selecteds.length;i++){
-			selectIds.push(selecteds[i].id);
-		}
-		pop("确定删除？",3,deleteBooksByIdsOK,selectIds);
-	}else{
-		pop("请选择要删除的数据",0);
-	}
-});
 //批量删除
 function deleteBooksByIdsOK(bookIds){
 	var url = "/item/deleteBooksById.do?bookIds="+bookIds;
