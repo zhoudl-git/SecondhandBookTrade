@@ -47,4 +47,32 @@ public class ItemCatServiceImpl implements ItemCatService {
 		return resultList;
 	}
 
+	@Override
+	public int deleteById(List<Long> ids) {
+		TbItemCatExample example = new TbItemCatExample();
+		//设置条件
+		Criteria criteria = example.createCriteria();
+		criteria.andIdIn(ids);
+		int flag = itemCatMapper.deleteByExample(example);
+		return flag;
+	}
+
+	@Override
+	public int updateById(TbItemCat itemCat) {
+		int flag = itemCatMapper.updateByPrimaryKey(itemCat);
+		return flag;
+	}
+
+	@Override
+	public TbItemCat selectById(Long id) {
+		TbItemCat itemCat = itemCatMapper.selectByPrimaryKey(id);
+		return itemCat;
+	}
+
+	@Override
+	public int insertItemCat(TbItemCat itemCat) {
+		int flag = itemCatMapper.insert(itemCat);
+		return flag;
+	}
+
 }

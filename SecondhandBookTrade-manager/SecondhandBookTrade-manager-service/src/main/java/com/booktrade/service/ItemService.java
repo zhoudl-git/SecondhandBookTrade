@@ -12,4 +12,7 @@ public interface ItemService {
 	int deleteBookById(Long bookId);
 	int deleteBooksByIdsOK(Long [] bookIds);
 	SystemReturnResult addItem(TbItem item, TbItemDesc itemDesc, String itemParams);
+	int updateBookById(Long bookId,String status);
+	int updateBookByIds(Long [] bookIds);
+	int updateBookByIds2(Long [] bookIds);
 }

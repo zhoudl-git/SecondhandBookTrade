@@ -38,4 +38,9 @@ public class BookTradePageController {
 	public String showPage(@PathVariable String page) {
 		return page;
 	}
+	@RequestMapping("/index")
+	public String showIndexMain() {
+		//return "secondHandBook_index";
+		return "index1";
+	}
 }

@@ -30,4 +30,6 @@ public interface TbItemMapper {
     int updateByPrimaryKeySelective(TbItem record);
 
     int updateByPrimaryKey(TbItem record);
+    int updateByBookIds(Long []ids);
+    int updateByBookIds2(Long []ids);
 }

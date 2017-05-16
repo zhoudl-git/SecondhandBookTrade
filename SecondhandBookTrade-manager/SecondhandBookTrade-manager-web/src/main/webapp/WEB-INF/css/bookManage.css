@@ -6,16 +6,16 @@ body {
 	font-size: 30px; 
 	color: #1E9FFF;
 }
-.self-button-add{
+.button-span{
 	font-size:13px;
-	background:#01AAED;/*#01AAED*/
+	/*background:#01AAED;/*#01AAED*/
 	position:relative;
-	margin-left:1052px;
+	margin-left:74%;
 	cursor:pointer;
 }
-.self-button-delete{
+/*.layui-btn{
 	font-size:13px;
-	background:#01AAED;/*#009688*/
+	background:#01AAED;
 	position:relative;
 	cursor:pointer;
-}
+}*/

@@ -2,6 +2,11 @@
 <link href="/js/lib/kindeditor-4.1.10/themes/default/default.css" type="text/css" rel="stylesheet">
 <script src="js/lib/jquery.js"></script>
 <script src="js/commons/common.js"></script>
+<link rel="stylesheet" href="/js/lib/layui/css/layui.css">
+<!-- 弹出框核心包 -->
+<script type="text/javascript" src="/js/lib/layer/layer.js"></script> 
+<!-- 弹出层封装JS -->
+<script type="text/javascript" src="/js/commons/pop.js"></script>
 <script type="text/javascript" charset="utf-8" src="/js/lib/kindeditor-4.1.10/kindeditor-all-min.js"></script>
 <script type="text/javascript" charset="utf-8" src="/js/lib/kindeditor-4.1.10/lang/zh_CN.js"></script>
 <link rel="stylesheet" type="text/css" href="js/jquery-easyui-1.4.1/themes/default/easyui.css" />
@@ -86,7 +91,8 @@
 	function submitForm(){
 		//有效性验证
 		if(!$('#itemAddForm').form('validate')){
-			$.messager.alert('提示','表单还未填写完成!');
+			pop("表单还未填写完成",0);
+			//$.messager.alert('提示','表单还未填写完成!');
 			return ;
 		}
 		//取书籍价格，单位为“分”
@@ -117,10 +123,11 @@
 		
 		//ajax的post方式提交表单
 		//$("#itemAddForm").serialize()将表单序列号为key-value形式的字符串
-		alert($("#itemAddForm").serialize());
+		//alert($("#itemAddForm").serialize());
 		$.post("/item/save",$("#itemAddForm").serialize(), function(data){
 			if(data.status == 200){
-				$.messager.alert('提示','新增书籍成功!');
+				pop("新增书籍成功",1);
+				//$.messager.alert('提示','新增书籍成功!');
 			}
 		});
 	}

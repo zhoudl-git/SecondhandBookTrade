@@ -303,6 +303,7 @@
       updated = #{updated,jdbcType=TIMESTAMP}
     where id = #{id,jdbcType=BIGINT}
   </update>
+  <!-- 删除商品 -->
   <delete id="deletesByPrimaryKey" parameterType="java.lang.Long">
    	delete from tb_item
    	<where>  
@@ -312,4 +313,24 @@
         </foreach>  
     </where> 
   </delete>
+  <!-- 下架商品 -->
+  <update id="updateByBookIds" parameterType="java.lang.Long">
+   	update tb_item set status = '0'
+   	<where>  
+        id  
+        <foreach  collection="array" item="id" open="in (" close=")" separator=",">   
+            #{id}  
+        </foreach>  
+    </where> 
+  </update>
+  <!-- 启用下架商品 -->
+  <update id="updateByBookIds2" parameterType="java.lang.Long">
+   	update tb_item set status = '1'
+   	<where>  
+        id  
+        <foreach  collection="array" item="id" open="in (" close=")" separator=",">   
+            #{id}  
+        </foreach>  
+    </where> 
+  </update>
 </mapper>

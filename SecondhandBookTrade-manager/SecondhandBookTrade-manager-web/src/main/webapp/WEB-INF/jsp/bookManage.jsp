@@ -19,8 +19,10 @@
   <span class="icon-pencil-square-o"></span>
   	<i class="layui-icon">&#xe620;</i>书籍列表</strong>
  <span>
- 	<span class="self-button-add" id="book-add">添加</span>
- 	<span class="self-button-delete" id="book-deletes">批量删除</span> 
+ 	<span class="button-span">
+	 	<span class="layui-btn" id="book-add">添加</span>
+	 	<span class="layui-btn" id="book-deletes">批量操作</span>
+ 	</span> 
  </span>	
  </div>
   <div class="body-content">

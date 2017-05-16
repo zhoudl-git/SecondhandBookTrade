@@ -111,4 +111,26 @@ public class ItemServiceImpl implements ItemService {
 		
 		return SystemReturnResult.ok();
 	}
+	@Override
+	public int updateBookById(Long bookId,String status) {
+		TbItem record = itemMapper.selectByPrimaryKey(bookId);
+		record.setId(bookId);
+		if("end".equals(status)){
+			record.setStatus(new Byte((byte) 0));
+		}else{
+			record.setStatus(new Byte((byte) 1));
+		}
+		int flag = itemMapper.updateByPrimaryKey(record);
+		return flag;
+	}
+	@Override
+	public int updateBookByIds(Long[] bookIds) {
+		int flag = itemMapper.updateByBookIds(bookIds);
+		return flag;
+	}
+	@Override
+	public int updateBookByIds2(Long[] bookIds) {
+		int flag = itemMapper.updateByBookIds(bookIds);
+		return flag;
+	}
 }

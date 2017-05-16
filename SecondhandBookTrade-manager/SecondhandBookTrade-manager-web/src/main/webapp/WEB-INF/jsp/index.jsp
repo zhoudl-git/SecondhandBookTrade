@@ -7,6 +7,7 @@
 <title>后台管理中心</title>  
 <!-- 引入公共页面 -->
 <link rel="stylesheet" href="/css/pintuer.css">
+<link rel="icon" href="/images/favicon.ico">
 <%@include file="public/commonHead.jsp" %> 
 </head>
 <body style="background-color:#f2f9fd;">
@@ -14,7 +15,7 @@
   <div class="logo margin-big-left fadein-top">
     <h1><img src="/images/y.jpg" class="radius-circle rotate-hover" height="50" alt="" />后台管理中心</h1>
   </div>
-  <div class="head-l"><a class="button button-little bg-green" href="shouye2/index.html" target="_blank"><span class="icon-home"></span> 前台首页</a> &nbsp;&nbsp;<a href="shouye/index.html" class="button button-little bg-blue"><span class="icon-wrench"></span> 清除缓存</a> &nbsp;&nbsp;<a class="button button-little bg-red" href="login.html"><span class="icon-power-off"></span> 退出登录</a> </div>
+  <div class="head-l"><a class="button button-little bg-green" href="/index" target="_blank"><span class="icon-home"></span> 前台首页</a> &nbsp;&nbsp;<a href="shouye/index.html" class="button button-little bg-blue"><span class="icon-wrench"></span> 清除缓存</a> &nbsp;&nbsp;<a class="button button-little bg-red" href="login.html"><span class="icon-power-off"></span> 退出登录</a> </div>
 </div>
 <div class="leftnav">
   <div class="leftnav-title"><strong><span class="icon-list"></span>菜单列表</strong></div>
@@ -30,8 +31,8 @@
   </ul>  
 	<h2><span class="icon-book"></span>书籍管理</h2>  
 	<ul>
-    <li><a href="list.html" target="right"><span class="icon-caret-right"></span>查看用户</a></li>
-    <li><a href="add.html" target="right"><span class="icon-caret-right"></span>权限管理</a></li>
+    <li><a href="bookManage" target="right"><span class="icon-caret-right"></span>书籍列表</a></li>
+    <li><a href="bookManageCat" target="right"><span class="icon-caret-right"></span>书籍类目</a></li>
     <li><a href="cate.html" target="right"><span class="icon-caret-right"></span>留言管理</a></li>        
   </ul> 
   <h2><span class="icon-pencil-square-o"></span>栏目管理</h2>
@@ -42,7 +43,7 @@
   </ul> 
 	<h2><span class="icon-users"></span>用户管理</h2>  
 	<ul>
-    <li><a href="list.html" target="right"><span class="icon-caret-right"></span>查看用户</a></li>
+    <li><a href="userManage" target="right"><span class="icon-caret-right"></span>用户列表</a></li>
     <li><a href="add.html" target="right"><span class="icon-caret-right"></span>权限管理</a></li>
     <li><a href="cate.html" target="right"><span class="icon-caret-right"></span>留言管理</a></li>        
   </ul> 
