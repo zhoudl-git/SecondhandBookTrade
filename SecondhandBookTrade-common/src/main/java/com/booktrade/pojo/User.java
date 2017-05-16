@@ -16,13 +16,7 @@ public class User {
 	 * "identity":"62242419940929523X","interest":"1",
 	 * "quiz1":"浙江","quiz2":"杭州","quiz3":"西湖区",
 	 * "like[write]":"on","like[read]":"on"}*/
-	private Long userId;
-	public Long getUserId() {
-		return userId;
-	}
-	public void setUserId(Long userId) {
-		this.userId = userId;
-	}
+	private Long id;
 	// 用户名
 	private String username;
 	// 密码
@@ -56,6 +50,12 @@ public class User {
 	}
 	public void setStatus(String status) {
 		this.status = status;
+	}
+	public Long getId() {
+		return id;
+	}
+	public void setId(Long id) {
+		this.id = id;
 	}
 	public Date getCreated() {
 		return created;

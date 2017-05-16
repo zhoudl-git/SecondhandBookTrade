@@ -2,7 +2,7 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="com.booktrade.dao.UserMapper">
 <resultMap id="BaseResultMap" type="com.booktrade.pojo.User" >
-    <id column="id" property="userId" jdbcType="BIGINT" />
+    <id column="id" property="id" jdbcType="BIGINT" />
     <result column="username" property="username" jdbcType="VARCHAR" />
     <result column="pass" property="password" jdbcType="VARCHAR" />
     <result column="phone" property="phone" jdbcType="VARCHAR" />
@@ -18,7 +18,7 @@
     <result column="status" property="status" jdbcType="VARCHAR" />
   </resultMap>
   <sql id="Base_Column_List" >
-    id, username, pass, phone, email, created, updated, birthday, identity,<!-- role, -->address,addressDetail,interest
+    id, username, pass, phone, email, created, updated, birthday, identity,<!-- role, -->address,addressDetail,interest,status
   </sql>
   <select id="getAllUser" resultMap="BaseResultMap">
   	select 
@@ -33,7 +33,17 @@
   </select>
   <!-- 不是严格意义上的删除用户 此处是将该用户的状态由正常状态修改为禁用状态 -->
   <update id="deleteUser" parameterType="map">
-  	update tb_user set status =  #{status,jdbcType=VARCHAR}
+  	update tb_user set status =  #{status,jdbcType=VARCHAR} where id = #{id}
+  </update>
+  <!-- 批量操作用户 -->
+  <update id="deleteUserByIds" parameterType="java.lang.Long">
+   	update tb_user set status = '0'
+   	<where>  
+        id  
+        <foreach  collection="array" item="id" open="in (" close=")" separator=",">   
+            #{id}  
+        </foreach>  
+    </where> 
   </update>
   <update id="updateUser" parameterType="map" >
     update tb_user
@@ -59,15 +69,18 @@
       <if test="record.updated != null" >
         updated = #{record.updated,jdbcType=TIMESTAMP},
       </if>
+      <if test="record.status != null" >
+        status = #{record.status,jdbcType=VARCHAR},
+      </if>
     </set>
   </update>
   <insert id="addUser" parameterType="map">
-    insert into tb_user (id, username, pass, phone, email, created, updated, birthday, identity,<!-- role, -->address,addressDetail,interest,sex)
+    insert into tb_user (id, username, pass, phone, email, created, updated, birthday, identity,<!-- role, -->address,addressDetail,interest,sex,status)
     values (
       #{id,jdbcType=BIGINT}, #{username,jdbcType=VARCHAR}, #{password,jdbcType=VARCHAR}, 
       #{phone,jdbcType=VARCHAR}, #{email,jdbcType=VARCHAR}, #{created,jdbcType=TIMESTAMP}, 
       #{updated,jdbcType=TIMESTAMP},#{birthday,jdbcType=VARCHAR},#{identity,jdbcType=VARCHAR},
       #{address,jdbcType=VARCHAR},#{addressDetail,jdbcType=VARCHAR},#{interest,jdbcType=VARCHAR},
-      #{sex,jdbcType=VARCHAR})
+      #{sex,jdbcType=VARCHAR},#{status,jdbcType=VARCHAR})
   </insert>
 </mapper>

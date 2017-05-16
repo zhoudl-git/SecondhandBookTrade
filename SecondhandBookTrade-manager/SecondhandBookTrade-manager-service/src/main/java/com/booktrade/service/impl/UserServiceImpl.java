@@ -44,16 +44,22 @@ public class UserServiceImpl implements UserService {
 	}
 	@Override
 	public Integer updateUser(Map<String, Object> map) {
-		
-		return null;
+		int status = userMapper.updateUser(map);
+		return status;
 	}
 	@Override
-	public Integer deleteUser(Long userId) {
-		return null;
+	public Integer deleteUser(Map<String,String> map) {
+		int status = userMapper.deleteUser(map);
+		return status;
 	}
 	@Override
 	public Integer addUser(Map<String, Object> map) {
 		int status = userMapper.addUser(map);
+		return status;
+	}
+	@Override
+	public Integer deleteUserByIds(Long[] userIds) {
+		int status = userMapper.deleteUserByIds(userIds);
 		return status;
 	}
 }

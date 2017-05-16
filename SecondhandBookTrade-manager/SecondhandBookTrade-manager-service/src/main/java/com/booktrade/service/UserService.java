@@ -14,7 +14,8 @@ public interface UserService {
 	User getUserById(Long itemId);
 	LigerUIDataGridResult getAllUser(Integer page, Integer rows);
 	Integer updateUser(Map<String,Object> map);
-	Integer deleteUser(Long userId);
+	Integer deleteUser(Map<String,String> map);
+	Integer deleteUserByIds(Long [] userIds);
 	Integer addUser(Map<String,Object> map);
 	/*int deleteBookById(Long bookId);
 	int deleteBooksByIdsOK(Long [] bookIds);

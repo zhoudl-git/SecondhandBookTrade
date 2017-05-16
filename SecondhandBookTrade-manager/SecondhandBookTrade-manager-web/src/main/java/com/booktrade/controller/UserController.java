@@ -96,4 +96,45 @@ public class UserController {
 		Integer status = userService.addUser(map);
 		return new SystemReturnResult(status);
 	}
+	@RequestMapping("/deleteUserById")
+	@ResponseBody
+	public SystemReturnResult deleteUserById(Long userId) {
+		Map<String, String> map = new HashMap<String,String>();
+		map.put("status", SystemCode.userDisable);
+		map.put("id", StringUtil.dnvString(userId));
+		Integer status = userService.deleteUser(map);
+		return new SystemReturnResult(status);
+	}
+	@RequestMapping("/updateUserById")
+	@ResponseBody
+	public SystemReturnResult deleteUserById2(Long userId) {
+		Map<String, String> map = new HashMap<String,String>();
+		map.put("status", SystemCode.userShow);
+		map.put("id", StringUtil.dnvString(userId));
+		Integer status = userService.deleteUser(map);
+		return new SystemReturnResult(status);
+	}
+	
+	@RequestMapping("/deleteUsersById")
+	@ResponseBody
+	public SystemReturnResult deleteUsersById(HttpServletRequest request,@RequestParam("userIds")Long []userIds) {
+		Integer flag = userService.deleteUserByIds(userIds);
+		return new SystemReturnResult(flag);
+	}
+	/*@RequestMapping("/updateUserById")
+	@ResponseBody
+	public SystemReturnResult updateUserById(Long userId) {
+		Map<String, Object> map = new HashMap<String,Object>();
+		map.put("status", SystemCode.userDisable);
+		map.put("id", StringUtil.dnvString(userId));
+		Integer status = userService.updateUser(map);
+		return new SystemReturnResult(status);
+	}*/
+	/*@RequestMapping("/updateBooksById")
+	@ResponseBody
+	public SystemReturnResult updateBooksByIdsOK(@RequestParam("bookIds")Long []bookIds) {
+		//int flag = userService.deleteBooksByIdsOK(bookIds);
+		int flag = userService.updateBookByIds(bookIds);
+		return new SystemReturnResult(flag);
+	}*/
 }

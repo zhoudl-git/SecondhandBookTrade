@@ -72,11 +72,11 @@ function setDataFieldGrid(jsonObjDataFile){
 				display: '书籍条形码',
 				name: 'barcode',
 				width: 100
-			}, */{
+			}, *//*{
 				display: 'cid',
 				name: 'cid',
 				width: 100
-			}, {
+			}, */{
 				display: '图片',
 				name: 'image',
 				width: 100
@@ -98,11 +98,11 @@ function setDataFieldGrid(jsonObjDataFile){
 				render: function(row) {
 					if(row.status != null) {
 						if(row.status == 1){
-							return "在架";
+							return "<span style='color:blue'>在架</span>";
 						}else if(row.status == 0){
-							return "下架";
+							return "<span style='color:red'>下架</span>";
 						}else{
-							return "下架";
+							return "";
 						}
 					} else {
 						return '';
