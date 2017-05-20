@@ -83,4 +83,8 @@
       #{address,jdbcType=VARCHAR},#{addressDetail,jdbcType=VARCHAR},#{interest,jdbcType=VARCHAR},
       #{sex,jdbcType=VARCHAR},#{status,jdbcType=VARCHAR})
   </insert>
+  <select id="login" parameterType="map" resultMap="BaseResultMap">
+  	select * from tb_user
+  	where username = #{username} and pass = #{password}
+  </select>
 </mapper>

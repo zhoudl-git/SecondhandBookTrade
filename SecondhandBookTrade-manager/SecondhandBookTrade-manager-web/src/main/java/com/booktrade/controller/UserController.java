@@ -4,9 +4,12 @@ package com.booktrade.controller;
 
 import java.util.Date;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -14,12 +17,18 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
-import com.booktrade.utils.StringUtil;
+
 import com.booktrade.pojo.LigerUIDataGridResult;
 import com.booktrade.pojo.SystemCode;
 import com.booktrade.pojo.SystemReturnResult;
+import com.booktrade.pojo.TbFunction;
+import com.booktrade.pojo.TbRole;
+import com.booktrade.pojo.TbUserRole;
 import com.booktrade.pojo.User;
+import com.booktrade.service.FunctionService;
 import com.booktrade.service.UserService;
+import com.booktrade.utils.CookieUtils;
+import com.booktrade.utils.StringUtil;
 
 /**   
  * @ClassName:  UserController   
@@ -34,7 +43,8 @@ public class UserController {
 	
 	@Autowired
 	private UserService userService;
-	
+	@Autowired
+	private FunctionService functionService;
 	@RequestMapping("/{itemId}")
 	@ResponseBody
 	private User getItemById(@PathVariable Long userId) {
@@ -52,7 +62,7 @@ public class UserController {
 	}
 	@RequestMapping("/addUser")
 	@ResponseBody
-	private SystemReturnResult addUser(HttpServletRequest request) {
+	private String addUser(HttpServletRequest request) {
 		String username = StringUtil.dnvString(request.getParameter("username"));
 		String password = StringUtil.dnvString(request.getParameter("password"));
 		String sex = StringUtil.dnvString(request.getParameter("sex"));
@@ -74,7 +84,7 @@ public class UserController {
 		map.put("email", email);
 		map.put("birthday", birthday);
 		map.put("addressDetail", addressDetail);
-		map.put("role", role);
+		map.put("role", SystemCode.defaultUserRole);
 		if("on".equals(write)){
 			write = "写作";
 		}
@@ -94,7 +104,7 @@ public class UserController {
 		map.put("created", nowDate);
 		map.put("updated", nowDate);
 		Integer status = userService.addUser(map);
-		return new SystemReturnResult(status);
+		return "return";
 	}
 	@RequestMapping("/deleteUserById")
 	@ResponseBody
@@ -120,6 +130,75 @@ public class UserController {
 	public SystemReturnResult deleteUsersById(HttpServletRequest request,@RequestParam("userIds")Long []userIds) {
 		Integer flag = userService.deleteUserByIds(userIds);
 		return new SystemReturnResult(flag);
+	}
+	@RequestMapping("/login")
+	@ResponseBody
+	public SystemReturnResult login(HttpServletRequest request,HttpServletResponse response) {
+		String username = StringUtil.dnvString(request.getParameter("username"));
+		String password = StringUtil.dnvString((request.getParameter("password")));
+		Map<String, String> map = new HashMap<String,String>();
+		map.put("username", username);
+		map.put("password", password);
+		User user = userService.login(map);
+		String url = null;
+		if(user != null){
+			if("1".equals(user.getStatus())){
+				List<TbFunction> function = functionService.getAllMenu2(user.getId());
+				if(function != null && function.size() > 0){
+					// 获得当前用户角色
+					List<TbUserRole> roleByUserId = userService.selectRoleByUserId(user.getId());
+					if (roleByUserId != null && roleByUserId.size() > 0) {
+						user.setRole(roleByUserId.get(0).getRoleId()+"");
+					}
+					HttpSession session = request.getSession();
+					// 使用session记录用户登录信息
+					session.setAttribute("user", user);
+					// 使用cookie记录用户登录ID
+					CookieUtils.setCookie(request, response, "bookTradeuser", user.getId()+"");
+					url = "afterIndex";
+				}else{
+					url = "index";
+				}
+			}else{
+				url = "exception";
+			}
+		}else{
+			url = "/";
+		}
+		return new SystemReturnResult(url);
+	}
+	@RequestMapping("/selectRole")
+	@ResponseBody
+	public SystemReturnResult selectRole(Long userId) {
+		List<TbRole> roles = userService.getAllRole();
+		return new SystemReturnResult(roles);
+	}
+	@RequestMapping("/setRoleByUser")
+	@ResponseBody
+	public SystemReturnResult setRoleByUser(HttpServletRequest request) {
+		String userId = StringUtil.dnvString(request.getParameter("userId"));
+		String roleId = StringUtil.dnvString(request.getParameter("roleId"));
+		// 查询该用户是否已经分配该角色
+		TbUserRole userRole = userService.setRole(Long.parseLong(userId), Long.parseLong(roleId));
+		int status = 0;
+		if(userRole == null){// 未分配该角色
+			// 删除用户之前的角色
+			int flag = userService.deleteRoleByUserId(Long.parseLong(userId));
+			if(flag == 1){
+				TbUserRole newUserRole = new TbUserRole();
+				newUserRole.setRoleId(Long.parseLong(roleId));
+				newUserRole.setUserId(Long.parseLong(userId));
+				Date date = new Date();
+				newUserRole.setCreated(date);
+				newUserRole.setUpdated(date);
+				status = userService.addUserRole(newUserRole);
+			}else{
+				status = Integer.parseInt(SystemCode.alreadyRole);// 删除之前角色失败
+			}
+		}else{
+			status = Integer.parseInt(SystemCode.alreadyRole);// 用户已经授予了该角色
+		}
+		return new SystemReturnResult(status);
 	}
 	/*@RequestMapping("/updateUserById")
 	@ResponseBody

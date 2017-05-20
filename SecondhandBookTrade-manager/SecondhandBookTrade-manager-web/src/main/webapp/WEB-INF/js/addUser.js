@@ -32,6 +32,8 @@ $(function (){
 		//监听提交
 		  form1.on('submit(demo1)', function(data){
 		  	 var data = JSON.stringify(data.field);
+		  	 // 
+		  	parent.layer.closeAll();
 		  	 //alert(data);
 		    /*layer.alert(JSON.stringify(data.field), {
 		      title: '最终的提交信息'
@@ -52,9 +54,12 @@ function functionSubmit(data){
 	var url = "/user/addUser.do";
   	$.axse(url,data,
   		function(oData){
-  			alert(oData);
+  			if(oData.data == 1){
+  				layer.msg("注册成功！将返回登录页面",{icon:1});
+  				window.location.href = "/";
+  			}
   		},function(msg){
-  			pop("请求失败 +" + msg,0);
+  			layer.msg("请求失败 +" + msg,0);
   		}
   	);
 }

@@ -12,4 +12,8 @@ public class SystemCode {
 	public static String userDisable = "0";
 	// 用户正常状态
 	public static String userShow = "1";
+	// 默认用户角色ID
+	public static String defaultUserRole = "0";
+	// 用户已经在该角色上
+	public static String alreadyRole = "-1";
 }

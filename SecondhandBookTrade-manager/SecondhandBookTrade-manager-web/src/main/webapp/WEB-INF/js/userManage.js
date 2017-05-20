@@ -141,7 +141,8 @@ function setDataFieldGrid(jsonObjDataFile){
 				align: 'center',
 				render: function(row) {
 					var html = "<img src='images/update.png' onclick='editUserById("+row.id+")' title='编辑'  style='cursor:pointer'/>";
-					    html += "<img src='images/delete.png' onclick='javascript:deleteUserById("+row.id+")' title='禁用'  style='cursor:pointer'/>";
+					    html += "<img src='images/deleteUser.png' onclick='javascript:deleteUserById("+row.id+")' title='禁用'  style='cursor:pointer'/>";
+					    html += "<img src='images/user_tb.png' onclick='javascript:setRole("+row.id+")' title='授予角色'  style='cursor:pointer'/>";
 					return html;
 				}
 			}]
@@ -192,6 +193,80 @@ function updateUserByIdOK(userId){
 			pop("请求失败 + " + msg,0);
 		}
 	);
+}
+function setRole(userId){
+	var url = "/user/selectRole.do?userId="+userId;
+	$.axse(url,null,
+		function(oData){
+			buttonIds = oData.data;
+			if(oData.data != null){
+				var html = "<div style='margin-top:40px;margin-left:20px;'>";
+				for(var i=0;i<oData.data.length;i++){
+					html += "<button class='layui-btn layui-btn-normal' style='margin-top:10px;margin-left:10px;' id='"+oData.data[i].id+"' onclick='buttonClick("+oData.data[i].id+")' >"+oData.data[i].name+"</button>";
+				}
+					html += "</div>";
+					html +="<div style='margin-top:150px;margin-left:220px;'><button class='layui-btn layui-btn-warm layui-btn-radius' onclick='setRoleByUser("+userId+")'>提交</button>";
+					//html +="<button class='layui-btn layui-btn-primary layui-btn-radius' onclick='close()'>取消</button>";
+					html +="</div>";
+				layer.open({
+					  type: 1,
+					  title: false,
+					  title: '请选择一个要授予的角色',
+					  closeBtn: 1,
+					  shadeClose: true,
+					  area: ['350px', '450px'],
+					  skin: 'yourclass',
+					  content: html
+					});
+			}else{
+				layer.msg("抱歉，该系统中暂时没有配置角色信息，请添加角色后再试！");
+			}
+		},function(msg){
+			pop("请求失败 + " + msg,0);
+		}
+	);
+}
+var buttonIds = [];
+function buttonClick(buttonId){
+	$("#"+buttonId).attr("class", "layui-btn layui-btn-normal");
+	for(var i=0;i<buttonIds.length;i++){
+		if(buttonId != buttonIds[i].id){
+			$("#"+buttonIds[i].id).attr("class", "layui-btn layui-btn-disabled");
+		}
+	}
+}
+function close(){
+	 layer.closeAll();
+}
+function setRoleByUser(userId){
+	var temp = 0;
+	var tempRoleId;
+	for(var i=0;i<buttonIds.length;i++){
+		var $class = $("#"+buttonIds[i].id).attr("class");
+		if($class == "layui-btn layui-btn-normal"){
+			temp ++;
+			tempRoleId = buttonIds[i].id;
+		}
+	}
+	if(temp == 1){
+		var url = "/user/setRoleByUser.do;"
+		var data = {"userId":userId,"roleId":tempRoleId};
+		$.axse(url,data,
+			function(oData){
+				if(oData.data == 1){
+					layer.msg("分配角色成功",{icon:1});
+				}else if(oData.data == -1){
+					layer.msg("该用户已经在该角色上，无需重复分配");
+				}else{
+					layer.msg("分配失败");
+				}
+			},function(msg){
+				layer.msg("请求失败 + " + msg,0);
+			}
+		);
+	}else{
+		layer.msg("抱歉，只能选择一个角色");
+	}
 }
 
 	

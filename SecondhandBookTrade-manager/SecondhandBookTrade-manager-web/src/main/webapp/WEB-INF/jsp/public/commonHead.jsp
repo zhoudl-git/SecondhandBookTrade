@@ -6,9 +6,7 @@
 <link rel="stylesheet" href="/css/admin.css">
 <link href="/js/lib/ligerui/lib/ligerUI/skins/Aqua/css/ligerui-all.css" rel="stylesheet" type="text/css" />
 <link href="/js/lib/ligerui/lib/ligerUI/skins/Gray2014/css/all.css" rel="stylesheet" type="text/css" />
-
 <link rel="stylesheet" href="/js/lib/layui/css/layui.css">
-
 <script src="js/lib/jquery.js"></script>
 <script src="js/lib/pintuer.js"></script> 
 <script src="/js/lib/ligerui/lib/ligerUI/js/core/base.js" type="text/javascript"></script>

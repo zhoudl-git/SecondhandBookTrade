@@ -12,4 +12,5 @@ public interface UserMapper {
 	public int updateUser(Map<String, Object> map);
 	public int addUser(Map<String, Object> map);
 	public int deleteUserByIds(Long [] userIds);
+	public User login(Map<String, String> map);
 }

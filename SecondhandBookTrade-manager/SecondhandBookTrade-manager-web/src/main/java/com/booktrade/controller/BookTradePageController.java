@@ -23,7 +23,7 @@ public class BookTradePageController {
 	 */  
 	@RequestMapping("/")
 	public String showIndex() {
-		return "index";
+		return "login";
 	}
 	
 	/**   
@@ -42,5 +42,10 @@ public class BookTradePageController {
 	public String showIndexMain() {
 		//return "secondHandBook_index";
 		return "index1";
+	}
+	@RequestMapping("/afterIndex")
+	public String showAfterIndexMain() {
+		//return "secondHandBook_index";
+		return "index";
 	}
 }
