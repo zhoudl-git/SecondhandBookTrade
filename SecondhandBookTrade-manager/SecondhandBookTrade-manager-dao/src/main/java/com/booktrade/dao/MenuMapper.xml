@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.booktrade.dao.MenuMapper">
+ <resultMap id="MenuResultMap" type="com.booktrade.pojo.Menu" >
+    <result column="name" property="name" jdbcType="VARCHAR" />
+    <result column="pId" property="pId" jdbcType="BIGINT" />
+    <result column="url" property="url" jdbcType="VARCHAR" />
+    <result column="pName" property="pName" jdbcType="INTEGER" />
+    <result column="id" property="accordion" jdbcType="BIGINT" />
+    <association property="user" javaType="com.booktrade.pojo.User">
+      <id column="id" property="id" jdbcType="BIGINT" />
+	    <result column="username" property="username" jdbcType="VARCHAR" />
+	    <result column="pass" property="password" jdbcType="VARCHAR" />
+	    <result column="phone" property="phone" jdbcType="VARCHAR" />
+	    <result column="email" property="email" jdbcType="VARCHAR" />
+	    <result column="created" property="created" jdbcType="TIMESTAMP" />
+	    <result column="updated" property="updated" jdbcType="TIMESTAMP" />
+	    <result column="birthday" property="birthday" jdbcType="VARCHAR" />
+	    <result column="identity" property="identity" jdbcType="VARCHAR" />
+	    <!-- <result column="role" property="role" jdbcType="VARCHAR" /> -->
+	    <result column="address" property="address" jdbcType="VARCHAR" />
+	    <result column="addressDetail" property="addressDetail" jdbcType="VARCHAR" />
+	    <result column="interest" property="interest" jdbcType="VARCHAR" />
+	    <result column="status" property="status" jdbcType="VARCHAR" />
+    </association>
+  </resultMap>
+  <select id="getAllMenu2" resultMap="MenuResultMap" parameterType="long">
+    <!-- SELECT a.id AS pId,a.name pName,b.id ,b.name,b.url
+    FROM tb_function a
+    LEFT JOIN tb_function b ON a.id=b.parent_id -->
+    SELECT DISTINCT t.id asTid,t.NAME,t.parent_id AS pId
+	FROM tb_function t,tb_role_function f,tb_role r,tb_user u,tb_user_role e
+	WHERE 
+	t.id = f.function_id AND r.id = f.role_id AND u.id = e.user_id 
+	AND e.role_id = r.id AND u.id = #{id}
+  </select>
+</mapper>
