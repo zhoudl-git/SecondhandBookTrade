@@ -41,7 +41,8 @@ public class BookTradePageController {
 	@RequestMapping("/index")
 	public String showIndexMain() {
 		//return "secondHandBook_index";
-		return "index1";
+		//return "index1";
+		return "booktrade_index";
 	}
 	@RequestMapping("/afterIndex")
 	public String showAfterIndexMain() {

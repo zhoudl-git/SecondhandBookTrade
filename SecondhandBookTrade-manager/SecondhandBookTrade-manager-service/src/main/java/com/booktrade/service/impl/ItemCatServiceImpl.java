@@ -75,4 +75,11 @@ public class ItemCatServiceImpl implements ItemCatService {
 		return flag;
 	}
 
+	@Override
+	public List<TbItemCat> getAllItemCat() {
+		TbItemCatExample example = new TbItemCatExample();
+		List<TbItemCat> itemCats = itemCatMapper.selectByExample(example);
+		return itemCats;
+	}
+
 }

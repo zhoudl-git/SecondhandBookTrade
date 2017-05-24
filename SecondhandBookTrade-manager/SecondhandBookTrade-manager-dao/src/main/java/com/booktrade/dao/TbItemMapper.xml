@@ -13,6 +13,7 @@
     <result column="status" property="status" jdbcType="TINYINT" />
     <result column="created" property="created" jdbcType="TIMESTAMP" />
     <result column="updated" property="updated" jdbcType="TIMESTAMP" />
+    <result column="upload_id" property="uploadId" jdbcType="BIGINT" />
   </resultMap>
   <sql id="Example_Where_Clause" >
     <where >
@@ -73,7 +74,7 @@
     </where>
   </sql>
   <sql id="Base_Column_List" >
-    id, title, sell_point, price, num, barcode, image, cid, status, created, updated
+    id, title, sell_point, price, num, barcode, image, cid, status, created, updated,upload_id
   </sql>
   <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.booktrade.pojo.TbItemExample" >
     select
@@ -110,11 +111,11 @@
     insert into tb_item (id, title, sell_point, 
       price, num, barcode, 
       image, cid, status, 
-      created, updated)
+      created, updated,upload_id)
     values (#{id,jdbcType=BIGINT}, #{title,jdbcType=VARCHAR}, #{sellPoint,jdbcType=VARCHAR}, 
       #{price,jdbcType=BIGINT}, #{num,jdbcType=INTEGER}, #{barcode,jdbcType=VARCHAR}, 
       #{image,jdbcType=VARCHAR}, #{cid,jdbcType=BIGINT}, #{status,jdbcType=TINYINT}, 
-      #{created,jdbcType=TIMESTAMP}, #{updated,jdbcType=TIMESTAMP})
+      #{created,jdbcType=TIMESTAMP}, #{updated,jdbcType=TIMESTAMP},#{uploadId,jdbcType=BIGINT})
   </insert>
   <insert id="insertSelective" parameterType="com.booktrade.pojo.TbItem" >
     insert into tb_item
@@ -333,4 +334,16 @@
         </foreach>  
     </where> 
   </update>
+  <select id="getItemByPage" parameterType="map" resultMap="BaseResultMap">
+  	select * from tb_item
+	where STATUS = #{status} 
+	<if test="cid !=null ">  
+      AND  cid = #{cid} 
+    </if>
+	<if test="search !=null ">  
+      and  title LIKE CONCAT(CONCAT('%', #{search, jdbcType=VARCHAR}),'%') 
+      or sell_point  LIKE CONCAT(CONCAT('%', #{search, jdbcType=VARCHAR}),'%')
+    </if>  
+	limit #{pageNum},#{pageStop}
+  </select>
 </mapper>

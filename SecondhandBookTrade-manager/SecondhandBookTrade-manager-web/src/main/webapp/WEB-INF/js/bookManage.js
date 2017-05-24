@@ -101,6 +101,8 @@ function setDataFieldGrid(jsonObjDataFile){
 							return "<span style='color:blue'>在架</span>";
 						}else if(row.status == 0){
 							return "<span style='color:red'>下架</span>";
+						}else if(row.status == 2){
+							return "<span style='color:#e4393c'>热搜</span>";
 						}else{
 							return "";
 						}
@@ -111,6 +113,11 @@ function setDataFieldGrid(jsonObjDataFile){
 			}, {
 				display: '名称',
 				name: 'title',
+				minWidth: 100
+			}, 
+			{
+				display: '上传人',
+				name: 'userName',
 				minWidth: 100
 			}, 
 			{
@@ -134,11 +141,34 @@ function setDataFieldGrid(jsonObjDataFile){
 				align: 'center',
 				render: function(row) {
 					var html = "<img src='images/update.png' onclick='editBookById("+row.id+")' title='编辑'  style='cursor:pointer'/>";
-					    html += "<img src='images/delete.png' onclick='javascript:deleteBookById("+row.id+")' title='下架'  style='cursor:pointer'/>";
+					html += "<img src='images/ct_icon.png' onclick='javascript:addHotSearch("+row.id+")' title='上热搜'  style='cursor:pointer'/>";   
+					html += "<img src='images/delete.png' onclick='javascript:deleteBookById("+row.id+")' title='下架'  style='cursor:pointer'/>";
 					return html;
 				}
 			}]
 		});
+}
+function addHotSearch(bookId){
+	pop("确定上热搜？",3,addHotSearchOK,bookId);
+}
+function addHotSearchOK(bookId){
+	var url = "/item/addHotSearchOK.do";
+	var data = {"bookId":bookId};
+	$.axse(url,data,
+			function(oData){
+				if(oData.data == 1){
+					pop("上热搜成功！" ,1);
+					getDataFieldGrid();
+					//window.location.reload();
+				}else if(oData.data == 0){
+					pop("上热搜失败！" ,0);
+				}else{
+					pop("上热搜失败，服务器错误",0);
+				}
+			},function(msg){
+				pop("请求失败 + " + msg,0);
+			}
+		);
 }
 //下架按钮
 function deleteBookById(bookId){

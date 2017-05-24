@@ -38,7 +38,12 @@ public class ItemCatController {
 		List<TreeNode> list = itemCatService.getItemCatList(parentId);
 		return list;
 	}
-	
+	@RequestMapping("/listIndex")
+	@ResponseBody
+	public SystemReturnResult listIndex() {
+		List<TbItemCat> allItemCat = itemCatService.getAllItemCat();
+		return new SystemReturnResult(allItemCat);
+	}
 	@RequestMapping(value="/deleteById")
 	@ResponseBody
 	public SystemReturnResult deleteById(@RequestParam("tempIds")List<Long> tempIds) {

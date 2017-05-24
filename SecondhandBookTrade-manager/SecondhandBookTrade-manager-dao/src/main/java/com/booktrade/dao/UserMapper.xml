@@ -25,7 +25,7 @@
   	<include refid="Base_Column_List" />
     from tb_user
   </select>
-  <select id="getUserById">
+  <select id="getUserById" resultMap="BaseResultMap">
   	select 
   	<include refid="Base_Column_List" />
   	from tb_user

@@ -12,4 +12,5 @@ public interface ItemCatService {
 	int updateById(TbItemCat itemCat);
 	TbItemCat selectById(Long id);
 	int insertItemCat(TbItemCat itemCat);
+	List<TbItemCat> getAllItemCat();
 }

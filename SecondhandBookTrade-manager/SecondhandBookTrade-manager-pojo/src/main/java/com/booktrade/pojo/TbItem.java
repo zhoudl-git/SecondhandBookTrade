@@ -24,8 +24,27 @@ public class TbItem {
     private Date created;
 
     private Date updated;
+    
+    private Long uploadId;
+    
+    private String userName;
+	public String getUserName() {
+		return userName;
+	}
 
-    public Long getId() {
+	public void setUserName(String userName) {
+		this.userName = userName;
+	}
+
+	public Long getUploadId() {
+		return uploadId;
+	}
+
+	public void setUploadId(Long uploadId) {
+		this.uploadId = uploadId;
+	}
+
+	public Long getId() {
         return id;
     }
 

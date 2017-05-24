@@ -1,6 +1,7 @@
 package com.booktrade.dao;
 
 import java.util.List;
+import java.util.Map;
 
 import org.apache.ibatis.annotations.Param;
 
@@ -32,4 +33,6 @@ public interface TbItemMapper {
     int updateByPrimaryKey(TbItem record);
     int updateByBookIds(Long []ids);
     int updateByBookIds2(Long []ids);
+    
+    List<TbItem> getItemByPage(Map<String, Object> map);
 }

@@ -1,15 +1,17 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-<mapper namespace="com.booktrade.dao.TbFunctionMapper" >
-  <resultMap id="BaseResultMap" type="com.booktrade.pojo.TbFunction" >
+<mapper namespace="com.booktrade.dao.TbShopCatMapper" >
+  <resultMap id="BaseResultMap" type="com.booktrade.pojo.TbShopCat" >
     <id column="id" property="id" jdbcType="BIGINT" />
-    <result column="name" property="name" jdbcType="VARCHAR" />
-    <result column="parent_id" property="parentId" jdbcType="BIGINT" />
-    <result column="url" property="url" jdbcType="VARCHAR" />
-    <result column="serial_num" property="serialNum" jdbcType="INTEGER" />
-    <result column="accordion" property="accordion" jdbcType="INTEGER" />
+    <result column="user_id" property="userId" jdbcType="BIGINT" />
+    <result column="item_id" property="itemId" jdbcType="BIGINT" />
+    <result column="item_name" property="itemName" jdbcType="VARCHAR" />
+    <result column="num" property="num" jdbcType="INTEGER" />
+    <result column="price" property="price" jdbcType="BIGINT" />
+    <result column="function_id" property="functionId" jdbcType="BIGINT" />
     <result column="created" property="created" jdbcType="TIMESTAMP" />
     <result column="updated" property="updated" jdbcType="TIMESTAMP" />
+    <result column="image" property="image" jdbcType="VARCHAR" />
   </resultMap>
   <sql id="Example_Where_Clause" >
     <where >
@@ -70,15 +72,15 @@
     </where>
   </sql>
   <sql id="Base_Column_List" >
-    id, name, parent_id, url, serial_num, accordion, created, updated
+    id, user_id, item_id, item_name, num, price, function_id, created, updated, image
   </sql>
-  <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.booktrade.pojo.TbFunctionExample" >
+  <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.booktrade.pojo.TbShopCatExample" >
     select
     <if test="distinct" >
       distinct
     </if>
     <include refid="Base_Column_List" />
-    from tb_function
+    from tb_shop_cat
     <if test="_parameter != null" >
       <include refid="Example_Where_Clause" />
     </if>
@@ -89,47 +91,53 @@
   <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Long" >
     select 
     <include refid="Base_Column_List" />
-    from tb_function
+    from tb_shop_cat
     where id = #{id,jdbcType=BIGINT}
   </select>
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Long" >
-    delete from tb_function
+    delete from tb_shop_cat
     where id = #{id,jdbcType=BIGINT}
   </delete>
-  <delete id="deleteByExample" parameterType="com.booktrade.pojo.TbFunctionExample" >
-    delete from tb_function
+  <delete id="deleteByExample" parameterType="com.booktrade.pojo.TbShopCatExample" >
+    delete from tb_shop_cat
     <if test="_parameter != null" >
       <include refid="Example_Where_Clause" />
     </if>
   </delete>
-  <insert id="insert" parameterType="com.booktrade.pojo.TbFunction" >
-    insert into tb_function (id, name, parent_id, 
-      url, serial_num, accordion, 
-      created, updated)
-    values (#{id,jdbcType=BIGINT}, #{name,jdbcType=VARCHAR}, #{parentId,jdbcType=BIGINT}, 
-      #{url,jdbcType=VARCHAR}, #{serialNum,jdbcType=INTEGER}, #{accordion,jdbcType=INTEGER}, 
-      #{created,jdbcType=TIMESTAMP}, #{updated,jdbcType=TIMESTAMP})
+  <insert id="insert" parameterType="com.booktrade.pojo.TbShopCat" >
+    insert into tb_shop_cat (id, user_id, item_id, 
+      item_name, num, price, 
+      function_id, created, updated,image
+      )
+    values (#{id,jdbcType=BIGINT}, #{userId,jdbcType=BIGINT}, #{itemId,jdbcType=BIGINT}, 
+      #{itemName,jdbcType=VARCHAR}, #{num,jdbcType=INTEGER}, #{price,jdbcType=BIGINT}, 
+      #{functionId,jdbcType=BIGINT}, #{created,jdbcType=TIMESTAMP}, #{updated,jdbcType=TIMESTAMP},
+       #{image,jdbcType=VARCHAR}
+      )
   </insert>
-  <insert id="insertSelective" parameterType="com.booktrade.pojo.TbFunction" >
-    insert into tb_function
+  <insert id="insertSelective" parameterType="com.booktrade.pojo.TbShopCat" >
+    insert into tb_shop_cat
     <trim prefix="(" suffix=")" suffixOverrides="," >
       <if test="id != null" >
         id,
       </if>
-      <if test="name != null" >
-        name,
+      <if test="userId != null" >
+        user_id,
       </if>
-      <if test="parentId != null" >
-        parent_id,
+      <if test="itemId != null" >
+        item_id,
       </if>
-      <if test="url != null" >
-        url,
+      <if test="itemName != null" >
+        item_name,
       </if>
-      <if test="serialNum != null" >
-        serial_num,
+      <if test="num != null" >
+        num,
       </if>
-      <if test="accordion != null" >
-        accordion,
+      <if test="price != null" >
+        price,
+      </if>
+      <if test="functionId != null" >
+        function_id,
       </if>
       <if test="created != null" >
         created,
@@ -142,20 +150,23 @@
       <if test="id != null" >
         #{id,jdbcType=BIGINT},
       </if>
-      <if test="name != null" >
-        #{name,jdbcType=VARCHAR},
+      <if test="userId != null" >
+        #{userId,jdbcType=BIGINT},
       </if>
-      <if test="parentId != null" >
-        #{parentId,jdbcType=BIGINT},
+      <if test="itemId != null" >
+        #{itemId,jdbcType=BIGINT},
       </if>
-      <if test="url != null" >
-        #{url,jdbcType=VARCHAR},
+      <if test="itemName != null" >
+        #{itemName,jdbcType=VARCHAR},
       </if>
-      <if test="serialNum != null" >
-        #{serialNum,jdbcType=INTEGER},
+      <if test="num != null" >
+        #{num,jdbcType=INTEGER},
       </if>
-      <if test="accordion != null" >
-        #{accordion,jdbcType=INTEGER},
+      <if test="price != null" >
+        #{price,jdbcType=BIGINT},
+      </if>
+      <if test="functionId != null" >
+        #{functionId,jdbcType=BIGINT},
       </if>
       <if test="created != null" >
         #{created,jdbcType=TIMESTAMP},
@@ -165,32 +176,35 @@
       </if>
     </trim>
   </insert>
-  <select id="countByExample" parameterType="com.booktrade.pojo.TbFunctionExample" resultType="java.lang.Integer" >
-    select count(*) from tb_function
+  <select id="countByExample" parameterType="com.booktrade.pojo.TbShopCatExample" resultType="java.lang.Integer" >
+    select count(*) from tb_shop_cat
     <if test="_parameter != null" >
       <include refid="Example_Where_Clause" />
     </if>
   </select>
   <update id="updateByExampleSelective" parameterType="map" >
-    update tb_function
+    update tb_shop_cat
     <set >
       <if test="record.id != null" >
         id = #{record.id,jdbcType=BIGINT},
       </if>
-      <if test="record.name != null" >
-        name = #{record.name,jdbcType=VARCHAR},
+      <if test="record.userId != null" >
+        user_id = #{record.userId,jdbcType=BIGINT},
       </if>
-      <if test="record.parentId != null" >
-        parent_id = #{record.parentId,jdbcType=BIGINT},
+      <if test="record.itemId != null" >
+        item_id = #{record.itemId,jdbcType=BIGINT},
       </if>
-      <if test="record.url != null" >
-        url = #{record.url,jdbcType=VARCHAR},
+      <if test="record.itemName != null" >
+        item_name = #{record.itemName,jdbcType=VARCHAR},
       </if>
-      <if test="record.serialNum != null" >
-        serial_num = #{record.serialNum,jdbcType=INTEGER},
+      <if test="record.num != null" >
+        num = #{record.num,jdbcType=INTEGER},
       </if>
-      <if test="record.accordion != null" >
-        accordion = #{record.accordion,jdbcType=INTEGER},
+      <if test="record.price != null" >
+        price = #{record.price,jdbcType=BIGINT},
+      </if>
+      <if test="record.functionId != null" >
+        function_id = #{record.functionId,jdbcType=BIGINT},
       </if>
       <if test="record.created != null" >
         created = #{record.created,jdbcType=TIMESTAMP},
@@ -204,36 +218,40 @@
     </if>
   </update>
   <update id="updateByExample" parameterType="map" >
-    update tb_function
+    update tb_shop_cat
     set id = #{record.id,jdbcType=BIGINT},
-      name = #{record.name,jdbcType=VARCHAR},
-      parent_id = #{record.parentId,jdbcType=BIGINT},
-      url = #{record.url,jdbcType=VARCHAR},
-      serial_num = #{record.serialNum,jdbcType=INTEGER},
-      accordion = #{record.accordion,jdbcType=INTEGER},
+      user_id = #{record.userId,jdbcType=BIGINT},
+      item_id = #{record.itemId,jdbcType=BIGINT},
+      item_name = #{record.itemName,jdbcType=VARCHAR},
+      num = #{record.num,jdbcType=INTEGER},
+      price = #{record.price,jdbcType=BIGINT},
+      function_id = #{record.functionId,jdbcType=BIGINT},
       created = #{record.created,jdbcType=TIMESTAMP},
       updated = #{record.updated,jdbcType=TIMESTAMP}
     <if test="_parameter != null" >
       <include refid="Update_By_Example_Where_Clause" />
     </if>
   </update>
-  <update id="updateByPrimaryKeySelective" parameterType="com.booktrade.pojo.TbFunction" >
-    update tb_function
+  <update id="updateByPrimaryKeySelective" parameterType="com.booktrade.pojo.TbShopCat" >
+    update tb_shop_cat
     <set >
-      <if test="name != null" >
-        name = #{name,jdbcType=VARCHAR},
+      <if test="userId != null" >
+        user_id = #{userId,jdbcType=BIGINT},
       </if>
-      <if test="parentId != null" >
-        parent_id = #{parentId,jdbcType=BIGINT},
+      <if test="itemId != null" >
+        item_id = #{itemId,jdbcType=BIGINT},
       </if>
-      <if test="url != null" >
-        url = #{url,jdbcType=VARCHAR},
+      <if test="itemName != null" >
+        item_name = #{itemName,jdbcType=VARCHAR},
       </if>
-      <if test="serialNum != null" >
-        serial_num = #{serialNum,jdbcType=INTEGER},
+      <if test="num != null" >
+        num = #{num,jdbcType=INTEGER},
       </if>
-      <if test="accordion != null" >
-        accordion = #{accordion,jdbcType=INTEGER},
+      <if test="price != null" >
+        price = #{price,jdbcType=BIGINT},
+      </if>
+      <if test="functionId != null" >
+        function_id = #{functionId,jdbcType=BIGINT},
       </if>
       <if test="created != null" >
         created = #{created,jdbcType=TIMESTAMP},
@@ -244,32 +262,38 @@
     </set>
     where id = #{id,jdbcType=BIGINT}
   </update>
-  <update id="updateByPrimaryKey" parameterType="com.booktrade.pojo.TbFunction" >
-    update tb_function
-    set name = #{name,jdbcType=VARCHAR},
-      parent_id = #{parentId,jdbcType=BIGINT},
-      url = #{url,jdbcType=VARCHAR},
-      serial_num = #{serialNum,jdbcType=INTEGER},
-      accordion = #{accordion,jdbcType=INTEGER},
+  <update id="updateByPrimaryKey" parameterType="com.booktrade.pojo.TbShopCat" >
+    update tb_shop_cat
+    set user_id = #{userId,jdbcType=BIGINT},
+      item_id = #{itemId,jdbcType=BIGINT},
+      item_name = #{itemName,jdbcType=VARCHAR},
+      num = #{num,jdbcType=INTEGER},
+      price = #{price,jdbcType=BIGINT},
+      function_id = #{functionId,jdbcType=BIGINT},
       created = #{created,jdbcType=TIMESTAMP},
       updated = #{updated,jdbcType=TIMESTAMP}
     where id = #{id,jdbcType=BIGINT}
   </update>
-  <!-- <select id="getAllMenu2" resultMap="BaseResultMap" parameterType="com.booktrade.pojo.TbFunctionExample" >
-    SELECT id,NAME,parent_id AS pId
-	FROM tb_function
-  </select> -->
-  <update id="updateTreeNode" parameterType="map" >
-  	update tb_function set name = #{name} where id = #{id}
+  <update id="updateByOtherId" parameterType="map">
+  	update tb_shop_cat
+    set <!-- user_id = #{userId,jdbcType=BIGINT},
+      item_id = #{itemId,jdbcType=BIGINT},
+      item_name = #{itemName,jdbcType=VARCHAR},-->
+      num = #{num,jdbcType=INTEGER}, 
+      price = #{price,jdbcType=BIGINT},
+      <!-- function_id = #{functionId,jdbcType=BIGINT},
+      created = #{created,jdbcType=TIMESTAMP}, -->
+      updated = #{updated,jdbcType=TIMESTAMP}
+    where <!-- id = #{id,jdbcType=BIGINT} and --> user_id = #{userId,jdbcType=BIGINT} 
+    and item_id = #{itemId,jdbcType=BIGINT}
   </update>
-  <select id="getAllMenu2" resultMap="BaseResultMap" parameterType="long" >
-    <!-- SELECT id,NAME,parent_id AS pId
-	FROM tb_function -->
-	SELECT DISTINCT t.id,t.NAME,t.parent_id ,t.url
-	FROM tb_function t,tb_role_function f,tb_role r,tb_user u,tb_user_role e
-	WHERE 
-	t.id = f.function_id AND r.id = f.role_id AND u.id = e.user_id 
-	AND e.role_id = r.id AND u.id = #{userId}
-	ORDER BY t.id,t.parent_id
-  </select>
+  <update id="updateShopCatByCatId" parameterType="map">
+  		update tb_shop_cat
+	    set 
+	      num = #{num,jdbcType=INTEGER}, 
+	      price = #{price,jdbcType=BIGINT},
+	      updated = #{updated,jdbcType=TIMESTAMP}
+	    where id = #{id,jdbcType=BIGINT} and user_id = #{userId,jdbcType=BIGINT} 
+	    <!-- and item_id = #{itemId,jdbcType=BIGINT} -->
+  </update>
 </mapper>

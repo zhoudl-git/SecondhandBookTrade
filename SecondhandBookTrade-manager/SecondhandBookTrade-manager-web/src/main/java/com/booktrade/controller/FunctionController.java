@@ -13,7 +13,6 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import com.alibaba.druid.util.StringUtils;
 import com.booktrade.pojo.SystemReturnResult;
 import com.booktrade.pojo.TbFunction;
 import com.booktrade.pojo.User;
@@ -50,6 +49,7 @@ public class FunctionController {
 				if(!temp.contains(functions.get(i))){
 					temp.add(functions.get(i));
 				}
+				System.out.println(functions.get(j).getParentId() +"::"+t);
 				if(functions.get(j).getParentId() == t){
 					temp.add(functions.get(j));
 				}

@@ -150,11 +150,6 @@ public class UserController {
 					if (roleByUserId != null && roleByUserId.size() > 0) {
 						user.setRole(roleByUserId.get(0).getRoleId()+"");
 					}
-					HttpSession session = request.getSession();
-					// 使用session记录用户登录信息
-					session.setAttribute("user", user);
-					// 使用cookie记录用户登录ID
-					CookieUtils.setCookie(request, response, "bookTradeuser", user.getId()+"");
 					url = "afterIndex";
 				}else{
 					url = "index";
@@ -162,6 +157,12 @@ public class UserController {
 			}else{
 				url = "exception";
 			}
+			HttpSession session = request.getSession();
+			// 使用session记录用户登录信息
+			session.setAttribute("user", user);
+			session.setAttribute("userName", user.getUsername());
+			// 使用cookie记录用户登录ID
+			CookieUtils.setCookie(request, response, "bookTradeuser", user.getId()+"");
 		}else{
 			url = "/";
 		}
@@ -183,7 +184,8 @@ public class UserController {
 		int status = 0;
 		if(userRole == null){// 未分配该角色
 			// 删除用户之前的角色
-			int flag = userService.deleteRoleByUserId(Long.parseLong(userId));
+			int flag = 1;
+					userService.deleteRoleByUserId(Long.parseLong(userId));
 			if(flag == 1){
 				TbUserRole newUserRole = new TbUserRole();
 				newUserRole.setRoleId(Long.parseLong(roleId));
