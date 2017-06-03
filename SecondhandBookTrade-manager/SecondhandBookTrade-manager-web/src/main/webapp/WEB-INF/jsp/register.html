@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        body {
+            /*margin-top: 50px;*/
+            margin-bottom: 50px;
+        }
+        .carousel > .carousel-inner >.item > img {
+            width: 100%;
+        }
+    </style>
+    <link rel="stylesheet" href="css/register.css">
+    <link href="css/bootstrap.css" rel="stylesheet">
+</head>
+<body>
+<div class="navbar navbar-default" style="background-color: #0f7eb6">
+    <div class="container">
+        <!--导航条头部 = brand + toggle-->
+        <div class="navbar-header">
+            <a class="navbar-brand" href="#">
+                <img src="img/logo.png" style="margin-top:-8px">
+            </a>
+            <a data-toggle="collapse" href="#my-menu" class="navbar-toggle">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </a>
+        </div>
+        <!--导航条折叠部分 = 导航 + 链接 + 表单 + 按钮 ...-->
+        <div id="my-menu" class="collapse navbar-collapse">
+            <!--导航条中的导航 navbar-nav-->
+            <ul class="nav navbar-nav">
+                <li><a href="index.html"  style="color:#fff">首页</a></li>
+                <li><a href="#"  style="color:#fff">新闻</a></li>
+            </ul>
+            <!--导航条中的超链接 navbar-link-->
+            <a href="login.html" class="btn btn-success navbar-btn navbar-right">登录</a>
+            <!--导航条中的文本 navbar-text-->
+            <!--导航条中的表单 navbar-form-->
+            <form class="navbar-form navbar-right">
+                <div class="form-group">
+                    <label class="sr-only" for="kw">搜索：</label>
+                    <input class="form-control" id="kw" placeholder="查询书籍..." type="text"/>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+
+<div class="form-container">
+    <span style="margin-left:300px;color:#0f7eb6;font-size: 25px;">欢迎注册二手书交易网</span>
+    <form id="form-register">
+        <div class="form-group">
+            <label for="uname" >用户名：</label>
+            <input name="uname" placeholder="输入用户名" id="uname"/>
+        </div>
+        <div class="form-group">
+            <label for="upwd">密码：</label>
+            <input type="password" name="upwd" id="upwd" placeholder="输入你的密码"/>
+        </div>
+        <div class="form-group">
+            <label for="pho">手机号：</label>
+            <input type="text" placeholder="输入手机号" name="pho" id="pho"/>
+        </div>
+        <div class="form-group">
+            <label for="age">年龄：</label>
+            <input type="number" value="20" min="10" max="60" name="age" id="age"/>
+        </div>
+        <div class="form-group">
+            <label for="address">地址：</label>
+            <input type="text" placeholder="输入常用地址" name="address" id="address"/>
+        </div>
+        <div class="form-group">
+            <button id="bt-register">提交注册信息</button>
+        </div>
+    </form>
+</div>
+</body>
+</html>
