@@ -86,6 +86,7 @@ public class ItemServiceImpl implements ItemService {
 	}
 	@Override
 	public SystemReturnResult addItem(TbItem item, TbItemDesc itemDesc, String itemParams,Long userId) {
+		int insert = 0;
 		try {
 			//生成书籍id
 			//可以使用redis的自增长key，在没有redis之前使用时间+随机数策略生成
@@ -104,7 +105,7 @@ public class ItemServiceImpl implements ItemService {
 			itemDesc.setCreated(date);
 			itemDesc.setUpdated(date);
 			//把数据插入到书籍描述表
-			itemDescMapper.insert(itemDesc);
+			insert = itemDescMapper.insert(itemDesc);
 			
 			//把书籍的规格参数插入到tb_item_param_item中
 			TbItemParamItem itemParamItem = new TbItemParamItem();
@@ -119,7 +120,7 @@ public class ItemServiceImpl implements ItemService {
 			return SystemReturnResult.build(500, ExceptionUtil.getStackTrace(e));
 		}
 		
-		return SystemReturnResult.ok();
+		return new SystemReturnResult(insert);
 	}
 	@Override
 	public int updateBookById(Long bookId,String status) {

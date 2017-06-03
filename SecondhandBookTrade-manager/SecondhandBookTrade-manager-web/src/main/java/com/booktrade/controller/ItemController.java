@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.booktrade.pojo.LigerUIDataGridResult;
+import com.booktrade.pojo.SystemCode;
 import com.booktrade.pojo.SystemReturnResult;
 import com.booktrade.pojo.TbItem;
 import com.booktrade.pojo.TbItemDesc;
@@ -78,8 +79,9 @@ public class ItemController {
 		return new SystemReturnResult(flag);
 	}
 	@RequestMapping("/save")
+	@ResponseBody
 	//添加一个itemParams参数接收规格参数的数据。
-	public String addItem(TbItem item, String desc, String itemParams,HttpServletRequest request) {
+	public SystemReturnResult addItem(TbItem item, String desc, String itemParams,HttpServletRequest request) {
 		TbItemDesc itemDesc = new TbItemDesc();
 		itemDesc.setItemDesc(desc);
 		User user = (User)request.getSession().getAttribute("user");
@@ -87,10 +89,10 @@ public class ItemController {
 		if(user != null){
 			userId = user.getId();
 		}else{
-			return "404";
+			return new SystemReturnResult(SystemCode.noLogin);
 		}
 		SystemReturnResult result = itemService.addItem(item, itemDesc, itemParams,userId);
-		return "redirect:bookManage.do";
+		return result;
 	}
 	@RequestMapping("/selectBookByCatId")
 	@ResponseBody

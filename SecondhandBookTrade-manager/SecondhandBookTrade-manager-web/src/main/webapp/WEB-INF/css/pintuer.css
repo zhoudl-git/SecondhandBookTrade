@@ -694,6 +694,7 @@ textarea.input{height:auto;}
 .keypoint p{font-size:18px;}
 .detail h1{text-align:center;}
 .detail p{text-indent:2em;}
+.text-center h1{font-size:54px;}
 h1,.h1{font-size:24px;}
 h2,.h2{font-size:20px;}
 h3,.h3{font-size:18px;}
@@ -807,7 +808,7 @@ blockquote p:last-child{margin:0;}
 .margin-large-right{margin-right:30px;}
 .margin-large-bottom{margin-bottom:30px;}
 .margin-large-left{margin-left:30px;}
-.margin-big{margin:20px;}
+.margin-big{margin:-50px;}
 .margin-big-top{margin-top:20px;}
 .margin-big-right{margin-right:20px;}
 .margin-big-bottom{margin-bottom:20px;}

@@ -124,10 +124,24 @@
 		//ajax的post方式提交表单
 		//$("#itemAddForm").serialize()将表单序列号为key-value形式的字符串
 		//alert($("#itemAddForm").serialize());
-		$.post("/item/save",$("#itemAddForm").serialize(), function(data){
-			if(data.status == 200){
-				pop("新增书籍成功",1);
+		$.post("/item/save",$("#itemAddForm").serialize(), function(oData){
+			if(oData.data == 1){
+				layer.alert("新增书籍成功");
+				layer.confirm('是否继续添加？', {
+					  btn: ['确定','取消'] //按钮
+					}, function(index){
+						clearForm();
+						layer.close(index);
+					}, function(index){
+						layer.close(index);
+					   window.location.href = 'bookManage';
+					});
 				//$.messager.alert('提示','新增书籍成功!');
+			}else if(oData.data == -1){
+				layer.msg("尚未登錄，請登錄后再添加書籍");
+				window.loaction.href = "/";
+			}else{
+				layer.alert("新增失敗");
 			}
 		});
 	}
