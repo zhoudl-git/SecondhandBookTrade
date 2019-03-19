@@ -1,0 +1,245 @@
+@charset "utf-8";
+/*通用*/
+body {
+    font:16px "microsoft yahei", Arial, Helvetica, sans-serif;
+    color:#666;
+    background: url(../img/bg.jpg);
+    /*background:-webkit-gradient(linear, 0% 100%,0% 0%,from(#2960b3), to(#e0e2f7));*/
+}
+li{list-style: none;}
+.lf{float:left;}
+.rt{float:right;}
+* {
+    padding: 0px;
+    margin: 0px;
+}
+a {
+    text-decoration: none;
+}
+ul {
+    list-style: outside none none;
+}
+.nav_c>li>a{
+    color:#fff;
+}
+.con_rec{
+    border:1px solid #ddd;
+    height:770px;
+    margin:20px 0;
+}
+.con_rec h3{
+    padding:5px;
+    color:#0f7eb6;
+}
+.con_rec>div>ul{
+    border:1px solid  #0f7eb6;
+    border-radius: 5px;
+    padding:10px;
+    margin:10px;
+}
+.con_rec>div>ul>li img{
+    margin:0 auto;
+    width:210px;
+    height:230px;
+    border:1px solid #ddd;
+    text-align: center;
+}
+.con_rec>div>ul li{
+    text-align: center;
+}
+.con_rec>div ul:hover{
+    box-shadow: 0 15px 25px -4px rgba(0, 0, 0, 0.5);
+}
+.con_rec>div>ul>li span{
+    color:#0f7eb6
+}
+.con_rec>div>ul>li b{
+    color:#e4393c;
+}
+.con_rec>div>ul>li a{
+    color:red;
+}
+.con_rec>div>ul>li a:hover{
+    border:1px solid #e4393c;
+    padding:2px 5px;
+    border-radius: 3px;
+    color:#e4393c;
+}
+#tc10>div>ul{
+    border:1px solid  #0f7eb6;
+    border-radius: 5px;
+    padding:10px;
+    margin:10px;
+}
+#tc10>div>ul>li img{
+    margin:0 auto;
+    width:210px;
+    height:230px;
+    border:1px solid #ddd;
+    text-align: center;
+}
+#tc10>div>ul li{
+    text-align: center;
+}
+#tc10>div>ul:hover{
+    box-shadow: 0 15px 25px -4px rgba(0, 0, 0, 0.5)
+}
+#tc10>div>ul>li span{
+    color:#0f7eb6
+}
+#tc10>div>ul>li a{
+    color:red;
+}
+#tc10>div>ul>li b{
+    color:#e4393c;
+}
+#tc10>div>ul>li a:hover{
+border:1px solid #e4393c;
+    padding:2px 5px;
+    border-radius: 3px;
+    color:#e4393c;
+}
+
+#tc20>div>ul{
+    border:1px solid  #0f7eb6;
+    border-radius: 5px;
+    padding:10px;
+    margin:10px;
+}
+#tc20>div>ul>li img{
+    margin:0 auto;
+    width:210px;
+    height:230px;
+    border:1px solid #ddd;
+    text-align: center;
+}
+#tc20>div>ul li{
+    text-align: center;
+}
+#tc20>div>ul:hover{
+    box-shadow: 0 15px 25px -4px rgba(0, 0, 0, 0.5)
+}
+#tc20>div>ul>li span{
+    color:#0f7eb6
+}
+#tc20>div>ul>li a{
+    color:red;
+}
+#tc20>div>ul>li b{
+    color:#e4393c;
+}
+#tc20>div>ul>li a:hover{
+    border:1px solid #e4393c;
+    padding:2px 5px;
+    border-radius: 3px;
+    color:#e4393c;
+}
+
+
+#tc30>div>ul{
+    border:1px solid  #0f7eb6;
+    border-radius: 5px;
+    padding:10px;
+    margin:10px;
+}
+#tc30>div>ul>li img{
+    margin:0 auto;
+    width:210px;
+    height:230px;
+    border:1px solid #ddd;
+    text-align: center;
+}
+#tc30>div>ul li{
+    text-align: center;
+}
+#tc30>div>ul:hover{
+    box-shadow: 0 15px 25px -4px rgba(0, 0, 0, 0.5)
+}
+#tc30>div>ul>li span{
+    color:#0f7eb6
+}
+#tc30>div>ul>li a{
+    color:red;
+}
+#tc30>div>ul>li b{
+    color:#e4393c;
+}
+#tc30>div>ul>li a:hover{
+    border:1px solid #e4393c;
+    padding:2px 5px;
+    border-radius: 3px;
+    color:#e4393c;
+}
+
+
+#tc40>div>ul{
+    border:1px solid  #0f7eb6;
+    border-radius: 5px;
+    padding:10px;
+    margin:10px;
+}
+#tc40>div>ul>li img{
+    margin:0 auto;
+    width:210px;
+    height:230px;
+    border:1px solid #ddd;
+    text-align: center;
+}
+#tc40>div>ul li{
+    text-align: center;
+}
+#tc40>div>ul:hover{
+    box-shadow: 0 15px 25px -4px rgba(0, 0, 0, 0.5)
+}
+#tc40>div>ul>li span{
+    color:#0f7eb6
+}
+#tc40>div>ul>li a{
+    color:red;
+}
+#tc40>div>ul>li b{
+    color:#e4393c;
+}
+#tc40>div>ul>li a:hover{
+    border:1px solid #e4393c;
+    padding:2px 5px;
+    border-radius: 3px;
+    color:#e4393c;
+}
+#tc10{
+    height:370px;
+    border-left:1px solid #ddd;
+    border-bottom:1px solid #ddd;
+    border-right:1px solid #ddd;
+    margin-bottom: 20px;
+}
+#tc20{
+    height:370px;
+    border-left:1px solid #ddd;
+    border-bottom:1px solid #ddd;
+    border-right:1px solid #ddd;
+    margin-bottom: 20px;
+}
+#tc30{
+    height:370px;
+    border-left:1px solid #ddd;
+    border-bottom:1px solid #ddd;
+    border-right:1px solid #ddd;
+    margin-bottom: 20px;
+}
+#tc40{
+    height:370px;
+    border-left:1px solid #ddd;
+    border-bottom:1px solid #ddd;
+    border-right:1px solid #ddd;
+    margin-bottom: 20px;
+}
+.footer{
+    border:1px solid #ddd;
+    height:100px;
+    background-color: #0f7eb6;
+    color:#fff;
+}
+.footer>ul li{
+    margin:40px 130px;
+}

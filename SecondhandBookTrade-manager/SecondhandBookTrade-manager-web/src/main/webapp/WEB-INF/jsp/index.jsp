@@ -58,7 +58,7 @@
   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;切换语言：<a href="##">中文</a> &nbsp;&nbsp;<a href="##">英文</a> </li>-->
 </ul>
 <div class="admin">
-  <iframe scrolling="auto" rameborder="0" src="bookManage" name="right" width="100%" height="100%"></iframe>
+  <iframe scrolling="auto" rameborder="0" src="statisticalAnalysis" name="right" width="100%" height="100%"></iframe>
 </div>
 <div style="text-align:center;">
 <!-- <p>来源:<a href="http://www.mycodes.net/" target="_blank">源码之家</a></p> -->

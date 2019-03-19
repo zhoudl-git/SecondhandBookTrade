@@ -1,0 +1,192 @@
+@charset "utf-8";
+
+/*产品列表*/
+.productlist{
+    overflow:hidden;
+    margin-bottom:10px;
+}
+.productlist header{
+    height: 25px;
+    background: #F1F1F1;
+    padding: 6px 8px;
+    border: 1px solid #E7E3E7;
+    background: #F9F9F9;
+    zoom: 1;
+}
+.productlist header ul li {
+    float:left;
+}
+.productlist header ul li a.curr {
+    background: #e4393c;
+    color: #FFF;
+    border-color: #e4393c;
+}
+.productlist header ul li a {
+    display: inline-block;
+    padding: 0 10px;
+    height: 23px;
+    border: 1px solid #CCC;
+    line-height: 23px;
+    margin-right: -1px;
+    background: #FFF;
+    color: #333;
+    text-decoration: none;
+}
+.productlist header ul li a:hover {
+    position: relative;
+    text-decoration: none;
+    border-color: #e4393c;
+    color: #e4393c;
+}
+
+.productlist header ol {
+    margin:0;
+    padding:0;
+    margin-right: 15px;
+    float:right;
+}
+.productlist header ol li {
+    float:left;
+    border: 1px solid #ddd;
+    background: #f5f5f5;
+    background: #F1F1F1;
+    padding: 4px 20px;
+}
+.productlist header ol li:last-child {
+    background: #fff;
+}
+
+#plist {
+    margin-bottom: 20px;
+    height: auto;
+    position: relative;
+    z-index: 1;
+}
+#plist ul {
+    width:1000px;
+}
+#plist ul li {
+    width: 230px;
+    height: 400px;
+    float: left;
+    margin-right: 15px;
+    margin-top: 10px;
+    padding-top:10px;
+    border:1px solid transparent;
+}
+#plist ul li:hover {
+    border:1px solid #ddd;
+    box-shadow:2px 2px #eee;
+}
+#plist ul li img {
+    width:98%;
+    vertical-align: middle;
+    border:0;
+}
+#plist ul li p {
+    line-height: 22px;
+    height: 22px;
+    overflow: hidden;
+    width: 100%;
+    margin: 10px;
+    color: #e4393c;
+    font-size: 20px;
+    font-weight: 400;
+    font-family: Verdana;
+}
+
+#plist ul li h1{
+    padding:10px;
+    margin:0px;
+    max-height:40px;
+    overflow:hidden;
+}
+#plist ul li h1 a{
+    font-weight: normal;
+    font-size:12px;
+}
+#plist ul li div {
+    margin-left:10px;
+    margin-top:10px;
+}
+#plist ul li div a{
+    float: left;
+    width: 25px;
+    height: 25px;
+    line-height: 25px;
+    border: 1px solid #DDD;
+    padding: 0 3px;
+    padding-left:25px;
+    position: relative;
+    background: #fff;
+    color: #999;
+}
+#plist ul li div a i {
+    position: absolute;
+    left: 5px;
+    top: 5px;
+    background-image: url("../images/search.ele.png");
+    background-repeat: no-repeat;
+    background-position: 9999px 9999px;
+    display: inline-block;
+    height: 12px;
+    width: 12px;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    font-size: 0;
+}
+#plist ul li div a.p-operate  i {
+    width: 18px;
+    height: 18px;
+    border:none;
+    background-position: 0px -413px;
+}
+#plist ul li div a.addcart {
+    padding-left:25px;
+    width: 70px;
+    text-align: center;
+    color: #e4393c;
+}
+#plist ul li div a.addcart i {
+    top:3px;
+    width:25px;
+    height:22px;
+    border:none;
+    background-position: 0px -272px;
+}
+
+/*分页*/
+.pager {
+    margin: 15px;
+    float:right;
+}
+.pager li {
+    display: inline-block;
+    border: 1px solid #ddd;
+    background: #f5f5f5;
+    padding: 9px 13px;
+}
+.pager li.active {
+    border: 1px solid transparent;
+    background: transparent;
+}
+.pager li.active a {
+    color: #e4393c;
+    cursor: default;
+}.pager {
+     margin: 15px auto 0;
+ }
+.pager li {
+    display: inline-block;
+    border: 1px solid #ddd;
+    background: #f5f5f5;
+    padding: 9px 13px;
+}
+.pager li.active {
+    border: 1px solid transparent;
+    background: transparent;
+}
+.pager li.active a {
+    color: #e4393c;
+    cursor: default;
+}

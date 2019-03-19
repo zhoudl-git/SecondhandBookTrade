@@ -6,11 +6,11 @@
  */
 function pop(str,status,method,params){
 	if(status == 0){
-		layer.msg(str);
+		top.layer.msg(str);
 	}else if(status == 1){
-		layer.msg(str, {icon: 1});
+        top.layer.msg(str, {icon: 1});
 	}else if(status == 2){
-		layer.alert(str, {
+        top.layer.alert(str, {
 			  skin: 'layui-layer-molv' 
 				  // 样式类名 
 				  // layui-layer-molv 墨绿 
@@ -19,7 +19,7 @@ function pop(str,status,method,params){
 			  ,anim: 4 //动画类型
 			});
 	}else if(status == 3){
-		layer.confirm(str, {
+        top.layer.confirm(str, {
 			  btn: ['确定','取消'] //按钮
 			}, function(){
 				var flag = true;
@@ -35,9 +35,9 @@ function pop(str,status,method,params){
 				}*/
 			});
 	}else if(status == 4){
-		layer.msg(str, {icon: 1});
+        top.layer.msg(str, {icon: 1});
 	}else if(status == 5){
-		layer.msg(str, {icon: 1});
+        top.layer.msg(str, {icon: 1});
 	}
 }
 /**
@@ -45,7 +45,7 @@ function pop(str,status,method,params){
  * @returns
  */
 function loading(){
-	var index = layer.load(1, {
+	var index = top.layer.load(1, {
 		shade: [0.1,'#fff'] //0.1透明度的白色背景
 	});
 	return index;
@@ -55,7 +55,7 @@ function loading(){
  * @returns
  */
 function loadingTO(){
-	var index = layer.load(0, {shade: false}); //0代表加载的风格，支持0-2
+	var index = top.layer.load(0, {shade: false}); //0代表加载的风格，支持0-2
 	return index;
 }
 /**
@@ -63,7 +63,7 @@ function loadingTO(){
  * @param index
  */
 function loadindClose(index){
-	layer.close(index); 
+    top.layer.close(index);
 }
 /**
  * 正则式匹配出当前正在执行的方法名称

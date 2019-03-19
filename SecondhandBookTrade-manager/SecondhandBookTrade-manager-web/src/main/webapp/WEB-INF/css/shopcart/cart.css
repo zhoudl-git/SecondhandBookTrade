@@ -1,0 +1,136 @@
+#cart
+{
+    border: 1px solid #f1f1f1;
+    border-top:2px solid #aaa;
+    width:800px;
+    background-color: #fcfffa;
+    margin:0px auto;
+    margin-top:50px;
+    border-collapse: collapse;
+}
+#cart td,#cart th{
+    min-height:40px;
+    line-height:40px;
+    border-top:1px solid #f1f1f1;
+    border-bottom:1px solid #f1f1f1;
+    padding:5px;
+    vertical-align: top;
+    text-align: left;
+}
+#cart thead input{
+    vertical-align: middle;
+}
+#cart tbody input[type='checkbox']{
+    float:left;
+    margin-right: 10px;
+}
+#cart tbody div{
+    border:1px solid #f1f1f1;
+    padding:5px;
+    float:left;
+    width:90px;
+    height:80px;
+    text-align: center;
+}
+#cart tbody img {
+    width:90%;
+}
+#cart a
+{
+    text-decoration:none;
+    color:#666;
+}
+#cart a:hover
+{
+    color:#E4393C;
+}
+#cart tbody td span{
+    font-weight: bold;
+}
+
+#cart tbody td input[type='text']{
+    border:1px solid #CACBCB;
+    border-left:0;
+    border-right:0;
+    height:20px;
+    width:40px;
+    padding:0;
+    text-align: center;
+}
+#cart tbody td button{
+    border:1px solid #CACBCB;
+    height:20px;
+    width:20px;
+    padding:0;
+    background-color: #fff;
+    box-sizing:content-box;
+}
+#cart_footer{
+    position: fixed;
+    width:100%;
+    height:80px;
+    bottom:0px;
+    left:0px;
+    background-color: #fff;
+    box-shadow: 0 -1px 8px rgba(0,1,1,.08);
+    z-inxe:10000;
+}
+#cart_footer>div{
+    text-align: right;
+    margin:10px auto;
+    width:800px;
+    height:52px;
+    line-height: 52px;
+}
+#cart_footer>div>span{
+    font-size: 16px;
+    color: #e4393c;
+    font-weight: 700;
+}
+#cart_footer>div>button{
+    display: inline-block;
+    width: 96px;
+    height: 52px;
+    overflow: hidden;
+    background-color:#E54346;
+    border:0;
+    line-height: 52px;
+    color: #fff;
+    text-align: center;
+    font-size: 18px;
+    font-weight: bold;
+    font-family: "microsoft yahei";
+    margin-left:20px;
+}
+
+body{
+    overflow-x: hidden;
+}
+
+/*transition过渡：某种样式属性（数值）在一段时间内缓慢变化*/
+#cart tbody img{
+    transition: transform 0.5s linear;
+}
+
+/*transform：转换（变形：放大、移动、旋转、skew）*/
+#cart tbody img:hover{
+    transform:scale(1.1);
+    /*transform:rotate(45deg);*/
+}
+
+#cart:hover::before{
+    transition: left 3s;
+    left: 1360px;
+}
+#cart:before{
+    /*border:1px solid red;*/
+    content: "";
+    position: absolute;
+    width: 80px;
+    height: 400px;
+    top: 180px;
+    left: -150px;
+    overflow: hidden;
+    background-image: linear-gradient(to right,rgba(255,255,255,0.2) 0,rgba(255,255,255,0.8) 50%,rgba(255,255,255,0.2) 100%);
+    transform: skewX(-25deg);
+}

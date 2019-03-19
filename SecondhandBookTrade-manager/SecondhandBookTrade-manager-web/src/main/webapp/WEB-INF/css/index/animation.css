@@ -1,0 +1,75 @@
+/*五角星的转圈动画效果*/
+@keyframes myfirst {
+    from  {
+        transform: rotate(0deg);
+        -ms-transform: rotate(0deg);		/* IE 9 */
+        -webkit-transform: rotate(0deg);	/* Safari and Chrome */
+        -o-transform: rotate(0deg);		/* Opera */
+        -moz-transform: rotate(0deg);		/* Firefox */
+    }
+    to  {
+        transform: rotate(720deg);
+        -ms-transform: rotate(720deg);		/* IE 9 */
+        -webkit-transform: rotate(720deg);	/* Safari and Chrome */
+        -o-transform: rotate(720deg);		/* Opera */
+        -moz-transform: rotate(720deg);		/* Firefox */
+    }
+}
+
+@-webkit-keyframes myfirst {
+    from  {
+        transform: rotate(0deg);
+        -ms-transform: rotate(0deg);		/* IE 9 */
+        -webkit-transform: rotate(0deg);	/* Safari and Chrome */
+        -o-transform: rotate(0deg);		/* Opera */
+        -moz-transform: rotate(0deg);		/* Firefox */
+    }
+    to  {
+        transform: rotate(720deg);
+        -ms-transform: rotate(720deg);		/* IE 9 */
+        -webkit-transform: rotate(720deg);	/* Safari and Chrome */
+        -o-transform: rotate(720deg);		/* Opera */
+        -moz-transform: rotate(720deg);		/* Firefox */
+    }
+}
+
+@-moz-keyframes myfirst {
+    from  {
+        transform: rotate(0deg);
+        -ms-transform: rotate(0deg);		/* IE 9 */
+        -webkit-transform: rotate(0deg);	/* Safari and Chrome */
+        -o-transform: rotate(0deg);		/* Opera */
+        -moz-transform: rotate(0deg);		/* Firefox */
+    }
+    to  {
+        transform: rotate(720deg);
+        -ms-transform: rotate(720deg);		/* IE 9 */
+        -webkit-transform: rotate(720deg);	/* Safari and Chrome */
+        -o-transform: rotate(720deg);		/* Opera */
+        -moz-transform: rotate(720deg);		/* Firefox */
+    }
+}
+
+@-o-keyframes myfirst  {
+    from  {
+        transform: rotate(0deg);
+        -ms-transform: rotate(0deg);		/* IE 9 */
+        -webkit-transform: rotate(0deg);	/* Safari and Chrome */
+        -o-transform: rotate(0deg);		/* Opera */
+        -moz-transform: rotate(0deg);		/* Firefox */
+    }
+    to {
+        transform: rotate(720deg);
+        -ms-transform: rotate(720deg);		/* IE 9 */
+        -webkit-transform: rotate(720deg);	/* Safari and Chrome */
+        -o-transform: rotate(720deg);		/* Opera */
+        -moz-transform: rotate(720deg);		/* Firefox */
+    }
+}
+
+#top_box>img:hover {
+    animation: myfirst 0.5s;
+    -moz-animation:myfirst 0.5s; /* Firefox */
+    -webkit-animation:myfirst 0.5s; /* Safari and Chrome */
+    -o-animation:myfirst 0.5s; /* Opera */
+}
