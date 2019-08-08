@@ -8,10 +8,10 @@
 </head>
 <link rel="stylesheet" href="/css/zTreeStyle/zTreeStyle.css">
 <%@include file="public/commonLayerUIForm.jsp" %>
-<script type="text/javascript" src="/js/lib/ztree/jquery.ztree.core-3.5.js"></script>
-<script type="text/javascript" src="/js/lib/ztree/jquery.ztree.excheck-3.5.js"></script>
-<script type="text/javascript" src="/js/lib/ztree/jquery.ztree.exedit-3.5.js"></script>
-<script type="text/javascript" src="/js/systemManage.js"></script>
+<script type="text/javascript" src="${pageContext.request.contextPath}/js/lib/ztree/jquery.ztree.core-3.5.js"></script>
+<script type="text/javascript" src="${pageContext.request.contextPath}/js/lib/ztree/jquery.ztree.excheck-3.5.js"></script>
+<script type="text/javascript" src="${pageContext.request.contextPath}/js/lib/ztree/jquery.ztree.exedit-3.5.js"></script>
+<script type="text/javascript" src="${pageContext.request.contextPath}/js/systemManage.js"></script>
 <script type="text/css" >
 body {
     font:16px "microsoft yahei", Arial, Helvetica, sans-serif;

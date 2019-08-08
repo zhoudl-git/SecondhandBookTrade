@@ -8,23 +8,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
     <meta name="renderer" content="webkit">
     <title>二手书籍交易中心-系统角色管理</title>
-     <script src="js/lib/jquery.js"></script>
-    <link href="/js/lib/ligerui/lib/ligerUI/skins/Aqua/css/ligerui-all.css" rel="stylesheet" type="text/css" />
-	<link href="/js/lib/ligerui/lib/ligerUI/skins/Gray2014/css/all.css" rel="stylesheet" type="text/css" />
-	<link rel="stylesheet" href="/js/lib/layui/css/layui.css">
-	<link rel="stylesheet" href="/css/bookManage.css">
-	<script src="/js/lib/ligerui/lib/ligerUI/js/core/base.js" type="text/javascript"></script>
-	<script src="/js/lib/ligerui/lib/ligerUI/js/ligerui.all.js" type="text/javascript"></script>
+     <script src="${pageContext.request.contextPath}/js/lib/jquery.js"></script>
+    <link href="${pageContext.request.contextPath}/js/lib/ligerui/lib/ligerUI/skins/Aqua/css/ligerui-all.css" rel="stylesheet" type="text/css" />
+	<link href="${pageContext.request.contextPath}/js/lib/ligerui/lib/ligerUI/skins/Gray2014/css/all.css" rel="stylesheet" type="text/css" />
+	<link rel="stylesheet" href="${pageContext.request.contextPath}/js/lib/layui/css/layui.css">
+	<link rel="stylesheet" href="${pageContext.request.contextPath}/css/bookManage.css">
+	<script src="${pageContext.request.contextPath}/js/lib/ligerui/lib/ligerUI/js/core/base.js" type="text/javascript"></script>
+	<script src="${pageContext.request.contextPath}/js/lib/ligerui/lib/ligerUI/js/ligerui.all.js" type="text/javascript"></script>
 	<script type="text/javascript" src="/js/lib/ligerui/lib/json2.js"></script>
-	<script src="/js/commons/ajaxEncapsulation.js"></script> 
-	<script src="/js/commons/jsUtils.js"></script>
-    <script src="/js/lib/layer/layer.js"></script>
+	<script src="${pageContext.request.contextPath}/js/commons/ajaxEncapsulation.js"></script>
+	<script src="${pageContext.request.contextPath}/js/commons/jsUtils.js"></script>
+    <script src="${pageContext.request.contextPath}/js/lib/layer/layer.js"></script>
 	<!-- 弹出框核心包 -->
-	<script type="text/javascript" src="/js/lib/layer/mobile/layer.js"></script>
-	<script type="text/javascript" src="/js/lib/layer/layer.js"></script> 
+	<script type="text/javascript" src="${pageContext.request.contextPath}/js/lib/layer/mobile/layer.js"></script>
+	<script type="text/javascript" src="${pageContext.request.contextPath}/js/lib/layer/layer.js"></script>
 	<!-- <!-- 弹出层封装JS -->
-	<script type="text/javascript" src="/js/commons/pop.js"></script> 
-	<script src="/js/roleManage.js"></script> 
+	<script type="text/javascript" src="${pageContext.request.contextPath}/js/commons/pop.js"></script>
+	<script src="${pageContext.request.contextPath}/js/roleManage.js"></script>
 </head>
 <body>
 <input type="hidden" id="per">

@@ -1,19 +1,19 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-<link href="/js/lib/kindeditor-4.1.10/themes/default/default.css" type="text/css" rel="stylesheet">
-<script src="js/lib/jquery.js"></script>
-<script src="js/commons/common.js"></script>
-<link rel="stylesheet" href="/js/lib/layui/css/layui.css">
+<link href="${pageContext.request.contextPath}/js/lib/kindeditor-4.1.10/themes/default/default.css" type="text/css" rel="stylesheet">
+<script src="${pageContext.request.contextPath}/js/lib/jquery.js"></script>
+<script src="${pageContext.request.contextPath}/js/commons/common.js"></script>
+<link rel="stylesheet" href="${pageContext.request.contextPath}/js/lib/layui/css/layui.css">
 <!-- 弹出框核心包 -->
-<script type="text/javascript" src="/js/lib/layer/layer.js"></script> 
+<script type="text/javascript" src="${pageContext.request.contextPath}/js/lib/layer/layer.js"></script>
 <!-- 弹出层封装JS -->
-<script type="text/javascript" src="/js/commons/pop.js"></script>
-<script type="text/javascript" charset="utf-8" src="/js/lib/kindeditor-4.1.10/kindeditor-all-min.js"></script>
-<script type="text/javascript" charset="utf-8" src="/js/lib/kindeditor-4.1.10/lang/zh_CN.js"></script>
-<link rel="stylesheet" type="text/css" href="js/jquery-easyui-1.4.1/themes/default/easyui.css" />
-<link rel="stylesheet" type="text/css" href="js/jquery-easyui-1.4.1/themes/icon.css" />
-<script type="text/javascript" src="js/jquery-easyui-1.4.1/jquery.min.js"></script>
-<script type="text/javascript" src="js/jquery-easyui-1.4.1/jquery.easyui.min.js"></script>
-<script type="text/javascript" src="js/jquery-easyui-1.4.1/locale/easyui-lang-zh_CN.js"></script>
+<script type="text/javascript" src="${pageContext.request.contextPath}/js/commons/pop.js"></script>
+<script type="text/javascript" charset="utf-8" src="${pageContext.request.contextPath}/js/lib/kindeditor-4.1.10/kindeditor-all-min.js"></script>
+<script type="text/javascript" charset="utf-8" src="${pageContext.request.contextPath}/js/lib/kindeditor-4.1.10/lang/zh_CN.js"></script>
+<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/js/jquery-easyui-1.4.1/themes/default/easyui.css" />
+<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/js/jquery-easyui-1.4.1/themes/icon.css" />
+<script type="text/javascript" src="${pageContext.request.contextPath}/js/jquery-easyui-1.4.1/jquery.min.js"></script>
+<script type="text/javascript" src="${pageContext.request.contextPath}/js/jquery-easyui-1.4.1/jquery.easyui.min.js"></script>
+<script type="text/javascript" src="${pageContext.request.contextPath}/js/jquery-easyui-1.4.1/locale/easyui-lang-zh_CN.js"></script>
 <div style="padding:10px 10px 10px 10px">
 	<form id="itemAddForm" class="itemForm" method="post">
 	    <table cellpadding="5">

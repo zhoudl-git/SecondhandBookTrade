@@ -6,12 +6,12 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>二手书籍交易系统-公告详情页</title>
 <%@include file="public/commonLayerUIForm.jsp" %>
-<link rel="icon" href="/images/favicon.ico">
-<link href="/css/index/common.css" rel="Stylesheet" />
+<link rel="icon" href="${pageContext.request.contextPath}/images/favicon.ico">
+<link href="${pageContext.request.contextPath}/css/index/common.css" rel="Stylesheet" />
 </head>
 <body>
 <div>
-	<img src="/images/report.jpg"  alt="公告栏" style="width:100%;height:20%;" />
+	<img src="${pageContext.request.contextPath}/images/report.jpg"  alt="公告栏" style="width:100%;height:20%;" />
 </div>
 <div style=" border:3px solid #000;height:100%;width:90%;margin:5%;" id="content">
 

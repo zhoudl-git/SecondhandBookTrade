@@ -7,10 +7,10 @@
 <title>二手交易系统-统计分析页面</title>
 <head>
 <!-- 引入 shine 主题 -->
-<script src="js/echart/js/shine.js"> </script>
-<script src="js/echart/js/echarts.js"></script>
-<script src="js/echart/js/china.js"></script>
-<script src="js/echart/js/gansu.js"></script>
+<script src="${pageContext.request.contextPath}/js/echart/js/shine.js"> </script>
+<script src="${pageContext.request.contextPath}/js/echart/js/echarts.js"></script>
+<script src="${pageContext.request.contextPath}/js/echart/js/china.js"></script>
+<script src="${pageContext.request.contextPath}/js/echart/js/gansu.js"></script>
 
 <style type="text/css">
 	#main{

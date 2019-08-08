@@ -7,10 +7,10 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>二手书籍交易系统-详情页</title>
  <%@include file="public/commonLayerUIForm.jsp" %>
-<link rel="icon" href="/images/favicon.ico">
-<link href="css/detail/common.css" type="text/css" rel="Stylesheet" />
-<link href="css/detail/detail.css" type="text/css" rel="Stylesheet" />
-<link href="css/detail/product_right.css" type="text/css" rel="Stylesheet" />
+<link rel="icon" href="${pageContext.request.contextPath}/images/favicon.ico">
+<link href="${pageContext.request.contextPath}/css/detail/common.css" type="text/css" rel="Stylesheet" />
+<link href="${pageContext.request.contextPath}/css/detail/detail.css" type="text/css" rel="Stylesheet" />
+<link href="${pageContext.request.contextPath}/css/detail/product_right.css" type="text/css" rel="Stylesheet" />
 </head>
 <body>
 <input type="hidden" id="itemIdUserMessage">
@@ -978,12 +978,12 @@
                 <a href=""><img src="images/cx.jpg" width="112" height="40" /></a>
             </div> -->
         </footer>
-      <script src="js/jquery-1.11.3.js"></script>
-      <script src="js/jd_detail.js"></script>
+      <script src="${pageContext.request.contextPath}/js/jquery-1.11.3.js"></script>
+      <script src="${pageContext.request.contextPath}/js/jd_detail.js"></script>
       <%-- <%@include file="public/commonLayerUIForm.jsp" %> --%>
-	  <script src="/js/booktrade_detail.js"></script>
-	  <script src="/js/jquery.cityselect.js"></script>
-      <script src="/js/login.js"></script>
-      <script src="/js/commons/latool.js"></script>
+	  <script src="${pageContext.request.contextPath}//js/booktrade_detail.js"></script>
+	  <script src="${pageContext.request.contextPath}//js/jquery.cityselect.js"></script>
+      <script src="${pageContext.request.contextPath}//js/login.js"></script>
+      <script src="${pageContext.request.contextPath}//js/commons/latool.js"></script>
     </body>
 </html>

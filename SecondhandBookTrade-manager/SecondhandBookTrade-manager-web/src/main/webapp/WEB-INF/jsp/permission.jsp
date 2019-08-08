@@ -6,16 +6,16 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>二手书籍交易管理中心-角色权限配置</title>
 </head>
-<link rel="stylesheet" href="/css/zTreeStyle/zTreeStyle.css">
+<link rel="stylesheet" href="${pageContext.request.contextPath}/css/zTreeStyle/zTreeStyle.css">
 <%@include file="public/commonLayerUIForm.jsp" %>
-<script type="text/javascript" src="/js/lib/ztree/jquery.ztree.core-3.5.js"></script>
-<script type="text/javascript" src="/js/lib/ztree/jquery.ztree.excheck-3.5.js"></script>
-<script type="text/javascript" src="/js/lib/ztree/jquery.ztree.exedit-3.5.js"></script>
+<script type="text/javascript" src="${pageContext.request.contextPath}/js/lib/ztree/jquery.ztree.core-3.5.js"></script>
+<script type="text/javascript" src="${pageContext.request.contextPath}/js/lib/ztree/jquery.ztree.excheck-3.5.js"></script>
+<script type="text/javascript" src="${pageContext.request.contextPath}/js/lib/ztree/jquery.ztree.exedit-3.5.js"></script>
 <!-- <!-- 弹出层封装JS -->
-<script src="/js/commons/ajaxEncapsulation.js"></script> 
-<script src="/js/commons/jsUtils.js"></script>
-<script type="text/javascript" src="/js/commons/pop.js"></script>
-<script type="text/javascript" src="/js/permission.js"></script>
+<script src="${pageContext.request.contextPath}/js/commons/ajaxEncapsulation.js"></script>
+<script src="${pageContext.request.contextPath}/js/commons/jsUtils.js"></script>
+<script type="text/javascript" src="${pageContext.request.contextPath}/js/commons/pop.js"></script>
+<script type="text/javascript" src="${pageContext.request.contextPath}/js/permission.js"></script>
 <body>
 <div class="panel admin-panel">
   <div class="panel-head">

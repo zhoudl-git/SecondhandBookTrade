@@ -6,17 +6,17 @@
         <title>二手书籍交易系统-首页</title>
         <meta charset="utf-8" />
         <%@include file="public/commonLayerUIForm.jsp" %>
-        <link rel="icon" href="/images/favicon.ico">
-        <link href="/css/index/common.css" rel="Stylesheet" />
-        <link href="/css/index/index.css" rel="Stylesheet" />
-        <link href="/css/index/animation.css" rel="Stylesheet" />
-		<script src="/js/booktrade_index.js"></script>
-       <script src="/js/login.js"></script>
-       <link href="/js/res/bootstrap1.min.css" rel="stylesheet" type="text/css" />
-	    <script src="/js/res/jqPaginator.min.js" type="text/javascript"></script>
-	    <link href="/js/res/myPage.css" rel="stylesheet" type="text/css" />
+        <link rel="icon" href="${pageContext.request.contextPath}/images/favicon.ico">
+        <link href="${pageContext.request.contextPath}/css/index/common.css" rel="Stylesheet" />
+        <link href="${pageContext.request.contextPath}/css/index/index.css" rel="Stylesheet" />
+        <link href="${pageContext.request.contextPath}/css/index/animation.css" rel="Stylesheet" />
+		<script src="${pageContext.request.contextPath}/js/booktrade_index.js"></script>
+       <script src="${pageContext.request.contextPath}/js/login.js"></script>
+       <link href="${pageContext.request.contextPath}/js/res/bootstrap1.min.css" rel="stylesheet" type="text/css" />
+	    <script src="${pageContext.request.contextPath}/js/res/jqPaginator.min.js" type="text/javascript"></script>
+	    <link href="${pageContext.request.contextPath}/js/res/myPage.css" rel="stylesheet" type="text/css" />
        <!-- <script src="js/jquery-1.11.3.js"></script> -->
-		<script src="js/jd_index.js"></script>
+		<script src="${pageContext.request.contextPath}/js/jd_index.js"></script>
     </head>
     <body>
     <input type="hidden" id="whrx">
@@ -596,6 +596,6 @@
                 <a href=""><img src="images/index/cx.jpg" width="112" height="40" /></a>
             </div> -->
         </footer>
-		 <script src="/js/res/myPage.js" type="text/javascript"></script>
+		 <script src="${pageContext.request.contextPath}/js/res/myPage.js" type="text/javascript"></script>
     </body>
 </html>

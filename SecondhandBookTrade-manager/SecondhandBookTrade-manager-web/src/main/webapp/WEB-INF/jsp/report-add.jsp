@@ -8,10 +8,10 @@
  <!-- 引入公共页面 -->
     <%@include file="public/commonHead.jsp" %>
     <!-- layer UI 核心包 --> 
-	<script src="/js/lib/layui/layui.js"></script>
+	<script src="${pageContext.request.contextPath}/js/lib/layui/layui.js"></script>
 	<!-- <script src="/js/lib/layui/lay/dest/layui.all.js"></script> -->
-	<script src="/js/lib/layui/lay/modules/form.js"></script>
-	<script src="/js/report-add.js"></script>
+	<script src="${pageContext.request.contextPath}/js/lib/layui/lay/modules/form.js"></script>
+	<script src="${pageContext.request.contextPath}/js/report-add.js"></script>
 </head>
 <body>
 <form class="layui-form" action="" style="margin-top:5%;">

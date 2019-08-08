@@ -6,10 +6,10 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="SecondhandBookTrade-common" />
         <module name="SecondhandBookTrade-manager-dao" />
-        <module name="SecondhandBookTrade-manager-pojo" />
         <module name="SecondhandBookTrade-manager-service" />
+        <module name="SecondhandBookTrade-manager-pojo" />
+        <module name="SecondhandBookTrade-common" />
         <module name="SecondhandBookTrade-manager-web" />
       </profile>
     </annotationProcessing>

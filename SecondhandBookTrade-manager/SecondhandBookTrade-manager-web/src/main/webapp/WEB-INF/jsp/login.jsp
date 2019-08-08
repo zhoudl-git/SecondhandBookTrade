@@ -10,17 +10,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
     <meta name="renderer" content="webkit">
-    <link rel="icon" href="/images/favicon.ico">
-    <link rel="stylesheet" href="css/pintuer.css">
-    <link rel="stylesheet" href="css/admin.css">
-    <script src="js/lib/jquery.js"></script>
-    <script src="js/lib/gVerify.js"></script>
-    <script src="js/lib/pintuer.js"></script>
-    <!-- 弹出框核心包 -->
-	<script type="text/javascript" src="/js/lib/layer/layer.js"></script>
-    <script src="js/login.js"></script>
-    <!-- ajax封装JS -->
-	<script src="/js/commons/ajaxEncapsulation.js"></script> 
+    <jsp:include page="./public/lib.jsp"/>
 </head>
 <body>
 <div class="bg"></div>
@@ -30,9 +20,9 @@
         <div class="xs6 xm4 xs3-move xm4-move">
             <div style="height:100px;margin-top:20%;">
             <div class="text-center margin-big padding-big-top" style="border:1px solid transparet;">
-            <h1 style="width: 800px;position: absolute;top: 80px;left: -200px;">
-            欢迎来到校园旧书交易管理系统
-            </h1>
+           <%-- <h1 style="width: 800px;position: absolute;top: 80px;left: -200px;">
+            二手书籍交易系统
+            </h1>--%>
             </div> 
             </div>
             <div class="media media-y margin-big-bottom">

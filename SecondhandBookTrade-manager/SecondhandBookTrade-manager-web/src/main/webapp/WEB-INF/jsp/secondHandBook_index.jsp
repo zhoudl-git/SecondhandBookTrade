@@ -5,21 +5,21 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title> new document </title>
-<link rel="stylesheet" type="text/css" href="/css/secondHandBook_index.css" >
-<link rel="icon" href="/images/favicon.ico"><!-- hw.ico -->
-<script src="js/lib/jquery.js"></script>
-<script type="text/javascript" src="js/secondHandBook_index.js"></script>
+<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/secondHandBook_index.css" >
+<link rel="icon" href="${pageContext.request.contextPath}/images/favicon.ico"><!-- hw.ico -->
+<script src="${pageContext.request.contextPath}/js/lib/jquery.js"></script>
+<script type="text/javascript" src="${pageContext.request.contextPath}/js/secondHandBook_index.js"></script>
 <!-- 弹出框核心包 -->
-<script type="text/javascript" src="/js/lib/layer/layer.js"></script> 
+<script type="text/javascript" src="${pageContext.request.contextPath}/js/lib/layer/layer.js"></script>
 <!-- 弹出层封装JS -->
-<script type="text/javascript" src="/js/commons/pop.js"></script>
+<script type="text/javascript" src="${pageContext.request.contextPath}/js/commons/pop.js"></script>
 <!-- layer UI 核心包 --> 
-<script src="/js/lib/layui/layui.js"></script>
-<script src="/js/lib/layui/lay/dest/layui.all.js"></script>
+<script src="${pageContext.request.contextPath}/js/lib/layui/layui.js"></script>
+<script src="${pageContext.request.contextPath}/js/lib/layui/lay/dest/layui.all.js"></script>
 <!-- ajax封装JS -->
-<script src="/js/commons/ajaxEncapsulation.js"></script> 
+<script src="${pageContext.request.contextPath}/js/commons/ajaxEncapsulation.js"></script>
 <!-- 系统工具类 -->
-<script src="/js/commons/jsUtils.js"></script>
+<script src="${pageContext.request.contextPath}/js/commons/jsUtils.js"></script>
 </head>
 <body>
 <!-- 页面顶部 -->
@@ -768,12 +768,12 @@
                                     <p class="channel-pro-1-2_p2" style="margin-top:20px;">¥799</p>
                                 </li>
                                 <li class="channel-pro-1-10">
-                                    <img src="/images/img/1453455044526.jpg"  height="190px">
+                                    <img src="${pageContext.request.contextPath}/images/img/1453455044526.jpg"  height="190px">
                                     <p class="channel-pro-1-2_p">华为 麦芒4 <a>无畏生长，磨砺见真我！</a></p>
                                     <p class="channel-pro-1-2_p2" style="margin-top:20px;">¥2299</p>
                                 </li>
                                 <li class="channel-pro-1-11">
-                                    <img src="/images/img/1457936187476.png"  height="190px">
+                                    <img src="${pageContext.request.contextPath}/images/img/1457936187476.png"  height="190px">
                                     <p class="channel-pro-1-2_p">荣耀畅玩4X <a>千万人之选，火爆热销</a></p>
                                     <p class="channel-pro-1-2_p2" style="margin-top:20px;">¥799</p>
                                 </li>
@@ -792,10 +792,10 @@
      <div class="follow">
         <div class="layout">
             <ul>
-                <li><a href=""><img src="/images/img/follow_hwsoft_application.png" alt=""/></a></li>
-                <li><a href=""><img src="/images/img/follow_sina.png" alt=""/></a></li>
-                <li><a href=""><img src="/images/img/follow_qzone.png" alt=""/></a></li>
-                <li><a href=""><img src="/images/img/follow_android.png" alt=""/></a></li>
+                <li><a href=""><img src="${pageContext.request.contextPath}/images/img/follow_hwsoft_application.png" alt=""/></a></li>
+                <li><a href=""><img src="${pageContext.request.contextPath}/images/img/follow_sina.png" alt=""/></a></li>
+                <li><a href=""><img src="${pageContext.request.contextPath}/images/img/follow_qzone.png" alt=""/></a></li>
+                <li><a href=""><img src="${pageContext.request.contextPath}/images/img/follow_android.png" alt=""/></a></li>
             </ul>
         </div>
     </div>
@@ -897,13 +897,13 @@
             隐私政策 服务协议 Copyright © 2012-2016 VMALL.COM 版权所有 保留一切权利
         </p>
         <p style="text-align:left; text-align: center">
-            <img src="/images/img/20160226162651249.png" alt=""/>
+            <img src="${pageContext.request.contextPath}/images/img/20160226162651249.png" alt=""/>
             苏公网安备 32011402010009号 | 苏ICP备09062682号-9 | 增值电信业务经营许可证：苏B2-20130048 | 网络文化经营许可证：苏网文[2012]0401-019号
         </p>
         <p style="text-align:left; text-align: center" class="footer-img">
-            <img src="/images/img/20160226162415360.png" alt=""/>
-            <img src="/images/img/20160226162521265.png" alt=""/>
-            <img src="/images/img/20160226162531395.png" alt=""/>
+            <img src="${pageContext.request.contextPath}/images/img/20160226162415360.png" alt=""/>
+            <img src="${pageContext.request.contextPath}/images/img/20160226162521265.png" alt=""/>
+            <img src="${pageContext.request.contextPath}/images/img/20160226162531395.png" alt=""/>
         </p>
     </div>
 </footer>

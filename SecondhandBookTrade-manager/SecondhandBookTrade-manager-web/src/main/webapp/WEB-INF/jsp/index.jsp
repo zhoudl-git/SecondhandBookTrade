@@ -6,15 +6,15 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>后台管理中心</title>  
 <!-- 引入公共页面 -->
-<link rel="stylesheet" href="/css/pintuer.css">
-<link rel="icon" href="/images/favicon.ico">
+<link rel="stylesheet" href="${pageContext.request.contextPath}/css/pintuer.css">
+<link rel="icon" href="${pageContext.request.contextPath}/images/favicon.ico">
 <%@include file="public/commonHead.jsp" %>
-<script src="/js/index.js"></script>
+<script src="${pageContext.request.contextPath}/js/index.js"></script>
 </head>
 <body style="background-color:#f2f9fd;">
 <div class="header bg-main" id="head">
   <div class="logo margin-big-left fadein-top">
-    <h1><img src="/images/y.jpg" class="radius-circle rotate-hover" height="50" alt="" />后台管理中心</h1>
+    <h1><img src="${pageContext.request.contextPath}/images/y.jpg" class="radius-circle rotate-hover" height="50" alt="" />后台管理中心</h1>
   </div>
   <div class="head-l"><a class="button button-little bg-green" href="/index" target="_blank"><span class="icon-home"></span> 前台首页</a> &nbsp;&nbsp;<a href="shouye/index.html" class="button button-little bg-blue"><span class="icon-wrench"></span> 清除缓存</a> &nbsp;&nbsp;<a class="button button-little bg-red" href="javascript:void(0)" id="logout"><span class="icon-power-off" ></span> 退出登录</a> </div>
 </div>

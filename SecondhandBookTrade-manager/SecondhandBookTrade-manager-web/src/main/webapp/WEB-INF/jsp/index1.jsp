@@ -7,11 +7,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title></title>
-    <link href="css/index.css" rel="stylesheet">
-    <link href="css/bootstrap.css" rel="stylesheet">
+    <link href="${pageContext.request.contextPath}/css/index.css" rel="stylesheet">
+    <link href="${pageContext.request.contextPath}/css/bootstrap.css" rel="stylesheet">
     <!--[if lt IE 9]>
-    <script src="js/html5shiv.min.js"></script>
-    <script src="js/respond.min.js"></script>
+    <script src="${pageContext.request.contextPath}/js/html5shiv.min.js"></script>
+    <script src="${pageContext.request.contextPath}/js/respond.min.js"></script>
     <![endif]-->
     <style>
         body {
@@ -399,7 +399,7 @@
         <li class="lf">网站链接</li>
     </ul>
 </div>
-<script src="js/jquery-1.11.3.js"></script>
-<script src="js/bootstrap.js"></script>
+<script src="${pageContext.request.contextPath}/js/jquery-1.11.3.js"></script>
+<script src="${pageContext.request.contextPath}/js/bootstrap.js"></script>
 </body>
 </html>

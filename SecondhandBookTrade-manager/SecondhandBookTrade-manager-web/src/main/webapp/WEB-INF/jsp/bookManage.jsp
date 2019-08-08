@@ -10,8 +10,8 @@
     <title>书籍信息管理</title> 
     <!-- 引入公共页面 -->
     <%@include file="public/commonHead.jsp" %>
-    <link rel="stylesheet" href="/css/bookManage.css"> 
-	<script src="/js/bookManage.js"></script> 
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/css/bookManage.css">
+	<script src="${pageContext.request.contextPath}/js/bookManage.js"></script>
 </head>
 <body>
 <div class="panel admin-panel">

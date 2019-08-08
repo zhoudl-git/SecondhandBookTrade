@@ -5,11 +5,11 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<link rel="stylesheet" href="css/jd.css">
+<link rel="stylesheet" href="${pageContext.request.contextPath}/css/jd.css">
  <%@include file="public/commonLayerUIForm.jsp" %>
-<link rel="icon" href="/images/favicon.ico">
- <link rel="stylesheet" href="css/order/jd.css">
-<link rel="stylesheet" href="css/order/addorder.css">
+<link rel="icon" href="${pageContext.request.contextPath}/images/favicon.ico">
+ <link rel="stylesheet" href="${pageContext.request.contextPath}/css/order/jd.css">
+<link rel="stylesheet" href="${pageContext.request.contextPath}/css/order/addorder.css">
 <style type="text/css">
         .t1
         {
@@ -241,10 +241,10 @@
 <div id="footer"></div>
 
 
-<script src="js/jquery-1.11.3.js"></script>
-<script src="js/addorder.js"></script>
-<script src="/js/jquery.cityselect.js"></script>
-<script src="/js/commons/latool.js"></script>
+<script src="${pageContext.request.contextPath}/js/jquery-1.11.3.js"></script>
+<script src="${pageContext.request.contextPath}/js/addorder.js"></script>
+<script src="${pageContext.request.contextPath}/js/jquery.cityselect.js"></script>
+<script src="${pageContext.request.contextPath}/js/commons/latool.js"></script>
 
 </body>
 </html>

@@ -6,9 +6,9 @@
   <title>二手书籍交易系统-用户中心</title>
   <meta charset="utf-8"/>
   <%@include file="public/commonLayerUIForm.jsp" %>
- <link rel="icon" href="/images/favicon.ico">
- <link href="css/detail/common.css" type="text/css" rel="Stylesheet" />
-  <link rel="stylesheet" href="css/order/jd.css">
+ <link rel="icon" href="${pageContext.request.contextPath}/images/favicon.ico">
+ <link href="${pageContext.request.contextPath}/css/detail/common.css" type="text/css" rel="Stylesheet" />
+  <link rel="stylesheet" href="${pageContext.request.contextPath}/css/order/jd.css">
   <!--<link rel="stylesheet" href="css/usercenter.css">-->
 </head>
 
@@ -246,10 +246,10 @@
 <div id="footer"></div>
 
 
-<script src="js/jquery-1.11.3.js"></script>
-<script src="js/fusioncharts.js"></script>
-<script src="js/fusioncharts.charts.js"></script>
-<script src="js/usercenter.js"></script>
-<script src="js/commons/common.js"></script>
+<script src="${pageContext.request.contextPath}/js/jquery-1.11.3.js"></script>
+<script src="${pageContext.request.contextPath}/js/fusioncharts.js"></script>
+<script src="${pageContext.request.contextPath}/js/fusioncharts.charts.js"></script>
+<script src="${pageContext.request.contextPath}/js/usercenter.js"></script>
+<script src="${pageContext.request.contextPath}/js/commons/common.js"></script>
 </body>
 </html>

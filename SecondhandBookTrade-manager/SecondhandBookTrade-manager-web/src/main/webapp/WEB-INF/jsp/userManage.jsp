@@ -11,11 +11,11 @@
     <!-- 引入公共页面 -->
     <%@include file="public/commonHead.jsp" %>
     <!-- layer UI 核心包 --> 
-	<script src="/js/lib/layui/layui.js"></script>
+	<script src="${pageContext.request.contextPath}/js/lib/layui/layui.js"></script>
 	<!-- <script src="/js/lib/layui/lay/dest/layui.all.js"></script> -->
-	<script src="/js/lib/layui/lay/modules/form.js"></script>
+	<script src="${pageContext.request.contextPath}/js/lib/layui/lay/modules/form.js"></script>
     <link rel="stylesheet" href="/css/bookManage.css"> 
-	<script src="/js/userManage.js"></script> 
+	<script src="${pageContext.request.contextPath}/js/userManage.js"></script>
 </head>
 <body>
 <div class="panel admin-panel">

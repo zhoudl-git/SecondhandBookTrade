@@ -5,9 +5,9 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>二手书籍交易系统-购物车</title>
-<link rel="icon" href="/images/favicon.ico">
+<link rel="icon" href="${pageContext.request.contextPath}/images/favicon.ico">
 <%@include file="public/commonLayerUIForm.jsp" %>
-<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="${pageContext.request.contextPath}/css/style.css">
 </head>
  <table id="cartTable">
     <thead>
@@ -92,11 +92,11 @@
         <span class="arrow">◆<span>◆</span></span>
     </div>
 </div>
-<script type="text/javascript" src="js/booktrade_shopcart.js"></script>
+<script type="text/javascript" src="${pageContext.request.contextPath}/js/booktrade_shopcart.js"></script>
 </body>
-		<script src="js/jquery-1.11.3.js">
+		<script src="${pageContext.request.contextPath}/js/jquery-1.11.3.js">
         </script>
-        <script src="js/shoppingcart.js">
+        <script src="${pageContext.request.contextPath}/js/shoppingcart.js">
         </script>
         <!-- <script type="text/javascript" src="js/script.js"></script> -->
 </html>

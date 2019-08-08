@@ -10,16 +10,16 @@
     <title>书籍类目信息管理</title> 
     <!-- 引入公共页面 -->
     <%@include file="public/commonHead.jsp" %>
-    <link rel="stylesheet" href="/css/bookManage.css">
-    <link rel="stylesheet" href="/css/zTreeStyle/zTreeStyle.css"> 
-    <script type="text/javascript" charset="utf-8" src="/js/lib/kindeditor-4.1.10/kindeditor-all-min.js"></script>
-	<script type="text/javascript" charset="utf-8" src="/js/lib/kindeditor-4.1.10/lang/zh_CN.js"></script>
-	<link rel="stylesheet" type="text/css" href="js/jquery-easyui-1.4.1/themes/default/easyui.css" />
-	<link rel="stylesheet" type="text/css" href="js/jquery-easyui-1.4.1/themes/icon.css" />
-	<script type="text/javascript" src="js/jquery-easyui-1.4.1/jquery.min.js"></script>
-	<script type="text/javascript" src="js/jquery-easyui-1.4.1/jquery.easyui.min.js"></script>
-	<script type="text/javascript" src="js/jquery-easyui-1.4.1/locale/easyui-lang-zh_CN.js"></script>
-	<script src="/js/bookManageCat.js"></script>
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/css/bookManage.css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/css/zTreeStyle/zTreeStyle.css">
+    <script type="text/javascript" charset="utf-8" src="${pageContext.request.contextPath}/js/lib/kindeditor-4.1.10/kindeditor-all-min.js"></script>
+	<script type="text/javascript" charset="utf-8" src="${pageContext.request.contextPath}/js/lib/kindeditor-4.1.10/lang/zh_CN.js"></script>
+	<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/js/jquery-easyui-1.4.1/themes/default/easyui.css" />
+	<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/js/jquery-easyui-1.4.1/themes/icon.css" />
+	<script type="text/javascript" src="${pageContext.request.contextPath}/js/jquery-easyui-1.4.1/jquery.min.js"></script>
+	<script type="text/javascript" src="${pageContext.request.contextPath}/js/jquery-easyui-1.4.1/jquery.easyui.min.js"></script>
+	<script type="text/javascript" src="${pageContext.request.contextPath}/js/jquery-easyui-1.4.1/locale/easyui-lang-zh_CN.js"></script>
+	<script src="${pageContext.request.contextPath}/js/bookManageCat.js"></script>
 	<style type="text/css">
 		body {
 			font-size:18px;
