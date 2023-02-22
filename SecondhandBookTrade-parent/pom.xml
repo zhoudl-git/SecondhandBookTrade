@@ -26,7 +26,7 @@
 		<pagehelper.version>5.0.0</pagehelper.version>
 		<!-- <pagehelper.version>3.4.2-fix</pagehelper.version> -->
 		<jsqlparser.version>0.9.1</jsqlparser.version>
-		<commons-fileupload.version>1.4</commons-fileupload.version>
+		<commons-fileupload.version>1.5</commons-fileupload.version>
 		<jedis.version>2.7.2</jedis.version>
 		<solrj.version>4.10.3</solrj.version>
 		<freemarker.version>2.3.23</freemarker.version>
